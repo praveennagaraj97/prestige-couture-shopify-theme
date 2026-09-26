@@ -51,11 +51,11 @@ pull-gift-card:
 
 push-dev: check
 	@test -n "$(THEME)" || (echo 'Set THEME to the unpublished preview theme ID' >&2; exit 2)
-	"$(SHOPIFY)" theme push --store "$(STORE)" --theme "$(THEME)" --strict
+	"$(SHOPIFY)" theme push --store "$(STORE)" --theme "$(THEME)" --strict --nodelete
 
 deploy-preview: check
 	@test -n "$(THEME)" || (echo 'Set THEME to the unpublished preview theme ID' >&2; exit 2)
-	"$(SHOPIFY)" theme push --store "$(STORE)" --theme "$(THEME)" --strict
+	"$(SHOPIFY)" theme push --store "$(STORE)" --theme "$(THEME)" --strict --nodelete
 
 # Pulling before pushing could overwrite the work being deployed.
 sync-dev: push-dev

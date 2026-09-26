@@ -1,0 +1,44 @@
+{%- capture additional_product_metafields -%}
+  {%- for metafield_pair in product.metafields.custom -%}
+    {%- assign metafield_key = metafield_pair | first -%}
+    {%- assign metafield = metafield_pair | last -%}
+    {%- unless metafield_key == 'details' or metafield_key == 'fabric_care' or metafield_key == 'number_of_reviews' or metafield_key == 'review' or metafield_key == 'colour' -%}
+      {%- if metafield != blank -%}
+        <div class="border-t border-strong-coffee/10 py-3 first:border-0">
+          <dt class="text-xs font-semibold uppercase tracking-[0.12em] text-dark-chocolate">{{ metafield_key | replace: '_', ' ' | replace: '-', ' ' | capitalize | escape }}</dt>
+          <dd class="mt-1 text-sm leading-relaxed text-strong-coffee/80">
+            {%- if metafield.type == 'json' -%}
+              <pre class="overflow-x-auto whitespace-pre-wrap font-sans">{{ metafield.value | json | escape }}</pre>
+            {%- elsif metafield.type == 'metaobject_reference' -%}
+              {%- assign referenced_entry = metafield.value -%}
+              {{- referenced_entry.label | default: referenced_entry.name | default: referenced_entry.system.handle | replace: '-', ' ' | capitalize | escape -}}
+            {%- elsif metafield.type contains 'list.' -%}
+              <ul class="space-y-1">
+                {%- for referenced_entry in metafield.value -%}
+                  <li>
+                    {%- if referenced_entry.title != blank and referenced_entry.url != blank -%}
+                      <a class="underline underline-offset-2" href="{{ referenced_entry.url }}">{{ referenced_entry.title | escape }}</a>
+                    {%- elsif referenced_entry.label != blank -%}
+                      {{- referenced_entry.label | escape -}}
+                    {%- elsif referenced_entry.name != blank -%}
+                      {{- referenced_entry.name | escape -}}
+                    {%- elsif referenced_entry.system.handle != blank -%}
+                      {{- referenced_entry.system.handle | replace: '-', ' ' | capitalize | escape -}}
+                    {%- else -%}
+                      {{- referenced_entry | escape -}}
+                    {%- endif -%}
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- else -%}
+              {{- metafield | metafield_tag -}}
+            {%- endif -%}
+          </dd>
+        </div>
+      {%- endif -%}
+    {%- endunless -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- if additional_product_metafields != blank -%}
+  <dl data-product-custom-metafields class="mt-4 divide-y divide-strong-coffee/10">{{ additional_product_metafields }}</dl>
+{%- endif -%}
