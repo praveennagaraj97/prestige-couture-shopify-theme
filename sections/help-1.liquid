@@ -1,0 +1,28 @@
+{% comment %} Source-parity migration: How can we help?. Content controls preserve the source layout. {% endcomment %}
+<section aria-label="{{ section.settings.text_1 | default: 'Help Center' | escape }}" class="section pt-10 pb-6 text-center md:pt-14 md:pb-8" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.3}}"><div class="mx-auto max-w-3xl"><span class="mb-3 inline-flex text-[11px] uppercase tracking-[0.28em] text-rust sm:text-xs">{{ section.settings.text_1 | default: 'Help Center' | escape }}</span><h1 aria-label="{{ section.settings.text_2 | default: 'How can we help?' | escape }}" class="font-libre-baskerville text-3xl text-dark-chocolate sm:text-4xl md:text-5xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.75,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.75,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.8}}">{{ section.settings.text_2 | default: 'How can we help?' | escape }}</h1></div></section>
+{% schema %}
+{
+  "name": "How can we help?",
+  "tag": "section",
+  "class": "kw-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text: Help Center",
+      "default": "Help Center"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Text: How can we help?",
+      "default": "How can we help?"
+    }
+  ],
+  "presets": [
+    {
+      "name": "How can we help?"
+    }
+  ]
+}
+{% endschema %}

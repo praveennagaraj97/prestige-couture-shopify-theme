@@ -1,0 +1,45 @@
+{% comment %} Source-parity migration: Choose a fit that feels right. Content controls preserve the source layout. {% endcomment %}
+<section aria-label="{{ section.settings.text_1 | default: 'Choose a fit that feels right' | escape }}" class="section pt-10 pb-8 md:pt-14 md:pb-10" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.25}}"><div class="mx-auto max-w-4xl"><div data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.45,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.15}},&quot;transition&quot;:{&quot;duration&quot;:0.45,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.15},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.25}}"><a href="{{ section.settings.link_2 | default: '/pages/help' | escape }}" class="mb-4 inline-flex items-center gap-2 text-[12px] font-medium text-rust transition-colors hover:text-mocha-coffee"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="text-[10px]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg>{{ section.settings.text_3 | default: 'Back to help center' | escape }}</a></div><span class="mb-3 inline-flex text-[11px] uppercase tracking-[0.28em] text-rust sm:text-xs">{{ section.settings.text_4 | default: 'Sizing &amp; Fit' | escape }}</span><h1 aria-label="{{ section.settings.text_1 | default: 'Choose a fit that feels right' | escape }}" class="font-libre-baskerville text-3xl leading-tight text-dark-chocolate sm:text-4xl md:text-5xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.6,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.6,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.8}}">{{ section.settings.text_1 | default: 'Choose a fit that feels right' | escape }}</h1><p class="mt-4 max-w-3xl text-sm leading-relaxed text-strong-coffee/80 sm:text-base" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.45,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.15}},&quot;transition&quot;:{&quot;duration&quot;:0.45,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.15},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.25}}">{{ section.settings.copy_5 | default: 'Use garment measurements, fit notes, and simple body measuring steps to select your best size before placing an order.' | escape }}</p></div></section>
+{% schema %}
+{
+  "name": "Choose a fit that feels r",
+  "tag": "section",
+  "class": "kw-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text: Choose a fit that feels right",
+      "default": "Choose a fit that feels right"
+    },
+    {
+      "type": "url",
+      "id": "link_2",
+      "label": "Link: Back to help center"
+    },
+    {
+      "type": "text",
+      "id": "text_3",
+      "label": "Text: Back to help center",
+      "default": "Back to help center"
+    },
+    {
+      "type": "text",
+      "id": "text_4",
+      "label": "Text: Sizing & Fit",
+      "default": "Sizing & Fit"
+    },
+    {
+      "type": "textarea",
+      "id": "copy_5",
+      "label": "Text: Use garment measurements, fit notes, and simple body measuring s",
+      "default": "Use garment measurements, fit notes, and simple body measuring steps to select your best size before placing an order."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Choose a fit that feels r"
+    }
+  ]
+}
+{% endschema %}

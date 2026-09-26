@@ -1,0 +1,118 @@
+{% comment %} Source-parity migration: What can be returned. Content controls preserve the source layout. {% endcomment %}
+<section aria-label="{{ section.settings.text_1 | default: 'Eligibility' | escape }}" class="section pb-12 md:pb-16" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><div class="mx-auto mb-8 max-w-2xl text-center md:mb-10"><h2 aria-label="{{ section.settings.text_2 | default: 'What can be returned' | escape }}" class="font-libre-baskerville text-2xl font-bold text-dark-chocolate sm:text-3xl md:text-4xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.8}}">{{ section.settings.text_2 | default: 'What can be returned' | escape }}</h2><p class="mt-2 text-sm text-strong-coffee/70 sm:text-base" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ section.settings.text_3 | default: 'The short version, so you can plan before shipping anything back.' | escape }}</p></div><div class="mx-auto grid max-w-5xl grid-cols-1 gap-5 md:grid-cols-2">{% for block in section.blocks %}{% case block.type %}{% when 'item_1' %}<div class="rounded-2xl bg-white p-5 ring-1 ring-emerald-600/20 sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-24},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><h3 class="mb-4 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-emerald-700"><span class="inline-block size-1.5 rounded-full bg-emerald-600"></span>{{ block.settings.text_1 | default: 'Accepted' | escape }}</h3><ul class="flex flex-col gap-3"><li class="flex items-start gap-2.5 text-[13px] leading-relaxed text-strong-coffee/85 sm:text-sm" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.35}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.35},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-emerald-600 text-[10px] text-white" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.25}},&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.25},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg></span>{{ block.settings.text_2 | default: 'Unworn pieces with original tags intact' | escape }}</li><li class="flex items-start gap-2.5 text-[13px] leading-relaxed text-strong-coffee/85 sm:text-sm" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.43000000000000005}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.43000000000000005},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-emerald-600 text-[10px] text-white" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.33}},&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.33},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg></span>{{ block.settings.text_3 | default: 'Products returned within 7 days of delivery' | escape }}</li><li class="flex items-start gap-2.5 text-[13px] leading-relaxed text-strong-coffee/85 sm:text-sm" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.51}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.51},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-emerald-600 text-[10px] text-white" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.41000000000000003}},&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.41000000000000003},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg></span>{{ block.settings.text_4 | default: 'Original invoice or order number shared with return' | escape }}</li><li class="flex items-start gap-2.5 text-[13px] leading-relaxed text-strong-coffee/85 sm:text-sm" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.59}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.59},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-emerald-600 text-[10px] text-white" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.49}},&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.49},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg></span>{{ block.settings.text_5 | default: 'Defects or wrong items received (we cover shipping both ways)' | escape }}</li></ul></div>
+{% when 'item_2' %}<div class="rounded-2xl bg-white p-5 ring-1 ring-rust/20 sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:24},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><h3 class="mb-4 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-rust"><span class="inline-block size-1.5 rounded-full bg-rust"></span>{{ block.settings.text_1 | default: 'Not accepted' | escape }}</h3><ul class="flex flex-col gap-3"><li class="flex items-start gap-2.5 text-[13px] leading-relaxed text-strong-coffee/85 sm:text-sm" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.4}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.4},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-rust text-[10px] text-white" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.3}},&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.3},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"></path></svg></span>{{ block.settings.text_2 | default: 'Pieces that have been worn, washed, or altered' | escape }}</li><li class="flex items-start gap-2.5 text-[13px] leading-relaxed text-strong-coffee/85 sm:text-sm" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.48}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.48},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-rust text-[10px] text-white" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.38}},&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.38},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"></path></svg></span>{{ block.settings.text_3 | default: 'Items without tags or returned after 7 days' | escape }}</li><li class="flex items-start gap-2.5 text-[13px] leading-relaxed text-strong-coffee/85 sm:text-sm" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.5599999999999999}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.5599999999999999},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-rust text-[10px] text-white" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.45999999999999996}},&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.45999999999999996},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"></path></svg></span>{{ block.settings.text_4 | default: 'Accessories or innerwear (hygiene)' | escape }}</li><li class="flex items-start gap-2.5 text-[13px] leading-relaxed text-strong-coffee/85 sm:text-sm" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.64}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.64},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-rust text-[10px] text-white" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.54}},&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.54},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"></path></svg></span>{{ block.settings.text_5 | default: 'Clearance sale items (exchanges only, sizing permitting)' | escape }}</li></ul></div>{% endcase %}{% endfor %}</div></section>
+{% schema %}
+{
+  "name": "What can be returned",
+  "tag": "section",
+  "class": "kw-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text: Eligibility",
+      "default": "Eligibility"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Text: What can be returned",
+      "default": "What can be returned"
+    },
+    {
+      "type": "text",
+      "id": "text_3",
+      "label": "Text: The short version, so you can plan before shipping anything back",
+      "default": "The short version, so you can plan before shipping anything back."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item_1",
+      "name": "Accepted",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Accepted — Accepted",
+          "default": "Accepted"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Accepted — Unworn pieces with original tags intact",
+          "default": "Unworn pieces with original tags intact"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Text: Accepted — Products returned within 7 days of delivery",
+          "default": "Products returned within 7 days of delivery"
+        },
+        {
+          "type": "text",
+          "id": "text_4",
+          "label": "Text: Accepted — Original invoice or order number shared with return",
+          "default": "Original invoice or order number shared with return"
+        },
+        {
+          "type": "text",
+          "id": "text_5",
+          "label": "Text: Accepted — Defects or wrong items received (we cover shipping bo",
+          "default": "Defects or wrong items received (we cover shipping both ways)"
+        }
+      ]
+    },
+    {
+      "type": "item_2",
+      "name": "Not accepted",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Not accepted — Not accepted",
+          "default": "Not accepted"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Not accepted — Pieces that have been worn, washed, or altered",
+          "default": "Pieces that have been worn, washed, or altered"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Text: Not accepted — Items without tags or returned after 7 days",
+          "default": "Items without tags or returned after 7 days"
+        },
+        {
+          "type": "text",
+          "id": "text_4",
+          "label": "Text: Not accepted — Accessories or innerwear (hygiene)",
+          "default": "Accessories or innerwear (hygiene)"
+        },
+        {
+          "type": "text",
+          "id": "text_5",
+          "label": "Text: Not accepted — Clearance sale items (exchanges only, sizing perm",
+          "default": "Clearance sale items (exchanges only, sizing permitting)"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "What can be returned",
+      "blocks": [
+        {
+          "type": "item_1"
+        },
+        {
+          "type": "item_2"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

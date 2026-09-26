@@ -1,0 +1,67 @@
+{
+  "sections": {
+    "content_1": {
+      "type": "testimonials-1",
+      "settings": {}
+    },
+    "content_2": {
+      "type": "testimonials-2",
+      "settings": {}
+    },
+    "content_3": {
+      "type": "testimonials-3",
+      "settings": {}
+    },
+    "content_4": {
+      "type": "testimonials-4",
+      "settings": {},
+      "blocks": {
+        "item_1": {
+          "type": "item_1",
+          "settings": {}
+        },
+        "item_2": {
+          "type": "item_2",
+          "settings": {}
+        },
+        "item_3": {
+          "type": "item_3",
+          "settings": {}
+        },
+        "item_4": {
+          "type": "item_4",
+          "settings": {}
+        },
+        "item_5": {
+          "type": "item_5",
+          "settings": {}
+        },
+        "item_6": {
+          "type": "item_6",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4",
+        "item_5",
+        "item_6"
+      ]
+    },
+    "content_5": {
+      "type": "testimonials-5",
+      "settings": {
+        "link_3": "/pages/contact"
+      }
+    }
+  },
+  "order": [
+    "content_1",
+    "content_2",
+    "content_3",
+    "content_4",
+    "content_5"
+  ]
+}

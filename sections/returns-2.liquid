@@ -1,0 +1,150 @@
+{% comment %} Source-parity migration: How returns work. Content controls preserve the source layout. {% endcomment %}
+<section aria-label="{{ section.settings.text_1 | default: 'How it works' | escape }}" class="section pb-12 md:pb-16" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><div class="mx-auto mb-10 max-w-2xl text-center md:mb-14"><h2 aria-label="{{ section.settings.text_2 | default: 'How returns work' | escape }}" class="font-libre-baskerville text-2xl font-bold text-dark-chocolate sm:text-3xl md:text-4xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.8}}">{{ section.settings.text_2 | default: 'How returns work' | escape }}</h2><p class="mt-2 text-sm text-strong-coffee/70 sm:text-base" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ section.settings.text_3 | default: 'Four steps, no paperwork.' | escape }}</p></div><div class="relative mx-auto grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4 md:gap-4">{% for block in section.blocks %}{% case block.type %}{% when 'item_1' %}<div class="relative flex flex-col gap-3 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.44999999999999996}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.44999999999999996},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><span class="font-libre-baskerville text-3xl font-semibold text-rust" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.3}},&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.3},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.text_1 | default: '01' | escape }}</span><h3 class="font-libre-baskerville text-lg font-semibold text-dark-chocolate">{{ block.settings.text_2 | default: 'Start a return' | escape }}</h3><p class="text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.copy_3 | default: 'Log in to your account or use the "Start return" link in your dispatch email. Pick items and tell us why.' | escape }}</p></div>
+{% when 'item_2' %}<div class="relative flex flex-col gap-3 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.59}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.59},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><span class="font-libre-baskerville text-3xl font-semibold text-rust" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.44}},&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.44},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.text_1 | default: '02' | escape }}</span><h3 class="font-libre-baskerville text-lg font-semibold text-dark-chocolate">{{ block.settings.text_2 | default: 'Pickup or drop-off' | escape }}</h3><p class="text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.copy_3 | default: 'We schedule a free pickup from your address within 48 hours. Prefer drop-off? Use any nearest logistics partner.' | escape }}</p></div>
+{% when 'item_3' %}<div class="relative flex flex-col gap-3 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.7300000000000001}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.7300000000000001},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><span class="font-libre-baskerville text-3xl font-semibold text-rust" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.5800000000000001}},&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.5800000000000001},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.text_1 | default: '03' | escape }}</span><h3 class="font-libre-baskerville text-lg font-semibold text-dark-chocolate">{{ block.settings.text_2 | default: 'Quality check' | escape }}</h3><p class="text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.copy_3 | default: 'Once we receive the piece, our studio team checks that it is unworn with tags. Usually done within 24 hours.' | escape }}</p></div>
+{% when 'item_4' %}<div class="relative flex flex-col gap-3 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.87}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.87},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><span class="font-libre-baskerville text-3xl font-semibold text-rust" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.72}},&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.72},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.text_1 | default: '04' | escape }}</span><h3 class="font-libre-baskerville text-lg font-semibold text-dark-chocolate">{{ block.settings.text_2 | default: 'Refund or exchange' | escape }}</h3><p class="text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.copy_3 | default: 'Exchanges ship the same day. Refunds land in your original payment method within 5–7 working days.' | escape }}</p></div>{% endcase %}{% endfor %}</div></section>
+{% schema %}
+{
+  "name": "How returns work",
+  "tag": "section",
+  "class": "kw-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text: How it works",
+      "default": "How it works"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Text: How returns work",
+      "default": "How returns work"
+    },
+    {
+      "type": "text",
+      "id": "text_3",
+      "label": "Text: Four steps, no paperwork.",
+      "default": "Four steps, no paperwork."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item_1",
+      "name": "Start a return",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Start a return — 01",
+          "default": "01"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Start a return — Start a return",
+          "default": "Start a return"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_3",
+          "label": "Text: Start a return — Log in to your account or use the \"Start return",
+          "default": "Log in to your account or use the \"Start return\" link in your dispatch email. Pick items and tell us why."
+        }
+      ]
+    },
+    {
+      "type": "item_2",
+      "name": "Pickup or drop-off",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Pickup or drop-off — 02",
+          "default": "02"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Pickup or drop-off — Pickup or drop-off",
+          "default": "Pickup or drop-off"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_3",
+          "label": "Text: Pickup or drop-off — We schedule a free pickup from your address",
+          "default": "We schedule a free pickup from your address within 48 hours. Prefer drop-off? Use any nearest logistics partner."
+        }
+      ]
+    },
+    {
+      "type": "item_3",
+      "name": "Quality check",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Quality check — 03",
+          "default": "03"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Quality check — Quality check",
+          "default": "Quality check"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_3",
+          "label": "Text: Quality check — Once we receive the piece, our studio team check",
+          "default": "Once we receive the piece, our studio team checks that it is unworn with tags. Usually done within 24 hours."
+        }
+      ]
+    },
+    {
+      "type": "item_4",
+      "name": "Refund or exchange",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Refund or exchange — 04",
+          "default": "04"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Refund or exchange — Refund or exchange",
+          "default": "Refund or exchange"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_3",
+          "label": "Text: Refund or exchange — Exchanges ship the same day. Refunds land i",
+          "default": "Exchanges ship the same day. Refunds land in your original payment method within 5–7 working days."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "How returns work",
+      "blocks": [
+        {
+          "type": "item_1"
+        },
+        {
+          "type": "item_2"
+        },
+        {
+          "type": "item_3"
+        },
+        {
+          "type": "item_4"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

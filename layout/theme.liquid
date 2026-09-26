@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}" class="h-full antialiased">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>{{ page_title | escape }}{% unless page_title contains shop.name %} — {{ shop.name | escape }}{% endunless %}</title>
+  {% if page_description %}<meta name="description" content="{{ page_description | escape }}">{% endif %}
+  <link rel="canonical" href="{{ canonical_url }}">
+  {% if settings.favicon != blank %}<link rel="icon" href="{{ settings.favicon | image_url: width: 32 }}">{% endif %}
+  <meta property="og:title" content="{{ page_title | escape }}"><meta property="og:url" content="{{ canonical_url }}"><meta property="og:type" content="{% if request.page_type == 'product' %}product{% else %}website{% endif %}">
+  {% if page_image %}<meta property="og:image" content="{{ page_image | image_url: width: 1200 }}">{% endif %}
+  {{ 'fonts.css' | asset_url | stylesheet_tag }}
+  {{ 'theme.css' | asset_url | stylesheet_tag }}
+  {{ content_for_header }}
+  <script>window.KW={root:{{ routes.root_url | json }},accountUrl:{{ routes.account_url | json }},searchUrl:{{ routes.search_url | json }},labels:{previous:{{ settings.previous_label | json }},next:{{ settings.next_label | json }} }};</script>
+  <script type="module" src="{{ 'theme.js' | asset_url }}"></script>
+</head>
+<body class="max-w-400 mx-auto">
+  <a class="sr-only focus:not-sr-only focus:fixed focus:top-0 focus:z-100 focus:bg-white focus:p-3" href="#MainContent">{{ settings.skip_label | escape }}</a>
+  {% sections 'header-group' %}
+  <main id="MainContent" class="text-dark-chocolate" tabindex="-1">{{ content_for_layout }}</main>
+  {% sections 'footer-group' %}
+  {% section 'cart-modal' %}
+  <div data-toast role="status" aria-live="polite" hidden class="fixed bottom-20 left-1/2 z-100 max-w-[90vw] -translate-x-1/2 rounded-xl bg-dark-chocolate px-5 py-3 text-sm text-white shadow-xl"></div>
+</body>
+</html>

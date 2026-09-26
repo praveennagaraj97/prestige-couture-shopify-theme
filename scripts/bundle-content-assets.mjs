@@ -1,0 +1,6 @@
+import fs from 'node:fs/promises';import {createHash} from 'node:crypto';
+const files=(await fs.readdir('sections')).filter(f=>f.endsWith('.liquid'));const assets=new Map();
+for(const f of files){const text=await fs.readFile('sections/'+f,'utf8');for(const m of text.matchAll(/\{% else %\}(https:\/\/(?:cdn\.shopify\.com|images\.unsplash\.com)\/[^\s<"]+)\{% endif %\}/g)){const raw=m[1],url=raw.replaceAll('&amp;','&');assets.set(raw,{url});}}
+for(const [raw,item] of assets){const response=await fetch(item.url);if(!response.ok)throw Error('Image download failed: '+response.status);const type=response.headers.get('content-type')||'';const ext=type.includes('png')?'png':type.includes('webp')?'webp':type.includes('svg')?'svg':'jpg';item.name='content-'+createHash('sha256').update(item.url).digest('hex').slice(0,12)+'.'+ext;await fs.writeFile('assets/'+item.name,Buffer.from(await response.arrayBuffer()));}
+for(const f of files){let text=await fs.readFile('sections/'+f,'utf8');for(const [raw,item]of assets)text=text.replaceAll(raw,`{{ '${item.name}' | asset_url }}`);await fs.writeFile('sections/'+f,text);}
+await fs.writeFile('docs/bundled-content-assets.json',JSON.stringify([...assets.values()],null,2));console.log(`Bundled ${assets.size} original CMS images.`);

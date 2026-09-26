@@ -1,0 +1,120 @@
+{% comment %} Source-parity migration: Orders & Tracking FAQ. Content controls preserve the source layout. {% endcomment %}
+<section aria-label="{{ section.settings.text_1 | default: 'Orders &amp; Tracking FAQ' | escape }}" class="section pb-16 md:pb-20" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><div class="mx-auto mb-8 max-w-2xl text-center md:mb-10"><h2 aria-label="{{ section.settings.text_1 | default: 'Orders &amp; Tracking FAQ' | escape }}" class="font-libre-baskerville text-2xl font-bold text-dark-chocolate sm:text-3xl md:text-4xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.8}}">{{ section.settings.text_1 | default: 'Orders &amp; Tracking FAQ' | escape }}</h2><p class="mt-3 text-sm text-strong-coffee/70 sm:text-base" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ section.settings.text_2 | default: 'Short answers to the most common questions for this topic.' | escape }}</p></div><div class="mx-auto flex max-w-3xl flex-col gap-3">{% for block in section.blocks %}{% case block.type %}{% when 'item_1' %}<div class="overflow-hidden rounded-2xl bg-white ring-1 transition-colors ring-rust/40" data-accordion="true" data-default-open="true" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.15},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><button type="button" class="flex w-full items-start justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-5" aria-expanded="true"><span class="font-libre-baskerville text-[15px] font-semibold text-dark-chocolate sm:text-base">{{ block.settings.text_1 | default: 'Where can I find my tracking link?' | escape }}</span><span data-accordion-icon="true" class="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full text-[11px] transition-colors bg-white-chocolate text-rust"><svg viewBox="0 0 448 512" fill="currentColor" width="1em" height="1em"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"></path></svg></span></button><div data-accordion-body="true" class="overflow-hidden"><p class="px-5 pb-5 text-[13px] leading-relaxed text-strong-coffee/80 sm:px-6 sm:pb-6 sm:text-sm">{{ block.settings.copy_2 | default: 'We send it over email and WhatsApp as soon as your order ships. You can also open your order from your account page and view live courier updates there.' | escape }}</p></div></div>
+{% when 'item_2' %}<div class="overflow-hidden rounded-2xl bg-white ring-1 transition-colors ring-strong-coffee/10" data-accordion="true" data-default-open="false" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.22999999999999998},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><button type="button" class="flex w-full items-start justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-5" aria-expanded="false"><span class="font-libre-baskerville text-[15px] font-semibold text-dark-chocolate sm:text-base">{{ block.settings.text_1 | default: 'Can I change my address after placing an order?' | escape }}</span><span data-accordion-icon="true" class="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full text-[11px] transition-colors bg-white-chocolate text-rust"><svg viewBox="0 0 448 512" fill="currentColor" width="1em" height="1em"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"></path></svg></span></button><div data-accordion-body="true" class="overflow-hidden"><p class="px-5 pb-5 text-[13px] leading-relaxed text-strong-coffee/80 sm:px-6 sm:pb-6 sm:text-sm">{{ block.settings.copy_2 | default: 'Yes, as long as the order has not been packed. Message support with your order number and complete new address so we can update it before dispatch.' | escape }}</p></div></div>
+{% when 'item_3' %}<div class="overflow-hidden rounded-2xl bg-white ring-1 transition-colors ring-strong-coffee/10" data-accordion="true" data-default-open="false" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.31},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><button type="button" class="flex w-full items-start justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-5" aria-expanded="false"><span class="font-libre-baskerville text-[15px] font-semibold text-dark-chocolate sm:text-base">{{ block.settings.text_1 | default: 'How do I cancel an order?' | escape }}</span><span data-accordion-icon="true" class="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full text-[11px] transition-colors bg-white-chocolate text-rust"><svg viewBox="0 0 448 512" fill="currentColor" width="1em" height="1em"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"></path></svg></span></button><div data-accordion-body="true" class="overflow-hidden"><p class="px-5 pb-5 text-[13px] leading-relaxed text-strong-coffee/80 sm:px-6 sm:pb-6 sm:text-sm">{{ block.settings.copy_2 | default: 'Reach us through contact support with your order ID. If dispatch has not happened, we cancel immediately and initiate the refund to your original payment method.' | escape }}</p></div></div>
+{% when 'item_4' %}<div class="overflow-hidden rounded-2xl bg-white ring-1 transition-colors ring-strong-coffee/10" data-accordion="true" data-default-open="false" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.39},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><button type="button" class="flex w-full items-start justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-5" aria-expanded="false"><span class="font-libre-baskerville text-[15px] font-semibold text-dark-chocolate sm:text-base">{{ block.settings.text_1 | default: 'What if tracking has not moved for 48 hours?' | escape }}</span><span data-accordion-icon="true" class="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full text-[11px] transition-colors bg-white-chocolate text-rust"><svg viewBox="0 0 448 512" fill="currentColor" width="1em" height="1em"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"></path></svg></span></button><div data-accordion-body="true" class="overflow-hidden"><p class="px-5 pb-5 text-[13px] leading-relaxed text-strong-coffee/80 sm:px-6 sm:pb-6 sm:text-sm">{{ block.settings.copy_2 | default: 'Share the tracking number with us and we will raise a courier follow-up the same day. We keep you updated until movement resumes.' | escape }}</p></div></div>{% endcase %}{% endfor %}</div></section>
+{% schema %}
+{
+  "name": "Orders & Tracking FAQ",
+  "tag": "section",
+  "class": "kw-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text: Orders & Tracking FAQ",
+      "default": "Orders & Tracking FAQ"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Text: Short answers to the most common questions for this topic.",
+      "default": "Short answers to the most common questions for this topic."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item_1",
+      "name": "Where can I find my trac",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Where can I find my trac — Where can I find my tracking link?",
+          "default": "Where can I find my tracking link?"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: Where can I find my trac — We send it over email and WhatsApp as",
+          "default": "We send it over email and WhatsApp as soon as your order ships. You can also open your order from your account page and view live courier updates there."
+        }
+      ]
+    },
+    {
+      "type": "item_2",
+      "name": "Can I change my address ",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Can I change my address — Can I change my address after placing ",
+          "default": "Can I change my address after placing an order?"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: Can I change my address — Yes, as long as the order has not been",
+          "default": "Yes, as long as the order has not been packed. Message support with your order number and complete new address so we can update it before dispatch."
+        }
+      ]
+    },
+    {
+      "type": "item_3",
+      "name": "How do I cancel an order",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: How do I cancel an order — How do I cancel an order?",
+          "default": "How do I cancel an order?"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: How do I cancel an order — Reach us through contact support with",
+          "default": "Reach us through contact support with your order ID. If dispatch has not happened, we cancel immediately and initiate the refund to your original payment method."
+        }
+      ]
+    },
+    {
+      "type": "item_4",
+      "name": "What if tracking has not",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: What if tracking has not — What if tracking has not moved for 48",
+          "default": "What if tracking has not moved for 48 hours?"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: What if tracking has not — Share the tracking number with us and",
+          "default": "Share the tracking number with us and we will raise a courier follow-up the same day. We keep you updated until movement resumes."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "Orders & Tracking FAQ",
+      "blocks": [
+        {
+          "type": "item_1"
+        },
+        {
+          "type": "item_2"
+        },
+        {
+          "type": "item_3"
+        },
+        {
+          "type": "item_4"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

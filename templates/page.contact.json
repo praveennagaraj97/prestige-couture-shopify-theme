@@ -1,0 +1,102 @@
+{
+  "sections": {
+    "content_1": {
+      "type": "contact-1",
+      "settings": {},
+      "blocks": {
+        "item_1": {
+          "type": "item_1",
+          "settings": {
+            "link_1": "https://wa.me/919876543210"
+          }
+        },
+        "item_2": {
+          "type": "item_2",
+          "settings": {}
+        },
+        "item_3": {
+          "type": "item_3",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3"
+      ]
+    },
+    "content_2": {
+      "type": "contact-2",
+      "settings": {},
+      "blocks": {
+        "item_1": {
+          "type": "item_1",
+          "settings": {}
+        },
+        "item_2": {
+          "type": "item_2",
+          "settings": {}
+        },
+        "item_3": {
+          "type": "item_3",
+          "settings": {}
+        },
+        "item_4": {
+          "type": "item_4",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4"
+      ]
+    },
+    "content_3": {
+      "type": "contact-3",
+      "settings": {
+        "link_6": "https://maps.google.com/?q=Lavelle+Road+Bengaluru"
+      }
+    },
+    "content_4": {
+      "type": "contact-4",
+      "settings": {},
+      "blocks": {
+        "item_1": {
+          "type": "item_1",
+          "settings": {}
+        },
+        "item_2": {
+          "type": "item_2",
+          "settings": {}
+        },
+        "item_3": {
+          "type": "item_3",
+          "settings": {}
+        },
+        "item_4": {
+          "type": "item_4",
+          "settings": {}
+        },
+        "item_5": {
+          "type": "item_5",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4",
+        "item_5"
+      ]
+    }
+  },
+  "order": [
+    "content_1",
+    "content_2",
+    "content_3",
+    "content_4"
+  ]
+}

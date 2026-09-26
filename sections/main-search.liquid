@@ -1,0 +1,91 @@
+<div data-error-message="{{ section.settings.error_message | escape }}" data-search-section="{{ section.id }}"><section class="section pt-10 pb-8 text-center md:pt-16 md:pb-10"><div class="mx-auto max-w-2xl"><h1 data-animated-text class="font-libre-baskerville text-2xl text-dark-chocolate sm:text-3xl md:text-4xl">{{ section.settings.title }}</h1><p class="mt-3 text-sm text-strong-coffee/70 sm:text-base">{{ section.settings.subtitle }}</p><form data-search-form action="{{ routes.search_url }}" method="get" role="search" class="mx-auto mt-7 flex w-full max-w-xl items-center gap-2 rounded-full bg-white p-1.5 shadow-[0_16px_40px_-20px_rgba(82,29,23,0.3)] border border-strong-coffee/10 sm:p-2"><span class="grid size-10 shrink-0 place-items-center text-lg text-rust">{% render 'icon', name: 'search' %}</span><input type="hidden" name="type" value="product"><input type="search" name="q" value="{{ search.terms | escape }}" placeholder="{{ section.settings.placeholder | escape }}" aria-label="{{ section.settings.search_label }}" class="min-w-0 flex-1 bg-transparent text-sm text-dark-chocolate outline-none placeholder:text-strong-coffee/45 sm:text-base"><button type="button" data-clear-search aria-label="{{ section.settings.clear_label }}" class="grid size-9 place-items-center rounded-full text-strong-coffee/60">×</button><noscript><button>{{ section.settings.search_label }}</button></noscript></form><div class="mt-5 flex flex-wrap items-center justify-center gap-2"><span class="text-[11px] uppercase tracking-[0.22em] text-strong-coffee/60">{{ section.settings.try_label }}</span>{% assign suggestions = section.settings.suggestions | split: ',' %}{% for suggestion in suggestions %}<button type="button" data-search-term="{{ suggestion | strip | escape }}" class="rounded-full border border-strong-coffee/15 bg-white px-3 py-1 text-[12px] text-strong-coffee/85 hover:border-rust/50 hover:text-rust">{{ suggestion | strip }}</button>{% endfor %}</div></div></section><div data-search-results aria-live="polite"><p data-commerce-error role="alert" class="section text-xs text-red-600"></p>{% if search.performed and search.results_count > 0 %}<section class="section pb-10 md:pb-14"><div class="mb-6 md:mb-8"><h2 class="font-libre-baskerville text-xl text-dark-chocolate sm:text-2xl">{{ search.results_count }} {{ section.settings.results_label }} <span class="text-rust">“{{ search.terms | escape }}”</span></h2><span class="mt-3 block h-0.5 w-12 bg-rust"></span></div>{% paginate search.results by 100 %}{% render 'product-grid', products: search.results, desktop_class: 'grid-cols-2 gap-4 md:grid-cols-3 md:gap-5 lg:grid-cols-4' %}{% if paginate.pages > 1 %}{{ paginate | default_pagination }}{% endif %}{% endpaginate %}</section>{% else %}{% if search.performed %}<section class="flex flex-col items-center justify-center px-4 py-8 text-center md:py-12">{% render 'empty-loom' %}<h3 data-animated-text class="font-libre-baskerville text-2xl text-dark-chocolate sm:text-3xl md:text-4xl">{{ section.settings.empty_title }}</h3><p class="mt-4 max-w-md text-sm text-strong-coffee/75 sm:text-base">{{ section.settings.empty_text }} “{{ search.terms | escape }}”</p><button type="button" data-clear-search class="mt-7 rounded-full border border-rust px-6 py-2.5 text-xs uppercase tracking-[0.2em] text-rust">{{ section.settings.clear_label }}</button></section>{% endif %}{% assign popular = section.settings.popular_collection | default: collections.all %}<section class="section pb-14 md:pb-20"><div class="mb-6 md:mb-8"><h2 class="font-libre-baskerville text-2xl text-dark-chocolate sm:text-3xl">{{ section.settings.popular_title }}</h2><p class="mt-1 text-sm text-strong-coffee/60">{{ section.settings.popular_subtitle }}</p><span class="mt-3 block h-0.5 w-12 bg-rust"></span></div>{% assign popular_products = popular.products | slice: 0, 5 %}{% render 'product-grid', products: popular_products, desktop_class: 'grid-cols-2 gap-4 md:grid-cols-3 md:gap-5 lg:grid-cols-5' %}</section>{% endif %}</div></div>
+{% schema %}
+{
+  "name": "Main Search",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "What are you weaving into today?"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Search styles, fabrics, colours, or just a mood — we’ll try to match it."
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Placeholder",
+      "default": "Try 'mul cotton kurti' or 'rust boat neck'"
+    },
+    {
+      "type": "text",
+      "id": "search_label",
+      "label": "Search Label",
+      "default": "Search products"
+    },
+    {
+      "type": "text",
+      "id": "clear_label",
+      "label": "Clear Label",
+      "default": "Clear search"
+    },
+    {
+      "type": "text",
+      "id": "try_label",
+      "label": "Try Label",
+      "default": "Try"
+    },
+    {
+      "type": "text",
+      "id": "suggestions",
+      "label": "Suggestions",
+      "default": "kurti,mul cotton,under 999,boat neck,straight sleeves"
+    },
+    {
+      "type": "text",
+      "id": "results_label",
+      "label": "Results Label",
+      "default": "results for"
+    },
+    {
+      "type": "text",
+      "id": "empty_title",
+      "label": "Empty Title",
+      "default": "Nothing matches — yet"
+    },
+    {
+      "type": "text",
+      "id": "empty_text",
+      "label": "Empty Text",
+      "default": "Try a softer term, a fabric, or a colour. We couldn’t find anything for"
+    },
+    {
+      "type": "text",
+      "id": "popular_title",
+      "label": "Popular Title",
+      "default": "People are searching"
+    },
+    {
+      "type": "text",
+      "id": "popular_subtitle",
+      "label": "Popular Subtitle",
+      "default": "Our most-loved pieces right now"
+    },
+    {
+      "id": "popular_collection",
+      "type": "collection",
+      "label": "Popular collection"
+    },
+    {
+      "type": "text",
+      "id": "error_message",
+      "label": "Error message",
+      "default": "We could not load these pieces. Please try again."
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,137 @@
+{% comment %} Source-parity migration: Still need help?. Content controls preserve the source layout. {% endcomment %}
+<section aria-label="{{ section.settings.text_1 | default: 'Contact support' | escape }}" class="section py-14 md:py-20" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}"><div class="mx-auto overflow-hidden rounded-3xl bg-white-chocolate/70 p-6 ring-1 ring-strong-coffee/5 sm:p-10 md:p-14" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}"><div class="mx-auto mb-8 max-w-2xl text-center md:mb-10"><h2 aria-label="{{ section.settings.text_2 | default: 'Still need help?' | escape }}" class="font-libre-baskerville text-2xl text-dark-chocolate sm:text-3xl md:text-4xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.8}}">{{ section.settings.text_2 | default: 'Still need help?' | escape }}</h2><p class="mt-3 text-sm text-strong-coffee/75 sm:text-base" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}">{{ section.settings.text_3 | default: 'Three quick ways to reach a human. Pick whichever fits your day.' | escape }}</p></div><div class="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5">{% for block in section.blocks %}{% case block.type %}{% when 'item_1' %}<a href="{{ block.settings.link_1 | default: 'https://wa.me/919876543210' | escape }}" class="group flex flex-col gap-3 rounded-2xl bg-white p-5 shadow-[0_16px_36px_-22px_rgba(82,29,23,0.35)] ring-1 ring-black/5 transition-shadow hover:shadow-[0_22px_44px_-20px_rgba(82,29,23,0.45)] sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;delay&quot;:0.8}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;delay&quot;:0.8},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><span class="inline-grid size-10 place-items-center rounded-full text-sm bg-emerald-600 text-white" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:0.9500000000000001}},&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:0.9500000000000001},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg></span><h3 class="font-libre-baskerville text-base font-semibold text-dark-chocolate sm:text-lg">{{ block.settings.text_2 | default: 'Chat with us' | escape }}</h3><p class="text-[13px] leading-relaxed text-strong-coffee/75 sm:text-sm">{{ block.settings.text_3 | default: 'Quickest path — our team usually replies within the hour on working days.' | escape }}</p><span class="mt-auto flex items-center gap-2 pt-2 text-[12px] font-medium text-rust">{{ block.settings.text_4 | default: 'Open WhatsApp' | escape }}<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="text-[10px]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></span></a>
+{% when 'item_2' %}<a href="{{ block.settings.link_1 | default: 'mailto:hello@krithiweaves.com' | escape }}" class="group flex flex-col gap-3 rounded-2xl bg-white p-5 shadow-[0_16px_36px_-22px_rgba(82,29,23,0.35)] ring-1 ring-black/5 transition-shadow hover:shadow-[0_22px_44px_-20px_rgba(82,29,23,0.45)] sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;delay&quot;:0.9500000000000001}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;delay&quot;:0.9500000000000001},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><span class="inline-grid size-10 place-items-center rounded-full text-sm bg-rust text-white" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:1.1}},&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:1.1},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"></path></svg></span><h3 class="font-libre-baskerville text-base font-semibold text-dark-chocolate sm:text-lg">{{ block.settings.text_2 | default: 'Send an email' | escape }}</h3><p class="text-[13px] leading-relaxed text-strong-coffee/75 sm:text-sm">{{ block.settings.text_3 | default: 'For detailed queries, wholesale, or anything that needs attachments.' | escape }}</p><span class="mt-auto flex items-center gap-2 pt-2 text-[12px] font-medium text-rust">{{ block.settings.text_4 | default: 'hello@krithiweaves.com' | escape }}<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="text-[10px]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></span></a>
+{% when 'item_3' %}<a href="{{ block.settings.link_1 | default: 'tel:+919876543210' | escape }}" class="group flex flex-col gap-3 rounded-2xl bg-white p-5 shadow-[0_16px_36px_-22px_rgba(82,29,23,0.35)] ring-1 ring-black/5 transition-shadow hover:shadow-[0_22px_44px_-20px_rgba(82,29,23,0.45)] sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;delay&quot;:1.1}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;delay&quot;:1.1},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><span class="inline-grid size-10 place-items-center rounded-full text-sm bg-dark-chocolate text-white" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:1.25}},&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:1.25},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"></path></svg></span><h3 class="font-libre-baskerville text-base font-semibold text-dark-chocolate sm:text-lg">{{ block.settings.text_2 | default: 'Call the studio' | escape }}</h3><p class="text-[13px] leading-relaxed text-strong-coffee/75 sm:text-sm">{{ block.settings.text_3 | default: 'Mon – Sat between 10 am and 7 pm IST, we pick up.' | escape }}</p><span class="mt-auto flex items-center gap-2 pt-2 text-[12px] font-medium text-rust">{{ block.settings.text_4 | default: '+91 98765 43210' | escape }}<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="text-[10px]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></span></a>{% endcase %}{% endfor %}</div></div></section>
+{% schema %}
+{
+  "name": "Still need help?",
+  "tag": "section",
+  "class": "kw-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text: Contact support",
+      "default": "Contact support"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Text: Still need help?",
+      "default": "Still need help?"
+    },
+    {
+      "type": "text",
+      "id": "text_3",
+      "label": "Text: Three quick ways to reach a human. Pick whichever fits your day.",
+      "default": "Three quick ways to reach a human. Pick whichever fits your day."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item_1",
+      "name": "Chat with us",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link_1",
+          "label": "Link: Chat with usQuickest path — our team usually replies within the "
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Chat with us — Chat with us",
+          "default": "Chat with us"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Text: Chat with us — Quickest path — our team usually replies within t",
+          "default": "Quickest path — our team usually replies within the hour on working days."
+        },
+        {
+          "type": "text",
+          "id": "text_4",
+          "label": "Text: Chat with us — Open WhatsApp",
+          "default": "Open WhatsApp"
+        }
+      ]
+    },
+    {
+      "type": "item_2",
+      "name": "Send an email",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link_1",
+          "label": "Link: Send an emailFor detailed queries, wholesale, or anything that n"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Send an email — Send an email",
+          "default": "Send an email"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Text: Send an email — For detailed queries, wholesale, or anything tha",
+          "default": "For detailed queries, wholesale, or anything that needs attachments."
+        },
+        {
+          "type": "text",
+          "id": "text_4",
+          "label": "Text: Send an email — hello@krithiweaves.com",
+          "default": "hello@krithiweaves.com"
+        }
+      ]
+    },
+    {
+      "type": "item_3",
+      "name": "Call the studio",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link_1",
+          "label": "Link: Call the studioMon – Sat between 10 am and 7 pm IST, we pick up."
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Call the studio — Call the studio",
+          "default": "Call the studio"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Text: Call the studio — Mon – Sat between 10 am and 7 pm IST, we pick ",
+          "default": "Mon – Sat between 10 am and 7 pm IST, we pick up."
+        },
+        {
+          "type": "text",
+          "id": "text_4",
+          "label": "Text: Call the studio — +91 98765 43210",
+          "default": "+91 98765 43210"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "Still need help?",
+      "blocks": [
+        {
+          "type": "item_1"
+        },
+        {
+          "type": "item_2"
+        },
+        {
+          "type": "item_3"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

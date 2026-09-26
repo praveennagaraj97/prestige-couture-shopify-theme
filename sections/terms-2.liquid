@@ -1,0 +1,531 @@
+{% comment %} Source-parity migration: 01.Acceptance of terms. Content controls preserve the source layout. {% endcomment %}
+<section class="section pb-14 md:pb-20"><div class="mx-auto grid max-w-6xl grid-cols-1 gap-8 lg:grid-cols-[260px_minmax(0,1fr)] lg:gap-12 xl:grid-cols-[280px_minmax(0,1fr)]"><div class="hidden lg:block"><nav aria-label="{{ section.settings.text_1 | default: 'On this page' | escape }}" class="sticky top-24 flex flex-col gap-1 rounded-2xl bg-white-chocolate/50 p-5 ring-1 ring-strong-coffee/5" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}"><span class="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-rust">{{ section.settings.text_1 | default: 'On this page' | escape }}</span><ul class="flex flex-col gap-1">{% for block in section.blocks %}{% case block.type %}{% when 'item_1' %}<li data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.25}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.25},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><a href="#acceptance" class="group flex items-center gap-2 rounded-md px-2 py-1.5 text-[13px] text-strong-coffee/80 transition-colors hover:bg-white hover:text-rust"><span class="inline-block size-1 rounded-full bg-rust/40 transition-colors group-hover:bg-rust" aria-hidden="true"></span>{{ block.settings.text_1 | default: 'Acceptance of terms' | escape }}</a></li>
+{% when 'item_2' %}<li data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.31}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.31},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><a href="#account" class="group flex items-center gap-2 rounded-md px-2 py-1.5 text-[13px] text-strong-coffee/80 transition-colors hover:bg-white hover:text-rust"><span class="inline-block size-1 rounded-full bg-rust/40 transition-colors group-hover:bg-rust" aria-hidden="true"></span>{{ block.settings.text_1 | default: 'Your account' | escape }}</a></li>
+{% when 'item_3' %}<li data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.37}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.37},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><a href="#orders" class="group flex items-center gap-2 rounded-md px-2 py-1.5 text-[13px] text-strong-coffee/80 transition-colors hover:bg-white hover:text-rust"><span class="inline-block size-1 rounded-full bg-rust/40 transition-colors group-hover:bg-rust" aria-hidden="true"></span>{{ block.settings.text_1 | default: 'Orders and pricing' | escape }}</a></li>
+{% when 'item_4' %}<li data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.43}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.43},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><a href="#shipping" class="group flex items-center gap-2 rounded-md px-2 py-1.5 text-[13px] text-strong-coffee/80 transition-colors hover:bg-white hover:text-rust"><span class="inline-block size-1 rounded-full bg-rust/40 transition-colors group-hover:bg-rust" aria-hidden="true"></span>{{ block.settings.text_1 | default: 'Shipping and delivery' | escape }}</a></li>
+{% when 'item_5' %}<li data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.49}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.49},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><a href="#returns" class="group flex items-center gap-2 rounded-md px-2 py-1.5 text-[13px] text-strong-coffee/80 transition-colors hover:bg-white hover:text-rust"><span class="inline-block size-1 rounded-full bg-rust/40 transition-colors group-hover:bg-rust" aria-hidden="true"></span>{{ block.settings.text_1 | default: 'Returns and refunds' | escape }}</a></li>
+{% when 'item_6' %}<li data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.55}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.55},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><a href="#ip" class="group flex items-center gap-2 rounded-md px-2 py-1.5 text-[13px] text-strong-coffee/80 transition-colors hover:bg-white hover:text-rust"><span class="inline-block size-1 rounded-full bg-rust/40 transition-colors group-hover:bg-rust" aria-hidden="true"></span>{{ block.settings.text_1 | default: 'Intellectual property' | escape }}</a></li>
+{% when 'item_7' %}<li data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.61}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.61},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><a href="#conduct" class="group flex items-center gap-2 rounded-md px-2 py-1.5 text-[13px] text-strong-coffee/80 transition-colors hover:bg-white hover:text-rust"><span class="inline-block size-1 rounded-full bg-rust/40 transition-colors group-hover:bg-rust" aria-hidden="true"></span>{{ block.settings.text_1 | default: 'Acceptable use' | escape }}</a></li>
+{% when 'item_8' %}<li data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.6699999999999999}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.6699999999999999},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><a href="#liability" class="group flex items-center gap-2 rounded-md px-2 py-1.5 text-[13px] text-strong-coffee/80 transition-colors hover:bg-white hover:text-rust"><span class="inline-block size-1 rounded-full bg-rust/40 transition-colors group-hover:bg-rust" aria-hidden="true"></span>{{ block.settings.text_1 | default: 'Limitation of liability' | escape }}</a></li>
+{% when 'item_9' %}<li data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.73}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.73},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><a href="#law" class="group flex items-center gap-2 rounded-md px-2 py-1.5 text-[13px] text-strong-coffee/80 transition-colors hover:bg-white hover:text-rust"><span class="inline-block size-1 rounded-full bg-rust/40 transition-colors group-hover:bg-rust" aria-hidden="true"></span>{{ block.settings.text_1 | default: 'Governing law' | escape }}</a></li>
+{% when 'item_10' %}<li data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.79}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.79},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><a href="#contact" class="group flex items-center gap-2 rounded-md px-2 py-1.5 text-[13px] text-strong-coffee/80 transition-colors hover:bg-white hover:text-rust"><span class="inline-block size-1 rounded-full bg-rust/40 transition-colors group-hover:bg-rust" aria-hidden="true"></span>{{ block.settings.text_1 | default: 'Contact' | escape }}</a></li>{% endcase %}{% endfor %}</ul></nav></div><div class="flex flex-col divide-y divide-strong-coffee/10">{% for block in section.blocks %}{% case block.type %}{% when 'item_11' %}<section id="acceptance" class="scroll-mt-28 py-5" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><h2 class="font-libre-baskerville text-xl text-dark-chocolate sm:text-2xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mr-3 text-rust">{{ block.settings.text_2 | default: '01.' | escape }}</span>{{ block.settings.text_1 | default: 'Acceptance of terms' | escape }}</h2><div class="mt-3 flex flex-col gap-3 text-sm leading-relaxed text-strong-coffee/85 sm:text-[15px]"><p data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.25}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.25},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.copy_3 | default: 'By browsing or placing an order on krithiweaves.com, you agree to be bound by these Terms of Service. If you do not agree with any part, please do not use the site.' | escape }}</p><p data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.33}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.33},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.copy_4 | default: 'We may update these Terms from time to time. The most current version lives on this page with the last-updated date at the top.' | escape }}</p></div></section>
+{% when 'item_12' %}<section id="account" class="scroll-mt-28 py-5" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><h2 class="font-libre-baskerville text-xl text-dark-chocolate sm:text-2xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mr-3 text-rust">{{ block.settings.text_2 | default: '02.' | escape }}</span>{{ block.settings.text_1 | default: 'Your account' | escape }}</h2><div class="mt-3 flex flex-col gap-3 text-sm leading-relaxed text-strong-coffee/85 sm:text-[15px]"><p data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.30000000000000004}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.30000000000000004},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.copy_3 | default: 'You can browse the store as a guest, but checking out faster and saving addresses requires an account. You agree to keep your login credentials secure and to tell us promptly if you suspect unauthorised access.' | escape }}</p><p data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.38000000000000006}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.38000000000000006},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.text_4 | default: 'You must be 18 or older, or have the consent of a parent or guardian, to place an order.' | escape }}</p></div></section>
+{% when 'item_13' %}<section id="orders" class="scroll-mt-28 py-5" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><h2 class="font-libre-baskerville text-xl text-dark-chocolate sm:text-2xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mr-3 text-rust">{{ block.settings.text_2 | default: '03.' | escape }}</span>{{ block.settings.text_1 | default: 'Orders and pricing' | escape }}</h2><div class="mt-3 flex flex-col gap-3 text-sm leading-relaxed text-strong-coffee/85 sm:text-[15px]"><p data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.35}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.35},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.copy_3 | default: 'All prices are listed in Indian Rupees (₹) and are inclusive of applicable taxes unless stated otherwise.' | escape }}</p><p data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.43}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.43},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.copy_4 | default: 'We reserve the right to refuse, limit, or cancel any order — for example, where a product is mispriced, out of stock, or suspected to be fraudulent. We will notify you and refund any amount debited.' | escape }}</p><p data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.51}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.51},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.text_5 | default: 'Orders are considered confirmed only after payment is successfully authorised.' | escape }}</p></div></section>
+{% when 'item_14' %}<section id="shipping" class="scroll-mt-28 py-5" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><h2 class="font-libre-baskerville text-xl text-dark-chocolate sm:text-2xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mr-3 text-rust">{{ block.settings.text_2 | default: '04.' | escape }}</span>{{ block.settings.text_1 | default: 'Shipping and delivery' | escape }}</h2><div class="mt-3 flex flex-col gap-3 text-sm leading-relaxed text-strong-coffee/85 sm:text-[15px]"><p data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.4}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.4},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.copy_3 | default: 'We ship across India and to a growing list of international destinations. Timelines, charges, and delivery partners are detailed on the Shipping Info page.' | escape }}</p><p data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.48000000000000004}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.48000000000000004},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.copy_4 | default: 'Risk of loss and ownership of products pass to you upon delivery to the address you provide.' | escape }}</p></div></section>
+{% when 'item_15' %}<section id="returns" class="scroll-mt-28 py-5" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><h2 class="font-libre-baskerville text-xl text-dark-chocolate sm:text-2xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mr-3 text-rust">{{ block.settings.text_2 | default: '05.' | escape }}</span>{{ block.settings.text_1 | default: 'Returns and refunds' | escape }}</h2><div class="mt-3 flex flex-col gap-3 text-sm leading-relaxed text-strong-coffee/85 sm:text-[15px]"><p data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.45000000000000007}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.45000000000000007},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.copy_3 | default: 'Our Return Policy page covers the full process, timelines, and eligibility. In short: 7 days for free exchanges, returns accepted on unworn items with tags intact.' | escape }}</p></div></section>
+{% when 'item_16' %}<section id="ip" class="scroll-mt-28 py-5" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><h2 class="font-libre-baskerville text-xl text-dark-chocolate sm:text-2xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mr-3 text-rust">{{ block.settings.text_2 | default: '06.' | escape }}</span>{{ block.settings.text_1 | default: 'Intellectual property' | escape }}</h2><div class="mt-3 flex flex-col gap-3 text-sm leading-relaxed text-strong-coffee/85 sm:text-[15px]"><p data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.5}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.5},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.copy_3 | default: 'All content on this site — including text, images, videos, patterns, and graphics — is the property of Krithi Weaves or its licensors, and is protected by Indian and international copyright laws.' | escape }}</p><p data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.58}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.58},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.copy_4 | default: 'You may not reproduce, distribute, or create derivative works from any part of the site without our written permission.' | escape }}</p></div></section>
+{% when 'item_17' %}<section id="conduct" class="scroll-mt-28 py-5" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><h2 class="font-libre-baskerville text-xl text-dark-chocolate sm:text-2xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mr-3 text-rust">{{ block.settings.text_2 | default: '07.' | escape }}</span>{{ block.settings.text_1 | default: 'Acceptable use' | escape }}</h2><div class="mt-3 flex flex-col gap-3 text-sm leading-relaxed text-strong-coffee/85 sm:text-[15px]"><p data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.55}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.55},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.text_3 | default: 'When using the site, you agree not to:' | escape }}</p><ul class="mt-1 flex flex-col gap-2"><li class="flex gap-2.5" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.7}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.7},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mt-2 inline-block size-1.5 shrink-0 rounded-full bg-rust" aria-hidden="true"></span><span>{{ block.settings.text_4 | default: 'Attempt to access parts of the site that are not meant to be public.' | escape }}</span></li><li class="flex gap-2.5" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.76}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.76},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mt-2 inline-block size-1.5 shrink-0 rounded-full bg-rust" aria-hidden="true"></span><span>{{ block.settings.text_5 | default: 'Interfere with site security, performance, or availability.' | escape }}</span></li><li class="flex gap-2.5" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.82}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.82},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mt-2 inline-block size-1.5 shrink-0 rounded-full bg-rust" aria-hidden="true"></span><span>{{ block.settings.text_6 | default: 'Use automated tools to scrape, reproduce, or reuse content.' | escape }}</span></li><li class="flex gap-2.5" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.8799999999999999}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.8799999999999999},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mt-2 inline-block size-1.5 shrink-0 rounded-full bg-rust" aria-hidden="true"></span><span>{{ block.settings.text_7 | default: 'Post content that is unlawful, abusive, or infringes on others’ rights.' | escape }}</span></li></ul></div></section>
+{% when 'item_18' %}<section id="liability" class="scroll-mt-28 py-5" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><h2 class="font-libre-baskerville text-xl text-dark-chocolate sm:text-2xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mr-3 text-rust">{{ block.settings.text_2 | default: '08.' | escape }}</span>{{ block.settings.text_1 | default: 'Limitation of liability' | escape }}</h2><div class="mt-3 flex flex-col gap-3 text-sm leading-relaxed text-strong-coffee/85 sm:text-[15px]"><p data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.6000000000000001}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.6000000000000001},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.copy_3 | default: 'We do our best to keep the site running smoothly and our products consistent, but we do not warrant that the site will be uninterrupted or error-free.' | escape }}</p><p data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.68}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.68},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.copy_4 | default: 'To the extent permitted by law, our liability for any claim arising out of your use of the site is limited to the amount you paid us in the twelve months preceding the claim.' | escape }}</p></div></section>
+{% when 'item_19' %}<section id="law" class="scroll-mt-28 py-5" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><h2 class="font-libre-baskerville text-xl text-dark-chocolate sm:text-2xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mr-3 text-rust">{{ block.settings.text_2 | default: '09.' | escape }}</span>{{ block.settings.text_1 | default: 'Governing law' | escape }}</h2><div class="mt-3 flex flex-col gap-3 text-sm leading-relaxed text-strong-coffee/85 sm:text-[15px]"><p data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.65}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.65},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.copy_3 | default: 'These Terms are governed by the laws of India. Any disputes will be subject to the exclusive jurisdiction of the courts at Bengaluru, Karnataka.' | escape }}</p></div></section>
+{% when 'item_20' %}<section id="contact" class="scroll-mt-28 py-5" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><h2 class="font-libre-baskerville text-xl text-dark-chocolate sm:text-2xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mr-3 text-rust">{{ block.settings.text_2 | default: '10.' | escape }}</span>{{ block.settings.text_1 | default: 'Contact' | escape }}</h2><div class="mt-3 flex flex-col gap-3 text-sm leading-relaxed text-strong-coffee/85 sm:text-[15px]"><p data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.7000000000000001}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.7000000000000001},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.text_3 | default: 'For questions about these Terms, email hello@krithiweaves.com or write to our studio.' | escape }}</p></div></section>{% endcase %}{% endfor %}</div></div></section>
+{% schema %}
+{
+  "name": "01.Acceptance of terms",
+  "tag": "section",
+  "class": "kw-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text: On this page",
+      "default": "On this page"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item_1",
+      "name": "Acceptance of terms",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Acceptance of terms — Acceptance of terms",
+          "default": "Acceptance of terms"
+        }
+      ]
+    },
+    {
+      "type": "item_2",
+      "name": "Your account",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Your account — Your account",
+          "default": "Your account"
+        }
+      ]
+    },
+    {
+      "type": "item_3",
+      "name": "Orders and pricing",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Orders and pricing — Orders and pricing",
+          "default": "Orders and pricing"
+        }
+      ]
+    },
+    {
+      "type": "item_4",
+      "name": "Shipping and delivery",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Shipping and delivery — Shipping and delivery",
+          "default": "Shipping and delivery"
+        }
+      ]
+    },
+    {
+      "type": "item_5",
+      "name": "Returns and refunds",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Returns and refunds — Returns and refunds",
+          "default": "Returns and refunds"
+        }
+      ]
+    },
+    {
+      "type": "item_6",
+      "name": "Intellectual property",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Intellectual property — Intellectual property",
+          "default": "Intellectual property"
+        }
+      ]
+    },
+    {
+      "type": "item_7",
+      "name": "Acceptable use",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Acceptable use — Acceptable use",
+          "default": "Acceptable use"
+        }
+      ]
+    },
+    {
+      "type": "item_8",
+      "name": "Limitation of liability",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Limitation of liability — Limitation of liability",
+          "default": "Limitation of liability"
+        }
+      ]
+    },
+    {
+      "type": "item_9",
+      "name": "Governing law",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Governing law — Governing law",
+          "default": "Governing law"
+        }
+      ]
+    },
+    {
+      "type": "item_10",
+      "name": "Contact",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Contact — Contact",
+          "default": "Contact"
+        }
+      ]
+    },
+    {
+      "type": "item_11",
+      "name": "01.Acceptance of terms",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: 01.Acceptance of terms — Acceptance of terms",
+          "default": "Acceptance of terms"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: 01.Acceptance of terms — 01.",
+          "default": "01."
+        },
+        {
+          "type": "textarea",
+          "id": "copy_3",
+          "label": "Text: 01.Acceptance of terms — By browsing or placing an order on krit",
+          "default": "By browsing or placing an order on krithiweaves.com, you agree to be bound by these Terms of Service. If you do not agree with any part, please do not use the site."
+        },
+        {
+          "type": "textarea",
+          "id": "copy_4",
+          "label": "Text: 01.Acceptance of terms — We may update these Terms from time to ",
+          "default": "We may update these Terms from time to time. The most current version lives on this page with the last-updated date at the top."
+        }
+      ]
+    },
+    {
+      "type": "item_12",
+      "name": "02.Your account",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: 02.Your account — Your account",
+          "default": "Your account"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: 02.Your account — 02.",
+          "default": "02."
+        },
+        {
+          "type": "textarea",
+          "id": "copy_3",
+          "label": "Text: 02.Your account — You can browse the store as a guest, but check",
+          "default": "You can browse the store as a guest, but checking out faster and saving addresses requires an account. You agree to keep your login credentials secure and to tell us promptly if you suspect unauthorised access."
+        },
+        {
+          "type": "text",
+          "id": "text_4",
+          "label": "Text: 02.Your account — You must be 18 or older, or have the consent o",
+          "default": "You must be 18 or older, or have the consent of a parent or guardian, to place an order."
+        }
+      ]
+    },
+    {
+      "type": "item_13",
+      "name": "03.Orders and pricing",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: 03.Orders and pricing — Orders and pricing",
+          "default": "Orders and pricing"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: 03.Orders and pricing — 03.",
+          "default": "03."
+        },
+        {
+          "type": "textarea",
+          "id": "copy_3",
+          "label": "Text: 03.Orders and pricing — All prices are listed in Indian Rupees (",
+          "default": "All prices are listed in Indian Rupees (₹) and are inclusive of applicable taxes unless stated otherwise."
+        },
+        {
+          "type": "textarea",
+          "id": "copy_4",
+          "label": "Text: 03.Orders and pricing — We reserve the right to refuse, limit, o",
+          "default": "We reserve the right to refuse, limit, or cancel any order — for example, where a product is mispriced, out of stock, or suspected to be fraudulent. We will notify you and refund any amount debited."
+        },
+        {
+          "type": "text",
+          "id": "text_5",
+          "label": "Text: 03.Orders and pricing — Orders are considered confirmed only aft",
+          "default": "Orders are considered confirmed only after payment is successfully authorised."
+        }
+      ]
+    },
+    {
+      "type": "item_14",
+      "name": "04.Shipping and delivery",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: 04.Shipping and delivery — Shipping and delivery",
+          "default": "Shipping and delivery"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: 04.Shipping and delivery — 04.",
+          "default": "04."
+        },
+        {
+          "type": "textarea",
+          "id": "copy_3",
+          "label": "Text: 04.Shipping and delivery — We ship across India and to a growing",
+          "default": "We ship across India and to a growing list of international destinations. Timelines, charges, and delivery partners are detailed on the Shipping Info page."
+        },
+        {
+          "type": "textarea",
+          "id": "copy_4",
+          "label": "Text: 04.Shipping and delivery — Risk of loss and ownership of product",
+          "default": "Risk of loss and ownership of products pass to you upon delivery to the address you provide."
+        }
+      ]
+    },
+    {
+      "type": "item_15",
+      "name": "05.Returns and refunds",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: 05.Returns and refunds — Returns and refunds",
+          "default": "Returns and refunds"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: 05.Returns and refunds — 05.",
+          "default": "05."
+        },
+        {
+          "type": "textarea",
+          "id": "copy_3",
+          "label": "Text: 05.Returns and refunds — Our Return Policy page covers the full ",
+          "default": "Our Return Policy page covers the full process, timelines, and eligibility. In short: 7 days for free exchanges, returns accepted on unworn items with tags intact."
+        }
+      ]
+    },
+    {
+      "type": "item_16",
+      "name": "06.Intellectual property",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: 06.Intellectual property — Intellectual property",
+          "default": "Intellectual property"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: 06.Intellectual property — 06.",
+          "default": "06."
+        },
+        {
+          "type": "textarea",
+          "id": "copy_3",
+          "label": "Text: 06.Intellectual property — All content on this site — including ",
+          "default": "All content on this site — including text, images, videos, patterns, and graphics — is the property of Krithi Weaves or its licensors, and is protected by Indian and international copyright laws."
+        },
+        {
+          "type": "textarea",
+          "id": "copy_4",
+          "label": "Text: 06.Intellectual property — You may not reproduce, distribute, or",
+          "default": "You may not reproduce, distribute, or create derivative works from any part of the site without our written permission."
+        }
+      ]
+    },
+    {
+      "type": "item_17",
+      "name": "07.Acceptable use",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: 07.Acceptable use — Acceptable use",
+          "default": "Acceptable use"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: 07.Acceptable use — 07.",
+          "default": "07."
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Text: 07.Acceptable use — When using the site, you agree not to:",
+          "default": "When using the site, you agree not to:"
+        },
+        {
+          "type": "text",
+          "id": "text_4",
+          "label": "Text: 07.Acceptable use — Attempt to access parts of the site that are",
+          "default": "Attempt to access parts of the site that are not meant to be public."
+        },
+        {
+          "type": "text",
+          "id": "text_5",
+          "label": "Text: 07.Acceptable use — Interfere with site security, performance, o",
+          "default": "Interfere with site security, performance, or availability."
+        },
+        {
+          "type": "text",
+          "id": "text_6",
+          "label": "Text: 07.Acceptable use — Use automated tools to scrape, reproduce, or",
+          "default": "Use automated tools to scrape, reproduce, or reuse content."
+        },
+        {
+          "type": "text",
+          "id": "text_7",
+          "label": "Text: 07.Acceptable use — Post content that is unlawful, abusive, or i",
+          "default": "Post content that is unlawful, abusive, or infringes on others’ rights."
+        }
+      ]
+    },
+    {
+      "type": "item_18",
+      "name": "08.Limitation of liabili",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: 08.Limitation of liabili — Limitation of liability",
+          "default": "Limitation of liability"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: 08.Limitation of liabili — 08.",
+          "default": "08."
+        },
+        {
+          "type": "textarea",
+          "id": "copy_3",
+          "label": "Text: 08.Limitation of liabili — We do our best to keep the site runni",
+          "default": "We do our best to keep the site running smoothly and our products consistent, but we do not warrant that the site will be uninterrupted or error-free."
+        },
+        {
+          "type": "textarea",
+          "id": "copy_4",
+          "label": "Text: 08.Limitation of liabili — To the extent permitted by law, our l",
+          "default": "To the extent permitted by law, our liability for any claim arising out of your use of the site is limited to the amount you paid us in the twelve months preceding the claim."
+        }
+      ]
+    },
+    {
+      "type": "item_19",
+      "name": "09.Governing law",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: 09.Governing law — Governing law",
+          "default": "Governing law"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: 09.Governing law — 09.",
+          "default": "09."
+        },
+        {
+          "type": "textarea",
+          "id": "copy_3",
+          "label": "Text: 09.Governing law — These Terms are governed by the laws of India",
+          "default": "These Terms are governed by the laws of India. Any disputes will be subject to the exclusive jurisdiction of the courts at Bengaluru, Karnataka."
+        }
+      ]
+    },
+    {
+      "type": "item_20",
+      "name": "10.Contact",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: 10.Contact — Contact",
+          "default": "Contact"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: 10.Contact — 10.",
+          "default": "10."
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Text: 10.Contact — For questions about these Terms, email hello@krithi",
+          "default": "For questions about these Terms, email hello@krithiweaves.com or write to our studio."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "01.Acceptance of terms",
+      "blocks": [
+        {
+          "type": "item_1"
+        },
+        {
+          "type": "item_2"
+        },
+        {
+          "type": "item_3"
+        },
+        {
+          "type": "item_4"
+        },
+        {
+          "type": "item_5"
+        },
+        {
+          "type": "item_6"
+        },
+        {
+          "type": "item_7"
+        },
+        {
+          "type": "item_8"
+        },
+        {
+          "type": "item_9"
+        },
+        {
+          "type": "item_10"
+        },
+        {
+          "type": "item_11"
+        },
+        {
+          "type": "item_12"
+        },
+        {
+          "type": "item_13"
+        },
+        {
+          "type": "item_14"
+        },
+        {
+          "type": "item_15"
+        },
+        {
+          "type": "item_16"
+        },
+        {
+          "type": "item_17"
+        },
+        {
+          "type": "item_18"
+        },
+        {
+          "type": "item_19"
+        },
+        {
+          "type": "item_20"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

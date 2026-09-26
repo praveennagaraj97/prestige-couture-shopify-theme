@@ -1,0 +1,30 @@
+{
+  "type": "header",
+  "name": "Header",
+  "sections": {
+    "announcement": {
+      "type": "announcement-bar",
+      "settings": {
+        "link_2": "/collections/all"
+      }
+    },
+    "header": {
+      "type": "site-header",
+      "settings": {
+        "link_1": "/",
+        "link_5": "/collections/all",
+        "link_7": "/pages/testimonials",
+        "link_9": "/pages/contact"
+      }
+    },
+    "search": {
+      "type": "search-overlay",
+      "settings": {}
+    }
+  },
+  "order": [
+    "announcement",
+    "header",
+    "search"
+  ]
+}

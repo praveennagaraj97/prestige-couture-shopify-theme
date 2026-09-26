@@ -1,0 +1,133 @@
+{% comment %} Source-parity migration: Style It. Content controls preserve the source layout. {% endcomment %}
+<section aria-label="{{ section.settings.text_1 | default: 'How They Style It' | escape }}" class="section pb-12 md:pb-16" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}"><div class="mx-auto max-w-5xl text-center"><h2 aria-label="{{ section.settings.text_1 | default: 'How They Style It' | escape }}" class="font-libre-baskerville text-2xl font-bold text-dark-chocolate sm:text-3xl md:text-4xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.6,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.6,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.8}}">{{ section.settings.text_1 | default: 'How They Style It' | escape }}</h2><p class="mt-2 text-sm text-strong-coffee/65 sm:text-base" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.35}},&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.35},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}">{{ section.settings.text_2 | default: 'Real looks from our Krithi family' | escape }}</p></div><div class="mx-auto mt-8 max-w-6xl overflow-hidden rounded-[18px] md:mt-10 md:rounded-[22px]"><div class="grid grid-cols-2 md:grid-cols-4" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}">{% for block in section.blocks %}{% case block.type %}{% when 'item_1' %}<div class="relative aspect-square overflow-hidden" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:18},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.1}},&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.1},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><img alt="{{ block.settings.text_2 | default: 'Customer styled look 1' | escape }}" sizes="(max-width: 768px) 50vw, 25vw" class="object-cover object-top" src="{% if block.settings.image_1 != blank %}{{ block.settings.image_1 | image_url: width: 2000 }}{% else %}{{ 'content-f6c563903466.jpg' | asset_url }}{% endif %}" width="437" height="655" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%" data-image-fade="450"></div>
+{% when 'item_2' %}<div class="relative aspect-square overflow-hidden" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:18},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.22}},&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.22},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><img alt="{{ block.settings.text_2 | default: 'Customer styled look 2' | escape }}" sizes="(max-width: 768px) 50vw, 25vw" class="object-cover object-top" src="{% if block.settings.image_1 != blank %}{{ block.settings.image_1 | image_url: width: 2000 }}{% else %}{{ 'content-a6b3e25d992c.jpg' | asset_url }}{% endif %}" width="437" height="656" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%" data-image-fade="450"></div>
+{% when 'item_3' %}<div class="relative aspect-square overflow-hidden" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:18},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.33999999999999997}},&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.33999999999999997},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><img alt="{{ block.settings.text_2 | default: 'Customer styled look 3' | escape }}" sizes="(max-width: 768px) 50vw, 25vw" class="object-cover object-top" src="{% if block.settings.image_1 != blank %}{{ block.settings.image_1 | image_url: width: 2000 }}{% else %}{{ 'content-f5a6afba7371.jpg' | asset_url }}{% endif %}" width="437" height="655" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%" data-image-fade="450"></div>
+{% when 'item_4' %}<div class="relative aspect-square overflow-hidden" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:18},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.45999999999999996}},&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.45999999999999996},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><img alt="{{ block.settings.text_2 | default: 'Customer styled look 4' | escape }}" sizes="(max-width: 768px) 50vw, 25vw" class="object-cover object-top" src="{% if block.settings.image_1 != blank %}{{ block.settings.image_1 | image_url: width: 2000 }}{% else %}{{ 'content-cfa544d9cc52.jpg' | asset_url }}{% endif %}" width="1333" height="2000" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%" data-image-fade="450"></div>{% endcase %}{% endfor %}</div><div class="relative bg-rust px-6 pb-5 pt-12 text-center sm:pt-14 md:pt-16"><a href="{{ section.settings.link_3 | default: 'https://instagram.com/krithi_weaves' | escape }}" target="_blank" rel="noopener noreferrer" class="absolute left-1/2 top-0 flex -translate-x-1/2 -translate-y-1/2 items-center gap-2.5 rounded-full bg-white/80 py-2 pl-2 pr-5 shadow-[0_10px_30px_-10px_rgba(82,29,23,0.35)] ring-1 ring-rust/10 transition-shadow hover:shadow-[0_14px_36px_-10px_rgba(82,29,23,0.45)]"><span class="grid size-8 place-items-center rounded-full bg-rust text-white"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="text-base" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg></span><span class="text-sm font-medium text-dark-chocolate sm:text-[15px]">{{ section.settings.text_4 | default: 'Follow Our Instagram' | escape }}</span></a><p class="text-xs text-white/85 sm:text-sm">{{ section.settings.text_5 | default: 'Tag us @krithi_Weaves' | escape }}</p></div></div></section>
+{% schema %}
+{
+  "name": "Style It",
+  "tag": "section",
+  "class": "kw-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text: How They Style It",
+      "default": "How They Style It"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Text: Real looks from our Krithi family",
+      "default": "Real looks from our Krithi family"
+    },
+    {
+      "type": "url",
+      "id": "link_3",
+      "label": "Link: Follow Our Instagram"
+    },
+    {
+      "type": "text",
+      "id": "text_4",
+      "label": "Text: Follow Our Instagram",
+      "default": "Follow Our Instagram"
+    },
+    {
+      "type": "text",
+      "id": "text_5",
+      "label": "Text: Tag us @krithi_Weaves",
+      "default": "Tag us @krithi_Weaves"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item_1",
+      "name": "Customer styled look 1",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image: Customer styled look 1"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Customer styled look 1",
+          "default": "Customer styled look 1"
+        }
+      ]
+    },
+    {
+      "type": "item_2",
+      "name": "Customer styled look 2",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image: Customer styled look 2"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Customer styled look 2",
+          "default": "Customer styled look 2"
+        }
+      ]
+    },
+    {
+      "type": "item_3",
+      "name": "Customer styled look 3",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image: Customer styled look 3"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Customer styled look 3",
+          "default": "Customer styled look 3"
+        }
+      ]
+    },
+    {
+      "type": "item_4",
+      "name": "Customer styled look 4",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image: Customer styled look 4"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Customer styled look 4",
+          "default": "Customer styled look 4"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "Style It",
+      "blocks": [
+        {
+          "type": "item_1"
+        },
+        {
+          "type": "item_2"
+        },
+        {
+          "type": "item_3"
+        },
+        {
+          "type": "item_4"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,142 @@
+{% comment %} Source-parity migration: Frequently asked. Content controls preserve the source layout. {% endcomment %}
+<section aria-label="{{ section.settings.text_1 | default: 'Frequently asked' | escape }}" class="section pb-16 md:pb-20" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><div class="mx-auto mb-8 max-w-2xl text-center md:mb-10"><h2 aria-label="{{ section.settings.text_1 | default: 'Frequently asked' | escape }}" class="font-libre-baskerville text-2xl font-bold text-dark-chocolate sm:text-3xl md:text-4xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.8}}">{{ section.settings.text_1 | default: 'Frequently asked' | escape }}</h2><p class="mt-3 text-sm text-strong-coffee/70 sm:text-base" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ section.settings.copy_2 | default: 'Quick answers to the questions we get most. Can&#39;t find yours? The form above is always open.' | escape }}</p></div><div class="mx-auto flex max-w-3xl flex-col gap-3">{% for block in section.blocks %}{% case block.type %}{% when 'item_1' %}<div class="overflow-hidden rounded-2xl bg-white ring-1 transition-colors ring-rust/40" data-accordion="true" data-default-open="true" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.15},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><button type="button" class="flex w-full items-start justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-5" aria-expanded="true"><span class="font-libre-baskerville text-[15px] font-semibold text-dark-chocolate sm:text-base">{{ block.settings.text_1 | default: 'How do I find my right size?' | escape }}</span><span data-accordion-icon="true" class="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full text-[11px] transition-colors bg-white-chocolate text-rust"><svg viewBox="0 0 448 512" fill="currentColor" width="1em" height="1em"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"></path></svg></span></button><div data-accordion-body="true" class="overflow-hidden"><p class="px-5 pb-5 text-[13px] leading-relaxed text-strong-coffee/80 sm:px-6 sm:pb-6 sm:text-sm">{{ block.settings.copy_2 | default: 'Every product page has a garment-specific size guide with actual bust, waist, and length measurements. If you are between sizes, WhatsApp us a quick note with your measurements and we will recommend the best fit from the current batch.' | escape }}</p></div></div>
+{% when 'item_2' %}<div class="overflow-hidden rounded-2xl bg-white ring-1 transition-colors ring-strong-coffee/10" data-accordion="true" data-default-open="false" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.22999999999999998},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><button type="button" class="flex w-full items-start justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-5" aria-expanded="false"><span class="font-libre-baskerville text-[15px] font-semibold text-dark-chocolate sm:text-base">{{ block.settings.text_1 | default: 'How long does shipping take?' | escape }}</span><span data-accordion-icon="true" class="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full text-[11px] transition-colors bg-white-chocolate text-rust"><svg viewBox="0 0 448 512" fill="currentColor" width="1em" height="1em"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"></path></svg></span></button><div data-accordion-body="true" class="overflow-hidden"><p class="px-5 pb-5 text-[13px] leading-relaxed text-strong-coffee/80 sm:px-6 sm:pb-6 sm:text-sm">{{ block.settings.copy_2 | default: 'Most orders within India dispatch within 48 hours and arrive in 3–6 working days. International orders take 7–10 working days after dispatch. Tracking is shared the moment the parcel leaves the studio.' | escape }}</p></div></div>
+{% when 'item_3' %}<div class="overflow-hidden rounded-2xl bg-white ring-1 transition-colors ring-strong-coffee/10" data-accordion="true" data-default-open="false" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.31},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><button type="button" class="flex w-full items-start justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-5" aria-expanded="false"><span class="font-libre-baskerville text-[15px] font-semibold text-dark-chocolate sm:text-base">{{ block.settings.text_1 | default: 'Can I return or exchange a piece?' | escape }}</span><span data-accordion-icon="true" class="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full text-[11px] transition-colors bg-white-chocolate text-rust"><svg viewBox="0 0 448 512" fill="currentColor" width="1em" height="1em"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"></path></svg></span></button><div data-accordion-body="true" class="overflow-hidden"><p class="px-5 pb-5 text-[13px] leading-relaxed text-strong-coffee/80 sm:px-6 sm:pb-6 sm:text-sm">{{ block.settings.copy_2 | default: 'Yes — exchanges are free within 7 days of delivery, provided the piece is unworn with tags intact. Refunds are processed within 5–7 working days of us receiving the return. Sale items are eligible for exchanges only.' | escape }}</p></div></div>
+{% when 'item_4' %}<div class="overflow-hidden rounded-2xl bg-white ring-1 transition-colors ring-strong-coffee/10" data-accordion="true" data-default-open="false" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.39},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><button type="button" class="flex w-full items-start justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-5" aria-expanded="false"><span class="font-libre-baskerville text-[15px] font-semibold text-dark-chocolate sm:text-base">{{ block.settings.text_1 | default: 'Do you take wholesale or bulk orders?' | escape }}</span><span data-accordion-icon="true" class="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full text-[11px] transition-colors bg-white-chocolate text-rust"><svg viewBox="0 0 448 512" fill="currentColor" width="1em" height="1em"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"></path></svg></span></button><div data-accordion-body="true" class="overflow-hidden"><p class="px-5 pb-5 text-[13px] leading-relaxed text-strong-coffee/80 sm:px-6 sm:pb-6 sm:text-sm">{{ block.settings.copy_2 | default: 'We work with a small number of boutiques and studios across India. Please write to hello@krithiweaves.com with "Wholesale" in the subject and we will share our line-sheet within two working days.' | escape }}</p></div></div>
+{% when 'item_5' %}<div class="overflow-hidden rounded-2xl bg-white ring-1 transition-colors ring-strong-coffee/10" data-accordion="true" data-default-open="false" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.47},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><button type="button" class="flex w-full items-start justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-5" aria-expanded="false"><span class="font-libre-baskerville text-[15px] font-semibold text-dark-chocolate sm:text-base">{{ block.settings.text_1 | default: 'How should I care for the fabric?' | escape }}</span><span data-accordion-icon="true" class="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full text-[11px] transition-colors bg-white-chocolate text-rust"><svg viewBox="0 0 448 512" fill="currentColor" width="1em" height="1em"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"></path></svg></span></button><div data-accordion-body="true" class="overflow-hidden"><p class="px-5 pb-5 text-[13px] leading-relaxed text-strong-coffee/80 sm:px-6 sm:pb-6 sm:text-sm">{{ block.settings.copy_2 | default: 'Machine wash cold, inside out, with a mild detergent. Line dry in shade. Do not wring or tumble dry. A quick steam-iron on low keeps the weave looking crisp without compromising softness.' | escape }}</p></div></div>{% endcase %}{% endfor %}</div></section>
+{% schema %}
+{
+  "name": "Frequently asked",
+  "tag": "section",
+  "class": "kw-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text: Frequently asked",
+      "default": "Frequently asked"
+    },
+    {
+      "type": "textarea",
+      "id": "copy_2",
+      "label": "Text: Quick answers to the questions we get most. Can't find yours? Th",
+      "default": "Quick answers to the questions we get most. Can't find yours? The form above is always open."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item_1",
+      "name": "How do I find my right s",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: How do I find my right s — How do I find my right size?",
+          "default": "How do I find my right size?"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: How do I find my right s — Every product page has a garment-spec",
+          "default": "Every product page has a garment-specific size guide with actual bust, waist, and length measurements. If you are between sizes, WhatsApp us a quick note with your measurements and we will recommend the best fit from the current batch."
+        }
+      ]
+    },
+    {
+      "type": "item_2",
+      "name": "How long does shipping t",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: How long does shipping t — How long does shipping take?",
+          "default": "How long does shipping take?"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: How long does shipping t — Most orders within India dispatch wit",
+          "default": "Most orders within India dispatch within 48 hours and arrive in 3–6 working days. International orders take 7–10 working days after dispatch. Tracking is shared the moment the parcel leaves the studio."
+        }
+      ]
+    },
+    {
+      "type": "item_3",
+      "name": "Can I return or exchange",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Can I return or exchange — Can I return or exchange a piece?",
+          "default": "Can I return or exchange a piece?"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: Can I return or exchange — Yes — exchanges are free within 7 day",
+          "default": "Yes — exchanges are free within 7 days of delivery, provided the piece is unworn with tags intact. Refunds are processed within 5–7 working days of us receiving the return. Sale items are eligible for exchanges only."
+        }
+      ]
+    },
+    {
+      "type": "item_4",
+      "name": "Do you take wholesale or",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Do you take wholesale or — Do you take wholesale or bulk orders?",
+          "default": "Do you take wholesale or bulk orders?"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: Do you take wholesale or — We work with a small number of boutiq",
+          "default": "We work with a small number of boutiques and studios across India. Please write to hello@krithiweaves.com with \"Wholesale\" in the subject and we will share our line-sheet within two working days."
+        }
+      ]
+    },
+    {
+      "type": "item_5",
+      "name": "How should I care for th",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: How should I care for th — How should I care for the fabric?",
+          "default": "How should I care for the fabric?"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: How should I care for th — Machine wash cold, inside out, with a",
+          "default": "Machine wash cold, inside out, with a mild detergent. Line dry in shade. Do not wring or tumble dry. A quick steam-iron on low keeps the weave looking crisp without compromising softness."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "Frequently asked",
+      "blocks": [
+        {
+          "type": "item_1"
+        },
+        {
+          "type": "item_2"
+        },
+        {
+          "type": "item_3"
+        },
+        {
+          "type": "item_4"
+        },
+        {
+          "type": "item_5"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

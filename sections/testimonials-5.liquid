@@ -1,0 +1,39 @@
+{% comment %} Source-parity migration: Wearing Krithi? Share your story.. Content controls preserve the source layout. {% endcomment %}
+<section class="section pb-16" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.3}}"><div class="mx-auto flex max-w-4xl flex-col items-center gap-5 overflow-hidden rounded-3xl bg-white-chocolate/70 px-6 py-10 text-center ring-1 ring-strong-coffee/5 md:flex-row md:justify-between md:gap-8 md:px-10 md:py-12 md:text-left" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.3}}"><div class="flex-1"><h2 aria-label="{{ section.settings.text_1 | default: 'Wearing Krithi? Share your story.' | escape }}" class="font-libre-baskerville text-2xl leading-snug text-dark-chocolate sm:text-3xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.8}}">{{ section.settings.text_1 | default: 'Wearing Krithi? Share your story.' | escape }}</h2><p class="mt-2 text-sm text-strong-coffee/75 sm:text-base" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.3}}">{{ section.settings.text_2 | default: 'One honest note helps the next person find a better-fitting piece.' | escape }}</p></div><a href="{{ section.settings.link_3 | default: '/pages/contact' | escape }}" class="inline-flex items-center gap-2 rounded-full bg-rust px-7 py-3 text-sm font-medium text-white transition-colors hover:bg-mocha-coffee" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:8},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.35}},&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.35},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.3}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="text-[13px]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"></path></svg>{{ section.settings.text_4 | default: 'Write a review' | escape }}</a></div></section>
+{% schema %}
+{
+  "name": "Wearing Krithi? Share you",
+  "tag": "section",
+  "class": "kw-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text: Wearing Krithi? Share your story.",
+      "default": "Wearing Krithi? Share your story."
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Text: One honest note helps the next person find a better-fitting piec",
+      "default": "One honest note helps the next person find a better-fitting piece."
+    },
+    {
+      "type": "url",
+      "id": "link_3",
+      "label": "Link: Write a review"
+    },
+    {
+      "type": "text",
+      "id": "text_4",
+      "label": "Text: Write a review",
+      "default": "Write a review"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Wearing Krithi? Share you"
+    }
+  ]
+}
+{% endschema %}

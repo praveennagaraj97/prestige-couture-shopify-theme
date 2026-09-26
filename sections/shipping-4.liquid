@@ -1,0 +1,142 @@
+{% comment %} Source-parity migration: Shipping & FAQ. Content controls preserve the source layout. {% endcomment %}
+<section aria-label="{{ section.settings.text_1 | default: 'Shipping &amp; FAQ' | escape }}" class="section pb-16 md:pb-20" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><div class="mx-auto mb-8 max-w-2xl text-center md:mb-10"><h2 aria-label="{{ section.settings.text_1 | default: 'Shipping &amp; FAQ' | escape }}" class="font-libre-baskerville text-2xl font-bold text-dark-chocolate sm:text-3xl md:text-4xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.8}}">{{ section.settings.text_1 | default: 'Shipping &amp; FAQ' | escape }}</h2><p class="mt-3 text-sm text-strong-coffee/70 sm:text-base" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ section.settings.text_2 | default: 'Common questions about delivery, tracking, and charges.' | escape }}</p></div><div class="mx-auto flex max-w-3xl flex-col gap-3">{% for block in section.blocks %}{% case block.type %}{% when 'item_1' %}<div class="overflow-hidden rounded-2xl bg-white ring-1 transition-colors ring-rust/40" data-accordion="true" data-default-open="true" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.15},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><button type="button" class="flex w-full items-start justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-5" aria-expanded="true"><span class="font-libre-baskerville text-[15px] font-semibold text-dark-chocolate sm:text-base">{{ block.settings.text_1 | default: 'How do I track my order?' | escape }}</span><span data-accordion-icon="true" class="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full text-[11px] transition-colors bg-white-chocolate text-rust"><svg viewBox="0 0 448 512" fill="currentColor" width="1em" height="1em"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"></path></svg></span></button><div data-accordion-body="true" class="overflow-hidden"><p class="px-5 pb-5 text-[13px] leading-relaxed text-strong-coffee/80 sm:px-6 sm:pb-6 sm:text-sm">{{ block.settings.copy_2 | default: 'The moment your order ships, we send you the tracking link via email and WhatsApp. You can also check real-time status from your account page under "Orders".' | escape }}</p></div></div>
+{% when 'item_2' %}<div class="overflow-hidden rounded-2xl bg-white ring-1 transition-colors ring-strong-coffee/10" data-accordion="true" data-default-open="false" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.22999999999999998},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><button type="button" class="flex w-full items-start justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-5" aria-expanded="false"><span class="font-libre-baskerville text-[15px] font-semibold text-dark-chocolate sm:text-base">{{ block.settings.text_1 | default: 'Do you offer cash on delivery?' | escape }}</span><span data-accordion-icon="true" class="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full text-[11px] transition-colors bg-white-chocolate text-rust"><svg viewBox="0 0 448 512" fill="currentColor" width="1em" height="1em"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"></path></svg></span></button><div data-accordion-body="true" class="overflow-hidden"><p class="px-5 pb-5 text-[13px] leading-relaxed text-strong-coffee/80 sm:px-6 sm:pb-6 sm:text-sm">{{ block.settings.copy_2 | default: 'Yes — COD is available for orders under ₹5000 across most Indian PIN codes. A small ₹49 convenience fee applies and is visible at checkout.' | escape }}</p></div></div>
+{% when 'item_3' %}<div class="overflow-hidden rounded-2xl bg-white ring-1 transition-colors ring-strong-coffee/10" data-accordion="true" data-default-open="false" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.31},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><button type="button" class="flex w-full items-start justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-5" aria-expanded="false"><span class="font-libre-baskerville text-[15px] font-semibold text-dark-chocolate sm:text-base">{{ block.settings.text_1 | default: 'Can I change my delivery address after ordering?' | escape }}</span><span data-accordion-icon="true" class="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full text-[11px] transition-colors bg-white-chocolate text-rust"><svg viewBox="0 0 448 512" fill="currentColor" width="1em" height="1em"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"></path></svg></span></button><div data-accordion-body="true" class="overflow-hidden"><p class="px-5 pb-5 text-[13px] leading-relaxed text-strong-coffee/80 sm:px-6 sm:pb-6 sm:text-sm">{{ block.settings.copy_2 | default: 'If your order has not been packed yet (usually within an hour of placing it), we can update the address. Just WhatsApp us the new address with your order number.' | escape }}</p></div></div>
+{% when 'item_4' %}<div class="overflow-hidden rounded-2xl bg-white ring-1 transition-colors ring-strong-coffee/10" data-accordion="true" data-default-open="false" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.39},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><button type="button" class="flex w-full items-start justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-5" aria-expanded="false"><span class="font-libre-baskerville text-[15px] font-semibold text-dark-chocolate sm:text-base">{{ block.settings.text_1 | default: 'My order is delayed — what now?' | escape }}</span><span data-accordion-icon="true" class="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full text-[11px] transition-colors bg-white-chocolate text-rust"><svg viewBox="0 0 448 512" fill="currentColor" width="1em" height="1em"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"></path></svg></span></button><div data-accordion-body="true" class="overflow-hidden"><p class="px-5 pb-5 text-[13px] leading-relaxed text-strong-coffee/80 sm:px-6 sm:pb-6 sm:text-sm">{{ block.settings.copy_2 | default: 'Occasionally couriers run behind schedule. If the tracker has not moved for 48 hours, drop us a line and we will follow up with our logistics partner right away.' | escape }}</p></div></div>
+{% when 'item_5' %}<div class="overflow-hidden rounded-2xl bg-white ring-1 transition-colors ring-strong-coffee/10" data-accordion="true" data-default-open="false" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.47},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><button type="button" class="flex w-full items-start justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-5" aria-expanded="false"><span class="font-libre-baskerville text-[15px] font-semibold text-dark-chocolate sm:text-base">{{ block.settings.text_1 | default: 'Do international orders have customs duties?' | escape }}</span><span data-accordion-icon="true" class="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full text-[11px] transition-colors bg-white-chocolate text-rust"><svg viewBox="0 0 448 512" fill="currentColor" width="1em" height="1em"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"></path></svg></span></button><div data-accordion-body="true" class="overflow-hidden"><p class="px-5 pb-5 text-[13px] leading-relaxed text-strong-coffee/80 sm:px-6 sm:pb-6 sm:text-sm">{{ block.settings.copy_2 | default: 'Import duties and local taxes vary by country and are typically collected by the courier upon delivery. Krithi Weaves is not responsible for these charges.' | escape }}</p></div></div>{% endcase %}{% endfor %}</div></section>
+{% schema %}
+{
+  "name": "Shipping & FAQ",
+  "tag": "section",
+  "class": "kw-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text: Shipping & FAQ",
+      "default": "Shipping & FAQ"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Text: Common questions about delivery, tracking, and charges.",
+      "default": "Common questions about delivery, tracking, and charges."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item_1",
+      "name": "How do I track my order?",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: How do I track my order? — How do I track my order?",
+          "default": "How do I track my order?"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: How do I track my order? — The moment your order ships, we send ",
+          "default": "The moment your order ships, we send you the tracking link via email and WhatsApp. You can also check real-time status from your account page under \"Orders\"."
+        }
+      ]
+    },
+    {
+      "type": "item_2",
+      "name": "Do you offer cash on del",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Do you offer cash on del — Do you offer cash on delivery?",
+          "default": "Do you offer cash on delivery?"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: Do you offer cash on del — Yes — COD is available for orders und",
+          "default": "Yes — COD is available for orders under ₹5000 across most Indian PIN codes. A small ₹49 convenience fee applies and is visible at checkout."
+        }
+      ]
+    },
+    {
+      "type": "item_3",
+      "name": "Can I change my delivery",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Can I change my delivery — Can I change my delivery address afte",
+          "default": "Can I change my delivery address after ordering?"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: Can I change my delivery — If your order has not been packed yet",
+          "default": "If your order has not been packed yet (usually within an hour of placing it), we can update the address. Just WhatsApp us the new address with your order number."
+        }
+      ]
+    },
+    {
+      "type": "item_4",
+      "name": "My order is delayed — wh",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: My order is delayed — wh — My order is delayed — what now?",
+          "default": "My order is delayed — what now?"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: My order is delayed — wh — Occasionally couriers run behind sche",
+          "default": "Occasionally couriers run behind schedule. If the tracker has not moved for 48 hours, drop us a line and we will follow up with our logistics partner right away."
+        }
+      ]
+    },
+    {
+      "type": "item_5",
+      "name": "Do international orders ",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Do international orders — Do international orders have customs d",
+          "default": "Do international orders have customs duties?"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: Do international orders — Import duties and local taxes vary by ",
+          "default": "Import duties and local taxes vary by country and are typically collected by the courier upon delivery. Krithi Weaves is not responsible for these charges."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "Shipping & FAQ",
+      "blocks": [
+        {
+          "type": "item_1"
+        },
+        {
+          "type": "item_2"
+        },
+        {
+          "type": "item_3"
+        },
+        {
+          "type": "item_4"
+        },
+        {
+          "type": "item_5"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

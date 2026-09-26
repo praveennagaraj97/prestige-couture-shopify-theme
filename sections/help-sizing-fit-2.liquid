@@ -1,0 +1,92 @@
+{% comment %} Source-parity migration: Garment-first sizing. Content controls preserve the source layout. {% endcomment %}
+<section aria-label="{{ section.settings.text_1 | default: 'Sizing &amp; Fit highlights' | escape }}" class="section pb-8 md:pb-10" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><div class="mx-auto grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">{% for block in section.blocks %}{% case block.type %}{% when 'item_1' %}<article class="flex h-full flex-col gap-2 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_16px_36px_-22px_rgba(82,29,23,0.35)] sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.15}},&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.15},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><h2 class="font-libre-baskerville text-lg text-dark-chocolate">{{ block.settings.text_1 | default: 'Garment-first sizing' | escape }}</h2><p class="text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.copy_2 | default: 'All size charts are based on actual garment measurements so you can compare with a similar piece you already own.' | escape }}</p></article>
+{% when 'item_2' %}<article class="flex h-full flex-col gap-2 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_16px_36px_-22px_rgba(82,29,23,0.35)] sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.22999999999999998}},&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.22999999999999998},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><h2 class="font-libre-baskerville text-lg text-dark-chocolate">{{ block.settings.text_1 | default: 'Fit notes on products' | escape }}</h2><p class="text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.copy_2 | default: 'Each product includes silhouette guidance like relaxed, structured, or easy fit to help you choose the right ease.' | escape }}</p></article>
+{% when 'item_3' %}<article class="flex h-full flex-col gap-2 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_16px_36px_-22px_rgba(82,29,23,0.35)] sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.31}},&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.31},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><h2 class="font-libre-baskerville text-lg text-dark-chocolate">{{ block.settings.text_1 | default: 'Manual size help' | escape }}</h2><p class="text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.copy_2 | default: 'If you are between sizes, share bust, waist, and hip measurements with our team for a recommended size.' | escape }}</p></article>{% endcase %}{% endfor %}</div></section>
+{% schema %}
+{
+  "name": "Garment-first sizing",
+  "tag": "section",
+  "class": "kw-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text: Sizing & Fit highlights",
+      "default": "Sizing & Fit highlights"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item_1",
+      "name": "Garment-first sizing",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Garment-first sizing — Garment-first sizing",
+          "default": "Garment-first sizing"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: Garment-first sizing — All size charts are based on actual garme",
+          "default": "All size charts are based on actual garment measurements so you can compare with a similar piece you already own."
+        }
+      ]
+    },
+    {
+      "type": "item_2",
+      "name": "Fit notes on products",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Fit notes on products — Fit notes on products",
+          "default": "Fit notes on products"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: Fit notes on products — Each product includes silhouette guidanc",
+          "default": "Each product includes silhouette guidance like relaxed, structured, or easy fit to help you choose the right ease."
+        }
+      ]
+    },
+    {
+      "type": "item_3",
+      "name": "Manual size help",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Manual size help — Manual size help",
+          "default": "Manual size help"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: Manual size help — If you are between sizes, share bust, waist, ",
+          "default": "If you are between sizes, share bust, waist, and hip measurements with our team for a recommended size."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "Garment-first sizing",
+      "blocks": [
+        {
+          "type": "item_1"
+        },
+        {
+          "type": "item_2"
+        },
+        {
+          "type": "item_3"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,110 @@
+<div data-modal="cart" data-modal-variant="bubble" hidden><div data-modal-panel class="flex min-h-0 w-full flex-1 flex-col">{% render 'cart-content', section: section %}</div></div>
+{% schema %}
+{
+  "name": "Cart Modal",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Your Bag"
+    },
+    {
+      "type": "text",
+      "id": "items_label",
+      "label": "Items Label",
+      "default": "items"
+    },
+    {
+      "type": "text",
+      "id": "close_label",
+      "label": "Close Label",
+      "default": "Close cart"
+    },
+    {
+      "type": "text",
+      "id": "empty_title",
+      "label": "Empty Title",
+      "default": "Your bag is empty"
+    },
+    {
+      "type": "text",
+      "id": "empty_text",
+      "label": "Empty Text",
+      "default": "Browse the collection and let a piece or two find its way in."
+    },
+    {
+      "type": "text",
+      "id": "shop_label",
+      "label": "Shop Label",
+      "default": "Shop the collection"
+    },
+    {
+      "type": "text",
+      "id": "remove_label",
+      "label": "Remove Label",
+      "default": "Remove"
+    },
+    {
+      "type": "text",
+      "id": "decrease_label",
+      "label": "Decrease Label",
+      "default": "Decrease quantity"
+    },
+    {
+      "type": "text",
+      "id": "increase_label",
+      "label": "Increase Label",
+      "default": "Increase quantity"
+    },
+    {
+      "type": "text",
+      "id": "promo_label",
+      "label": "Promo Label",
+      "default": "Promo code"
+    },
+    {
+      "type": "text",
+      "id": "apply_label",
+      "label": "Apply Label",
+      "default": "Apply"
+    },
+    {
+      "type": "text",
+      "id": "subtotal_label",
+      "label": "Subtotal Label",
+      "default": "Subtotal"
+    },
+    {
+      "type": "text",
+      "id": "shipping_text",
+      "label": "Shipping Text",
+      "default": "Shipping & taxes calculated at checkout."
+    },
+    {
+      "type": "text",
+      "id": "checkout_label",
+      "label": "Checkout Label",
+      "default": "Checkout"
+    },
+    {
+      "type": "text",
+      "id": "continue_label",
+      "label": "Continue Label",
+      "default": "Continue Shopping"
+    },
+    {
+      "type": "text",
+      "id": "error_message",
+      "label": "Error Message",
+      "default": "We could not update your bag. Please try again."
+    },
+    {
+      "type": "text",
+      "id": "invalid_discount",
+      "label": "Invalid discount message",
+      "default": "This promo code could not be applied."
+    }
+  ]
+}
+{% endschema %}

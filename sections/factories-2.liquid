@@ -1,0 +1,242 @@
+{% comment %} Source-parity migration: Our partner ateliers. Content controls preserve the source layout. {% endcomment %}
+<section aria-label="{{ section.settings.text_1 | default: 'Our partners' | escape }}" class="section pb-12 md:pb-16" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><div class="mx-auto mb-8 max-w-2xl text-center md:mb-10"><h2 aria-label="{{ section.settings.text_2 | default: 'Our partner ateliers' | escape }}" class="font-libre-baskerville text-2xl font-bold text-dark-chocolate sm:text-3xl md:text-4xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.8}}">{{ section.settings.text_2 | default: 'Our partner ateliers' | escape }}</h2><p class="mt-2 text-sm text-strong-coffee/70 sm:text-base" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.3}},&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.3},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ section.settings.text_3 | default: 'Four small studios, one shared commitment to quiet quality.' | escape }}</p></div><div class="mx-auto grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 md:gap-5 lg:grid-cols-4">{% for block in section.blocks %}{% case block.type %}{% when 'item_1' %}<article class="group flex h-full flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_18px_40px_-24px_rgba(82,29,23,0.4)]" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.25}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.25},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><div class="relative aspect-3/4 w-full overflow-hidden bg-white-chocolate" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.35}},&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.35},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><img alt="{{ block.settings.text_2 | default: 'Workshop floor at Lavanya Tailors' | escape }}" sizes="(max-width: 768px) 90vw, 340px" class="object-cover transition-transform duration-700 group-hover:scale-105" src="{% if block.settings.image_1 != blank %}{{ block.settings.image_1 | image_url: width: 2000 }}{% else %}{{ 'influ_1.jpg' | asset_url }}{% endif %}" width="437" height="656" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%" data-image-fade="450"><span class="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold text-rust backdrop-blur" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:0.75}},&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:0.75},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.text_3 | default: 'Since 2022' | escape }}</span></div><div class="flex flex-1 flex-col gap-2 p-5"><h3 class="font-libre-baskerville text-lg font-semibold text-dark-chocolate sm:text-xl">{{ block.settings.text_4 | default: 'Lavanya Tailors' | escape }}</h3><p class="flex items-center gap-1.5 text-[12px] text-strong-coffee/70"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" class="text-rust" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"></path></svg>{{ block.settings.text_5 | default: 'Bengaluru, Karnataka' | escape }}</p><p class="mt-1 text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.text_6 | default: 'Cotton kurtis &amp; co-ords' | escape }}</p><p class="mt-auto inline-flex items-center gap-1.5 pt-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-strong-coffee/60"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" class="text-rust" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M144 0a80 80 0 1 1 0 160A80 80 0 1 1 144 0zM512 0a80 80 0 1 1 0 160A80 80 0 1 1 512 0zM0 298.7C0 239.8 47.8 192 106.7 192l42.7 0c15.9 0 31 3.5 44.6 9.7c-1.3 7.2-1.9 14.7-1.9 22.3c0 38.2 16.8 72.5 43.3 96c-.2 0-.4 0-.7 0L21.3 320C9.6 320 0 310.4 0 298.7zM405.3 320c-.2 0-.4 0-.7 0c26.6-23.5 43.3-57.8 43.3-96c0-7.6-.7-15-1.9-22.3c13.6-6.3 28.7-9.7 44.6-9.7l42.7 0C592.2 192 640 239.8 640 298.7c0 11.8-9.6 21.3-21.3 21.3l-213.3 0zM224 224a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zM128 485.3C128 411.7 187.7 352 261.3 352l117.3 0C452.3 352 512 411.7 512 485.3c0 14.7-11.9 26.7-26.7 26.7l-330.7 0c-14.7 0-26.7-11.9-26.7-26.7z"></path></svg>{{ block.settings.text_7 | default: '14 artisans' | escape }}</p></div></article>
+{% when 'item_2' %}<article class="group flex h-full flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_18px_40px_-24px_rgba(82,29,23,0.4)]" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.37}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.37},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><div class="relative aspect-3/4 w-full overflow-hidden bg-white-chocolate" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.47}},&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.47},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><img alt="{{ block.settings.text_2 | default: 'Workshop floor at Meera Studio' | escape }}" sizes="(max-width: 768px) 90vw, 340px" class="object-cover transition-transform duration-700 group-hover:scale-105" src="{% if block.settings.image_1 != blank %}{{ block.settings.image_1 | image_url: width: 2000 }}{% else %}{{ 'influ_2.jpg' | asset_url }}{% endif %}" width="437" height="655" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%" data-image-fade="450"><span class="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold text-rust backdrop-blur" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:0.87}},&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:0.87},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.text_3 | default: 'Since 2023' | escape }}</span></div><div class="flex flex-1 flex-col gap-2 p-5"><h3 class="font-libre-baskerville text-lg font-semibold text-dark-chocolate sm:text-xl">{{ block.settings.text_4 | default: 'Meera Studio' | escape }}</h3><p class="flex items-center gap-1.5 text-[12px] text-strong-coffee/70"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" class="text-rust" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"></path></svg>{{ block.settings.text_5 | default: 'Mysuru, Karnataka' | escape }}</p><p class="mt-1 text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.text_6 | default: 'Mul &amp; lightweight dresses' | escape }}</p><p class="mt-auto inline-flex items-center gap-1.5 pt-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-strong-coffee/60"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" class="text-rust" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M144 0a80 80 0 1 1 0 160A80 80 0 1 1 144 0zM512 0a80 80 0 1 1 0 160A80 80 0 1 1 512 0zM0 298.7C0 239.8 47.8 192 106.7 192l42.7 0c15.9 0 31 3.5 44.6 9.7c-1.3 7.2-1.9 14.7-1.9 22.3c0 38.2 16.8 72.5 43.3 96c-.2 0-.4 0-.7 0L21.3 320C9.6 320 0 310.4 0 298.7zM405.3 320c-.2 0-.4 0-.7 0c26.6-23.5 43.3-57.8 43.3-96c0-7.6-.7-15-1.9-22.3c13.6-6.3 28.7-9.7 44.6-9.7l42.7 0C592.2 192 640 239.8 640 298.7c0 11.8-9.6 21.3-21.3 21.3l-213.3 0zM224 224a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zM128 485.3C128 411.7 187.7 352 261.3 352l117.3 0C452.3 352 512 411.7 512 485.3c0 14.7-11.9 26.7-26.7 26.7l-330.7 0c-14.7 0-26.7-11.9-26.7-26.7z"></path></svg>{{ block.settings.text_7 | default: '9 artisans' | escape }}</p></div></article>
+{% when 'item_3' %}<article class="group flex h-full flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_18px_40px_-24px_rgba(82,29,23,0.4)]" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.49}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.49},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><div class="relative aspect-3/4 w-full overflow-hidden bg-white-chocolate" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.59}},&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.59},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><img alt="{{ block.settings.text_2 | default: 'Workshop floor at Nirmala Atelier' | escape }}" sizes="(max-width: 768px) 90vw, 340px" class="object-cover transition-transform duration-700 group-hover:scale-105" src="{% if block.settings.image_1 != blank %}{{ block.settings.image_1 | image_url: width: 2000 }}{% else %}{{ 'influ_3.jpg' | asset_url }}{% endif %}" width="437" height="655" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%" data-image-fade="450"><span class="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold text-rust backdrop-blur" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:0.99}},&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:0.99},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.text_3 | default: 'Since 2023' | escape }}</span></div><div class="flex flex-1 flex-col gap-2 p-5"><h3 class="font-libre-baskerville text-lg font-semibold text-dark-chocolate sm:text-xl">{{ block.settings.text_4 | default: 'Nirmala Atelier' | escape }}</h3><p class="flex items-center gap-1.5 text-[12px] text-strong-coffee/70"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" class="text-rust" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"></path></svg>{{ block.settings.text_5 | default: 'Coimbatore, Tamil Nadu' | escape }}</p><p class="mt-1 text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.text_6 | default: 'Linen separates &amp; tops' | escape }}</p><p class="mt-auto inline-flex items-center gap-1.5 pt-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-strong-coffee/60"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" class="text-rust" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M144 0a80 80 0 1 1 0 160A80 80 0 1 1 144 0zM512 0a80 80 0 1 1 0 160A80 80 0 1 1 512 0zM0 298.7C0 239.8 47.8 192 106.7 192l42.7 0c15.9 0 31 3.5 44.6 9.7c-1.3 7.2-1.9 14.7-1.9 22.3c0 38.2 16.8 72.5 43.3 96c-.2 0-.4 0-.7 0L21.3 320C9.6 320 0 310.4 0 298.7zM405.3 320c-.2 0-.4 0-.7 0c26.6-23.5 43.3-57.8 43.3-96c0-7.6-.7-15-1.9-22.3c13.6-6.3 28.7-9.7 44.6-9.7l42.7 0C592.2 192 640 239.8 640 298.7c0 11.8-9.6 21.3-21.3 21.3l-213.3 0zM224 224a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zM128 485.3C128 411.7 187.7 352 261.3 352l117.3 0C452.3 352 512 411.7 512 485.3c0 14.7-11.9 26.7-26.7 26.7l-330.7 0c-14.7 0-26.7-11.9-26.7-26.7z"></path></svg>{{ block.settings.text_7 | default: '11 artisans' | escape }}</p></div></article>
+{% when 'item_4' %}<article class="group flex h-full flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_18px_40px_-24px_rgba(82,29,23,0.4)]" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.61}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.61},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><div class="relative aspect-3/4 w-full overflow-hidden bg-white-chocolate" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.71}},&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.71},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><img alt="{{ block.settings.text_2 | default: 'Workshop floor at Parvathi Women’s Co-op' | escape }}" sizes="(max-width: 768px) 90vw, 340px" class="object-cover transition-transform duration-700 group-hover:scale-105" src="{% if block.settings.image_1 != blank %}{{ block.settings.image_1 | image_url: width: 2000 }}{% else %}{{ 'influ_4.jpg' | asset_url }}{% endif %}" width="437" height="656" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%" data-image-fade="450"><span class="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold text-rust backdrop-blur" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:1.1099999999999999}},&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:1.1099999999999999},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.text_3 | default: 'Since 2024' | escape }}</span></div><div class="flex flex-1 flex-col gap-2 p-5"><h3 class="font-libre-baskerville text-lg font-semibold text-dark-chocolate sm:text-xl">{{ block.settings.text_4 | default: 'Parvathi Women’s Co-op' | escape }}</h3><p class="flex items-center gap-1.5 text-[12px] text-strong-coffee/70"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" class="text-rust" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"></path></svg>{{ block.settings.text_5 | default: 'Kanchipuram, Tamil Nadu' | escape }}</p><p class="mt-1 text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.text_6 | default: 'Block print &amp; embroidery' | escape }}</p><p class="mt-auto inline-flex items-center gap-1.5 pt-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-strong-coffee/60"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" class="text-rust" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M144 0a80 80 0 1 1 0 160A80 80 0 1 1 144 0zM512 0a80 80 0 1 1 0 160A80 80 0 1 1 512 0zM0 298.7C0 239.8 47.8 192 106.7 192l42.7 0c15.9 0 31 3.5 44.6 9.7c-1.3 7.2-1.9 14.7-1.9 22.3c0 38.2 16.8 72.5 43.3 96c-.2 0-.4 0-.7 0L21.3 320C9.6 320 0 310.4 0 298.7zM405.3 320c-.2 0-.4 0-.7 0c26.6-23.5 43.3-57.8 43.3-96c0-7.6-.7-15-1.9-22.3c13.6-6.3 28.7-9.7 44.6-9.7l42.7 0C592.2 192 640 239.8 640 298.7c0 11.8-9.6 21.3-21.3 21.3l-213.3 0zM224 224a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zM128 485.3C128 411.7 187.7 352 261.3 352l117.3 0C452.3 352 512 411.7 512 485.3c0 14.7-11.9 26.7-26.7 26.7l-330.7 0c-14.7 0-26.7-11.9-26.7-26.7z"></path></svg>{{ block.settings.text_7 | default: '18 artisans' | escape }}</p></div></article>{% endcase %}{% endfor %}</div></section>
+{% schema %}
+{
+  "name": "Our partner ateliers",
+  "tag": "section",
+  "class": "kw-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text: Our partners",
+      "default": "Our partners"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Text: Our partner ateliers",
+      "default": "Our partner ateliers"
+    },
+    {
+      "type": "text",
+      "id": "text_3",
+      "label": "Text: Four small studios, one shared commitment to quiet quality.",
+      "default": "Four small studios, one shared commitment to quiet quality."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item_1",
+      "name": "Lavanya Tailors",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image: Workshop floor at Lavanya Tailors"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Workshop floor at Lavanya Tailors",
+          "default": "Workshop floor at Lavanya Tailors"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Text: Lavanya Tailors — Since 2022",
+          "default": "Since 2022"
+        },
+        {
+          "type": "text",
+          "id": "text_4",
+          "label": "Text: Lavanya Tailors — Lavanya Tailors",
+          "default": "Lavanya Tailors"
+        },
+        {
+          "type": "text",
+          "id": "text_5",
+          "label": "Text: Lavanya Tailors — Bengaluru, Karnataka",
+          "default": "Bengaluru, Karnataka"
+        },
+        {
+          "type": "text",
+          "id": "text_6",
+          "label": "Text: Lavanya Tailors — Cotton kurtis & co-ords",
+          "default": "Cotton kurtis & co-ords"
+        },
+        {
+          "type": "text",
+          "id": "text_7",
+          "label": "Text: Lavanya Tailors — 14 artisans",
+          "default": "14 artisans"
+        }
+      ]
+    },
+    {
+      "type": "item_2",
+      "name": "Meera Studio",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image: Workshop floor at Meera Studio"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Workshop floor at Meera Studio",
+          "default": "Workshop floor at Meera Studio"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Text: Meera Studio — Since 2023",
+          "default": "Since 2023"
+        },
+        {
+          "type": "text",
+          "id": "text_4",
+          "label": "Text: Meera Studio — Meera Studio",
+          "default": "Meera Studio"
+        },
+        {
+          "type": "text",
+          "id": "text_5",
+          "label": "Text: Meera Studio — Mysuru, Karnataka",
+          "default": "Mysuru, Karnataka"
+        },
+        {
+          "type": "text",
+          "id": "text_6",
+          "label": "Text: Meera Studio — Mul & lightweight dresses",
+          "default": "Mul & lightweight dresses"
+        },
+        {
+          "type": "text",
+          "id": "text_7",
+          "label": "Text: Meera Studio — 9 artisans",
+          "default": "9 artisans"
+        }
+      ]
+    },
+    {
+      "type": "item_3",
+      "name": "Nirmala Atelier",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image: Workshop floor at Nirmala Atelier"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Workshop floor at Nirmala Atelier",
+          "default": "Workshop floor at Nirmala Atelier"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Text: Nirmala Atelier — Since 2023",
+          "default": "Since 2023"
+        },
+        {
+          "type": "text",
+          "id": "text_4",
+          "label": "Text: Nirmala Atelier — Nirmala Atelier",
+          "default": "Nirmala Atelier"
+        },
+        {
+          "type": "text",
+          "id": "text_5",
+          "label": "Text: Nirmala Atelier — Coimbatore, Tamil Nadu",
+          "default": "Coimbatore, Tamil Nadu"
+        },
+        {
+          "type": "text",
+          "id": "text_6",
+          "label": "Text: Nirmala Atelier — Linen separates & tops",
+          "default": "Linen separates & tops"
+        },
+        {
+          "type": "text",
+          "id": "text_7",
+          "label": "Text: Nirmala Atelier — 11 artisans",
+          "default": "11 artisans"
+        }
+      ]
+    },
+    {
+      "type": "item_4",
+      "name": "Parvathi Women’s Co-op",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image: Workshop floor at Parvathi Women’s Co-op"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Workshop floor at Parvathi Women’s Co-op",
+          "default": "Workshop floor at Parvathi Women’s Co-op"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Text: Parvathi Women’s Co-op — Since 2024",
+          "default": "Since 2024"
+        },
+        {
+          "type": "text",
+          "id": "text_4",
+          "label": "Text: Parvathi Women’s Co-op — Parvathi Women’s Co-op",
+          "default": "Parvathi Women’s Co-op"
+        },
+        {
+          "type": "text",
+          "id": "text_5",
+          "label": "Text: Parvathi Women’s Co-op — Kanchipuram, Tamil Nadu",
+          "default": "Kanchipuram, Tamil Nadu"
+        },
+        {
+          "type": "text",
+          "id": "text_6",
+          "label": "Text: Parvathi Women’s Co-op — Block print & embroidery",
+          "default": "Block print & embroidery"
+        },
+        {
+          "type": "text",
+          "id": "text_7",
+          "label": "Text: Parvathi Women’s Co-op — 18 artisans",
+          "default": "18 artisans"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "Our partner ateliers",
+      "blocks": [
+        {
+          "type": "item_1"
+        },
+        {
+          "type": "item_2"
+        },
+        {
+          "type": "item_3"
+        },
+        {
+          "type": "item_4"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

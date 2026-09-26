@@ -1,0 +1,92 @@
+{% comment %} Source-parity migration: Tracking updates. Content controls preserve the source layout. {% endcomment %}
+<section aria-label="{{ section.settings.text_1 | default: 'Orders &amp; Tracking highlights' | escape }}" class="section pb-8 md:pb-10" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><div class="mx-auto grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">{% for block in section.blocks %}{% case block.type %}{% when 'item_1' %}<article class="flex h-full flex-col gap-2 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_16px_36px_-22px_rgba(82,29,23,0.35)] sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.15}},&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.15},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><h2 class="font-libre-baskerville text-lg text-dark-chocolate">{{ block.settings.text_1 | default: 'Tracking updates' | escape }}</h2><p class="text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.copy_2 | default: 'Tracking is sent by email and WhatsApp once the parcel leaves our studio, usually within 24–48 hours.' | escape }}</p></article>
+{% when 'item_2' %}<article class="flex h-full flex-col gap-2 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_16px_36px_-22px_rgba(82,29,23,0.35)] sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.22999999999999998}},&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.22999999999999998},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><h2 class="font-libre-baskerville text-lg text-dark-chocolate">{{ block.settings.text_1 | default: 'Edits before dispatch' | escape }}</h2><p class="text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.copy_2 | default: 'Address and phone updates are possible before packing starts. Share your order ID with the new details right away.' | escape }}</p></article>
+{% when 'item_3' %}<article class="flex h-full flex-col gap-2 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_16px_36px_-22px_rgba(82,29,23,0.35)] sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.31}},&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.31},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><h2 class="font-libre-baskerville text-lg text-dark-chocolate">{{ block.settings.text_1 | default: 'Cancellation window' | escape }}</h2><p class="text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.copy_2 | default: 'Orders can be cancelled before dispatch. After shipping, return or exchange options will apply based on policy.' | escape }}</p></article>{% endcase %}{% endfor %}</div></section>
+{% schema %}
+{
+  "name": "Tracking updates",
+  "tag": "section",
+  "class": "kw-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text: Orders & Tracking highlights",
+      "default": "Orders & Tracking highlights"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item_1",
+      "name": "Tracking updates",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Tracking updates — Tracking updates",
+          "default": "Tracking updates"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: Tracking updates — Tracking is sent by email and WhatsApp once t",
+          "default": "Tracking is sent by email and WhatsApp once the parcel leaves our studio, usually within 24–48 hours."
+        }
+      ]
+    },
+    {
+      "type": "item_2",
+      "name": "Edits before dispatch",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Edits before dispatch — Edits before dispatch",
+          "default": "Edits before dispatch"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: Edits before dispatch — Address and phone updates are possible b",
+          "default": "Address and phone updates are possible before packing starts. Share your order ID with the new details right away."
+        }
+      ]
+    },
+    {
+      "type": "item_3",
+      "name": "Cancellation window",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Cancellation window — Cancellation window",
+          "default": "Cancellation window"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: Cancellation window — Orders can be cancelled before dispatch. A",
+          "default": "Orders can be cancelled before dispatch. After shipping, return or exchange options will apply based on policy."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "Tracking updates",
+      "blocks": [
+        {
+          "type": "item_1"
+        },
+        {
+          "type": "item_2"
+        },
+        {
+          "type": "item_3"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

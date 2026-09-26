@@ -1,0 +1,8 @@
+ignore:
+  - node_modules/**
+  - docs/**
+  - scripts/**
+  - src/**
+  - tests/**
+  - .tmp/**
+  - dist/**

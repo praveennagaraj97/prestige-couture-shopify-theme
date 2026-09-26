@@ -1,0 +1,97 @@
+[
+  {
+    "source": "/",
+    "target": "/",
+    "template": "index"
+  },
+  {
+    "source": "/products",
+    "target": "/collections/all",
+    "template": "collection"
+  },
+  {
+    "source": "/products/{handle}",
+    "target": "/products/{handle}",
+    "template": "product"
+  },
+  {
+    "source": "/search",
+    "target": "/search",
+    "template": "search"
+  },
+  {
+    "source": "/about",
+    "target": "/pages/about",
+    "template": "page.about"
+  },
+  {
+    "source": "/factories",
+    "target": "/pages/factories",
+    "template": "page.factories"
+  },
+  {
+    "source": "/careers",
+    "target": "/pages/careers",
+    "template": "page.careers"
+  },
+  {
+    "source": "/testimonials",
+    "target": "/pages/testimonials",
+    "template": "page.testimonials"
+  },
+  {
+    "source": "/contact",
+    "target": "/pages/contact",
+    "template": "page.contact"
+  },
+  {
+    "source": "/help",
+    "target": "/pages/help",
+    "template": "page.help"
+  },
+  {
+    "source": "/returns",
+    "target": "/pages/returns",
+    "template": "page.returns"
+  },
+  {
+    "source": "/shipping",
+    "target": "/pages/shipping",
+    "template": "page.shipping"
+  },
+  {
+    "source": "/bulk-orders",
+    "target": "/pages/bulk-orders",
+    "template": "page.bulk-orders"
+  },
+  {
+    "source": "/privacy",
+    "target": "/pages/privacy",
+    "template": "page.privacy"
+  },
+  {
+    "source": "/terms",
+    "target": "/pages/terms",
+    "template": "page.terms"
+  },
+  {
+    "source": "/cookies",
+    "target": "/pages/cookies",
+    "template": "page.cookies"
+  },
+  {
+    "source": "/help/orders-tracking",
+    "target": "/pages/help-orders-tracking",
+    "template": "page.help-orders-tracking"
+  },
+  {
+    "source": "/help/sizing-fit",
+    "target": "/pages/help-sizing-fit",
+    "template": "page.help-sizing-fit"
+  },
+  {
+    "source": "/help/payments-refunds",
+    "target": "/pages/help-payments-refunds",
+    "template": "page.help-payments-refunds"
+  }
+]

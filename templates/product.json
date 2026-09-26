@@ -1,0 +1,111 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {},
+      "blocks": {
+        "0": {
+          "type": "size",
+          "settings": {
+            "size": "XS",
+            "bust": 32,
+            "waist": 26,
+            "hip": 35
+          }
+        },
+        "1": {
+          "type": "size",
+          "settings": {
+            "size": "S",
+            "bust": 34,
+            "waist": 28,
+            "hip": 37
+          }
+        },
+        "2": {
+          "type": "size",
+          "settings": {
+            "size": "M",
+            "bust": 36,
+            "waist": 30,
+            "hip": 39
+          }
+        },
+        "3": {
+          "type": "size",
+          "settings": {
+            "size": "L",
+            "bust": 38,
+            "waist": 32,
+            "hip": 41
+          }
+        },
+        "4": {
+          "type": "size",
+          "settings": {
+            "size": "XL",
+            "bust": 40,
+            "waist": 34,
+            "hip": 43
+          }
+        },
+        "5": {
+          "type": "size",
+          "settings": {
+            "size": "XXL",
+            "bust": 42,
+            "waist": 36,
+            "hip": 45
+          }
+        },
+        "promise0": {
+          "type": "promise",
+          "settings": {
+            "title": "Free Shipping",
+            "text": "Orders over ₹999",
+            "icon": "truck"
+          }
+        },
+        "promise1": {
+          "type": "promise",
+          "settings": {
+            "title": "7-Day Returns",
+            "text": "Easy exchanges",
+            "icon": "return"
+          }
+        },
+        "promise2": {
+          "type": "promise",
+          "settings": {
+            "title": "Handwoven",
+            "text": "Natural fabrics",
+            "icon": "leaf"
+          }
+        },
+        "promise3": {
+          "type": "promise",
+          "settings": {
+            "title": "Secure Checkout",
+            "text": "Safe payments",
+            "icon": "shield"
+          }
+        }
+      },
+      "block_order": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "promise0",
+        "promise1",
+        "promise2",
+        "promise3"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

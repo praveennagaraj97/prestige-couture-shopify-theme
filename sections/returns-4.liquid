@@ -1,0 +1,142 @@
+{% comment %} Source-parity migration: Returns & FAQ. Content controls preserve the source layout. {% endcomment %}
+<section aria-label="{{ section.settings.text_1 | default: 'Returns &amp; FAQ' | escape }}" class="section pb-16 md:pb-20" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><div class="mx-auto mb-8 max-w-2xl text-center md:mb-10"><h2 aria-label="{{ section.settings.text_1 | default: 'Returns &amp; FAQ' | escape }}" class="font-libre-baskerville text-2xl font-bold text-dark-chocolate sm:text-3xl md:text-4xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.8}}">{{ section.settings.text_1 | default: 'Returns &amp; FAQ' | escape }}</h2><p class="mt-3 text-sm text-strong-coffee/70 sm:text-base" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ section.settings.text_2 | default: 'The top questions we get about sending pieces back.' | escape }}</p></div><div class="mx-auto flex max-w-3xl flex-col gap-3">{% for block in section.blocks %}{% case block.type %}{% when 'item_1' %}<div class="overflow-hidden rounded-2xl bg-white ring-1 transition-colors ring-rust/40" data-accordion="true" data-default-open="true" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.15},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><button type="button" class="flex w-full items-start justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-5" aria-expanded="true"><span class="font-libre-baskerville text-[15px] font-semibold text-dark-chocolate sm:text-base">{{ block.settings.text_1 | default: 'Do I have to pay for return shipping?' | escape }}</span><span data-accordion-icon="true" class="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full text-[11px] transition-colors bg-white-chocolate text-rust"><svg viewBox="0 0 448 512" fill="currentColor" width="1em" height="1em"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"></path></svg></span></button><div data-accordion-body="true" class="overflow-hidden"><p class="px-5 pb-5 text-[13px] leading-relaxed text-strong-coffee/80 sm:px-6 sm:pb-6 sm:text-sm">{{ block.settings.copy_2 | default: 'Exchanges are always free. Returns are free if the item is defective or we sent the wrong piece. Otherwise, a small ₹99 pickup fee is deducted from your refund for size/preference returns.' | escape }}</p></div></div>
+{% when 'item_2' %}<div class="overflow-hidden rounded-2xl bg-white ring-1 transition-colors ring-strong-coffee/10" data-accordion="true" data-default-open="false" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.22999999999999998},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><button type="button" class="flex w-full items-start justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-5" aria-expanded="false"><span class="font-libre-baskerville text-[15px] font-semibold text-dark-chocolate sm:text-base">{{ block.settings.text_1 | default: 'How soon will I get my refund?' | escape }}</span><span data-accordion-icon="true" class="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full text-[11px] transition-colors bg-white-chocolate text-rust"><svg viewBox="0 0 448 512" fill="currentColor" width="1em" height="1em"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"></path></svg></span></button><div data-accordion-body="true" class="overflow-hidden"><p class="px-5 pb-5 text-[13px] leading-relaxed text-strong-coffee/80 sm:px-6 sm:pb-6 sm:text-sm">{{ block.settings.copy_2 | default: 'Once your return passes quality check (usually within 24 hours of us receiving the piece), refunds are processed the same day and land back in your original payment method within 5–7 working days.' | escape }}</p></div></div>
+{% when 'item_3' %}<div class="overflow-hidden rounded-2xl bg-white ring-1 transition-colors ring-strong-coffee/10" data-accordion="true" data-default-open="false" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.31},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><button type="button" class="flex w-full items-start justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-5" aria-expanded="false"><span class="font-libre-baskerville text-[15px] font-semibold text-dark-chocolate sm:text-base">{{ block.settings.text_1 | default: 'Can I return only some items from my order?' | escape }}</span><span data-accordion-icon="true" class="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full text-[11px] transition-colors bg-white-chocolate text-rust"><svg viewBox="0 0 448 512" fill="currentColor" width="1em" height="1em"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"></path></svg></span></button><div data-accordion-body="true" class="overflow-hidden"><p class="px-5 pb-5 text-[13px] leading-relaxed text-strong-coffee/80 sm:px-6 sm:pb-6 sm:text-sm">{{ block.settings.copy_2 | default: 'Yes. Start a return from your order page and pick exactly which pieces you want to send back. We will pick up everything in a single visit.' | escape }}</p></div></div>
+{% when 'item_4' %}<div class="overflow-hidden rounded-2xl bg-white ring-1 transition-colors ring-strong-coffee/10" data-accordion="true" data-default-open="false" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.39},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><button type="button" class="flex w-full items-start justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-5" aria-expanded="false"><span class="font-libre-baskerville text-[15px] font-semibold text-dark-chocolate sm:text-base">{{ block.settings.text_1 | default: 'Can I exchange for a different size or style?' | escape }}</span><span data-accordion-icon="true" class="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full text-[11px] transition-colors bg-white-chocolate text-rust"><svg viewBox="0 0 448 512" fill="currentColor" width="1em" height="1em"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"></path></svg></span></button><div data-accordion-body="true" class="overflow-hidden"><p class="px-5 pb-5 text-[13px] leading-relaxed text-strong-coffee/80 sm:px-6 sm:pb-6 sm:text-sm">{{ block.settings.copy_2 | default: 'Absolutely. Size exchanges are instant if the new size is in stock. If you prefer a different style, we issue store credit equal to the returned item’s value, which you can spend immediately.' | escape }}</p></div></div>
+{% when 'item_5' %}<div class="overflow-hidden rounded-2xl bg-white ring-1 transition-colors ring-strong-coffee/10" data-accordion="true" data-default-open="false" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.47},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><button type="button" class="flex w-full items-start justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-5" aria-expanded="false"><span class="font-libre-baskerville text-[15px] font-semibold text-dark-chocolate sm:text-base">{{ block.settings.text_1 | default: 'Do international orders have the same policy?' | escape }}</span><span data-accordion-icon="true" class="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full text-[11px] transition-colors bg-white-chocolate text-rust"><svg viewBox="0 0 448 512" fill="currentColor" width="1em" height="1em"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"></path></svg></span></button><div data-accordion-body="true" class="overflow-hidden"><p class="px-5 pb-5 text-[13px] leading-relaxed text-strong-coffee/80 sm:px-6 sm:pb-6 sm:text-sm">{{ block.settings.copy_2 | default: 'International returns are accepted within 14 days of delivery. Customers cover return shipping and any customs charges. Once the piece reaches our studio, the rest of the process is the same.' | escape }}</p></div></div>{% endcase %}{% endfor %}</div></section>
+{% schema %}
+{
+  "name": "Returns & FAQ",
+  "tag": "section",
+  "class": "kw-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text: Returns & FAQ",
+      "default": "Returns & FAQ"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Text: The top questions we get about sending pieces back.",
+      "default": "The top questions we get about sending pieces back."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item_1",
+      "name": "Do I have to pay for ret",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Do I have to pay for ret — Do I have to pay for return shipping?",
+          "default": "Do I have to pay for return shipping?"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: Do I have to pay for ret — Exchanges are always free. Returns ar",
+          "default": "Exchanges are always free. Returns are free if the item is defective or we sent the wrong piece. Otherwise, a small ₹99 pickup fee is deducted from your refund for size/preference returns."
+        }
+      ]
+    },
+    {
+      "type": "item_2",
+      "name": "How soon will I get my r",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: How soon will I get my r — How soon will I get my refund?",
+          "default": "How soon will I get my refund?"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: How soon will I get my r — Once your return passes quality check",
+          "default": "Once your return passes quality check (usually within 24 hours of us receiving the piece), refunds are processed the same day and land back in your original payment method within 5–7 working days."
+        }
+      ]
+    },
+    {
+      "type": "item_3",
+      "name": "Can I return only some i",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Can I return only some i — Can I return only some items from my ",
+          "default": "Can I return only some items from my order?"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: Can I return only some i — Yes. Start a return from your order p",
+          "default": "Yes. Start a return from your order page and pick exactly which pieces you want to send back. We will pick up everything in a single visit."
+        }
+      ]
+    },
+    {
+      "type": "item_4",
+      "name": "Can I exchange for a dif",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Can I exchange for a dif — Can I exchange for a different size o",
+          "default": "Can I exchange for a different size or style?"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: Can I exchange for a dif — Absolutely. Size exchanges are instan",
+          "default": "Absolutely. Size exchanges are instant if the new size is in stock. If you prefer a different style, we issue store credit equal to the returned item’s value, which you can spend immediately."
+        }
+      ]
+    },
+    {
+      "type": "item_5",
+      "name": "Do international orders ",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Do international orders — Do international orders have the same ",
+          "default": "Do international orders have the same policy?"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: Do international orders — International returns are accepted wit",
+          "default": "International returns are accepted within 14 days of delivery. Customers cover return shipping and any customs charges. Once the piece reaches our studio, the rest of the process is the same."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "Returns & FAQ",
+      "blocks": [
+        {
+          "type": "item_1"
+        },
+        {
+          "type": "item_2"
+        },
+        {
+          "type": "item_3"
+        },
+        {
+          "type": "item_4"
+        },
+        {
+          "type": "item_5"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

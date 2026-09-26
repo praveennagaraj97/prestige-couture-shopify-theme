@@ -1,0 +1,388 @@
+{% comment %} Source-parity migration: Stories. Content controls preserve the source layout. {% endcomment %}
+<section aria-label="{{ section.settings.text_1 | default: 'Real Stories. Real Comfort.' | escape }}" class="relative overflow-hidden " data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><img alt="" aria-hidden="true" sizes="100vw" class="pointer-events-none select-none object-cover opacity-60" src="{% if section.settings.image_2 != blank %}{{ section.settings.image_2 | image_url: width: 2000 }}{% else %}{{ 'stories_bg.png' | asset_url }}{% endif %}" width="1536" height="1024" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%" data-image-fade="450"><div class="section relative py-14 md:py-20"><div class="sm:hidden"><div class="mx-auto mb-9 max-w-[19rem] text-center" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{&quot;transition&quot;:{}},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><h2 class="font-libre-baskerville text-[28px] leading-[1.16] text-dark-chocolate"><span aria-label="{{ section.settings.text_3 | default: 'Real Stories' | escape }}" class="block" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.6,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.6,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.8}}">{{ section.settings.text_3 | default: 'Real Stories' | escape }}</span><span aria-label="{{ section.settings.text_4 | default: 'Real Comfort.' | escape }}" class="mt-1 block" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.6,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.6,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.8}}">{{ section.settings.text_4 | default: 'Real Comfort.' | escape }}</span></h2><p class="mx-auto mt-4 max-w-[17rem] text-[15px] leading-7 text-strong-coffee/60" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.45,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2}},&quot;transition&quot;:{&quot;duration&quot;:0.45,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ section.settings.text_5 | default: 'Real conversations from happy customers who chose Krithi Weaves.' | escape }}</p></div><div class="mx-auto max-w-[21.75rem]"><div class="grid grid-cols-2 items-start gap-x-3">{% for block in section.blocks %}{% case block.type %}{% when 'item_1' %}<div class="flex flex-col gap-3 pt-3" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><figure class="overflow-hidden rounded-[18px] bg-white shadow-[0_8px_26px_-18px_rgba(82,29,23,0.22)] ring-1 ring-black/3 -rotate-[1.2deg] " data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:18},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05}},&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><img alt="{{ block.settings.text_2 | default: 'Customer story 1' | escape }}" class="h-auto w-full select-none" sizes="(max-width: 639px) 46vw, 24vw" draggable="false" src="{% if block.settings.image_1 != blank %}{{ block.settings.image_1 | image_url: width: 2000 }}{% else %}{{ 'content-4002d12eec78.png' | asset_url }}{% endif %}" width="426" height="262" loading="lazy" decoding="async" data-image-fade="450"></figure><figure class="overflow-hidden rounded-[18px] bg-white shadow-[0_8px_26px_-18px_rgba(82,29,23,0.22)] ring-1 ring-black/3  " data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:18},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05}},&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><img alt="{{ block.settings.text_4 | default: 'Customer story 3' | escape }}" class="h-auto w-full select-none" sizes="(max-width: 639px) 46vw, 24vw" draggable="false" src="{% if block.settings.image_3 != blank %}{{ block.settings.image_3 | image_url: width: 2000 }}{% else %}{{ 'content-10b0cdd307c9.png' | asset_url }}{% endif %}" width="498" height="166" loading="lazy" decoding="async" data-image-fade="450"></figure><figure class="overflow-hidden rounded-[18px] bg-white shadow-[0_8px_26px_-18px_rgba(82,29,23,0.22)] ring-1 ring-black/3  " data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:18},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05}},&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><img alt="{{ block.settings.text_6 | default: 'Customer story 5' | escape }}" class="h-auto w-full select-none" sizes="(max-width: 639px) 46vw, 24vw" draggable="false" src="{% if block.settings.image_5 != blank %}{{ block.settings.image_5 | image_url: width: 2000 }}{% else %}{{ 'content-b77f015082a0.png' | asset_url }}{% endif %}" width="274" height="239" loading="lazy" decoding="async" data-image-fade="450"></figure><figure class="overflow-hidden rounded-[18px] bg-white shadow-[0_8px_26px_-18px_rgba(82,29,23,0.22)] ring-1 ring-black/3 -rotate-[1.2deg] " data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:18},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05}},&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><img alt="{{ block.settings.text_8 | default: 'Customer story 7' | escape }}" class="h-auto w-full select-none" sizes="(max-width: 639px) 46vw, 24vw" draggable="false" src="{% if block.settings.image_7 != blank %}{{ block.settings.image_7 | image_url: width: 2000 }}{% else %}{{ 'content-d6dde2ffc3ce.png' | asset_url }}{% endif %}" width="339" height="148" loading="lazy" decoding="async" data-image-fade="450"></figure><figure class="overflow-hidden rounded-[18px] bg-white shadow-[0_8px_26px_-18px_rgba(82,29,23,0.22)] ring-1 ring-black/3  mx-auto w-[82%]" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:18},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05}},&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><img alt="{{ block.settings.text_10 | default: 'Customer story 9' | escape }}" class="h-auto w-full select-none" sizes="(max-width: 639px) 46vw, 24vw" draggable="false" src="{% if block.settings.image_9 != blank %}{{ block.settings.image_9 | image_url: width: 2000 }}{% else %}{{ 'content-c086c72045f7.png' | asset_url }}{% endif %}" width="289" height="133" loading="lazy" decoding="async" data-image-fade="450"></figure></div>
+{% when 'item_2' %}<div class="flex flex-col gap-3 pt-6" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><figure class="overflow-hidden rounded-[18px] bg-white shadow-[0_8px_26px_-18px_rgba(82,29,23,0.22)] ring-1 ring-black/3 rotate-[1.2deg] " data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:18},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05}},&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><img alt="{{ block.settings.text_2 | default: 'Customer story 2' | escape }}" class="h-auto w-full select-none" sizes="(max-width: 639px) 46vw, 24vw" draggable="false" src="{% if block.settings.image_1 != blank %}{{ block.settings.image_1 | image_url: width: 2000 }}{% else %}{{ 'content-f51dc8e8e15e.png' | asset_url }}{% endif %}" width="305" height="173" loading="lazy" decoding="async" data-image-fade="450"></figure><figure class="overflow-hidden rounded-[18px] bg-white shadow-[0_8px_26px_-18px_rgba(82,29,23,0.22)] ring-1 ring-black/3  " data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:18},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05}},&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><img alt="{{ block.settings.text_4 | default: 'Customer story 4' | escape }}" class="h-auto w-full select-none" sizes="(max-width: 639px) 46vw, 24vw" draggable="false" src="{% if block.settings.image_3 != blank %}{{ block.settings.image_3 | image_url: width: 2000 }}{% else %}{{ 'content-6903bc4a7e28.png' | asset_url }}{% endif %}" width="324" height="168" loading="lazy" decoding="async" data-image-fade="450"></figure><figure class="overflow-hidden rounded-[18px] bg-white shadow-[0_8px_26px_-18px_rgba(82,29,23,0.22)] ring-1 ring-black/3 rotate-[1.2deg] " data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:18},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05}},&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><img alt="{{ block.settings.text_6 | default: 'Customer story 6' | escape }}" class="h-auto w-full select-none" sizes="(max-width: 639px) 46vw, 24vw" draggable="false" src="{% if block.settings.image_5 != blank %}{{ block.settings.image_5 | image_url: width: 2000 }}{% else %}{{ 'content-b364bb2b0abb.png' | asset_url }}{% endif %}" width="340" height="95" loading="lazy" decoding="async" data-image-fade="450"></figure><figure class="overflow-hidden rounded-[18px] bg-white shadow-[0_8px_26px_-18px_rgba(82,29,23,0.22)] ring-1 ring-black/3  " data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:18},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05}},&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><img alt="{{ block.settings.text_8 | default: 'Customer story 8' | escape }}" class="h-auto w-full select-none" sizes="(max-width: 639px) 46vw, 24vw" draggable="false" src="{% if block.settings.image_7 != blank %}{{ block.settings.image_7 | image_url: width: 2000 }}{% else %}{{ 'content-223a7f6eb8aa.png' | asset_url }}{% endif %}" width="352" height="70" loading="lazy" decoding="async" data-image-fade="450"></figure><figure class="overflow-hidden rounded-[18px] bg-white shadow-[0_8px_26px_-18px_rgba(82,29,23,0.22)] ring-1 ring-black/3 rotate-[1.2deg] " data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:18},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05}},&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><img alt="{{ block.settings.text_10 | default: 'Customer story 10' | escape }}" class="h-auto w-full select-none" sizes="(max-width: 639px) 46vw, 24vw" draggable="false" src="{% if block.settings.image_9 != blank %}{{ block.settings.image_9 | image_url: width: 2000 }}{% else %}{{ 'content-381cb9d37095.png' | asset_url }}{% endif %}" width="275" height="275" loading="lazy" decoding="async" data-image-fade="450"></figure></div>{% endcase %}{% endfor %}</div></div></div><div class="mx-auto mb-10 hidden max-w-2xl text-center md:mb-14 sm:block" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{&quot;transition&quot;:{}},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><h2 aria-label="{{ section.settings.text_1 | default: 'Real Stories. Real Comfort.' | escape }}" class="font-libre-baskerville text-2xl font-bold text-dark-chocolate sm:text-3xl md:text-4xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.6,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.6,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.8}}">{{ section.settings.text_1 | default: 'Real Stories. Real Comfort.' | escape }}</h2><p class="mt-3 text-sm text-strong-coffee/70 sm:text-base" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.45,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2}},&quot;transition&quot;:{&quot;duration&quot;:0.45,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ section.settings.text_5 | default: 'Real conversations from happy customers who chose Krithi Weaves.' | escape }}</p></div><div class="mx-auto hidden max-w-6xl columns-1 gap-4 sm:columns-2 sm:gap-5 md:columns-3 md:gap-6 lg:columns-4 sm:block">{% for block in section.blocks %}{% case block.type %}{% when 'item_3' %}<figure class="group relative mb-4 block break-inside-avoid overflow-hidden rounded-[14px] bg-white shadow-[0_6px_20px_-12px_rgba(82,29,23,0.18)] ring-1 ring-black/3 transition-shadow duration-200 hover:shadow-[0_14px_30px_-14px_rgba(82,29,23,0.28)] sm:mb-5 md:mb-6 will-change-transform" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05}},&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><img alt="{{ block.settings.text_2 | default: 'Customer story 1' | escape }}" class="h-auto w-full select-none" sizes="(max-width: 640px) 92vw, (max-width: 768px) 45vw, (max-width: 1024px) 32vw, 24vw" draggable="false" src="{% if block.settings.image_1 != blank %}{{ block.settings.image_1 | image_url: width: 2000 }}{% else %}{{ 'content-4002d12eec78.png' | asset_url }}{% endif %}" width="426" height="262" loading="lazy" decoding="async" data-image-fade="450"></figure>
+{% when 'item_4' %}<figure class="group relative mb-4 block break-inside-avoid overflow-hidden rounded-[14px] bg-white shadow-[0_6px_20px_-12px_rgba(82,29,23,0.18)] ring-1 ring-black/3 transition-shadow duration-200 hover:shadow-[0_14px_30px_-14px_rgba(82,29,23,0.28)] sm:mb-5 md:mb-6 will-change-transform" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05}},&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><img alt="{{ block.settings.text_2 | default: 'Customer story 2' | escape }}" class="h-auto w-full select-none" sizes="(max-width: 640px) 92vw, (max-width: 768px) 45vw, (max-width: 1024px) 32vw, 24vw" draggable="false" src="{% if block.settings.image_1 != blank %}{{ block.settings.image_1 | image_url: width: 2000 }}{% else %}{{ 'content-f51dc8e8e15e.png' | asset_url }}{% endif %}" width="305" height="173" loading="lazy" decoding="async" data-image-fade="450"></figure>
+{% when 'item_5' %}<figure class="group relative mb-4 block break-inside-avoid overflow-hidden rounded-[14px] bg-white shadow-[0_6px_20px_-12px_rgba(82,29,23,0.18)] ring-1 ring-black/3 transition-shadow duration-200 hover:shadow-[0_14px_30px_-14px_rgba(82,29,23,0.28)] sm:mb-5 md:mb-6 will-change-transform" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05}},&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><img alt="{{ block.settings.text_2 | default: 'Customer story 3' | escape }}" class="h-auto w-full select-none" sizes="(max-width: 640px) 92vw, (max-width: 768px) 45vw, (max-width: 1024px) 32vw, 24vw" draggable="false" src="{% if block.settings.image_1 != blank %}{{ block.settings.image_1 | image_url: width: 2000 }}{% else %}{{ 'content-10b0cdd307c9.png' | asset_url }}{% endif %}" width="498" height="166" loading="lazy" decoding="async" data-image-fade="450"></figure>
+{% when 'item_6' %}<figure class="group relative mb-4 block break-inside-avoid overflow-hidden rounded-[14px] bg-white shadow-[0_6px_20px_-12px_rgba(82,29,23,0.18)] ring-1 ring-black/3 transition-shadow duration-200 hover:shadow-[0_14px_30px_-14px_rgba(82,29,23,0.28)] sm:mb-5 md:mb-6 will-change-transform" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05}},&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><img alt="{{ block.settings.text_2 | default: 'Customer story 4' | escape }}" class="h-auto w-full select-none" sizes="(max-width: 640px) 92vw, (max-width: 768px) 45vw, (max-width: 1024px) 32vw, 24vw" draggable="false" src="{% if block.settings.image_1 != blank %}{{ block.settings.image_1 | image_url: width: 2000 }}{% else %}{{ 'content-6903bc4a7e28.png' | asset_url }}{% endif %}" width="324" height="168" loading="lazy" decoding="async" data-image-fade="450"></figure>
+{% when 'item_7' %}<figure class="group relative mb-4 block break-inside-avoid overflow-hidden rounded-[14px] bg-white shadow-[0_6px_20px_-12px_rgba(82,29,23,0.18)] ring-1 ring-black/3 transition-shadow duration-200 hover:shadow-[0_14px_30px_-14px_rgba(82,29,23,0.28)] sm:mb-5 md:mb-6 will-change-transform" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05}},&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><img alt="{{ block.settings.text_2 | default: 'Customer story 5' | escape }}" class="h-auto w-full select-none" sizes="(max-width: 640px) 92vw, (max-width: 768px) 45vw, (max-width: 1024px) 32vw, 24vw" draggable="false" src="{% if block.settings.image_1 != blank %}{{ block.settings.image_1 | image_url: width: 2000 }}{% else %}{{ 'content-b77f015082a0.png' | asset_url }}{% endif %}" width="274" height="239" loading="lazy" decoding="async" data-image-fade="450"></figure>
+{% when 'item_8' %}<figure class="group relative mb-4 block break-inside-avoid overflow-hidden rounded-[14px] bg-white shadow-[0_6px_20px_-12px_rgba(82,29,23,0.18)] ring-1 ring-black/3 transition-shadow duration-200 hover:shadow-[0_14px_30px_-14px_rgba(82,29,23,0.28)] sm:mb-5 md:mb-6 will-change-transform" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05}},&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><img alt="{{ block.settings.text_2 | default: 'Customer story 6' | escape }}" class="h-auto w-full select-none" sizes="(max-width: 640px) 92vw, (max-width: 768px) 45vw, (max-width: 1024px) 32vw, 24vw" draggable="false" src="{% if block.settings.image_1 != blank %}{{ block.settings.image_1 | image_url: width: 2000 }}{% else %}{{ 'content-b364bb2b0abb.png' | asset_url }}{% endif %}" width="340" height="95" loading="lazy" decoding="async" data-image-fade="450"></figure>
+{% when 'item_9' %}<figure class="group relative mb-4 block break-inside-avoid overflow-hidden rounded-[14px] bg-white shadow-[0_6px_20px_-12px_rgba(82,29,23,0.18)] ring-1 ring-black/3 transition-shadow duration-200 hover:shadow-[0_14px_30px_-14px_rgba(82,29,23,0.28)] sm:mb-5 md:mb-6 will-change-transform" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05}},&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><img alt="{{ block.settings.text_2 | default: 'Customer story 7' | escape }}" class="h-auto w-full select-none" sizes="(max-width: 640px) 92vw, (max-width: 768px) 45vw, (max-width: 1024px) 32vw, 24vw" draggable="false" src="{% if block.settings.image_1 != blank %}{{ block.settings.image_1 | image_url: width: 2000 }}{% else %}{{ 'content-d6dde2ffc3ce.png' | asset_url }}{% endif %}" width="339" height="148" loading="lazy" decoding="async" data-image-fade="450"></figure>
+{% when 'item_10' %}<figure class="group relative mb-4 block break-inside-avoid overflow-hidden rounded-[14px] bg-white shadow-[0_6px_20px_-12px_rgba(82,29,23,0.18)] ring-1 ring-black/3 transition-shadow duration-200 hover:shadow-[0_14px_30px_-14px_rgba(82,29,23,0.28)] sm:mb-5 md:mb-6 will-change-transform" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05}},&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><img alt="{{ block.settings.text_2 | default: 'Customer story 8' | escape }}" class="h-auto w-full select-none" sizes="(max-width: 640px) 92vw, (max-width: 768px) 45vw, (max-width: 1024px) 32vw, 24vw" draggable="false" src="{% if block.settings.image_1 != blank %}{{ block.settings.image_1 | image_url: width: 2000 }}{% else %}{{ 'content-223a7f6eb8aa.png' | asset_url }}{% endif %}" width="352" height="70" loading="lazy" decoding="async" data-image-fade="450"></figure>
+{% when 'item_11' %}<figure class="group relative mb-4 block break-inside-avoid overflow-hidden rounded-[14px] bg-white shadow-[0_6px_20px_-12px_rgba(82,29,23,0.18)] ring-1 ring-black/3 transition-shadow duration-200 hover:shadow-[0_14px_30px_-14px_rgba(82,29,23,0.28)] sm:mb-5 md:mb-6 will-change-transform" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05}},&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><img alt="{{ block.settings.text_2 | default: 'Customer story 9' | escape }}" class="h-auto w-full select-none" sizes="(max-width: 640px) 92vw, (max-width: 768px) 45vw, (max-width: 1024px) 32vw, 24vw" draggable="false" src="{% if block.settings.image_1 != blank %}{{ block.settings.image_1 | image_url: width: 2000 }}{% else %}{{ 'content-c086c72045f7.png' | asset_url }}{% endif %}" width="289" height="133" loading="lazy" decoding="async" data-image-fade="450"></figure>
+{% when 'item_12' %}<figure class="group relative mb-4 block break-inside-avoid overflow-hidden rounded-[14px] bg-white shadow-[0_6px_20px_-12px_rgba(82,29,23,0.18)] ring-1 ring-black/3 transition-shadow duration-200 hover:shadow-[0_14px_30px_-14px_rgba(82,29,23,0.28)] sm:mb-5 md:mb-6 will-change-transform" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05}},&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.05},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><img alt="{{ block.settings.text_2 | default: 'Customer story 10' | escape }}" class="h-auto w-full select-none" sizes="(max-width: 640px) 92vw, (max-width: 768px) 45vw, (max-width: 1024px) 32vw, 24vw" draggable="false" src="{% if block.settings.image_1 != blank %}{{ block.settings.image_1 | image_url: width: 2000 }}{% else %}{{ 'content-381cb9d37095.png' | asset_url }}{% endif %}" width="275" height="275" loading="lazy" decoding="async" data-image-fade="450"></figure>{% endcase %}{% endfor %}</div></div></section>
+{% schema %}
+{
+  "name": "Stories",
+  "tag": "section",
+  "class": "kw-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text: Real Stories. Real Comfort.",
+      "default": "Real Stories. Real Comfort."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image: image"
+    },
+    {
+      "type": "text",
+      "id": "text_3",
+      "label": "Text: Real Stories",
+      "default": "Real Stories"
+    },
+    {
+      "type": "text",
+      "id": "text_4",
+      "label": "Text: Real Comfort.",
+      "default": "Real Comfort."
+    },
+    {
+      "type": "text",
+      "id": "text_5",
+      "label": "Text: Real conversations from happy customers who chose Krithi Weaves.",
+      "default": "Real conversations from happy customers who chose Krithi Weaves."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item_1",
+      "name": "Customer story 1",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image: Customer story 1"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Customer story 1",
+          "default": "Customer story 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Image: Customer story 3"
+        },
+        {
+          "type": "text",
+          "id": "text_4",
+          "label": "Text: Customer story 3",
+          "default": "Customer story 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_5",
+          "label": "Image: Customer story 5"
+        },
+        {
+          "type": "text",
+          "id": "text_6",
+          "label": "Text: Customer story 5",
+          "default": "Customer story 5"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_7",
+          "label": "Image: Customer story 7"
+        },
+        {
+          "type": "text",
+          "id": "text_8",
+          "label": "Text: Customer story 7",
+          "default": "Customer story 7"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_9",
+          "label": "Image: Customer story 9"
+        },
+        {
+          "type": "text",
+          "id": "text_10",
+          "label": "Text: Customer story 9",
+          "default": "Customer story 9"
+        }
+      ]
+    },
+    {
+      "type": "item_2",
+      "name": "Customer story 2",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image: Customer story 2"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Customer story 2",
+          "default": "Customer story 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Image: Customer story 4"
+        },
+        {
+          "type": "text",
+          "id": "text_4",
+          "label": "Text: Customer story 4",
+          "default": "Customer story 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_5",
+          "label": "Image: Customer story 6"
+        },
+        {
+          "type": "text",
+          "id": "text_6",
+          "label": "Text: Customer story 6",
+          "default": "Customer story 6"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_7",
+          "label": "Image: Customer story 8"
+        },
+        {
+          "type": "text",
+          "id": "text_8",
+          "label": "Text: Customer story 8",
+          "default": "Customer story 8"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_9",
+          "label": "Image: Customer story 10"
+        },
+        {
+          "type": "text",
+          "id": "text_10",
+          "label": "Text: Customer story 10",
+          "default": "Customer story 10"
+        }
+      ]
+    },
+    {
+      "type": "item_3",
+      "name": "Customer story 1 3",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image: Customer story 1"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Customer story 1",
+          "default": "Customer story 1"
+        }
+      ]
+    },
+    {
+      "type": "item_4",
+      "name": "Customer story 2 4",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image: Customer story 2"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Customer story 2",
+          "default": "Customer story 2"
+        }
+      ]
+    },
+    {
+      "type": "item_5",
+      "name": "Customer story 3",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image: Customer story 3"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Customer story 3",
+          "default": "Customer story 3"
+        }
+      ]
+    },
+    {
+      "type": "item_6",
+      "name": "Customer story 4",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image: Customer story 4"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Customer story 4",
+          "default": "Customer story 4"
+        }
+      ]
+    },
+    {
+      "type": "item_7",
+      "name": "Customer story 5",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image: Customer story 5"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Customer story 5",
+          "default": "Customer story 5"
+        }
+      ]
+    },
+    {
+      "type": "item_8",
+      "name": "Customer story 6",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image: Customer story 6"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Customer story 6",
+          "default": "Customer story 6"
+        }
+      ]
+    },
+    {
+      "type": "item_9",
+      "name": "Customer story 7",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image: Customer story 7"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Customer story 7",
+          "default": "Customer story 7"
+        }
+      ]
+    },
+    {
+      "type": "item_10",
+      "name": "Customer story 8",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image: Customer story 8"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Customer story 8",
+          "default": "Customer story 8"
+        }
+      ]
+    },
+    {
+      "type": "item_11",
+      "name": "Customer story 9",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image: Customer story 9"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Customer story 9",
+          "default": "Customer story 9"
+        }
+      ]
+    },
+    {
+      "type": "item_12",
+      "name": "Customer story 10",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image: Customer story 10"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Customer story 10",
+          "default": "Customer story 10"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "Stories",
+      "blocks": [
+        {
+          "type": "item_1"
+        },
+        {
+          "type": "item_2"
+        },
+        {
+          "type": "item_3"
+        },
+        {
+          "type": "item_4"
+        },
+        {
+          "type": "item_5"
+        },
+        {
+          "type": "item_6"
+        },
+        {
+          "type": "item_7"
+        },
+        {
+          "type": "item_8"
+        },
+        {
+          "type": "item_9"
+        },
+        {
+          "type": "item_10"
+        },
+        {
+          "type": "item_11"
+        },
+        {
+          "type": "item_12"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

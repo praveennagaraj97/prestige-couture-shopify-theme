@@ -1,0 +1,80 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Krithi Weaves",
+    "theme_author": "Krithi Weaves",
+    "theme_version": "1.0.0",
+    "theme_documentation_url": "https://shopify.dev/docs/storefronts/themes",
+    "theme_support_url": "https://krithiweaves.com/contact"
+  },
+  {
+    "name": "Shared content",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon"
+      },
+      {
+        "type": "text",
+        "id": "card_add_label",
+        "label": "Add to Bag label",
+        "default": "Add to Cart"
+      },
+      {
+        "type": "text",
+        "id": "card_mobile_add_label",
+        "label": "Add to Bag label",
+        "default": "Add to Bag"
+      },
+      {
+        "type": "text",
+        "id": "card_view_label",
+        "label": "View product label",
+        "default": "View Bag"
+      },
+      {
+        "type": "text",
+        "id": "card_mobile_view_label",
+        "label": "View product label",
+        "default": "View Bag"
+      },
+      {
+        "type": "text",
+        "id": "card_in_cart_label",
+        "label": "In Bag label",
+        "default": "In Bag"
+      },
+      {
+        "type": "text",
+        "id": "card_adding_label",
+        "label": "Adding… label",
+        "default": "Adding…"
+      },
+      {
+        "type": "text",
+        "id": "previous_label",
+        "label": "Previous label",
+        "default": "Previous"
+      },
+      {
+        "type": "text",
+        "id": "next_label",
+        "label": "Next label",
+        "default": "Next"
+      },
+      {
+        "type": "text",
+        "id": "skip_label",
+        "label": "Skip to content label",
+        "default": "Skip to content"
+      },
+      {
+        "type": "text",
+        "id": "card_off_label",
+        "label": "Discount label",
+        "default": "OFF"
+      }
+    ]
+  }
+]

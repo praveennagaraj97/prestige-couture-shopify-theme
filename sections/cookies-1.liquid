@@ -1,0 +1,40 @@
+{% comment %} Source-parity migration: Cookie Policy. Content controls preserve the source layout. {% endcomment %}
+<section aria-label="{{ section.settings.text_1 | default: 'Cookie Policy' | escape }}" class="section pt-10 pb-8 md:pt-14 md:pb-10" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.3}}"><div><span class="mb-3 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.28em] text-rust sm:text-xs" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.3}}"><span class="inline-block h-px w-8 bg-rust/60" aria-hidden="true"></span>{{ section.settings.text_2 | default: 'Cookies' | escape }}</span><h1 aria-label="{{ section.settings.text_1 | default: 'Cookie Policy' | escape }}" class="font-libre-baskerville text-3xl leading-tight text-dark-chocolate sm:text-4xl md:text-5xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.8}}">{{ section.settings.text_1 | default: 'Cookie Policy' | escape }}</h1><p class="mt-4 max-w-2xl text-sm leading-relaxed text-strong-coffee/80 sm:text-base" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.3}}">{{ section.settings.copy_3 | default: 'A short, plain-English explanation of the cookies we use — and how to switch them off if you prefer.' | escape }}</p><span class="mt-6 inline-flex items-center gap-2 rounded-full bg-white-chocolate px-4 py-1.5 text-[12px] text-strong-coffee/75 ring-1 ring-strong-coffee/10" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:8},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.35}},&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;delay&quot;:0.35},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.3}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="text-[11px] text-rust" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M128 0c17.7 0 32 14.3 32 32l0 32 128 0 0-32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 32 48 0c26.5 0 48 21.5 48 48l0 48L0 160l0-48C0 85.5 21.5 64 48 64l48 0 0-32c0-17.7 14.3-32 32-32zM0 192l448 0 0 272c0 26.5-21.5 48-48 48L48 512c-26.5 0-48-21.5-48-48L0 192zm80 64c-8.8 0-16 7.2-16 16l0 96c0 8.8 7.2 16 16 16l96 0c8.8 0 16-7.2 16-16l0-96c0-8.8-7.2-16-16-16l-96 0z"></path></svg>{{ section.settings.text_4 | default: 'Last updated April 2026' | escape }}</span></div></section>
+{% schema %}
+{
+  "name": "Cookie Policy",
+  "tag": "section",
+  "class": "kw-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text: Cookie Policy",
+      "default": "Cookie Policy"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Text: Cookies",
+      "default": "Cookies"
+    },
+    {
+      "type": "textarea",
+      "id": "copy_3",
+      "label": "Text: A short, plain-English explanation of the cookies we use — and h",
+      "default": "A short, plain-English explanation of the cookies we use — and how to switch them off if you prefer."
+    },
+    {
+      "type": "text",
+      "id": "text_4",
+      "label": "Text: Last updated April 2026",
+      "default": "Last updated April 2026"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cookie Policy"
+    }
+  ]
+}
+{% endschema %}

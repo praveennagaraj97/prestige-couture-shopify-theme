@@ -1,0 +1,331 @@
+{% comment %} Source-parity migration: 01.What cookies are. Content controls preserve the source layout. {% endcomment %}
+<section class="section pb-14 md:pb-20"><div class="mx-auto grid max-w-6xl grid-cols-1 gap-8 lg:grid-cols-[260px_minmax(0,1fr)] lg:gap-12 xl:grid-cols-[280px_minmax(0,1fr)]"><div class="hidden lg:block"><nav aria-label="{{ section.settings.text_1 | default: 'On this page' | escape }}" class="sticky top-24 flex flex-col gap-1 rounded-2xl bg-white-chocolate/50 p-5 ring-1 ring-strong-coffee/5" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}"><span class="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-rust">{{ section.settings.text_1 | default: 'On this page' | escape }}</span><ul class="flex flex-col gap-1">{% for block in section.blocks %}{% case block.type %}{% when 'item_1' %}<li data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.25}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.25},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><a href="#what" class="group flex items-center gap-2 rounded-md px-2 py-1.5 text-[13px] text-strong-coffee/80 transition-colors hover:bg-white hover:text-rust"><span class="inline-block size-1 rounded-full bg-rust/40 transition-colors group-hover:bg-rust" aria-hidden="true"></span>{{ block.settings.text_1 | default: 'What cookies are' | escape }}</a></li>
+{% when 'item_2' %}<li data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.31}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.31},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><a href="#essential" class="group flex items-center gap-2 rounded-md px-2 py-1.5 text-[13px] text-strong-coffee/80 transition-colors hover:bg-white hover:text-rust"><span class="inline-block size-1 rounded-full bg-rust/40 transition-colors group-hover:bg-rust" aria-hidden="true"></span>{{ block.settings.text_1 | default: 'Strictly necessary cookies' | escape }}</a></li>
+{% when 'item_3' %}<li data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.37}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.37},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><a href="#analytics" class="group flex items-center gap-2 rounded-md px-2 py-1.5 text-[13px] text-strong-coffee/80 transition-colors hover:bg-white hover:text-rust"><span class="inline-block size-1 rounded-full bg-rust/40 transition-colors group-hover:bg-rust" aria-hidden="true"></span>{{ block.settings.text_1 | default: 'Analytics cookies' | escape }}</a></li>
+{% when 'item_4' %}<li data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.43}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.43},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><a href="#marketing" class="group flex items-center gap-2 rounded-md px-2 py-1.5 text-[13px] text-strong-coffee/80 transition-colors hover:bg-white hover:text-rust"><span class="inline-block size-1 rounded-full bg-rust/40 transition-colors group-hover:bg-rust" aria-hidden="true"></span>{{ block.settings.text_1 | default: 'Marketing cookies' | escape }}</a></li>
+{% when 'item_5' %}<li data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.49}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.49},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><a href="#manage" class="group flex items-center gap-2 rounded-md px-2 py-1.5 text-[13px] text-strong-coffee/80 transition-colors hover:bg-white hover:text-rust"><span class="inline-block size-1 rounded-full bg-rust/40 transition-colors group-hover:bg-rust" aria-hidden="true"></span>{{ block.settings.text_1 | default: 'Managing your preferences' | escape }}</a></li>
+{% when 'item_6' %}<li data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.55}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.55},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><a href="#contact" class="group flex items-center gap-2 rounded-md px-2 py-1.5 text-[13px] text-strong-coffee/80 transition-colors hover:bg-white hover:text-rust"><span class="inline-block size-1 rounded-full bg-rust/40 transition-colors group-hover:bg-rust" aria-hidden="true"></span>{{ block.settings.text_1 | default: 'Questions?' | escape }}</a></li>{% endcase %}{% endfor %}</ul></nav></div><div class="flex flex-col divide-y divide-strong-coffee/10">{% for block in section.blocks %}{% case block.type %}{% when 'item_7' %}<section id="what" class="scroll-mt-28 py-5" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><h2 class="font-libre-baskerville text-xl text-dark-chocolate sm:text-2xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mr-3 text-rust">{{ block.settings.text_2 | default: '01.' | escape }}</span>{{ block.settings.text_1 | default: 'What cookies are' | escape }}</h2><div class="mt-3 flex flex-col gap-3 text-sm leading-relaxed text-strong-coffee/85 sm:text-[15px]"><p data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.25}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.25},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.copy_3 | default: 'Cookies are small text files that a website places on your device when you visit. They are widely used to make sites work, remember preferences, and understand how they are being used.' | escape }}</p><p data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.33}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.33},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.copy_4 | default: 'This page explains the cookies Krithi Weaves uses, why we use them, and how you can manage your preferences.' | escape }}</p></div></section>
+{% when 'item_8' %}<section id="essential" class="scroll-mt-28 py-5" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><h2 class="font-libre-baskerville text-xl text-dark-chocolate sm:text-2xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mr-3 text-rust">{{ block.settings.text_2 | default: '02.' | escape }}</span>{{ block.settings.text_1 | default: 'Strictly necessary cookies' | escape }}</h2><div class="mt-3 flex flex-col gap-3 text-sm leading-relaxed text-strong-coffee/85 sm:text-[15px]"><p data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.30000000000000004}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.30000000000000004},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.copy_3 | default: 'These cookies are required for the site to function — signing in, keeping items in your cart, remembering your currency choice. They cannot be disabled without breaking core features.' | escape }}</p><ul class="mt-1 flex flex-col gap-2"><li class="flex gap-2.5" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.45}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.45},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mt-2 inline-block size-1.5 shrink-0 rounded-full bg-rust" aria-hidden="true"></span><span>{{ block.settings.text_4 | default: 'session_id — keeps you signed in across pages.' | escape }}</span></li><li class="flex gap-2.5" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.51}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.51},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mt-2 inline-block size-1.5 shrink-0 rounded-full bg-rust" aria-hidden="true"></span><span>{{ block.settings.text_5 | default: 'cart_token — stores your cart for up to 14 days.' | escape }}</span></li><li class="flex gap-2.5" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.5700000000000001}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.5700000000000001},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mt-2 inline-block size-1.5 shrink-0 rounded-full bg-rust" aria-hidden="true"></span><span>{{ block.settings.text_6 | default: 'csrf_token — protects forms against cross-site request forgery.' | escape }}</span></li></ul></div></section>
+{% when 'item_9' %}<section id="analytics" class="scroll-mt-28 py-5" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><h2 class="font-libre-baskerville text-xl text-dark-chocolate sm:text-2xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mr-3 text-rust">{{ block.settings.text_2 | default: '03.' | escape }}</span>{{ block.settings.text_1 | default: 'Analytics cookies' | escape }}</h2><div class="mt-3 flex flex-col gap-3 text-sm leading-relaxed text-strong-coffee/85 sm:text-[15px]"><p data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.35}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.35},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.copy_3 | default: 'We use analytics cookies to understand which pages are popular, how visitors navigate the site, and where things can be improved. The data is aggregated and does not identify individual users.' | escape }}</p><ul class="mt-1 flex flex-col gap-2"><li class="flex gap-2.5" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.5}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.5},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mt-2 inline-block size-1.5 shrink-0 rounded-full bg-rust" aria-hidden="true"></span><span>{{ block.settings.copy_4 | default: 'We rely on a single privacy-first analytics provider — no cross-site tracking, no third-party advertising networks.' | escape }}</span></li><li class="flex gap-2.5" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.56}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.56},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mt-2 inline-block size-1.5 shrink-0 rounded-full bg-rust" aria-hidden="true"></span><span>{{ block.settings.text_5 | default: 'You can opt out at any time using the cookie banner or from your browser settings.' | escape }}</span></li></ul></div></section>
+{% when 'item_10' %}<section id="marketing" class="scroll-mt-28 py-5" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><h2 class="font-libre-baskerville text-xl text-dark-chocolate sm:text-2xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mr-3 text-rust">{{ block.settings.text_2 | default: '04.' | escape }}</span>{{ block.settings.text_1 | default: 'Marketing cookies' | escape }}</h2><div class="mt-3 flex flex-col gap-3 text-sm leading-relaxed text-strong-coffee/85 sm:text-[15px]"><p data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.4}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.4},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.copy_3 | default: 'If you consent, marketing cookies help us show you relevant collection previews and remember which emails you have already interacted with. You can withdraw consent at any time.' | escape }}</p></div></section>
+{% when 'item_11' %}<section id="manage" class="scroll-mt-28 py-5" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><h2 class="font-libre-baskerville text-xl text-dark-chocolate sm:text-2xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mr-3 text-rust">{{ block.settings.text_2 | default: '05.' | escape }}</span>{{ block.settings.text_1 | default: 'Managing your preferences' | escape }}</h2><div class="mt-3 flex flex-col gap-3 text-sm leading-relaxed text-strong-coffee/85 sm:text-[15px]"><p data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.45000000000000007}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.45000000000000007},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.copy_3 | default: 'You can change your cookie preferences by clicking "Cookie settings" in the site footer, or by clearing cookies through your browser.' | escape }}</p><p data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.53}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.53},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.copy_4 | default: 'Blocking cookies may affect how the site behaves — for example, you may be signed out, or your cart may reset.' | escape }}</p></div></section>
+{% when 'item_12' %}<section id="contact" class="scroll-mt-28 py-5" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><h2 class="font-libre-baskerville text-xl text-dark-chocolate sm:text-2xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><span class="mr-3 text-rust">{{ block.settings.text_2 | default: '06.' | escape }}</span>{{ block.settings.text_1 | default: 'Questions?' | escape }}</h2><div class="mt-3 flex flex-col gap-3 text-sm leading-relaxed text-strong-coffee/85 sm:text-[15px]"><p data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.5}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.5},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ block.settings.copy_3 | default: 'Write to privacy@krithiweaves.com with the subject "Cookies" and we will respond within two working days.' | escape }}</p></div></section>{% endcase %}{% endfor %}</div></div></section>
+{% schema %}
+{
+  "name": "01.What cookies are",
+  "tag": "section",
+  "class": "kw-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text: On this page",
+      "default": "On this page"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item_1",
+      "name": "What cookies are",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: What cookies are — What cookies are",
+          "default": "What cookies are"
+        }
+      ]
+    },
+    {
+      "type": "item_2",
+      "name": "Strictly necessary cooki",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Strictly necessary cooki — Strictly necessary cookies",
+          "default": "Strictly necessary cookies"
+        }
+      ]
+    },
+    {
+      "type": "item_3",
+      "name": "Analytics cookies",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Analytics cookies — Analytics cookies",
+          "default": "Analytics cookies"
+        }
+      ]
+    },
+    {
+      "type": "item_4",
+      "name": "Marketing cookies",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Marketing cookies — Marketing cookies",
+          "default": "Marketing cookies"
+        }
+      ]
+    },
+    {
+      "type": "item_5",
+      "name": "Managing your preference",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Managing your preference — Managing your preferences",
+          "default": "Managing your preferences"
+        }
+      ]
+    },
+    {
+      "type": "item_6",
+      "name": "Questions?",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Questions? — Questions?",
+          "default": "Questions?"
+        }
+      ]
+    },
+    {
+      "type": "item_7",
+      "name": "01.What cookies are",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: 01.What cookies are — What cookies are",
+          "default": "What cookies are"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: 01.What cookies are — 01.",
+          "default": "01."
+        },
+        {
+          "type": "textarea",
+          "id": "copy_3",
+          "label": "Text: 01.What cookies are — Cookies are small text files that a websit",
+          "default": "Cookies are small text files that a website places on your device when you visit. They are widely used to make sites work, remember preferences, and understand how they are being used."
+        },
+        {
+          "type": "textarea",
+          "id": "copy_4",
+          "label": "Text: 01.What cookies are — This page explains the cookies Krithi Weav",
+          "default": "This page explains the cookies Krithi Weaves uses, why we use them, and how you can manage your preferences."
+        }
+      ]
+    },
+    {
+      "type": "item_8",
+      "name": "02.Strictly necessary co",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: 02.Strictly necessary co — Strictly necessary cookies",
+          "default": "Strictly necessary cookies"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: 02.Strictly necessary co — 02.",
+          "default": "02."
+        },
+        {
+          "type": "textarea",
+          "id": "copy_3",
+          "label": "Text: 02.Strictly necessary co — These cookies are required for the si",
+          "default": "These cookies are required for the site to function — signing in, keeping items in your cart, remembering your currency choice. They cannot be disabled without breaking core features."
+        },
+        {
+          "type": "text",
+          "id": "text_4",
+          "label": "Text: 02.Strictly necessary co — session_id — keeps you signed in acro",
+          "default": "session_id — keeps you signed in across pages."
+        },
+        {
+          "type": "text",
+          "id": "text_5",
+          "label": "Text: 02.Strictly necessary co — cart_token — stores your cart for up ",
+          "default": "cart_token — stores your cart for up to 14 days."
+        },
+        {
+          "type": "text",
+          "id": "text_6",
+          "label": "Text: 02.Strictly necessary co — csrf_token — protects forms against c",
+          "default": "csrf_token — protects forms against cross-site request forgery."
+        }
+      ]
+    },
+    {
+      "type": "item_9",
+      "name": "03.Analytics cookies",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: 03.Analytics cookies — Analytics cookies",
+          "default": "Analytics cookies"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: 03.Analytics cookies — 03.",
+          "default": "03."
+        },
+        {
+          "type": "textarea",
+          "id": "copy_3",
+          "label": "Text: 03.Analytics cookies — We use analytics cookies to understand wh",
+          "default": "We use analytics cookies to understand which pages are popular, how visitors navigate the site, and where things can be improved. The data is aggregated and does not identify individual users."
+        },
+        {
+          "type": "textarea",
+          "id": "copy_4",
+          "label": "Text: 03.Analytics cookies — We rely on a single privacy-first analyti",
+          "default": "We rely on a single privacy-first analytics provider — no cross-site tracking, no third-party advertising networks."
+        },
+        {
+          "type": "text",
+          "id": "text_5",
+          "label": "Text: 03.Analytics cookies — You can opt out at any time using the coo",
+          "default": "You can opt out at any time using the cookie banner or from your browser settings."
+        }
+      ]
+    },
+    {
+      "type": "item_10",
+      "name": "04.Marketing cookies",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: 04.Marketing cookies — Marketing cookies",
+          "default": "Marketing cookies"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: 04.Marketing cookies — 04.",
+          "default": "04."
+        },
+        {
+          "type": "textarea",
+          "id": "copy_3",
+          "label": "Text: 04.Marketing cookies — If you consent, marketing cookies help us",
+          "default": "If you consent, marketing cookies help us show you relevant collection previews and remember which emails you have already interacted with. You can withdraw consent at any time."
+        }
+      ]
+    },
+    {
+      "type": "item_11",
+      "name": "05.Managing your prefere",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: 05.Managing your prefere — Managing your preferences",
+          "default": "Managing your preferences"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: 05.Managing your prefere — 05.",
+          "default": "05."
+        },
+        {
+          "type": "textarea",
+          "id": "copy_3",
+          "label": "Text: 05.Managing your prefere — You can change your cookie preference",
+          "default": "You can change your cookie preferences by clicking \"Cookie settings\" in the site footer, or by clearing cookies through your browser."
+        },
+        {
+          "type": "textarea",
+          "id": "copy_4",
+          "label": "Text: 05.Managing your prefere — Blocking cookies may affect how the s",
+          "default": "Blocking cookies may affect how the site behaves — for example, you may be signed out, or your cart may reset."
+        }
+      ]
+    },
+    {
+      "type": "item_12",
+      "name": "06.Questions?",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: 06.Questions? — Questions?",
+          "default": "Questions?"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: 06.Questions? — 06.",
+          "default": "06."
+        },
+        {
+          "type": "textarea",
+          "id": "copy_3",
+          "label": "Text: 06.Questions? — Write to privacy@krithiweaves.com with the subje",
+          "default": "Write to privacy@krithiweaves.com with the subject \"Cookies\" and we will respond within two working days."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "01.What cookies are",
+      "blocks": [
+        {
+          "type": "item_1"
+        },
+        {
+          "type": "item_2"
+        },
+        {
+          "type": "item_3"
+        },
+        {
+          "type": "item_4"
+        },
+        {
+          "type": "item_5"
+        },
+        {
+          "type": "item_6"
+        },
+        {
+          "type": "item_7"
+        },
+        {
+          "type": "item_8"
+        },
+        {
+          "type": "item_9"
+        },
+        {
+          "type": "item_10"
+        },
+        {
+          "type": "item_11"
+        },
+        {
+          "type": "item_12"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

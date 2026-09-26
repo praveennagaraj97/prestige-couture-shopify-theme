@@ -1,0 +1,39 @@
+{% comment %} Source-parity migration: Woven With Intention. Content controls preserve the source layout. {% endcomment %}
+<section aria-label="{{ section.settings.text_1 | default: 'Woven With Intention' | escape }}" class="section relative pt-10 pb-12 md:pt-14 md:pb-16" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.25}}"><div class="relative overflow-hidden rounded-[24px]" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.6,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.6,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.25}}"><div class="relative aspect-[16/9] min-h-80 w-full md:min-h-[420px]"><img alt="" sizes="(max-width: 1024px) 100vw, 1200px" class="object-cover object-center" src="{% if section.settings.image_2 != blank %}{{ section.settings.image_2 | image_url: width: 2000 }}{% else %}{{ 'about_bg.jpg' | asset_url }}{% endif %}" width="2000" height="1333" loading="eager" decoding="async" style="position:absolute;inset:0;width:100%;height:100%" data-image-fade="450"><div class="absolute inset-0 bg-linear-to-r from-dark-chocolate/70 via-dark-chocolate/35 to-transparent"></div></div><div class="absolute inset-0 flex flex-col justify-end px-6 pb-8 sm:px-10 sm:pb-10 md:pb-14 lg:px-14"><span class="mb-3 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.28em] text-white-chocolate/85 sm:text-xs" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.25}}"><span class="inline-block h-[1px] w-8 bg-white-chocolate/70" aria-hidden="true"></span>{{ section.settings.text_3 | default: 'Our Story' | escape }}</span><h1 aria-label="{{ section.settings.text_1 | default: 'Woven With Intention' | escape }}" class="font-libre-baskerville text-3xl leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl max-w-3xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.6,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.6,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.8}}">{{ section.settings.text_1 | default: 'Woven With Intention' | escape }}</h1><p class="mt-4 max-w-xl text-sm leading-relaxed text-white/85 sm:text-base" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.45,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2}},&quot;transition&quot;:{&quot;duration&quot;:0.45,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.25}}">{{ section.settings.copy_4 | default: 'Krithi Weaves was born from an architect’s eye for form and a quiet love for everyday comfort — a wardrobe made for Indian weather, Indian bodies, and Indian mornings.' | escape }}</p><span aria-hidden="true" style="transform-origin:left center" class="mt-5 block h-[2px] w-24 bg-rust" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.4}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.4},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.25}}"></span></div></div></section>
+{% schema %}
+{
+  "name": "Woven With Intention",
+  "tag": "section",
+  "class": "kw-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text: Woven With Intention",
+      "default": "Woven With Intention"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image: image"
+    },
+    {
+      "type": "text",
+      "id": "text_3",
+      "label": "Text: Our Story",
+      "default": "Our Story"
+    },
+    {
+      "type": "textarea",
+      "id": "copy_4",
+      "label": "Text: Krithi Weaves was born from an architect’s eye for form and a qu",
+      "default": "Krithi Weaves was born from an architect’s eye for form and a quiet love for everyday comfort — a wardrobe made for Indian weather, Indian bodies, and Indian mornings."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Woven With Intention"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,73 @@
+{
+  "sections": {
+    "content_1": {
+      "type": "help-orders-tracking-1",
+      "settings": {
+        "link_2": "/pages/help"
+      }
+    },
+    "content_2": {
+      "type": "help-orders-tracking-2",
+      "settings": {},
+      "blocks": {
+        "item_1": {
+          "type": "item_1",
+          "settings": {}
+        },
+        "item_2": {
+          "type": "item_2",
+          "settings": {}
+        },
+        "item_3": {
+          "type": "item_3",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3"
+      ]
+    },
+    "content_3": {
+      "type": "help-orders-tracking-3",
+      "settings": {},
+      "blocks": {
+        "item_1": {
+          "type": "item_1",
+          "settings": {}
+        },
+        "item_2": {
+          "type": "item_2",
+          "settings": {}
+        },
+        "item_3": {
+          "type": "item_3",
+          "settings": {}
+        },
+        "item_4": {
+          "type": "item_4",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4"
+      ]
+    },
+    "content_4": {
+      "type": "help-orders-tracking-4",
+      "settings": {
+        "link_4": "/pages/contact"
+      }
+    }
+  },
+  "order": [
+    "content_1",
+    "content_2",
+    "content_3",
+    "content_4"
+  ]
+}

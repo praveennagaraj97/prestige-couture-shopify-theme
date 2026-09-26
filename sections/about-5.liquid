@@ -1,0 +1,74 @@
+{% comment %} Source-parity migration: Find a piece that fits your day.. Content controls preserve the source layout. {% endcomment %}
+<section aria-label="{{ section.settings.text_1 | default: 'Find a piece that fits your day.' | escape }}" class="section pb-14 md:pb-20" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.3}}"><div class="mx-auto max-w-5xl overflow-hidden rounded-3xl bg-rust px-6 py-10 text-center text-white sm:px-10 sm:py-14 md:px-14" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.3}}"><h2 aria-label="{{ section.settings.text_1 | default: 'Find a piece that fits your day.' | escape }}" class="mx-auto max-w-2xl font-libre-baskerville text-2xl leading-tight sm:text-3xl md:text-4xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.6,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.6,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.8}}">{{ section.settings.text_1 | default: 'Find a piece that fits your day.' | escape }}</h2><p class="mx-auto mt-4 max-w-xl text-sm text-white/85 sm:text-base" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.6}},&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.6},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.3}}">{{ section.settings.copy_2 | default: 'Explore the collection or drop us a note — we’d love to help you find your first Krithi piece.' | escape }}</p><div class="mt-7 flex flex-wrap items-center justify-center gap-3">{% for block in section.blocks %}{% case block.type %}{% when 'item_1' %}<a href="{{ block.settings.link_1 | default: '/collections/all' | escape }}" class="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-2.5 text-sm font-medium text-rust transition-colors hover:bg-white-chocolate" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><span>{{ block.settings.text_2 | default: 'Shop the collection' | escape }}</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="text-xs transition-transform duration-200 group-hover:translate-x-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></a>
+{% when 'item_2' %}<a href="{{ block.settings.link_1 | default: '/pages/contact' | escape }}" class="inline-flex items-center gap-2 rounded-full border border-white/60 px-7 py-2.5 text-sm font-medium text-white transition-colors hover:bg-white/10" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}>{{ block.settings.text_2 | default: 'Get in touch' | escape }}</a>{% endcase %}{% endfor %}</div></div></section>
+{% schema %}
+{
+  "name": "Find a piece that fits yo",
+  "tag": "section",
+  "class": "kw-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text: Find a piece that fits your day.",
+      "default": "Find a piece that fits your day."
+    },
+    {
+      "type": "textarea",
+      "id": "copy_2",
+      "label": "Text: Explore the collection or drop us a note — we’d love to help you",
+      "default": "Explore the collection or drop us a note — we’d love to help you find your first Krithi piece."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item_1",
+      "name": "Shop the collection",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link_1",
+          "label": "Link: Shop the collection"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Shop the collection — Shop the collection",
+          "default": "Shop the collection"
+        }
+      ]
+    },
+    {
+      "type": "item_2",
+      "name": "Get in touch",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link_1",
+          "label": "Link: Get in touch"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Get in touch — Get in touch",
+          "default": "Get in touch"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "Find a piece that fits yo",
+      "blocks": [
+        {
+          "type": "item_1"
+        },
+        {
+          "type": "item_2"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

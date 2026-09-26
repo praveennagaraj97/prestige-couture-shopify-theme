@@ -1,0 +1,336 @@
+{% comment %} Source-parity migration: Where we ship. Content controls preserve the source layout. {% endcomment %}
+<section aria-label="{{ section.settings.text_1 | default: 'Where we ship' | escape }}" class="section pb-12 md:pb-16" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><div class="mx-auto mb-8 max-w-2xl text-center md:mb-10"><h2 aria-label="{{ section.settings.text_1 | default: 'Where we ship' | escape }}" class="font-libre-baskerville text-2xl font-bold text-dark-chocolate sm:text-3xl md:text-4xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.8}}">{{ section.settings.text_1 | default: 'Where we ship' | escape }}</h2><p class="mt-2 text-sm text-strong-coffee/70 sm:text-base" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ section.settings.text_2 | default: 'Timelines and charges by region. All windows count working days from dispatch, not order.' | escape }}</p></div><div class="mx-auto grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 md:gap-5">{% for block in section.blocks %}{% case block.type %}{% when 'item_1' %}<article class="flex h-full flex-col gap-4 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_18px_40px_-24px_rgba(82,29,23,0.4)] sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.25}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.25},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><div><span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-rust">{{ block.settings.text_1 | default: 'Zone 1' | escape }}</span><h3 class="mt-1 font-libre-baskerville text-lg font-semibold text-dark-chocolate sm:text-xl">{{ block.settings.text_2 | default: 'Metro cities' | escape }}</h3><p class="mt-1 text-[13px] text-strong-coffee/70">{{ block.settings.text_3 | default: 'Bengaluru, Mumbai, Delhi, Chennai, Hyderabad, Kolkata, Pune' | escape }}</p></div><dl class="grid grid-cols-2 gap-3 border-t border-strong-coffee/10 pt-4 text-[13px]"><div data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.4}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.4},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><dt class="text-[11px] uppercase tracking-[0.16em] text-strong-coffee/55">{{ block.settings.text_4 | default: 'Delivery window' | escape }}</dt><dd class="mt-1 font-semibold text-dark-chocolate">{{ block.settings.text_5 | default: '2–4 working days' | escape }}</dd></div><div data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.47}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.47},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><dt class="text-[11px] uppercase tracking-[0.16em] text-strong-coffee/55">{{ block.settings.text_6 | default: 'Charge' | escape }}</dt><dd class="mt-1 font-semibold text-dark-chocolate">{{ block.settings.text_7 | default: '₹49' | escape }}</dd></div><div data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.54}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.54},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><dt class="text-[11px] uppercase tracking-[0.16em] text-strong-coffee/55">{{ block.settings.text_8 | default: 'Free over' | escape }}</dt><dd class="mt-1 font-semibold text-emerald-700">{{ block.settings.text_9 | default: '₹999' | escape }}</dd></div><div data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.61}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.61},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><dt class="text-[11px] uppercase tracking-[0.16em] text-strong-coffee/55">{{ block.settings.text_10 | default: 'Partners' | escape }}</dt><dd class="mt-1 font-medium text-strong-coffee/85">{{ block.settings.text_11 | default: 'Delhivery, Blue Dart' | escape }}</dd></div></dl></article>
+{% when 'item_2' %}<article class="flex h-full flex-col gap-4 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_18px_40px_-24px_rgba(82,29,23,0.4)] sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.35}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.35},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><div><span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-rust">{{ block.settings.text_1 | default: 'Zone 2' | escape }}</span><h3 class="mt-1 font-libre-baskerville text-lg font-semibold text-dark-chocolate sm:text-xl">{{ block.settings.text_2 | default: 'Rest of India' | escape }}</h3><p class="mt-1 text-[13px] text-strong-coffee/70">{{ block.settings.text_3 | default: 'All other PIN codes across India' | escape }}</p></div><dl class="grid grid-cols-2 gap-3 border-t border-strong-coffee/10 pt-4 text-[13px]"><div data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.5}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.5},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><dt class="text-[11px] uppercase tracking-[0.16em] text-strong-coffee/55">{{ block.settings.text_4 | default: 'Delivery window' | escape }}</dt><dd class="mt-1 font-semibold text-dark-chocolate">{{ block.settings.text_5 | default: '4–7 working days' | escape }}</dd></div><div data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.57}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.57},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><dt class="text-[11px] uppercase tracking-[0.16em] text-strong-coffee/55">{{ block.settings.text_6 | default: 'Charge' | escape }}</dt><dd class="mt-1 font-semibold text-dark-chocolate">{{ block.settings.text_7 | default: '₹99' | escape }}</dd></div><div data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.6399999999999999}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.6399999999999999},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><dt class="text-[11px] uppercase tracking-[0.16em] text-strong-coffee/55">{{ block.settings.text_8 | default: 'Free over' | escape }}</dt><dd class="mt-1 font-semibold text-emerald-700">{{ block.settings.text_9 | default: '₹1499' | escape }}</dd></div><div data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.71}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.71},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><dt class="text-[11px] uppercase tracking-[0.16em] text-strong-coffee/55">{{ block.settings.text_10 | default: 'Partners' | escape }}</dt><dd class="mt-1 font-medium text-strong-coffee/85">{{ block.settings.text_11 | default: 'Delhivery, India Post' | escape }}</dd></div></dl></article>
+{% when 'item_3' %}<article class="flex h-full flex-col gap-4 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_18px_40px_-24px_rgba(82,29,23,0.4)] sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.45}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.45},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><div><span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-rust">{{ block.settings.text_1 | default: 'Zone 3' | escape }}</span><h3 class="mt-1 font-libre-baskerville text-lg font-semibold text-dark-chocolate sm:text-xl">{{ block.settings.text_2 | default: 'South Asia' | escape }}</h3><p class="mt-1 text-[13px] text-strong-coffee/70">{{ block.settings.text_3 | default: 'Sri Lanka, Nepal, Bhutan, Bangladesh' | escape }}</p></div><dl class="grid grid-cols-2 gap-3 border-t border-strong-coffee/10 pt-4 text-[13px]"><div data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.6}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.6},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><dt class="text-[11px] uppercase tracking-[0.16em] text-strong-coffee/55">{{ block.settings.text_4 | default: 'Delivery window' | escape }}</dt><dd class="mt-1 font-semibold text-dark-chocolate">{{ block.settings.text_5 | default: '7–10 working days' | escape }}</dd></div><div data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.67}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.67},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><dt class="text-[11px] uppercase tracking-[0.16em] text-strong-coffee/55">{{ block.settings.text_6 | default: 'Charge' | escape }}</dt><dd class="mt-1 font-semibold text-dark-chocolate">{{ block.settings.text_7 | default: '₹599' | escape }}</dd></div><div data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.74}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.74},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><dt class="text-[11px] uppercase tracking-[0.16em] text-strong-coffee/55">{{ block.settings.text_8 | default: 'Free over' | escape }}</dt><dd class="mt-1 font-semibold text-emerald-700">{{ block.settings.text_9 | default: '₹4999' | escape }}</dd></div><div data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.81}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.81},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><dt class="text-[11px] uppercase tracking-[0.16em] text-strong-coffee/55">{{ block.settings.text_10 | default: 'Partners' | escape }}</dt><dd class="mt-1 font-medium text-strong-coffee/85">{{ block.settings.text_11 | default: 'DHL, Aramex' | escape }}</dd></div></dl></article>
+{% when 'item_4' %}<article class="flex h-full flex-col gap-4 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_18px_40px_-24px_rgba(82,29,23,0.4)] sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.55}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.55},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><div><span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-rust">{{ block.settings.text_1 | default: 'Zone 4' | escape }}</span><h3 class="mt-1 font-libre-baskerville text-lg font-semibold text-dark-chocolate sm:text-xl">{{ block.settings.text_2 | default: 'Rest of the world' | escape }}</h3><p class="mt-1 text-[13px] text-strong-coffee/70">{{ block.settings.text_3 | default: 'UK, US, Canada, EU, Australia, Singapore, UAE' | escape }}</p></div><dl class="grid grid-cols-2 gap-3 border-t border-strong-coffee/10 pt-4 text-[13px]"><div data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.7000000000000001}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.7000000000000001},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><dt class="text-[11px] uppercase tracking-[0.16em] text-strong-coffee/55">{{ block.settings.text_4 | default: 'Delivery window' | escape }}</dt><dd class="mt-1 font-semibold text-dark-chocolate">{{ block.settings.text_5 | default: '7–12 working days' | escape }}</dd></div><div data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.77}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.77},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><dt class="text-[11px] uppercase tracking-[0.16em] text-strong-coffee/55">{{ block.settings.text_6 | default: 'Charge' | escape }}</dt><dd class="mt-1 font-semibold text-dark-chocolate">{{ block.settings.text_7 | default: 'From ₹899' | escape }}</dd></div><div data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.8400000000000001}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.8400000000000001},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><dt class="text-[11px] uppercase tracking-[0.16em] text-strong-coffee/55">{{ block.settings.text_8 | default: 'Free over' | escape }}</dt><dd class="mt-1 font-semibold text-emerald-700">{{ block.settings.text_9 | default: '₹7499' | escape }}</dd></div><div data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.91}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.91},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><dt class="text-[11px] uppercase tracking-[0.16em] text-strong-coffee/55">{{ block.settings.text_10 | default: 'Partners' | escape }}</dt><dd class="mt-1 font-medium text-strong-coffee/85">{{ block.settings.text_11 | default: 'DHL Express, FedEx' | escape }}</dd></div></dl></article>{% endcase %}{% endfor %}</div></section>
+{% schema %}
+{
+  "name": "Where we ship",
+  "tag": "section",
+  "class": "kw-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text: Where we ship",
+      "default": "Where we ship"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Text: Timelines and charges by region. All windows count working days ",
+      "default": "Timelines and charges by region. All windows count working days from dispatch, not order."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item_1",
+      "name": "Metro cities",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Metro cities — Zone 1",
+          "default": "Zone 1"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Metro cities — Metro cities",
+          "default": "Metro cities"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Text: Metro cities — Bengaluru, Mumbai, Delhi, Chennai, Hyderabad, Kol",
+          "default": "Bengaluru, Mumbai, Delhi, Chennai, Hyderabad, Kolkata, Pune"
+        },
+        {
+          "type": "text",
+          "id": "text_4",
+          "label": "Text: Metro cities — Delivery window",
+          "default": "Delivery window"
+        },
+        {
+          "type": "text",
+          "id": "text_5",
+          "label": "Text: Metro cities — 2–4 working days",
+          "default": "2–4 working days"
+        },
+        {
+          "type": "text",
+          "id": "text_6",
+          "label": "Text: Metro cities — Charge",
+          "default": "Charge"
+        },
+        {
+          "type": "text",
+          "id": "text_7",
+          "label": "Text: Metro cities — ₹49",
+          "default": "₹49"
+        },
+        {
+          "type": "text",
+          "id": "text_8",
+          "label": "Text: Metro cities — Free over",
+          "default": "Free over"
+        },
+        {
+          "type": "text",
+          "id": "text_9",
+          "label": "Text: Metro cities — ₹999",
+          "default": "₹999"
+        },
+        {
+          "type": "text",
+          "id": "text_10",
+          "label": "Text: Metro cities — Partners",
+          "default": "Partners"
+        },
+        {
+          "type": "text",
+          "id": "text_11",
+          "label": "Text: Metro cities — Delhivery, Blue Dart",
+          "default": "Delhivery, Blue Dart"
+        }
+      ]
+    },
+    {
+      "type": "item_2",
+      "name": "Rest of India",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Rest of India — Zone 2",
+          "default": "Zone 2"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Rest of India — Rest of India",
+          "default": "Rest of India"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Text: Rest of India — All other PIN codes across India",
+          "default": "All other PIN codes across India"
+        },
+        {
+          "type": "text",
+          "id": "text_4",
+          "label": "Text: Rest of India — Delivery window",
+          "default": "Delivery window"
+        },
+        {
+          "type": "text",
+          "id": "text_5",
+          "label": "Text: Rest of India — 4–7 working days",
+          "default": "4–7 working days"
+        },
+        {
+          "type": "text",
+          "id": "text_6",
+          "label": "Text: Rest of India — Charge",
+          "default": "Charge"
+        },
+        {
+          "type": "text",
+          "id": "text_7",
+          "label": "Text: Rest of India — ₹99",
+          "default": "₹99"
+        },
+        {
+          "type": "text",
+          "id": "text_8",
+          "label": "Text: Rest of India — Free over",
+          "default": "Free over"
+        },
+        {
+          "type": "text",
+          "id": "text_9",
+          "label": "Text: Rest of India — ₹1499",
+          "default": "₹1499"
+        },
+        {
+          "type": "text",
+          "id": "text_10",
+          "label": "Text: Rest of India — Partners",
+          "default": "Partners"
+        },
+        {
+          "type": "text",
+          "id": "text_11",
+          "label": "Text: Rest of India — Delhivery, India Post",
+          "default": "Delhivery, India Post"
+        }
+      ]
+    },
+    {
+      "type": "item_3",
+      "name": "South Asia",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: South Asia — Zone 3",
+          "default": "Zone 3"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: South Asia — South Asia",
+          "default": "South Asia"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Text: South Asia — Sri Lanka, Nepal, Bhutan, Bangladesh",
+          "default": "Sri Lanka, Nepal, Bhutan, Bangladesh"
+        },
+        {
+          "type": "text",
+          "id": "text_4",
+          "label": "Text: South Asia — Delivery window",
+          "default": "Delivery window"
+        },
+        {
+          "type": "text",
+          "id": "text_5",
+          "label": "Text: South Asia — 7–10 working days",
+          "default": "7–10 working days"
+        },
+        {
+          "type": "text",
+          "id": "text_6",
+          "label": "Text: South Asia — Charge",
+          "default": "Charge"
+        },
+        {
+          "type": "text",
+          "id": "text_7",
+          "label": "Text: South Asia — ₹599",
+          "default": "₹599"
+        },
+        {
+          "type": "text",
+          "id": "text_8",
+          "label": "Text: South Asia — Free over",
+          "default": "Free over"
+        },
+        {
+          "type": "text",
+          "id": "text_9",
+          "label": "Text: South Asia — ₹4999",
+          "default": "₹4999"
+        },
+        {
+          "type": "text",
+          "id": "text_10",
+          "label": "Text: South Asia — Partners",
+          "default": "Partners"
+        },
+        {
+          "type": "text",
+          "id": "text_11",
+          "label": "Text: South Asia — DHL, Aramex",
+          "default": "DHL, Aramex"
+        }
+      ]
+    },
+    {
+      "type": "item_4",
+      "name": "Rest of the world",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Rest of the world — Zone 4",
+          "default": "Zone 4"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Rest of the world — Rest of the world",
+          "default": "Rest of the world"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Text: Rest of the world — UK, US, Canada, EU, Australia, Singapore, UA",
+          "default": "UK, US, Canada, EU, Australia, Singapore, UAE"
+        },
+        {
+          "type": "text",
+          "id": "text_4",
+          "label": "Text: Rest of the world — Delivery window",
+          "default": "Delivery window"
+        },
+        {
+          "type": "text",
+          "id": "text_5",
+          "label": "Text: Rest of the world — 7–12 working days",
+          "default": "7–12 working days"
+        },
+        {
+          "type": "text",
+          "id": "text_6",
+          "label": "Text: Rest of the world — Charge",
+          "default": "Charge"
+        },
+        {
+          "type": "text",
+          "id": "text_7",
+          "label": "Text: Rest of the world — From ₹899",
+          "default": "From ₹899"
+        },
+        {
+          "type": "text",
+          "id": "text_8",
+          "label": "Text: Rest of the world — Free over",
+          "default": "Free over"
+        },
+        {
+          "type": "text",
+          "id": "text_9",
+          "label": "Text: Rest of the world — ₹7499",
+          "default": "₹7499"
+        },
+        {
+          "type": "text",
+          "id": "text_10",
+          "label": "Text: Rest of the world — Partners",
+          "default": "Partners"
+        },
+        {
+          "type": "text",
+          "id": "text_11",
+          "label": "Text: Rest of the world — DHL Express, FedEx",
+          "default": "DHL Express, FedEx"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "Where we ship",
+      "blocks": [
+        {
+          "type": "item_1"
+        },
+        {
+          "type": "item_2"
+        },
+        {
+          "type": "item_3"
+        },
+        {
+          "type": "item_4"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

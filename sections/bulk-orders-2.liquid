@@ -1,0 +1,170 @@
+{% comment %} Source-parity migration: Why bulk with Krithi. Content controls preserve the source layout. {% endcomment %}
+<section aria-label="{{ section.settings.text_1 | default: 'Why bulk with us' | escape }}" class="section pb-12 md:pb-16" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><div class="mx-auto mb-8 max-w-2xl text-center md:mb-10"><h2 aria-label="{{ section.settings.text_2 | default: 'Why bulk with Krithi' | escape }}" class="font-libre-baskerville text-2xl font-bold text-dark-chocolate sm:text-3xl md:text-4xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.8}}">{{ section.settings.text_2 | default: 'Why bulk with Krithi' | escape }}</h2><p class="mt-2 text-sm text-strong-coffee/70 sm:text-base" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}">{{ section.settings.text_3 | default: 'Quiet quality at fair prices, for 30 pieces or 3,000.' | escape }}</p></div><div class="mx-auto grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 md:gap-5 lg:grid-cols-3">{% for block in section.blocks %}{% case block.type %}{% when 'item_1' %}<div class="group flex h-full flex-col gap-3 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_18px_40px_-24px_rgba(82,29,23,0.4)] sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.35}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.35},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><span class="inline-grid size-11 place-items-center rounded-xl bg-rust/10 text-lg text-rust transition-colors group-hover:bg-rust group-hover:text-white" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:0.25}},&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:0.25},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M512 80c0 18-14.3 34.6-38.4 48c-29.1 16.1-72.5 27.5-122.3 30.9c-3.7-1.8-7.4-3.5-11.3-5C300.6 137.4 248.2 128 192 128c-8.3 0-16.4 .2-24.5 .6l-1.1-.6C142.3 114.6 128 98 128 80c0-44.2 86-80 192-80S512 35.8 512 80zM160.7 161.1c10.2-.7 20.7-1.1 31.3-1.1c62.2 0 117.4 12.3 152.5 31.4C369.3 204.9 384 221.7 384 240c0 4-.7 7.9-2.1 11.7c-4.6 13.2-17 25.3-35 35.5c0 0 0 0 0 0c-.1 .1-.3 .1-.4 .2c0 0 0 0 0 0s0 0 0 0c-.3 .2-.6 .3-.9 .5c-35 19.4-90.8 32-153.6 32c-59.6 0-112.9-11.3-148.2-29.1c-1.9-.9-3.7-1.9-5.5-2.9C14.3 274.6 0 258 0 240c0-34.8 53.4-64.5 128-75.4c10.5-1.5 21.4-2.7 32.7-3.5zM416 240c0-21.9-10.6-39.9-24.1-53.4c28.3-4.4 54.2-11.4 76.2-20.5c16.3-6.8 31.5-15.2 43.9-25.5l0 35.4c0 19.3-16.5 37.1-43.8 50.9c-14.6 7.4-32.4 13.7-52.4 18.5c.1-1.8 .2-3.5 .2-5.3zm-32 96c0 18-14.3 34.6-38.4 48c-1.8 1-3.6 1.9-5.5 2.9C304.9 404.7 251.6 416 192 416c-62.8 0-118.6-12.6-153.6-32C14.3 370.6 0 354 0 336l0-35.4c12.5 10.3 27.6 18.7 43.9 25.5C83.4 342.6 135.8 352 192 352s108.6-9.4 148.1-25.9c7.8-3.2 15.3-6.9 22.4-10.9c6.1-3.4 11.8-7.2 17.2-11.2c1.5-1.1 2.9-2.3 4.3-3.4l0 3.4 0 5.7 0 26.3zm32 0l0-32 0-25.9c19-4.2 36.5-9.5 52.1-16c16.3-6.8 31.5-15.2 43.9-25.5l0 35.4c0 10.5-5 21-14.9 30.9c-16.3 16.3-45 29.7-81.3 38.4c.1-1.7 .2-3.5 .2-5.3zM192 448c56.2 0 108.6-9.4 148.1-25.9c16.3-6.8 31.5-15.2 43.9-25.5l0 35.4c0 44.2-86 80-192 80S0 476.2 0 432l0-35.4c12.5 10.3 27.6 18.7 43.9 25.5C83.4 438.6 135.8 448 192 448z"></path></svg></span><h3 class="font-libre-baskerville text-base font-semibold text-dark-chocolate sm:text-lg">{{ block.settings.text_1 | default: 'Volume pricing' | escape }}</h3><p class="text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.text_2 | default: 'Discounts from 10% on 50+ pieces, scaling up to 30% on 500+ orders.' | escape }}</p></div>
+{% when 'item_2' %}<div class="group flex h-full flex-col gap-3 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_18px_40px_-24px_rgba(82,29,23,0.4)] sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.43000000000000005}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.43000000000000005},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><span class="inline-grid size-11 place-items-center rounded-xl bg-rust/10 text-lg text-rust transition-colors group-hover:bg-rust group-hover:text-white" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:0.33}},&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:0.33},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M469.3 19.3l23.4 23.4c25 25 25 65.5 0 90.5l-56.4 56.4L322.3 75.7l56.4-56.4c25-25 65.5-25 90.5 0zM44.9 353.2L299.7 98.3 413.7 212.3 158.8 467.1c-6.7 6.7-15.1 11.6-24.2 14.2l-104 29.7c-8.4 2.4-17.4 .1-23.6-6.1s-8.5-15.2-6.1-23.6l29.7-104c2.6-9.2 7.5-17.5 14.2-24.2zM249.4 103.4L103.4 249.4 16 161.9c-18.7-18.7-18.7-49.1 0-67.9L94.1 16c18.7-18.7 49.1-18.7 67.9 0l19.8 19.8c-.3 .3-.7 .6-1 .9l-64 64c-6.2 6.2-6.2 16.4 0 22.6s16.4 6.2 22.6 0l64-64c.3-.3 .6-.7 .9-1l45.1 45.1zM408.6 262.6l45.1 45.1c-.3 .3-.7 .6-1 .9l-64 64c-6.2 6.2-6.2 16.4 0 22.6s16.4 6.2 22.6 0l64-64c.3-.3 .6-.7 .9-1L496 350.1c18.7 18.7 18.7 49.1 0 67.9L417.9 496c-18.7 18.7-49.1 18.7-67.9 0l-87.4-87.4L408.6 262.6z"></path></svg></span><h3 class="font-libre-baskerville text-base font-semibold text-dark-chocolate sm:text-lg">{{ block.settings.text_1 | default: 'Custom tailoring' | escape }}</h3><p class="text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.text_2 | default: 'Minor design tweaks — sleeve length, neckline, pocket — at no extra charge.' | escape }}</p></div>
+{% when 'item_3' %}<div class="group flex h-full flex-col gap-3 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_18px_40px_-24px_rgba(82,29,23,0.4)] sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.51}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.51},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><span class="inline-grid size-11 place-items-center rounded-xl bg-rust/10 text-lg text-rust transition-colors group-hover:bg-rust group-hover:text-white" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:0.41000000000000003}},&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:0.41000000000000003},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M128 0C92.7 0 64 28.7 64 64l0 96 64 0 0-96 226.7 0L384 93.3l0 66.7 64 0 0-66.7c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0L128 0zM384 352l0 32 0 64-256 0 0-64 0-16 0-16 256 0zm64 32l32 0c17.7 0 32-14.3 32-32l0-96c0-35.3-28.7-64-64-64L64 192c-35.3 0-64 28.7-64 64l0 96c0 17.7 14.3 32 32 32l32 0 0 64c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-64zM432 248a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"></path></svg></span><h3 class="font-libre-baskerville text-base font-semibold text-dark-chocolate sm:text-lg">{{ block.settings.text_1 | default: 'Branded tags' | escape }}</h3><p class="text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.text_2 | default: 'Your logo on woven labels, hang tags, and packaging. MOQ 50 units.' | escape }}</p></div>
+{% when 'item_4' %}<div class="group flex h-full flex-col gap-3 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_18px_40px_-24px_rgba(82,29,23,0.4)] sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.59}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.59},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><span class="inline-grid size-11 place-items-center rounded-xl bg-rust/10 text-lg text-rust transition-colors group-hover:bg-rust group-hover:text-white" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:0.49}},&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:0.49},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M323.4 85.2l-96.8 78.4c-16.1 13-19.2 36.4-7 53.1c12.9 17.8 38 21.3 55.3 7.8l99.3-77.2c7-5.4 17-4.2 22.5 2.8s4.2 17-2.8 22.5l-20.9 16.2L512 316.8 512 128l-.7 0-3.9-2.5L434.8 79c-15.3-9.8-33.2-15-51.4-15c-21.8 0-43 7.5-60 21.2zm22.8 124.4l-51.7 40.2C263 274.4 217.3 268 193.7 235.6c-22.2-30.5-16.6-73.1 12.7-96.8l83.2-67.3c-11.6-4.9-24.1-7.4-36.8-7.4C234 64 215.7 69.6 200 80l-72 48 0 224 28.2 0 91.4 83.4c19.6 17.9 49.9 16.5 67.8-3.1c5.5-6.1 9.2-13.2 11.1-20.6l17 15.6c19.5 17.9 49.9 16.6 67.8-2.9c4.5-4.9 7.8-10.6 9.9-16.5c19.4 13 45.8 10.3 62.1-7.5c17.9-19.5 16.6-49.9-2.9-67.8l-134.2-123zM16 128c-8.8 0-16 7.2-16 16L0 352c0 17.7 14.3 32 32 32l32 0c17.7 0 32-14.3 32-32l0-224-80 0zM48 320a16 16 0 1 1 0 32 16 16 0 1 1 0-32zM544 128l0 224c0 17.7 14.3 32 32 32l32 0c17.7 0 32-14.3 32-32l0-208c0-8.8-7.2-16-16-16l-80 0zm32 208a16 16 0 1 1 32 0 16 16 0 1 1 -32 0z"></path></svg></span><h3 class="font-libre-baskerville text-base font-semibold text-dark-chocolate sm:text-lg">{{ block.settings.text_1 | default: 'Single point of contact' | escape }}</h3><p class="text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.text_2 | default: 'One dedicated account manager from enquiry through delivery.' | escape }}</p></div>
+{% when 'item_5' %}<div class="group flex h-full flex-col gap-3 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_18px_40px_-24px_rgba(82,29,23,0.4)] sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.67}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.67},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><span class="inline-grid size-11 place-items-center rounded-xl bg-rust/10 text-lg text-rust transition-colors group-hover:bg-rust group-hover:text-white" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:0.5700000000000001}},&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:0.5700000000000001},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M112 0C85.5 0 64 21.5 64 48l0 48L16 96c-8.8 0-16 7.2-16 16s7.2 16 16 16l48 0 208 0c8.8 0 16 7.2 16 16s-7.2 16-16 16L64 160l-16 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l16 0 176 0c8.8 0 16 7.2 16 16s-7.2 16-16 16L64 224l-48 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l48 0 144 0c8.8 0 16 7.2 16 16s-7.2 16-16 16L64 288l0 128c0 53 43 96 96 96s96-43 96-96l128 0c0 53 43 96 96 96s96-43 96-96l32 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l0-64 0-32 0-18.7c0-17-6.7-33.3-18.7-45.3L512 114.7c-12-12-28.3-18.7-45.3-18.7L416 96l0-48c0-26.5-21.5-48-48-48L112 0zM544 237.3l0 18.7-128 0 0-96 50.7 0L544 237.3zM160 368a48 48 0 1 1 0 96 48 48 0 1 1 0-96zm272 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0z"></path></svg></span><h3 class="font-libre-baskerville text-base font-semibold text-dark-chocolate sm:text-lg">{{ block.settings.text_1 | default: 'Fast turnaround' | escape }}</h3><p class="text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.text_2 | default: '15–21 days for stock styles, 30–45 days for custom runs.' | escape }}</p></div>
+{% when 'item_6' %}<div class="group flex h-full flex-col gap-3 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_18px_40px_-24px_rgba(82,29,23,0.4)] sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:16},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.75}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.75},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><span class="inline-grid size-11 place-items-center rounded-xl bg-rust/10 text-lg text-rust transition-colors group-hover:bg-rust group-hover:text-white" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:0.65}},&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:0.65},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M144 0a80 80 0 1 1 0 160A80 80 0 1 1 144 0zM512 0a80 80 0 1 1 0 160A80 80 0 1 1 512 0zM0 298.7C0 239.8 47.8 192 106.7 192l42.7 0c15.9 0 31 3.5 44.6 9.7c-1.3 7.2-1.9 14.7-1.9 22.3c0 38.2 16.8 72.5 43.3 96c-.2 0-.4 0-.7 0L21.3 320C9.6 320 0 310.4 0 298.7zM405.3 320c-.2 0-.4 0-.7 0c26.6-23.5 43.3-57.8 43.3-96c0-7.6-.7-15-1.9-22.3c13.6-6.3 28.7-9.7 44.6-9.7l42.7 0C592.2 192 640 239.8 640 298.7c0 11.8-9.6 21.3-21.3 21.3l-213.3 0zM224 224a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zM128 485.3C128 411.7 187.7 352 261.3 352l117.3 0C452.3 352 512 411.7 512 485.3c0 14.7-11.9 26.7-26.7 26.7l-330.7 0c-14.7 0-26.7-11.9-26.7-26.7z"></path></svg></span><h3 class="font-libre-baskerville text-base font-semibold text-dark-chocolate sm:text-lg">{{ block.settings.text_1 | default: 'For every team' | escape }}</h3><p class="text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.text_2 | default: 'Used by yoga studios, cafes, schools, hospitality, and corporate gifts.' | escape }}</p></div>{% endcase %}{% endfor %}</div></section>
+{% schema %}
+{
+  "name": "Why bulk with Krithi",
+  "tag": "section",
+  "class": "kw-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text: Why bulk with us",
+      "default": "Why bulk with us"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Text: Why bulk with Krithi",
+      "default": "Why bulk with Krithi"
+    },
+    {
+      "type": "text",
+      "id": "text_3",
+      "label": "Text: Quiet quality at fair prices, for 30 pieces or 3,000.",
+      "default": "Quiet quality at fair prices, for 30 pieces or 3,000."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item_1",
+      "name": "Volume pricing",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Volume pricing — Volume pricing",
+          "default": "Volume pricing"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Volume pricing — Discounts from 10% on 50+ pieces, scaling up to",
+          "default": "Discounts from 10% on 50+ pieces, scaling up to 30% on 500+ orders."
+        }
+      ]
+    },
+    {
+      "type": "item_2",
+      "name": "Custom tailoring",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Custom tailoring — Custom tailoring",
+          "default": "Custom tailoring"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Custom tailoring — Minor design tweaks — sleeve length, neckline",
+          "default": "Minor design tweaks — sleeve length, neckline, pocket — at no extra charge."
+        }
+      ]
+    },
+    {
+      "type": "item_3",
+      "name": "Branded tags",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Branded tags — Branded tags",
+          "default": "Branded tags"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Branded tags — Your logo on woven labels, hang tags, and packagi",
+          "default": "Your logo on woven labels, hang tags, and packaging. MOQ 50 units."
+        }
+      ]
+    },
+    {
+      "type": "item_4",
+      "name": "Single point of contact",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Single point of contact — Single point of contact",
+          "default": "Single point of contact"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Single point of contact — One dedicated account manager from enq",
+          "default": "One dedicated account manager from enquiry through delivery."
+        }
+      ]
+    },
+    {
+      "type": "item_5",
+      "name": "Fast turnaround",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Fast turnaround — Fast turnaround",
+          "default": "Fast turnaround"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Fast turnaround — 15–21 days for stock styles, 30–45 days for cu",
+          "default": "15–21 days for stock styles, 30–45 days for custom runs."
+        }
+      ]
+    },
+    {
+      "type": "item_6",
+      "name": "For every team",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: For every team — For every team",
+          "default": "For every team"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: For every team — Used by yoga studios, cafes, schools, hospitali",
+          "default": "Used by yoga studios, cafes, schools, hospitality, and corporate gifts."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "Why bulk with Krithi",
+      "blocks": [
+        {
+          "type": "item_1"
+        },
+        {
+          "type": "item_2"
+        },
+        {
+          "type": "item_3"
+        },
+        {
+          "type": "item_4"
+        },
+        {
+          "type": "item_5"
+        },
+        {
+          "type": "item_6"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

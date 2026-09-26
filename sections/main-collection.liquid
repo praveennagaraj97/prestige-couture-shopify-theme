@@ -1,0 +1,188 @@
+<div data-error-message="{{ section.settings.error_message | escape }}" data-collection-section="{{ section.id }}"><section class="section pt-8 pb-3 md:pt-12 md:pb-6"><nav class="mb-5 flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] text-strong-coffee/65 sm:text-xs"><a href="{{ routes.root_url }}">{{ section.settings.home_label }}</a> › <span class="text-rust">{{ section.settings.overline }}</span></nav><h1 data-animated-text class="font-libre-baskerville text-3xl text-dark-chocolate sm:text-4xl md:text-5xl">{{ section.settings.title }}</h1><p class="mt-3 max-w-2xl text-sm text-strong-coffee/80 sm:text-base">{{ section.settings.description }}</p><span class="mt-6 block h-px w-full bg-linear-to-r from-rust/0 via-rust/40 to-rust/0"></span></section><section class="section pb-14 md:pb-20"><div class="grid grid-cols-1 gap-6 lg:grid-cols-[260px_minmax(0,1fr)] lg:gap-8 xl:grid-cols-[280px_minmax(0,1fr)]"><div class="hidden lg:block"><div class="sticky top-24 flex max-h-[calc(100vh-7rem)] flex-col">{% render 'collection-filters', section: section %}</div></div><div class="flex flex-col gap-5"><div class="flex items-center justify-between gap-3 border-b border-strong-coffee/10 pb-3"><div class="flex items-center gap-3"><button type="button" data-open-modal="collection-filters" class="inline-flex items-center gap-2 rounded-full border border-strong-coffee/20 bg-white px-4 py-2 text-xs text-strong-coffee/85 lg:hidden">{{ section.settings.filters_label }}</button><span class="text-[12px] text-strong-coffee/60 sm:text-[13px]"><strong class="text-dark-chocolate">{{ collection.products_count }}</strong> {{ section.settings.products_label }}</span></div><form action="{{ collection.url }}"><select data-sort name="sort_by" aria-label="{{ section.settings.sort_label }}" class="appearance-none rounded-full border border-strong-coffee/20 bg-white py-2 pl-4 pr-9 text-[12px] text-strong-coffee/85 outline-none sm:text-[13px]">{% assign sort_values = 'best-selling,created-descending,price-ascending,price-descending' | split: ',' %}{% assign current_sort = collection.sort_by | default: 'best-selling' %}{% for value in sort_values %}{% assign key = 'sort_' | append: forloop.index %}<option value="{{ value }}" {% if current_sort == value %}selected{% endif %}>{{ section.settings.sort_label }}: {{ section.settings[key] }}</option>{% endfor %}</select><noscript><button>{{ section.settings.apply_label }}</button></noscript></form></div><p data-commerce-error role="alert" class="text-xs text-red-600"></p>{% paginate collection.products by 100 %}{% if collection.products_count > 0 %}{% render 'product-grid', products: collection.products %}{% else %}<div class="flex flex-col items-center justify-center px-4 py-16 text-center md:py-24">{% render 'empty-loom' %}<h3 data-animated-text class="font-libre-baskerville text-2xl text-dark-chocolate sm:text-3xl md:text-4xl">{{ section.settings.empty_title }}</h3><p class="mt-4 max-w-md text-sm text-strong-coffee/75 sm:text-base">{{ section.settings.empty_text }}</p><a data-collection-link href="{{ collection.url }}" class="mt-7 rounded-full border border-rust px-6 py-2.5 text-xs uppercase tracking-[0.2em] text-rust">{{ section.settings.clear_label }}</a></div>{% endif %}{% if paginate.pages > 1 %}<nav data-pagination class="flex justify-center gap-4">{{ paginate | default_pagination }}</nav>{% endif %}{% endpaginate %}</div></div></section><div data-modal="collection-filters" data-modal-variant="bottom" hidden><div data-modal-panel><div class="flex justify-between px-5 py-4"><h2>{{ section.settings.filters_label }}</h2><button data-close-modal aria-label="{{ section.settings.close_label }}">×</button></div>{% render 'collection-filters', section: section %}</div></div></div>
+{% schema %}
+{
+  "name": "Main Collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "home_label",
+      "label": "Home Label",
+      "default": "Home"
+    },
+    {
+      "type": "text",
+      "id": "overline",
+      "label": "Overline",
+      "default": "Shop"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "The Collection"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Description",
+      "default": "Architect-designed everyday kurtis, dresses, and separates — breathable fabrics, considered fits, always under ₹1500."
+    },
+    {
+      "type": "text",
+      "id": "filters_label",
+      "label": "Filters Label",
+      "default": "Filters"
+    },
+    {
+      "type": "text",
+      "id": "clear_label",
+      "label": "Clear Label",
+      "default": "Clear all"
+    },
+    {
+      "type": "text",
+      "id": "price_label",
+      "label": "Price Label",
+      "default": "Price"
+    },
+    {
+      "type": "text",
+      "id": "price_1",
+      "label": "Price 1",
+      "default": "Under ₹500"
+    },
+    {
+      "type": "text",
+      "id": "price_2",
+      "label": "Price 2",
+      "default": "₹500 – ₹1000"
+    },
+    {
+      "type": "text",
+      "id": "price_3",
+      "label": "Price 3",
+      "default": "₹1000 – ₹1500"
+    },
+    {
+      "type": "text",
+      "id": "price_4",
+      "label": "Price 4",
+      "default": "₹1500+"
+    },
+    {
+      "type": "text",
+      "id": "apply_label",
+      "label": "Apply Label",
+      "default": "Apply"
+    },
+    {
+      "type": "text",
+      "id": "products_label",
+      "label": "Products Label",
+      "default": "products"
+    },
+    {
+      "type": "text",
+      "id": "sort_label",
+      "label": "Sort Label",
+      "default": "Sort"
+    },
+    {
+      "type": "text",
+      "id": "sort_1",
+      "label": "Sort 1",
+      "default": "Featured"
+    },
+    {
+      "type": "text",
+      "id": "sort_2",
+      "label": "Sort 2",
+      "default": "Newest in"
+    },
+    {
+      "type": "text",
+      "id": "sort_3",
+      "label": "Sort 3",
+      "default": "Price: Low to High"
+    },
+    {
+      "type": "text",
+      "id": "sort_4",
+      "label": "Sort 4",
+      "default": "Price: High to Low"
+    },
+    {
+      "type": "text",
+      "id": "empty_title",
+      "label": "Empty Title",
+      "default": "Nothing matches — yet"
+    },
+    {
+      "type": "text",
+      "id": "empty_text",
+      "label": "Empty Text",
+      "default": "We couldn’t find any pieces for these filters. Loosen the search and we’ll pull more styles from the shelf."
+    },
+    {
+      "type": "text",
+      "id": "close_label",
+      "label": "Close Label",
+      "default": "Close filters"
+    },
+    {
+      "type": "text",
+      "id": "error_message",
+      "label": "Error message",
+      "default": "We could not load these pieces. Please try again."
+    },
+    {
+      "type": "number",
+      "id": "price_1_min",
+      "label": "Price 1 min",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "price_1_max",
+      "label": "Price 1 max (0 = no limit)",
+      "default": 500
+    },
+    {
+      "type": "number",
+      "id": "price_2_min",
+      "label": "Price 2 min",
+      "default": 500
+    },
+    {
+      "type": "number",
+      "id": "price_2_max",
+      "label": "Price 2 max (0 = no limit)",
+      "default": 1000
+    },
+    {
+      "type": "number",
+      "id": "price_3_min",
+      "label": "Price 3 min",
+      "default": 1000
+    },
+    {
+      "type": "number",
+      "id": "price_3_max",
+      "label": "Price 3 max (0 = no limit)",
+      "default": 1500
+    },
+    {
+      "type": "number",
+      "id": "price_4_min",
+      "label": "Price 4 min",
+      "default": 1500
+    },
+    {
+      "type": "number",
+      "id": "price_4_max",
+      "label": "Price 4 max (0 = no limit)",
+      "default": 0
+    }
+  ]
+}
+{% endschema %}

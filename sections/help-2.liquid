@@ -1,0 +1,224 @@
+{% comment %} Source-parity migration: Help 2. Content controls preserve the source layout. {% endcomment %}
+<section aria-label="{{ section.settings.text_1 | default: 'Browse topics' | escape }}" class="section py-3" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><div class="mx-auto grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 md:gap-5 lg:grid-cols-3">{% for block in section.blocks %}{% case block.type %}{% when 'item_1' %}<a href="{{ block.settings.link_1 | default: '/pages/help-orders-tracking' | escape }}" class="group flex h-full flex-col gap-3 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_18px_40px_-24px_rgba(82,29,23,0.4)] sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.25}},&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.25},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><span class="inline-grid size-11 place-items-center rounded-xl bg-rust/10 text-lg text-rust transition-colors group-hover:bg-rust group-hover:text-white" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:4},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.4}},&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.4},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M50.7 58.5L0 160l208 0 0-128L93.7 32C75.5 32 58.9 42.3 50.7 58.5zM240 160l208 0L397.3 58.5C389.1 42.3 372.5 32 354.3 32L240 32l0 128zm208 32L0 192 0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-224z"></path></svg></span><h3 class="font-libre-baskerville text-base font-semibold text-dark-chocolate sm:text-lg">{{ block.settings.text_2 | default: 'Orders &amp; tracking' | escape }}</h3><p class="text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.text_3 | default: 'Check status, edit before dispatch, or cancel an order.' | escape }}</p><span class="mt-auto flex items-center gap-2 pt-2 text-[12px] font-medium text-rust">{{ block.settings.text_4 | default: 'Read guide' | escape }}<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="text-[10px] transition-transform duration-200 group-hover:translate-x-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></span></a>
+{% when 'item_2' %}<a href="{{ block.settings.link_1 | default: '/pages/shipping' | escape }}" class="group flex h-full flex-col gap-3 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_18px_40px_-24px_rgba(82,29,23,0.4)] sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.33}},&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.33},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><span class="inline-grid size-11 place-items-center rounded-xl bg-rust/10 text-lg text-rust transition-colors group-hover:bg-rust group-hover:text-white" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:4},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.48}},&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.48},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M48 0C21.5 0 0 21.5 0 48L0 368c0 26.5 21.5 48 48 48l16 0c0 53 43 96 96 96s96-43 96-96l128 0c0 53 43 96 96 96s96-43 96-96l32 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l0-64 0-32 0-18.7c0-17-6.7-33.3-18.7-45.3L512 114.7c-12-12-28.3-18.7-45.3-18.7L416 96l0-48c0-26.5-21.5-48-48-48L48 0zM416 160l50.7 0L544 237.3l0 18.7-128 0 0-96zM112 416a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm368-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path></svg></span><h3 class="font-libre-baskerville text-base font-semibold text-dark-chocolate sm:text-lg">{{ block.settings.text_2 | default: 'Shipping &amp; delivery' | escape }}</h3><p class="text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.text_3 | default: 'Timelines, charges, and where we ship.' | escape }}</p><span class="mt-auto flex items-center gap-2 pt-2 text-[12px] font-medium text-rust">{{ block.settings.text_4 | default: 'Read guide' | escape }}<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="text-[10px] transition-transform duration-200 group-hover:translate-x-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></span></a>
+{% when 'item_3' %}<a href="{{ block.settings.link_1 | default: '/pages/returns' | escape }}" class="group flex h-full flex-col gap-3 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_18px_40px_-24px_rgba(82,29,23,0.4)] sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.41000000000000003}},&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.41000000000000003},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><span class="inline-grid size-11 place-items-center rounded-xl bg-rust/10 text-lg text-rust transition-colors group-hover:bg-rust group-hover:text-white" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:4},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.56}},&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.56},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M125.7 160l50.3 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L48 224c-17.7 0-32-14.3-32-32L16 64c0-17.7 14.3-32 32-32s32 14.3 32 32l0 51.2L97.6 97.6c87.5-87.5 229.3-87.5 316.8 0s87.5 229.3 0 316.8s-229.3 87.5-316.8 0c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0c62.5 62.5 163.8 62.5 226.3 0s62.5-163.8 0-226.3s-163.8-62.5-226.3 0L125.7 160z"></path></svg></span><h3 class="font-libre-baskerville text-base font-semibold text-dark-chocolate sm:text-lg">{{ block.settings.text_2 | default: 'Returns &amp; exchanges' | escape }}</h3><p class="text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.text_3 | default: 'How and when to send a piece back.' | escape }}</p><span class="mt-auto flex items-center gap-2 pt-2 text-[12px] font-medium text-rust">{{ block.settings.text_4 | default: 'Read guide' | escape }}<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="text-[10px] transition-transform duration-200 group-hover:translate-x-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></span></a>
+{% when 'item_4' %}<a href="{{ block.settings.link_1 | default: '/pages/help-sizing-fit' | escape }}" class="group flex h-full flex-col gap-3 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_18px_40px_-24px_rgba(82,29,23,0.4)] sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.49}},&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.49},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><span class="inline-grid size-11 place-items-center rounded-xl bg-rust/10 text-lg text-rust transition-colors group-hover:bg-rust group-hover:text-white" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:4},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.64}},&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.64},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M.2 468.9C2.7 493.1 23.1 512 48 512l96 0 320 0c26.5 0 48-21.5 48-48l0-96c0-26.5-21.5-48-48-48l-48 0 0 80c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-80-64 0 0 80c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-80-64 0 0 80c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-80-80 0c-8.8 0-16-7.2-16-16s7.2-16 16-16l80 0 0-64-80 0c-8.8 0-16-7.2-16-16s7.2-16 16-16l80 0 0-64-80 0c-8.8 0-16-7.2-16-16s7.2-16 16-16l80 0 0-48c0-26.5-21.5-48-48-48L48 0C21.5 0 0 21.5 0 48L0 368l0 96c0 1.7 .1 3.3 .2 4.9z"></path></svg></span><h3 class="font-libre-baskerville text-base font-semibold text-dark-chocolate sm:text-lg">{{ block.settings.text_2 | default: 'Sizing &amp; fit' | escape }}</h3><p class="text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.text_3 | default: 'Find your size with our measurement guide.' | escape }}</p><span class="mt-auto flex items-center gap-2 pt-2 text-[12px] font-medium text-rust">{{ block.settings.text_4 | default: 'Read guide' | escape }}<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="text-[10px] transition-transform duration-200 group-hover:translate-x-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></span></a>
+{% when 'item_5' %}<a href="{{ block.settings.link_1 | default: '/pages/help-payments-refunds' | escape }}" class="group flex h-full flex-col gap-3 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_18px_40px_-24px_rgba(82,29,23,0.4)] sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.5700000000000001}},&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.5700000000000001},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><span class="inline-grid size-11 place-items-center rounded-xl bg-rust/10 text-lg text-rust transition-colors group-hover:bg-rust group-hover:text-white" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:4},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.7200000000000001}},&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.7200000000000001},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M64 32C28.7 32 0 60.7 0 96l0 32 576 0 0-32c0-35.3-28.7-64-64-64L64 32zM576 224L0 224 0 416c0 35.3 28.7 64 64 64l448 0c35.3 0 64-28.7 64-64l0-192zM112 352l64 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-64 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm112 16c0-8.8 7.2-16 16-16l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16z"></path></svg></span><h3 class="font-libre-baskerville text-base font-semibold text-dark-chocolate sm:text-lg">{{ block.settings.text_2 | default: 'Payments &amp; refunds' | escape }}</h3><p class="text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.text_3 | default: 'Accepted methods, failed payments, refund timelines.' | escape }}</p><span class="mt-auto flex items-center gap-2 pt-2 text-[12px] font-medium text-rust">{{ block.settings.text_4 | default: 'Read guide' | escape }}<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="text-[10px] transition-transform duration-200 group-hover:translate-x-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></span></a>
+{% when 'item_6' %}<a href="{{ block.settings.link_1 | default: '/pages/contact' | escape }}" class="group flex h-full flex-col gap-3 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_18px_40px_-24px_rgba(82,29,23,0.4)] sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.65}},&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.65},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><span class="inline-grid size-11 place-items-center rounded-xl bg-rust/10 text-lg text-rust transition-colors group-hover:bg-rust group-hover:text-white" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:4},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.8}},&quot;transition&quot;:{&quot;duration&quot;:0.25,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.8},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256 48C141.1 48 48 141.1 48 256l0 40c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-40C0 114.6 114.6 0 256 0S512 114.6 512 256l0 144.1c0 48.6-39.4 88-88.1 88L313.6 488c-8.3 14.3-23.8 24-41.6 24l-32 0c-26.5 0-48-21.5-48-48s21.5-48 48-48l32 0c17.8 0 33.3 9.7 41.6 24l110.4 .1c22.1 0 40-17.9 40-40L464 256c0-114.9-93.1-208-208-208zM144 208l16 0c17.7 0 32 14.3 32 32l0 112c0 17.7-14.3 32-32 32l-16 0c-35.3 0-64-28.7-64-64l0-48c0-35.3 28.7-64 64-64zm224 0c35.3 0 64 28.7 64 64l0 48c0 35.3-28.7 64-64 64l-16 0c-17.7 0-32-14.3-32-32l0-112c0-17.7 14.3-32 32-32l16 0z"></path></svg></span><h3 class="font-libre-baskerville text-base font-semibold text-dark-chocolate sm:text-lg">{{ block.settings.text_2 | default: 'Contact &amp; support' | escape }}</h3><p class="text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.text_3 | default: 'Reach us on email, chat, or phone.' | escape }}</p><span class="mt-auto flex items-center gap-2 pt-2 text-[12px] font-medium text-rust">{{ block.settings.text_4 | default: 'Read guide' | escape }}<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="text-[10px] transition-transform duration-200 group-hover:translate-x-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></span></a>{% endcase %}{% endfor %}</div></section>
+{% schema %}
+{
+  "name": "Help 2",
+  "tag": "section",
+  "class": "kw-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text: Browse topics",
+      "default": "Browse topics"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item_1",
+      "name": "Orders & tracking",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link_1",
+          "label": "Link: Orders & trackingCheck status, edit before dispatch, or cancel a"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Orders & tracking — Orders & tracking",
+          "default": "Orders & tracking"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Text: Orders & tracking — Check status, edit before dispatch, or cance",
+          "default": "Check status, edit before dispatch, or cancel an order."
+        },
+        {
+          "type": "text",
+          "id": "text_4",
+          "label": "Text: Orders & tracking — Read guide",
+          "default": "Read guide"
+        }
+      ]
+    },
+    {
+      "type": "item_2",
+      "name": "Shipping & delivery",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link_1",
+          "label": "Link: Shipping & deliveryTimelines, charges, and where we ship.Read gu"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Shipping & delivery — Shipping & delivery",
+          "default": "Shipping & delivery"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Text: Shipping & delivery — Timelines, charges, and where we ship.",
+          "default": "Timelines, charges, and where we ship."
+        },
+        {
+          "type": "text",
+          "id": "text_4",
+          "label": "Text: Shipping & delivery — Read guide",
+          "default": "Read guide"
+        }
+      ]
+    },
+    {
+      "type": "item_3",
+      "name": "Returns & exchanges",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link_1",
+          "label": "Link: Returns & exchangesHow and when to send a piece back.Read guide"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Returns & exchanges — Returns & exchanges",
+          "default": "Returns & exchanges"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Text: Returns & exchanges — How and when to send a piece back.",
+          "default": "How and when to send a piece back."
+        },
+        {
+          "type": "text",
+          "id": "text_4",
+          "label": "Text: Returns & exchanges — Read guide",
+          "default": "Read guide"
+        }
+      ]
+    },
+    {
+      "type": "item_4",
+      "name": "Sizing & fit",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link_1",
+          "label": "Link: Sizing & fitFind your size with our measurement guide.Read guide"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Sizing & fit — Sizing & fit",
+          "default": "Sizing & fit"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Text: Sizing & fit — Find your size with our measurement guide.",
+          "default": "Find your size with our measurement guide."
+        },
+        {
+          "type": "text",
+          "id": "text_4",
+          "label": "Text: Sizing & fit — Read guide",
+          "default": "Read guide"
+        }
+      ]
+    },
+    {
+      "type": "item_5",
+      "name": "Payments & refunds",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link_1",
+          "label": "Link: Payments & refundsAccepted methods, failed payments, refund time"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Payments & refunds — Payments & refunds",
+          "default": "Payments & refunds"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Text: Payments & refunds — Accepted methods, failed payments, refund t",
+          "default": "Accepted methods, failed payments, refund timelines."
+        },
+        {
+          "type": "text",
+          "id": "text_4",
+          "label": "Text: Payments & refunds — Read guide",
+          "default": "Read guide"
+        }
+      ]
+    },
+    {
+      "type": "item_6",
+      "name": "Contact & support",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link_1",
+          "label": "Link: Contact & supportReach us on email, chat, or phone.Read guide"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: Contact & support — Contact & support",
+          "default": "Contact & support"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Text: Contact & support — Reach us on email, chat, or phone.",
+          "default": "Reach us on email, chat, or phone."
+        },
+        {
+          "type": "text",
+          "id": "text_4",
+          "label": "Text: Contact & support — Read guide",
+          "default": "Read guide"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "Help 2",
+      "blocks": [
+        {
+          "type": "item_1"
+        },
+        {
+          "type": "item_2"
+        },
+        {
+          "type": "item_3"
+        },
+        {
+          "type": "item_4"
+        },
+        {
+          "type": "item_5"
+        },
+        {
+          "type": "item_6"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

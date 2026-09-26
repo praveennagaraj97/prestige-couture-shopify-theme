@@ -1,0 +1,148 @@
+{% comment %} Source-parity migration: What we audit, every six months. Content controls preserve the source layout. {% endcomment %}
+<section aria-label="{{ section.settings.text_1 | default: 'Our standards' | escape }}" class="section pb-14 md:pb-20" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}"><div class="mx-auto overflow-hidden rounded-3xl bg-white-chocolate/70 p-6 ring-1 ring-strong-coffee/5 sm:p-10 md:p-14" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}"><div class="mx-auto mb-8 max-w-2xl text-center md:mb-10"><h2 aria-label="{{ section.settings.text_2 | default: 'What we audit, every six months' | escape }}" class="font-libre-baskerville text-2xl text-dark-chocolate sm:text-3xl md:text-4xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.8}}">{{ section.settings.text_2 | default: 'What we audit, every six months' | escape }}</h2><p class="mt-3 text-sm text-strong-coffee/75 sm:text-base" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}">{{ section.settings.copy_3 | default: 'These are the five commitments we ask every partner to hold to. Copies of the audit reports are available on request.' | escape }}</p></div><ul class="mx-auto grid max-w-4xl grid-cols-1 gap-3">{% for block in section.blocks %}{% case block.type %}{% when 'item_1' %}<li data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><div class="flex items-start gap-3.5 rounded-2xl bg-white p-4 ring-1 ring-strong-coffee/10 sm:p-5" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.82}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.82},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}"><span class="mt-0.5 grid size-8 shrink-0 place-items-center rounded-full bg-rust text-xs text-white" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:0.7}},&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:0.7},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg></span><div><h3 class="font-libre-baskerville text-[15px] font-semibold text-dark-chocolate sm:text-base">{{ block.settings.text_1 | default: 'Fair wages, paid on time' | escape }}</h3><p class="mt-1 text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.copy_2 | default: 'Every artisan earns above the Karnataka/Tamil Nadu minimum wage, paid monthly in verified bank accounts.' | escape }}</p></div></div></li>
+{% when 'item_2' %}<li data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><div class="flex items-start gap-3.5 rounded-2xl bg-white p-4 ring-1 ring-strong-coffee/10 sm:p-5" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.9199999999999999}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.9199999999999999},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}"><span class="mt-0.5 grid size-8 shrink-0 place-items-center rounded-full bg-rust text-xs text-white" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:0.7999999999999999}},&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:0.7999999999999999},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg></span><div><h3 class="font-libre-baskerville text-[15px] font-semibold text-dark-chocolate sm:text-base">{{ block.settings.text_1 | default: 'Safe, lit workspaces' | escape }}</h3><p class="mt-1 text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.copy_2 | default: 'Natural light, ergonomic seating, clean washrooms, and fire-safety audits every six months.' | escape }}</p></div></div></li>
+{% when 'item_3' %}<li data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><div class="flex items-start gap-3.5 rounded-2xl bg-white p-4 ring-1 ring-strong-coffee/10 sm:p-5" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:1.02}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:1.02},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}"><span class="mt-0.5 grid size-8 shrink-0 place-items-center rounded-full bg-rust text-xs text-white" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:0.8999999999999999}},&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:0.8999999999999999},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg></span><div><h3 class="font-libre-baskerville text-[15px] font-semibold text-dark-chocolate sm:text-base">{{ block.settings.text_1 | default: 'Reasonable hours' | escape }}</h3><p class="mt-1 text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.copy_2 | default: 'No compulsory overtime. Breaks every two hours. Overtime, when needed, is opt-in and paid 1.5x.' | escape }}</p></div></div></li>
+{% when 'item_4' %}<li data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><div class="flex items-start gap-3.5 rounded-2xl bg-white p-4 ring-1 ring-strong-coffee/10 sm:p-5" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:1.12}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:1.12},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}"><span class="mt-0.5 grid size-8 shrink-0 place-items-center rounded-full bg-rust text-xs text-white" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:1}},&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:1},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg></span><div><h3 class="font-libre-baskerville text-[15px] font-semibold text-dark-chocolate sm:text-base">{{ block.settings.text_1 | default: 'Majority women-led' | escape }}</h3><p class="mt-1 text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.copy_2 | default: 'All four of our current partners are led by women, with women making up 85% of the tailoring teams.' | escape }}</p></div></div></li>
+{% when 'item_5' %}<li data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><div class="flex items-start gap-3.5 rounded-2xl bg-white p-4 ring-1 ring-strong-coffee/10 sm:p-5" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:-12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:1.2200000000000002}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:1.2200000000000002},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}"><span class="mt-0.5 grid size-8 shrink-0 place-items-center rounded-full bg-rust text-xs text-white" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:1.1}},&quot;transition&quot;:{&quot;duration&quot;:0.2,&quot;delay&quot;:1.1},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path></svg></span><div><h3 class="font-libre-baskerville text-[15px] font-semibold text-dark-chocolate sm:text-base">{{ block.settings.text_1 | default: 'Fabric waste tracking' | escape }}</h3><p class="mt-1 text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.copy_2 | default: 'Cut-waste is measured per batch and donated to upcycling initiatives or used in our packaging.' | escape }}</p></div></div></li>{% endcase %}{% endfor %}</ul></div></section>
+{% schema %}
+{
+  "name": "What we audit, every six ",
+  "tag": "section",
+  "class": "kw-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text: Our standards",
+      "default": "Our standards"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Text: What we audit, every six months",
+      "default": "What we audit, every six months"
+    },
+    {
+      "type": "textarea",
+      "id": "copy_3",
+      "label": "Text: These are the five commitments we ask every partner to hold to. ",
+      "default": "These are the five commitments we ask every partner to hold to. Copies of the audit reports are available on request."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item_1",
+      "name": "Fair wages, paid on time",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Fair wages, paid on time — Fair wages, paid on time",
+          "default": "Fair wages, paid on time"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: Fair wages, paid on time — Every artisan earns above the Karnata",
+          "default": "Every artisan earns above the Karnataka/Tamil Nadu minimum wage, paid monthly in verified bank accounts."
+        }
+      ]
+    },
+    {
+      "type": "item_2",
+      "name": "Safe, lit workspaces",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Safe, lit workspaces — Safe, lit workspaces",
+          "default": "Safe, lit workspaces"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: Safe, lit workspaces — Natural light, ergonomic seating, clean w",
+          "default": "Natural light, ergonomic seating, clean washrooms, and fire-safety audits every six months."
+        }
+      ]
+    },
+    {
+      "type": "item_3",
+      "name": "Reasonable hours",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Reasonable hours — Reasonable hours",
+          "default": "Reasonable hours"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: Reasonable hours — No compulsory overtime. Breaks every two hour",
+          "default": "No compulsory overtime. Breaks every two hours. Overtime, when needed, is opt-in and paid 1.5x."
+        }
+      ]
+    },
+    {
+      "type": "item_4",
+      "name": "Majority women-led",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Majority women-led — Majority women-led",
+          "default": "Majority women-led"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: Majority women-led — All four of our current partners are led by",
+          "default": "All four of our current partners are led by women, with women making up 85% of the tailoring teams."
+        }
+      ]
+    },
+    {
+      "type": "item_5",
+      "name": "Fabric waste tracking",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Fabric waste tracking — Fabric waste tracking",
+          "default": "Fabric waste tracking"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: Fabric waste tracking — Cut-waste is measured per batch and dona",
+          "default": "Cut-waste is measured per batch and donated to upcycling initiatives or used in our packaging."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "What we audit, every six ",
+      "blocks": [
+        {
+          "type": "item_1"
+        },
+        {
+          "type": "item_2"
+        },
+        {
+          "type": "item_3"
+        },
+        {
+          "type": "item_4"
+        },
+        {
+          "type": "item_5"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

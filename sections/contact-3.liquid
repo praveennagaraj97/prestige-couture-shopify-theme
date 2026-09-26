@@ -1,0 +1,57 @@
+{% comment %} Source-parity migration: Contact 3. Content controls preserve the source layout. {% endcomment %}
+<section aria-label="{{ section.settings.text_1 | default: 'Studio location' | escape }}" class="section pb-12 md:pb-16" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}"><div class="relative mx-auto grid max-w-6xl grid-cols-1 overflow-hidden rounded-3xl bg-white-chocolate/60 ring-1 ring-strong-coffee/10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}"><div class="relative aspect-[16/10] md:aspect-auto md:min-h-[340px]"><svg viewBox="0 0 600 400" aria-hidden="true" class="absolute inset-0 h-full w-full"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#b13e10" stroke-opacity="0.15" stroke-width="1"></path></pattern><linearGradient id="roads" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#521d17" stop-opacity="0.25"></stop><stop offset="1" stop-color="#521d17" stop-opacity="0.05"></stop></linearGradient></defs><rect width="600" height="400" fill="#f0e5d8"></rect><rect width="600" height="400" fill="url(#grid)"></rect><path d="M0 180 Q200 140 340 200 T600 220" fill="none" stroke="url(#roads)" stroke-width="18" stroke-linecap="round"></path><path d="M260 0 Q300 140 320 400" fill="none" stroke="url(#roads)" stroke-width="14" stroke-linecap="round"></path><path d="M440 0 L420 400" fill="none" stroke="#521d17" stroke-opacity="0.15" stroke-width="3"></path><circle cx="120" cy="120" r="34" fill="#b13e10" fill-opacity="0.07"></circle><circle cx="500" cy="300" r="46" fill="#b13e10" fill-opacity="0.07"></circle><rect x="80" y="260" width="80" height="46" rx="6" fill="#521d17" fill-opacity="0.08"></rect><rect x="470" y="80" width="60" height="60" rx="8" fill="#521d17" fill-opacity="0.08"></rect></svg><div class="absolute left-[54%] top-[48%] -translate-x-1/2 -translate-y-1/2"><span aria-hidden="true" class="absolute left-1/2 top-1/2 block size-8 -translate-x-1/2 -translate-y-1/2 rounded-full bg-rust/20" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:0.18,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:&quot;easeOut&quot;,&quot;delay&quot;:0.55}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:&quot;easeOut&quot;,&quot;delay&quot;:0.55},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}"></span><span class="relative z-10 grid size-11 place-items-center rounded-full bg-rust text-white shadow-[0_12px_26px_-10px_rgba(82,29,23,0.6)]" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:-10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.35}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.35},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" class="text-base" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"></path></svg></span></div></div><div class="flex flex-col justify-center gap-3 p-6 sm:p-8 md:p-10" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.85}},&quot;transition&quot;:{&quot;duration&quot;:0.55,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.85},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}"><span class="text-[11px] uppercase tracking-[0.22em] text-rust">{{ section.settings.text_2 | default: 'Our studio' | escape }}</span><h3 class="font-libre-baskerville text-2xl leading-tight text-dark-chocolate sm:text-3xl">{{ section.settings.text_3 | default: 'Lavelle Road, Bengaluru' | escape }}</h3><p class="text-sm leading-relaxed text-strong-coffee/80 sm:text-[15px]">{{ section.settings.copy_4 | default: 'Tucked into a quiet lane in central Bengaluru — a small studio where every piece is drafted, sampled, and checked before it reaches you.' | escape }}</p><p class="text-[13px] text-strong-coffee/65">{{ section.settings.text_5 | default: 'No. 47, Lavelle Road, Bengaluru — 560001' | escape }}</p><a href="{{ section.settings.link_6 | default: 'https://maps.google.com/?q=Lavelle+Road+Bengaluru' | escape }}" target="_blank" rel="noreferrer" class="mt-2 inline-flex w-fit items-center gap-2 text-[13px] font-medium text-rust transition-colors hover:text-mocha-coffee">{{ section.settings.text_7 | default: 'Get directions' | escape }}<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="text-[11px] transition-transform duration-200 hover:translate-x-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></a></div></div></section>
+{% schema %}
+{
+  "name": "Contact 3",
+  "tag": "section",
+  "class": "kw-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text: Studio location",
+      "default": "Studio location"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Text: Our studio",
+      "default": "Our studio"
+    },
+    {
+      "type": "text",
+      "id": "text_3",
+      "label": "Text: Lavelle Road, Bengaluru",
+      "default": "Lavelle Road, Bengaluru"
+    },
+    {
+      "type": "textarea",
+      "id": "copy_4",
+      "label": "Text: Tucked into a quiet lane in central Bengaluru — a small studio w",
+      "default": "Tucked into a quiet lane in central Bengaluru — a small studio where every piece is drafted, sampled, and checked before it reaches you."
+    },
+    {
+      "type": "text",
+      "id": "text_5",
+      "label": "Text: No. 47, Lavelle Road, Bengaluru — 560001",
+      "default": "No. 47, Lavelle Road, Bengaluru — 560001"
+    },
+    {
+      "type": "url",
+      "id": "link_6",
+      "label": "Link: Get directions"
+    },
+    {
+      "type": "text",
+      "id": "text_7",
+      "label": "Text: Get directions",
+      "default": "Get directions"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact 3"
+    }
+  ]
+}
+{% endschema %}

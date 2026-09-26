@@ -1,0 +1,26 @@
+<section class="section py-24 text-center"><p class="mb-4 text-sm text-rust">404</p><h1 class="font-libre-baskerville text-3xl">{{ section.settings.heading | escape }}</h1><p class="mt-4">{{ section.settings.copy | escape }}</p><a class="mt-8 inline-flex rounded-full bg-rust px-6 py-3 text-white" href="{{ routes.all_products_collection_url }}">{{ section.settings.label | escape }}</a></section>
+{% schema %}
+{
+  "name": "Page not found",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "This page could not be found"
+    },
+    {
+      "type": "text",
+      "id": "copy",
+      "label": "Description",
+      "default": "Let's find something you'll love in the collection."
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Button label",
+      "default": "Shop the collection"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,51 @@
+{% comment %} Source-parity migration: Our factories.. Content controls preserve the source layout. {% endcomment %}
+<section aria-label="{{ section.settings.text_1 | default: 'Factories' | escape }}" class="section pt-10 pb-10 md:pt-14 md:pb-14" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.25}}"><div class="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:gap-14"><div><span class="mb-3 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.28em] text-rust sm:text-xs" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.25}}"><span class="inline-block h-[1px] w-8 bg-rust/60" aria-hidden="true"></span>{{ section.settings.text_2 | default: 'Where we make it' | escape }}</span><h1 aria-label="{{ section.settings.text_3 | default: 'Our factories.' | escape }}" class="font-libre-baskerville text-3xl leading-tight text-dark-chocolate sm:text-4xl md:text-5xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.8}}">{{ section.settings.text_3 | default: 'Our factories.' | escape }}</h1><p class="mt-4 max-w-xl text-sm leading-relaxed text-strong-coffee/80 sm:text-base" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:12},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.25}}">{{ section.settings.copy_4 | default: 'We don&#39;t own factories — we partner with them. Five small, women-led ateliers across Karnataka and Tamil Nadu stitch every Krithi piece. Each partner is audited every six months for fair wages, safe conditions, and transparent ownership.' | escape }}</p></div><div class="relative mx-auto aspect-[4/5] w-full max-w-[380px] overflow-hidden rounded-[22px] md:mx-0" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.35,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.25}}"><img alt="{{ section.settings.text_6 | default: 'Tailor working at one of Krithi Weaves partner ateliers' | escape }}" sizes="(max-width: 768px) 90vw, 380px" class="object-cover" src="{% if section.settings.image_5 != blank %}{{ section.settings.image_5 | image_url: width: 2000 }}{% else %}{{ 'how.jpg' | asset_url }}{% endif %}" width="1333" height="2000" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%" data-image-fade="450"></div></div></section>
+{% schema %}
+{
+  "name": "Our factories.",
+  "tag": "section",
+  "class": "kw-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text: Factories",
+      "default": "Factories"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Text: Where we make it",
+      "default": "Where we make it"
+    },
+    {
+      "type": "text",
+      "id": "text_3",
+      "label": "Text: Our factories.",
+      "default": "Our factories."
+    },
+    {
+      "type": "textarea",
+      "id": "copy_4",
+      "label": "Text: We don't own factories — we partner with them. Five small, women",
+      "default": "We don't own factories — we partner with them. Five small, women-led ateliers across Karnataka and Tamil Nadu stitch every Krithi piece. Each partner is audited every six months for fair wages, safe conditions, and transparent ownership."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_5",
+      "label": "Image: Tailor working at one of Krithi Weaves partner ateliers"
+    },
+    {
+      "type": "text",
+      "id": "text_6",
+      "label": "Text: Tailor working at one of Krithi Weaves partner ateliers",
+      "default": "Tailor working at one of Krithi Weaves partner ateliers"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Our factories."
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,92 @@
+{% comment %} Source-parity migration: Supported methods. Content controls preserve the source layout. {% endcomment %}
+<section aria-label="{{ section.settings.text_1 | default: 'Payments &amp; Refunds highlights' | escape }}" class="section pb-8 md:pb-10" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}"><div class="mx-auto grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">{% for block in section.blocks %}{% case block.type %}{% when 'item_1' %}<article class="flex h-full flex-col gap-2 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_16px_36px_-22px_rgba(82,29,23,0.35)] sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.15}},&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.15},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><h2 class="font-libre-baskerville text-lg text-dark-chocolate">{{ block.settings.text_1 | default: 'Supported methods' | escape }}</h2><p class="text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.copy_2 | default: 'We support UPI, cards, net banking, and selected wallets. COD is available on eligible Indian PIN codes.' | escape }}</p></article>
+{% when 'item_2' %}<article class="flex h-full flex-col gap-2 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_16px_36px_-22px_rgba(82,29,23,0.35)] sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.22999999999999998}},&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.22999999999999998},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><h2 class="font-libre-baskerville text-lg text-dark-chocolate">{{ block.settings.text_1 | default: 'Failed or pending payments' | escape }}</h2><p class="text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.copy_2 | default: 'If amount is debited but order is not created, the gateway auto-reverses in most cases within banking timelines.' | escape }}</p></article>
+{% when 'item_3' %}<article class="flex h-full flex-col gap-2 rounded-2xl bg-white p-5 ring-1 ring-strong-coffee/10 transition-shadow hover:shadow-[0_16px_36px_-22px_rgba(82,29,23,0.35)] sm:p-6" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.31}},&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.31},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.15}}" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><h2 class="font-libre-baskerville text-lg text-dark-chocolate">{{ block.settings.text_1 | default: 'Refund processing' | escape }}</h2><p class="text-[13px] leading-relaxed text-strong-coffee/80 sm:text-sm">{{ block.settings.copy_2 | default: 'Approved refunds are initiated quickly from our side and settle to your original source depending on bank/payment partner speed.' | escape }}</p></article>{% endcase %}{% endfor %}</div></section>
+{% schema %}
+{
+  "name": "Supported methods",
+  "tag": "section",
+  "class": "kw-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text: Payments & Refunds highlights",
+      "default": "Payments & Refunds highlights"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item_1",
+      "name": "Supported methods",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Supported methods — Supported methods",
+          "default": "Supported methods"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: Supported methods — We support UPI, cards, net banking, and sele",
+          "default": "We support UPI, cards, net banking, and selected wallets. COD is available on eligible Indian PIN codes."
+        }
+      ]
+    },
+    {
+      "type": "item_2",
+      "name": "Failed or pending paymen",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Failed or pending paymen — Failed or pending payments",
+          "default": "Failed or pending payments"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: Failed or pending paymen — If amount is debited but order is not",
+          "default": "If amount is debited but order is not created, the gateway auto-reverses in most cases within banking timelines."
+        }
+      ]
+    },
+    {
+      "type": "item_3",
+      "name": "Refund processing",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: Refund processing — Refund processing",
+          "default": "Refund processing"
+        },
+        {
+          "type": "textarea",
+          "id": "copy_2",
+          "label": "Text: Refund processing — Approved refunds are initiated quickly from ",
+          "default": "Approved refunds are initiated quickly from our side and settle to your original source depending on bank/payment partner speed."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "Supported methods",
+      "blocks": [
+        {
+          "type": "item_1"
+        },
+        {
+          "type": "item_2"
+        },
+        {
+          "type": "item_3"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

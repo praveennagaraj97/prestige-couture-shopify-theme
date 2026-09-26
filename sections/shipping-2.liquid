@@ -1,0 +1,150 @@
+{% comment %} Source-parity migration: Your order, in stages. Content controls preserve the source layout. {% endcomment %}
+<section aria-label="{{ section.settings.text_1 | default: 'Order timeline' | escape }}" class="section pb-12 md:pb-16" data-motion="{&quot;initial&quot;:{},&quot;animate&quot;:{},&quot;transition&quot;:{},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}"><div class="mx-auto mb-10 max-w-2xl text-center md:mb-14"><h2 aria-label="{{ section.settings.text_2 | default: 'Your order, in stages' | escape }}" class="font-libre-baskerville text-2xl font-bold text-dark-chocolate sm:text-3xl md:text-4xl" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:14},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.6,&quot;ease&quot;:[0.22,1,0.36,1]}},&quot;transition&quot;:{&quot;duration&quot;:0.6,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.8}}">{{ section.settings.text_2 | default: 'Your order, in stages' | escape }}</h2><p class="mt-2 text-sm text-strong-coffee/70 sm:text-base" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.3}},&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.3},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}">{{ section.settings.text_3 | default: 'Where your order is, and when.' | escape }}</p></div><div class="mx-auto max-w-5xl rounded-3xl bg-white-chocolate/50 px-6 py-10 ring-1 ring-strong-coffee/5 sm:px-10"><div class="relative"><span style="transform-origin:left center" aria-hidden="true" class="absolute left-5 right-5 top-5 h-[3px] rounded-full bg-linear-to-r from-rust/50 via-rust to-rust/50" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2}},&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.2},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}"></span><ol class="grid grid-cols-4 gap-2">{% for block in section.blocks %}{% case block.type %}{% when 'item_1' %}<li class="relative flex flex-col items-center text-center" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><span class="relative z-10 grid size-10 place-items-center rounded-full bg-rust text-[11px] font-semibold text-white ring-4 ring-white-chocolate/50" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:4},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.3}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.3},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}">{{ block.settings.text_1 | default: '1' | escape }}</span><p class="mt-3 text-[13px] font-semibold text-dark-chocolate sm:text-sm" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.5}},&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.5},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}">{{ block.settings.text_2 | default: 'Ordered' | escape }}</p><p class="mt-0.5 max-w-[14ch] text-[11px] text-strong-coffee/60 sm:text-[12px]" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.6}},&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.6},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}">{{ block.settings.text_3 | default: 'Payment confirmed' | escape }}</p></li>
+{% when 'item_2' %}<li class="relative flex flex-col items-center text-center" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><span class="relative z-10 grid size-10 place-items-center rounded-full bg-rust text-[11px] font-semibold text-white ring-4 ring-white-chocolate/50" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:4},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.48}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.48},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}">{{ block.settings.text_1 | default: '2' | escape }}</span><p class="mt-3 text-[13px] font-semibold text-dark-chocolate sm:text-sm" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.6799999999999999}},&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.6799999999999999},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}">{{ block.settings.text_2 | default: 'Packed' | escape }}</p><p class="mt-0.5 max-w-[14ch] text-[11px] text-strong-coffee/60 sm:text-[12px]" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.78}},&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.78},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}">{{ block.settings.text_3 | default: 'Within 24 hours' | escape }}</p></li>
+{% when 'item_3' %}<li class="relative flex flex-col items-center text-center" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><span class="relative z-10 grid size-10 place-items-center rounded-full bg-rust text-[11px] font-semibold text-white ring-4 ring-white-chocolate/50" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:4},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.6599999999999999}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.6599999999999999},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}">{{ block.settings.text_1 | default: '3' | escape }}</span><p class="mt-3 text-[13px] font-semibold text-dark-chocolate sm:text-sm" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.8599999999999999}},&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.8599999999999999},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}">{{ block.settings.text_2 | default: 'Dispatched' | escape }}</p><p class="mt-0.5 max-w-[14ch] text-[11px] text-strong-coffee/60 sm:text-[12px]" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.96}},&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.96},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}">{{ block.settings.text_3 | default: 'Tracking shared' | escape }}</p></li>
+{% when 'item_4' %}<li class="relative flex flex-col items-center text-center" data-editor-block="{{ block.id }}" {{ block.shopify_attributes }}><span class="relative z-10 grid size-10 place-items-center rounded-full bg-rust text-[11px] font-semibold text-white ring-4 ring-white-chocolate/50" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:4},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.8400000000000001}},&quot;transition&quot;:{&quot;duration&quot;:0.3,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:0.8400000000000001},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}">{{ block.settings.text_1 | default: '4' | escape }}</span><p class="mt-3 text-[13px] font-semibold text-dark-chocolate sm:text-sm" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:1.04}},&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:1.04},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}">{{ block.settings.text_2 | default: 'Delivered' | escape }}</p><p class="mt-0.5 max-w-[14ch] text-[11px] text-strong-coffee/60 sm:text-[12px]" data-motion="{&quot;initial&quot;:{&quot;opacity&quot;:0,&quot;y&quot;:10},&quot;animate&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0,&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:1.1400000000000001}},&quot;transition&quot;:{&quot;duration&quot;:0.4,&quot;ease&quot;:[0.22,1,0.36,1],&quot;delay&quot;:1.1400000000000001},&quot;inView&quot;:true,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}">{{ block.settings.text_3 | default: 'Fabric in hand' | escape }}</p></li>{% endcase %}{% endfor %}</ol></div></div></section>
+{% schema %}
+{
+  "name": "Your order, in stages",
+  "tag": "section",
+  "class": "kw-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text: Order timeline",
+      "default": "Order timeline"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Text: Your order, in stages",
+      "default": "Your order, in stages"
+    },
+    {
+      "type": "text",
+      "id": "text_3",
+      "label": "Text: Where your order is, and when.",
+      "default": "Where your order is, and when."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item_1",
+      "name": "1OrderedPayment confirme",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: 1OrderedPayment confirme — 1",
+          "default": "1"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: 1OrderedPayment confirme — Ordered",
+          "default": "Ordered"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Text: 1OrderedPayment confirme — Payment confirmed",
+          "default": "Payment confirmed"
+        }
+      ]
+    },
+    {
+      "type": "item_2",
+      "name": "2PackedWithin 24 hours",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: 2PackedWithin 24 hours — 2",
+          "default": "2"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: 2PackedWithin 24 hours — Packed",
+          "default": "Packed"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Text: 2PackedWithin 24 hours — Within 24 hours",
+          "default": "Within 24 hours"
+        }
+      ]
+    },
+    {
+      "type": "item_3",
+      "name": "3DispatchedTracking shar",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: 3DispatchedTracking shar — 3",
+          "default": "3"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: 3DispatchedTracking shar — Dispatched",
+          "default": "Dispatched"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Text: 3DispatchedTracking shar — Tracking shared",
+          "default": "Tracking shared"
+        }
+      ]
+    },
+    {
+      "type": "item_4",
+      "name": "4DeliveredFabric in hand",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Text: 4DeliveredFabric in hand — 4",
+          "default": "4"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Text: 4DeliveredFabric in hand — Delivered",
+          "default": "Delivered"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Text: 4DeliveredFabric in hand — Fabric in hand",
+          "default": "Fabric in hand"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {
+      "name": "Your order, in stages",
+      "blocks": [
+        {
+          "type": "item_1"
+        },
+        {
+          "type": "item_2"
+        },
+        {
+          "type": "item_3"
+        },
+        {
+          "type": "item_4"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
