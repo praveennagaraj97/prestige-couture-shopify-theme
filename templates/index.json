@@ -31,13 +31,7 @@
           "settings": {}
         }
       },
-      "block_order": [
-        "item_1",
-        "item_2",
-        "item_3",
-        "item_4",
-        "item_5"
-      ]
+      "block_order": ["item_1", "item_2", "item_3", "item_4", "item_5"]
     },
     "featured": {
       "type": "home-products",
@@ -66,10 +60,7 @@
           "settings": {}
         }
       },
-      "block_order": [
-        "item_1",
-        "item_2"
-      ]
+      "block_order": ["item_1", "item_2"]
     },
     "stories": {
       "type": "home-stories",
@@ -156,11 +147,7 @@
           "settings": {}
         }
       },
-      "block_order": [
-        "item_1",
-        "item_2",
-        "item_3"
-      ]
+      "block_order": ["item_1", "item_2", "item_3"]
     },
     "how": {
       "type": "home-how",
@@ -179,16 +166,12 @@
           "settings": {}
         }
       },
-      "block_order": [
-        "item_1",
-        "item_2",
-        "item_3"
-      ]
+      "block_order": ["item_1", "item_2", "item_3"]
     },
     "style-it": {
       "type": "home-style-it",
       "settings": {
-        "link_3": "https://instagram.com/krithi_weaves"
+        "link_3": "https://www.instagram.com/krithi_weaves_"
       },
       "blocks": {
         "item_1": {
@@ -208,12 +191,7 @@
           "settings": {}
         }
       },
-      "block_order": [
-        "item_1",
-        "item_2",
-        "item_3",
-        "item_4"
-      ]
+      "block_order": ["item_1", "item_2", "item_3", "item_4"]
     },
     "connect": {
       "type": "home-connect",
@@ -236,12 +214,7 @@
           "settings": {}
         }
       },
-      "block_order": [
-        "item_1",
-        "item_2",
-        "item_3",
-        "item_4"
-      ]
+      "block_order": ["item_1", "item_2", "item_3", "item_4"]
     }
   },
   "order": [

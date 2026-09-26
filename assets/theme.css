@@ -2698,6 +2698,9 @@
         background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
       }
     }
+    .hover\:text-dark-chocolate:hover {
+      color: var(--color-dark-chocolate);
+    }
     .hover\:text-mocha-coffee:hover {
       color: var(--color-mocha-coffee);
     }
@@ -3883,6 +3886,58 @@ input:not([type="checkbox"]):not([type="radio"]):focus, textarea:focus, select:f
   border-bottom: 0;
   padding-bottom: 0;
 }
+[data-collection-section][aria-busy="true"] [data-filter-apply], [data-collection-section][aria-busy="true"] [data-filter-clear] {
+  opacity: .65;
+  pointer-events: none;
+}
+[data-collection-section][aria-busy="true"] [data-filter-apply]::before {
+  content: '';
+  display: inline-block;
+  width: .75rem;
+  height: .75rem;
+  margin-right: .35rem;
+  vertical-align: -1px;
+  border: 1.5px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 999px;
+  animation: kw-add-spin 650ms linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-collection-section][aria-busy="true"] [data-filter-apply]::before {
+    animation: none;
+  }
+}
+.kw-filter-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .3rem;
+  min-width: 1.5rem;
+  padding: .25rem 0;
+  white-space: nowrap;
+}
+.kw-filter-action svg {
+  width: 1rem;
+  height: 1rem;
+  flex: none;
+}
+@container (max-width: 230px) {
+  .kw-filter-action span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .kw-filter-action svg {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+}
 [data-product-details] summary > span {
   display: inline-flex;
   font-size: .75rem;
@@ -3909,6 +3964,50 @@ input:not([type="checkbox"]):not([type="radio"]):focus, textarea:focus, select:f
   [data-collection-filter] .kw-filter-chevron {
     transition: none;
   }
+}
+.kw-filter-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .3rem;
+  min-width: 1.5rem;
+  padding: .25rem 0;
+  white-space: nowrap;
+}
+.kw-filter-action svg {
+  width: 1rem;
+  height: 1rem;
+  flex: none;
+}
+@container (max-width: 230px) {
+  .kw-filter-action span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .kw-filter-action svg {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+}
+[data-filter-apply]::before {
+  content: none;
+}
+[data-collection-section][aria-busy="true"] [data-filter-apply]::before {
+  content: '';
+  width: .75rem;
+  height: .75rem;
+  margin-right: .35rem;
+  border: 1.5px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 999px;
+  animation: kw-add-spin 650ms linear infinite;
 }
 @property --tw-translate-x {
   syntax: "*";
