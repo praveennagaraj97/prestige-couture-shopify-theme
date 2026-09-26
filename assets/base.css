@@ -122,6 +122,13 @@ textarea:focus, select:focus {
   border-color: transparent;
   box-shadow: none;
 }
+[data-search-form] [name="q"]:focus,
+[data-search-form] [name="q"]:focus-visible {
+  outline: none;
+  outline-offset: 0;
+  border-color: transparent;
+  box-shadow: none;
+}
 [data-size-filter] .kw-filter-chevron { transition: transform .25s ease-out; }
 [data-size-filter]:not([open]) .kw-filter-chevron { transform: rotate(-90deg); }
 [data-product-details] summary > span { display: inline-flex; font-size: .75rem; }
