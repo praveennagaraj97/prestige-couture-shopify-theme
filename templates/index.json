@@ -43,24 +43,14 @@
       "type": "home-products",
       "settings": {
         "heading": "Featured Products",
-        "mode": "featured",
-        "products": [
-          "indigo-kurti",
-          "sample-rose-cotton-kurti",
-          "sample-everyday-cotton-kurti"
-        ]
+        "mode": "featured"
       }
     },
     "best": {
       "type": "home-products",
       "settings": {
         "heading": "Best Sellers",
-        "mode": "best",
-        "products": [
-          "indigo-kurti",
-          "sample-rose-cotton-kurti",
-          "sample-everyday-cotton-kurti"
-        ]
+        "mode": "best"
       }
     },
     "testimonials": {

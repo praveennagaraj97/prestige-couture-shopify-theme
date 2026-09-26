@@ -21,7 +21,6 @@
   {% if products != blank %}
     <div class="grid grid-cols-2 gap-3 sm:hidden">
       {% for product in products limit: 4 %}
-        {% if section.settings.mode == 'best' and forloop.index > 3 %}{% break %}{% endif %}
         <div class="{% if section.settings.mode == 'best' and forloop.first %}col-span-2{% endif %}" data-motion='{"initial":{"opacity":0,"y":14},"animate":{"opacity":1,"y":0},"transition":{"duration":0.4,"delay":{{ forloop.index0 | times: 0.04 | plus: 0.02 }},"ease":[0.22,1,0.36,1]},"inView":true,"viewport":{"amount":0.25}}'>
           {% if section.settings.mode == 'best' %}{% render 'product-card', product: product, mode: 'mobile-best', index: forloop.index0 %}{% else %}{% render 'product-card', product: product, mode: 'mobile', index: forloop.index0 %}{% endif %}
         </div>
@@ -29,12 +28,12 @@
     </div>
     {% if section.settings.mode == 'best' %}
       <div class="hidden gap-5 sm:grid sm:grid-cols-2 md:grid-cols-3">
-        {% for product in products limit: 3 %}<div data-motion='{"initial":{"opacity":0,"y":14},"animate":{"opacity":1,"y":0},"transition":{"duration":0.4,"delay":{{ forloop.index0 | times: 0.04 | plus: 0.02 }},"ease":[0.22,1,0.36,1]},"inView":true,"viewport":{"amount":0.3}}'>{% render 'product-card', product: product, mode: 'best', index: forloop.index0 %}</div>{% endfor %}
+        {% for product in products limit: 6 %}<div data-motion='{"initial":{"opacity":0,"y":14},"animate":{"opacity":1,"y":0},"transition":{"duration":0.4,"delay":{{ forloop.index0 | times: 0.04 | plus: 0.02 }},"ease":[0.22,1,0.36,1]},"inView":true,"viewport":{"amount":0.3}}'>{% render 'product-card', product: product, mode: 'best', index: forloop.index0 %}</div>{% endfor %}
       </div>
     {% else %}
       <div class="relative hidden sm:block" data-carousel>
         <div class="no-scrollbar flex snap-x snap-mandatory overflow-x-auto scroll-smooth gap-4 md:gap-5 py-2" data-carousel-track>
-          {% for product in products limit: 12 %}<div class="shrink-0 snap-start basis-[70%] sm:basis-[45%] md:basis-[33%] lg:basis-[25%]" data-motion='{"initial":{"opacity":0,"y":14},"animate":{"opacity":1,"y":0},"transition":{"duration":0.4,"delay":{{ forloop.index0 | times: 0.04 | plus: 0.02 }},"ease":[0.22,1,0.36,1]},"inView":true,"viewport":{"amount":0.2}}'>{% render 'product-card', product: product, mode: 'desktop', index: forloop.index0 %}</div>{% endfor %}
+          {% for product in products limit: 6 %}<div class="shrink-0 snap-start basis-[70%] sm:basis-[45%] md:basis-[33%] lg:basis-[25%]" data-motion='{"initial":{"opacity":0,"y":14},"animate":{"opacity":1,"y":0},"transition":{"duration":0.4,"delay":{{ forloop.index0 | times: 0.04 | plus: 0.02 }},"ease":[0.22,1,0.36,1]},"inView":true,"viewport":{"amount":0.2}}'>{% render 'product-card', product: product, mode: 'desktop', index: forloop.index0 %}</div>{% endfor %}
         </div>
         <button type="button" data-carousel-prev class="absolute left-0 top-1/2 hidden size-10 -translate-y-1/2 place-items-center rounded-full bg-white/90 text-rust shadow-md md:grid" aria-label="{{ section.settings.previous | escape }}">{% render 'icon', name: 'chevron-left' %}</button>
         <button type="button" data-carousel-next class="absolute right-0 top-1/2 hidden size-10 -translate-y-1/2 place-items-center rounded-full bg-rust text-white shadow-md md:grid" aria-label="{{ section.settings.next | escape }}">{% render 'icon', name: 'chevron-right' %}</button>
