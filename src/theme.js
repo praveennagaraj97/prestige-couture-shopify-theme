@@ -1,3 +1,4 @@
+import {leftIcon,rightIcon} from './icons.js';
 import {animate, inView} from 'motion';
 import {initializeForms} from './forms.js';
 import {initializeCommerce} from './commerce.js';
@@ -61,7 +62,7 @@ function carousels(root){
   let prev=el.querySelector('[data-carousel-prev]'),next=el.querySelector('[data-carousel-next]');
   if(!prev&&!next&&!el.closest('.home-products')){
    const host=el.parentElement;host.classList.add('kw-carousel-host');
-   for(const [dir,label] of [[-1,window.KW.labels.previous],[1,window.KW.labels.next]]){const button=document.createElement('button');button.type='button';button.className=`kw-carousel-arrow kw-carousel-${dir<0?'prev':'next'}`;button.setAttribute('aria-label',label);button.innerHTML=`<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="${dir<0?'M15 5l-7 7 7 7':'M9 5l7 7-7 7'}" fill="none" stroke="currentColor" stroke-width="3"/></svg>`;host.append(button);register(el,()=>button.remove());if(dir<0)prev=button;else next=button;}
+   for(const [dir,label] of [[-1,window.KW.labels.previous],[1,window.KW.labels.next]]){const button=document.createElement('button');button.type='button';button.className=`kw-carousel-arrow kw-carousel-${dir<0?'prev':'next'}`;button.setAttribute('aria-label',label);button.innerHTML=dir<0?leftIcon:rightIcon;host.append(button);register(el,()=>button.remove());if(dir<0)prev=button;else next=button;}
   }
   const states=new WeakMap(),controls=new WeakMap();
   const visibility=(button,visible)=>{if(!button||states.get(button)===visible)return;states.set(button,visible);controls.get(button)?.stop();button.disabled=!visible;if(visible)button.hidden=false;const control=animate(button,{opacity:visible?1:0,scale:visible?1:.7},{duration:reduced.matches?0:.2,ease:'easeOut'});controls.set(button,control);control.then(()=>{if(!states.get(button))button.hidden=true;});};

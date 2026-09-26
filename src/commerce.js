@@ -1,3 +1,4 @@
+import {closeIcon} from './icons.js';
 import {animate} from 'motion';
 import {createCartAPI,applicableDiscountCodes} from './cart-api.js';
 let installed=false,cart={items:[]},api;
@@ -16,7 +17,7 @@ async function refreshCart(next){
  syncCart();emit('kw:cart-updated',{cart});
 }
 function syncCart(){
- $$('[data-discount-codes]').forEach(container=>{container.replaceChildren();for(const code of applicableDiscountCodes(cart)){const chip=document.createElement('span');chip.className='inline-flex items-center gap-1 rounded-full bg-rust/10 px-2.5 py-1 text-[10px] font-medium text-rust';chip.append(document.createTextNode(code));const remove=document.createElement('button');remove.type='button';remove.dataset.removeDiscount=code;remove.setAttribute('aria-label',`${container.dataset.removeLabel} ${code}`);remove.className='ml-0.5 text-rust/70 hover:text-rust disabled:opacity-40';remove.textContent='×';chip.append(remove);container.append(chip);}});
+ $$('[data-discount-codes]').forEach(container=>{container.replaceChildren();for(const code of applicableDiscountCodes(cart)){const chip=document.createElement('span');chip.className='inline-flex items-center gap-1 rounded-full bg-rust/10 px-2.5 py-1 text-[10px] font-medium text-rust';chip.append(document.createTextNode(code));const remove=document.createElement('button');remove.type='button';remove.dataset.removeDiscount=code;remove.setAttribute('aria-label',`${container.dataset.removeLabel} ${code}`);remove.className='ml-0.5 text-rust/70 hover:text-rust disabled:opacity-40';remove.innerHTML=closeIcon;remove.classList.add('text-[8px]');chip.append(remove);container.append(chip);}});
  syncPriceBuckets();
  $$('[data-cart-count]').forEach(el=>el.textContent=cart.item_count||0);
  $$('[data-product-card]').forEach(card=>{const present=cart.items.some(i=>String(i.product_id)===card.dataset.productId);const button=$('[data-card-action]',card);if(button){($('[data-card-label]',button)||button).textContent=present?button.dataset.viewLabel:button.dataset.addLabel;button.disabled=!present&&button.dataset.available==='false';button.dataset.inCart=String(present);}const badge=$('[data-card-badge]',card),discount=$('[data-card-discount]',card);if(badge)badge.hidden=!present;if(discount)discount.hidden=present;});

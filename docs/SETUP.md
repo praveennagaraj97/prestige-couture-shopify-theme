@@ -60,3 +60,9 @@ Product and card add buttons use the Cross-talk-style centered 650ms ring while 
 The savings badge is server-rendered and updated on variant selection; variants without savings hide the entire badge. Purchase labels update independently of bag/check/bolt SVGs. Size-guide rows, measurement strokes, and tab/unit indicators use bundled Motion with the source timings and springs; reduced motion skips those transitions. Carousel arrows enter/exit only when scrolling in their direction is possible.
 
 Home, Contact and Bulk Orders use inline validation while retaining Shopify contact submissions. Theme settings → Form validation controls required-field, invalid-email and invalid-value messages, with English fallbacks. Errors attach to the affected field via `aria-describedby`; failed submission focuses the first invalid field. Without JavaScript the native form remains available.
+
+## Native size-filter prerequisite
+
+The listing renders Shopify's native Size product-option filter (`filter.v.option.size`), including its authoritative values/counts and active selections. On 2026-09-26 the migration store exposed Price but no Size, and Shopify Search & Discovery was not installed. Install Shopify's free Search & Discovery app, then add the Size product-option source under Filters and save. Existing Price configuration should remain unchanged. This is a shared store setting; copying the theme ZIP alone does not enable it. The theme also recognizes Size independently of a renamed display label.
+
+Control SVGs use the original Next.js `react-icons/fa6` and `react-icons/fi` paths. Text inputs, selects and textareas use a 2px rust ring at 15% opacity with no offset outline; buttons and links retain keyboard focus cues.

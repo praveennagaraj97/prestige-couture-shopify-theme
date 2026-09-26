@@ -106,3 +106,20 @@ button:disabled {
 [data-guide-panel="measure"] > div:last-child > p { position: relative; padding: 1rem 1rem 1rem 3.5rem; border-radius: .75rem; background: white; }
 [data-guide-panel="measure"] > div:last-child > p::before { counter-increment: measurement; content: counter(measurement); position: absolute; left: 1rem; top: 1rem; display: grid; place-items: center; width: 1.75rem; height: 1.75rem; border-radius: 50%; background: var(--color-rust); color: white; font-size: .75rem; }
 [data-guide-panel="measure"] > div:last-child > p strong { display: block; margin-bottom: .125rem; color: var(--color-dark-chocolate); font-size: .875rem; }
+
+/* Subtle field focus; retain the stronger keyboard cue on buttons and links. */
+input:not([type="checkbox"]):not([type="radio"]):focus,
+textarea:focus, select:focus {
+  outline: none;
+  outline-offset: 0;
+  border-color: color-mix(in srgb, var(--color-rust) 60%, transparent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-rust) 15%, transparent);
+}
+[data-size-filter] .kw-filter-chevron { transition: transform .25s ease-out; }
+[data-size-filter]:not([open]) .kw-filter-chevron { transform: rotate(-90deg); }
+[data-product-details] summary > span { display: inline-flex; font-size: .75rem; }
+[data-product-details][open] summary > span { transform: rotate(180deg); }
+.kw-size-checkbox { appearance: none; }
+.kw-size-checkbox:checked { border-color: var(--color-rust); background-color: var(--color-rust); background-position: center; background-repeat: no-repeat; background-size: 10px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.5 5 9.5l5-7' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+.kw-size-checkbox:focus-visible { outline: 1px solid var(--color-rust); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { [data-size-filter] .kw-filter-chevron { transition: none; } }
