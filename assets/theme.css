@@ -315,6 +315,9 @@
   .-right-1 {
     right: calc(var(--spacing) * -1);
   }
+  .-right-1\.5 {
+    right: calc(var(--spacing) * -1.5);
+  }
   .right-0 {
     right: 0px;
   }
@@ -915,6 +918,9 @@
   }
   .basis-\[92\%\] {
     flex-basis: 92%;
+  }
+  .basis-\[100\%\] {
+    flex-basis: 100%;
   }
   .origin-left {
     transform-origin: 0;
