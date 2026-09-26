@@ -1,6 +1,7 @@
 import {leftIcon,rightIcon} from './icons.js';
 import {animate, inView} from 'motion';
 import {initializeForms} from './forms.js';
+import {isActiveNavigationPath} from './navigation.js';
 import {initializeCommerce} from './commerce.js';
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
 const initialized=new WeakSet(), cleanups=new Map();
@@ -75,7 +76,18 @@ function header(root){
  const update=()=>{const compact=scrollY>40;if(compact===last)return;last=compact;el.classList.toggle('kw-header-compact',compact);if(row)animate(row,{paddingTop:compact?4:8,paddingBottom:compact?4:8},{duration:reduced.matches?0:.3,ease:'easeOut'});if(logo)animate(logo,{scale:compact?.9:1,y:0,opacity:1},{duration:reduced.matches?0:.3,ease:'easeOut'});};update();window.addEventListener('scroll',update,{passive:true});register(el,()=>window.removeEventListener('scroll',update));
  });
  $all('[data-footer-toggle]',root).forEach(button=>{if(initialized.has(button))return;initialized.add(button);button.addEventListener('click',()=>{const open=button.getAttribute('aria-expanded')!=='true';button.setAttribute('aria-expanded',String(open));const container=button.closest('h3').nextElementSibling;container.classList.toggle('grid-rows-[0fr]',!open);container.classList.toggle('grid-rows-[1fr]',open);container.classList.toggle('mt-2',open);button.querySelector('svg')?.classList.toggle('rotate-180',open);});});
- $all('[data-header] nav a[href],nav[aria-label] a[href]',root).forEach(link=>{const active=new URL(link.href).pathname===location.pathname;link.toggleAttribute('aria-current',active);if(active)link.setAttribute('aria-current','page');});
+ const syncActiveNavigation=()=>{
+  $all('[data-header] nav a[data-nav-item][href],nav[aria-label] a[data-nav-item][href]',root).forEach(link=>{
+   const target=new URL(link.href,location.href).pathname;
+   const active=isActiveNavigationPath(target,location.pathname);
+   link.toggleAttribute('aria-current',active);if(active)link.setAttribute('aria-current','page');
+   link.classList.toggle('text-rust',active);link.classList.toggle('text-strong-coffee',!active);
+   const indicator=link.querySelector('[data-nav-indicator]');if(!indicator) return;
+   if(active){indicator.hidden=false;if(!reduced.matches)animate(indicator,{scale:1,opacity:1},{duration:.25,ease:'easeOut'});}
+   else {indicator.hidden=true;indicator.style.opacity='';indicator.style.transform='';}
+  });
+ };
+ syncActiveNavigation();window.addEventListener('popstate',syncActiveNavigation);register(root,()=>window.removeEventListener('popstate',syncActiveNavigation));
 }
 function initialize(root=document){$all('[data-animated-text]',root).forEach(el=>{if(!el.dataset.motion)el.dataset.motion=JSON.stringify({initial:{opacity:0,y:14},animate:{opacity:1,y:0},transition:{duration:.6,ease},inView:true,viewport:{amount:.8}});});motions(root);accordions(root);carousels(root);header(root);initializeCommerce(root);initializeForms(root);}
 document.addEventListener('click',event=>{
