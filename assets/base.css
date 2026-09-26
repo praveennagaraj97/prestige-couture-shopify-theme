@@ -83,11 +83,17 @@ button:disabled {
 
 /* Same centered 650ms ring used by Cross-talk's add-to-cart button. */
 .kw-add-loading { position: relative; color: transparent !important; }
+.kw-form-loading { position: relative; color: transparent !important; }
+.kw-form-loading > * { opacity: 0; }
+.kw-form-loading::after { content: ''; position: absolute; top: 50%; left: 50%; width: 1rem; height: 1rem; margin: -.5rem 0 0 -.5rem; border: 1.5px solid currentColor; border-right-color: transparent; border-radius: 999px; animation: kw-add-spin 650ms linear infinite; }
+.kw-form-loading { color: transparent !important; }
+.kw-form-loading::after { color: white; border-color: white; border-right-color: transparent; }
+.shopify-challenge__container { padding-block: 1rem; }
 .kw-add-loading [data-card-label] { opacity: 0; }
 .kw-add-loading::after { content: ''; position: absolute; top: 50%; left: 50%; width: 1rem; height: 1rem; margin: -.5rem 0 0 -.5rem; border: 1.5px solid var(--color-rust); border-right-color: transparent; border-radius: 999px; animation: kw-add-spin 650ms linear infinite; }
 [data-product-buy].kw-add-loading::after, [data-card-action].kw-add-loading::after { border-color: white; border-right-color: transparent; }
 @keyframes kw-add-spin { to { transform: rotate(360deg); } }
-@media (prefers-reduced-motion: reduce) { .kw-add-loading::after { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .kw-add-loading::after, .kw-form-loading::after { animation: none; } }
 
 /* Match the original inline feedback, without browser validation bubbles. */
 .kw-field { min-width: 0; }
