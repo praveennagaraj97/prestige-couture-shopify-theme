@@ -916,8 +916,11 @@
   .basis-\[70\%\] {
     flex-basis: 70%;
   }
-  .basis-\[100\%\] {
-    flex-basis: 100%;
+  .basis-\[80\%\] {
+    flex-basis: 80%;
+  }
+  .basis-\[92\%\] {
+    flex-basis: 92%;
   }
   .origin-left {
     transform-origin: 0;
