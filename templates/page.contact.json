@@ -2,7 +2,10 @@
   "sections": {
     "content_1": {
       "type": "contact-1",
-      "settings": {},
+      "settings": {
+        "link_2": "/pages/help",
+        "text_3": "Back to help center"
+      },
       "blocks": {
         "item_1": {
           "type": "item_1",

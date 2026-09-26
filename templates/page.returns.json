@@ -2,7 +2,10 @@
   "sections": {
     "content_1": {
       "type": "returns-1",
-      "settings": {}
+      "settings": {
+        "link_2": "/pages/help",
+        "text_3": "Back to help center"
+      }
     },
     "content_2": {
       "type": "returns-2",
