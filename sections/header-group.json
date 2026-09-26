@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "type": "header",
   "name": "Header",
@@ -5,22 +14,48 @@
     "announcement": {
       "type": "announcement-bar",
       "settings": {
+        "text_1": "Get early access on launches and offers.",
         "link_2": "/collections/all",
-        "link_target": "_blank"
+        "link_target": "_self",
+        "text_3": "Browse"
       }
     },
     "header": {
       "type": "site-header",
       "settings": {
         "link_1": "/",
+        "text_3": "Krithi Weaves",
+        "text_4": "Home",
         "link_5": "/collections/all",
+        "text_6": "Products",
         "link_7": "/pages/testimonials",
-        "link_9": "/pages/contact"
+        "text_8": "Testimonials",
+        "link_9": "/pages/contact",
+        "text_10": "Contact Us",
+        "text_11": "Shop Now",
+        "text_12": "Search",
+        "text_13": "Account",
+        "text_14": "Cart",
+        "text_15": "Open navigation menu",
+        "text_16": "Site navigation",
+        "text_17": "Close navigation menu"
       }
     },
     "search": {
       "type": "search-overlay",
-      "settings": {}
+      "settings": {
+        "text_1": "Search",
+        "text_2": "Search products",
+        "text_3": "Search kurtis, dresses, colours, or fabrics",
+        "text_4": "Close",
+        "text_5": "Try",
+        "text_6": "mul cotton",
+        "text_7": "rust boat neck",
+        "text_8": "under 999",
+        "text_9": "bell sleeves",
+        "text_10": "straight sleeves",
+        "text_11": "block print"
+      }
     }
   },
   "order": [
