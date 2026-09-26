@@ -7,7 +7,7 @@
   {%- assign seo_title = page_title | default: shop.name -%}
   {%- assign meta_description = page_description | default: shop.description | default: settings.default_meta_description -%}
   {%- assign social_image = page_image | default: settings.social_sharing_image -%}
-  <title>{{ seo_title | escape }}{% unless seo_title contains shop.name %} — {{ shop.name | escape }}{% endunless %}</title>
+  <title>{{ seo_title | escape }}</title>
   <meta name="description" content="{{ meta_description | escape }}">
   <link rel="canonical" href="{{ canonical_url }}">
   {% if settings.favicon != blank %}
