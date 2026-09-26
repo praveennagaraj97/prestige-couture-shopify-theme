@@ -2,7 +2,7 @@ name: Deploy preview theme
 
 on:
   push:
-    branches: [migration/shopify-theme]
+    branches: [main]
     paths:
       - '**'
       - '.github/workflows/deploy-preview.yml'

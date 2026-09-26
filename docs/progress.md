@@ -1,6 +1,6 @@
 # Shopify migration implementation ledger
 Approved spec: user-provided Krithi Weaves Shopify Theme Migration plan in this task.
-Workspace: standalone theme repository on migration/shopify-theme. Source website and crosstalk are read-only references.
+Workspace: standalone theme repository on main. Source website and crosstalk are read-only references.
 
 ## Work packages
 1. Foundation/shared shell/home — root, in progress.

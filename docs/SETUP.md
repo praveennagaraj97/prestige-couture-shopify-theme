@@ -70,8 +70,8 @@ Control SVGs use the original Next.js `react-icons/fa6` and `react-icons/fi` pat
 
 ## GitHub deployment
 
-The repository is [`praveennagaraj97/krithi-weaves-shopify-theme`](https://github.com/praveennagaraj97/krithi-weaves-shopify-theme), branch `migration/shopify-theme`. `.github/workflows/theme-ci.yml` builds assets, runs the test suite and CSS consistency check, then runs Shopify Theme Check on pushes and pull requests. `.github/workflows/deploy-preview.yml` repeats validation and pushes only to a configured theme ID on `b8pvud-pu.myshopify.com` when changes land on the migration branch; it never publishes a theme. It also supports manual runs through GitHub Actions.
+The repository is [`praveennagaraj97/krithi-weaves-shopify-theme`](https://github.com/praveennagaraj97/krithi-weaves-shopify-theme), branch `main`. `.github/workflows/theme-ci.yml` builds assets, runs the test suite and CSS consistency check, then runs Shopify Theme Check on pushes and pull requests. `.github/workflows/deploy-preview.yml` repeats validation and pushes only to a configured theme ID on `b8pvud-pu.myshopify.com` when changes land on `main`; it never publishes a theme. It also supports manual runs through GitHub Actions.
 
 Automated previews use the repository variable `SHOPIFY_THEME_ID` and the repository secret `SHOPIFY_CLI_THEME_TOKEN`. The store-scoped Theme Access password is configured for this repository. Locally, put the same password in the ignored `theme/.env` file as `SHOPIFY_CLI_THEME_TOKEN=...`; `make dev` exports it to Shopify CLI. Never commit or print the password. To rotate it, create a replacement password in Theme Access, update the GitHub secret and local `.env`, then revoke the old password.
 
-Initial preview: theme `krithi-weaves-theme` (ID `213697298685`) is already uploaded and remains unpublished. Subsequent pushes to `migration/shopify-theme` update only that theme.
+Initial preview: theme `krithi-weaves-theme` (ID `213697298685`) is already uploaded and remains unpublished. Subsequent pushes to `main` update only that theme.
