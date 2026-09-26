@@ -68,7 +68,9 @@ function carousels(root){
   const states=new WeakMap(),controls=new WeakMap();
   const visibility=(button,visible)=>{if(!button||states.get(button)===visible)return;states.set(button,visible);controls.get(button)?.stop();button.disabled=!visible;if(visible)button.hidden=false;const control=animate(button,{opacity:visible?1:0,scale:visible?1:.7},{duration:reduced.matches?0:.2,ease:'easeOut'});controls.set(button,control);control.then(()=>{if(!states.get(button))button.hidden=true;});};
   prev?.addEventListener('click',()=>track.scrollBy({left:-track.clientWidth*.8,behavior:reduced.matches?'instant':'smooth'}));next?.addEventListener('click',()=>track.scrollBy({left:track.clientWidth*.8,behavior:reduced.matches?'instant':'smooth'}));
-  const update=()=>{visibility(prev,track.scrollLeft>0);visibility(next,track.scrollLeft<track.scrollWidth-track.clientWidth-1);};update();track.addEventListener('scroll',update,{passive:true});const ro=new ResizeObserver(update);ro.observe(track);register(el,()=>{ro.disconnect();track.removeEventListener('scroll',update);});
+  const forwardVerticalWheel=event=>{if(Math.abs(event.deltaY)<=Math.abs(event.deltaX))return;const delta=event.deltaY*(event.deltaMode===1?16:event.deltaMode===2?innerHeight:1),page=document.scrollingElement;if(!page)return;const max=page.scrollHeight-page.clientHeight,canScroll=delta>0?page.scrollTop<max-1:page.scrollTop>0;if(!canScroll)return;event.preventDefault();page.scrollTop+=delta;};
+  if(el.matches('[data-carousel]'))track.addEventListener('wheel',forwardVerticalWheel,{passive:false});
+  const update=()=>{visibility(prev,track.scrollLeft>0);visibility(next,track.scrollLeft<track.scrollWidth-track.clientWidth-1);};update();track.addEventListener('scroll',update,{passive:true});const ro=new ResizeObserver(update);ro.observe(track);register(el,()=>{ro.disconnect();track.removeEventListener('scroll',update);if(el.matches('[data-carousel]'))track.removeEventListener('wheel',forwardVerticalWheel);});
  });
 }
 function header(root){
