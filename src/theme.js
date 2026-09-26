@@ -83,8 +83,7 @@ function header(root){
    link.toggleAttribute('aria-current',active);if(active)link.setAttribute('aria-current','page');
    link.classList.toggle('text-rust',active);link.classList.toggle('text-strong-coffee',!active);
    const indicator=link.querySelector('[data-nav-indicator]');if(!indicator) return;
-   if(active){indicator.hidden=false;if(!reduced.matches)animate(indicator,{scale:1,opacity:1},{duration:.25,ease:'easeOut'});}
-   else {indicator.hidden=true;indicator.style.opacity='';indicator.style.transform='';}
+   indicator.hidden=!active;
   });
  };
  syncActiveNavigation();window.addEventListener('popstate',syncActiveNavigation);register(root,()=>window.removeEventListener('popstate',syncActiveNavigation));
