@@ -5094,7 +5094,7 @@ function syncCart() {
     const present = cart.items.some((i) => String(i.product_id) === card.dataset.productId);
     const button = $("[data-card-action]", card);
     if (button) {
-      ($("[data-card-label]", button) || button).textContent = present ? button.dataset.viewLabel : button.dataset.addLabel;
+      ($("[data-card-label]", button) || button).textContent = present ? button.dataset.viewLabel : button.dataset.available === "false" ? button.dataset.outOfStockLabel : button.dataset.addLabel;
       button.disabled = !present && button.dataset.available === "false";
       button.dataset.inCart = String(present);
     }

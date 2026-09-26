@@ -117,23 +117,24 @@ textarea:focus, select:focus {
 }
 [data-modal-variant="search"] input[data-overlay-query]:focus,
 [data-modal-variant="search"] input[data-overlay-query]:focus-visible {
-  outline: none;
-  outline-offset: 0;
-  border-color: transparent;
-  box-shadow: none;
+  outline: none !important;
+  outline-offset: 0 !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
 }
 [data-search-form] input[name="q"]:focus,
 [data-search-form] input[name="q"]:focus-visible {
-  outline: none;
-  outline-offset: 0;
-  border-color: transparent;
-  box-shadow: none;
+  outline: none !important;
+  outline-offset: 0 !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
 }
-[data-size-filter] .kw-filter-chevron { transition: transform .25s ease-out; }
-[data-size-filter]:not([open]) .kw-filter-chevron { transform: rotate(-90deg); }
+[data-collection-filter] .kw-filter-chevron { transition: transform .25s ease-out; }
+[data-collection-filter]:not([open]) .kw-filter-chevron { transform: rotate(-90deg); }
+[data-filter-form] > details:last-of-type { border-bottom: 0; padding-bottom: 0; }
 [data-product-details] summary > span { display: inline-flex; font-size: .75rem; }
 [data-product-details][open] summary > span { transform: rotate(180deg); }
 .kw-size-checkbox { appearance: none; }
 .kw-size-checkbox:checked { border-color: var(--color-rust); background-color: var(--color-rust); background-position: center; background-repeat: no-repeat; background-size: 10px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.5 5 9.5l5-7' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
 .kw-size-checkbox:focus-visible { outline: 1px solid var(--color-rust); outline-offset: 2px; }
-@media (prefers-reduced-motion: reduce) { [data-size-filter] .kw-filter-chevron { transition: none; } }
+@media (prefers-reduced-motion: reduce) { [data-collection-filter] .kw-filter-chevron { transition: none; } }
