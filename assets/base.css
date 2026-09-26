@@ -115,6 +115,13 @@ textarea:focus, select:focus {
   border-color: color-mix(in srgb, var(--color-rust) 60%, transparent);
   box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-rust) 15%, transparent);
 }
+[data-modal-variant="search"] [data-overlay-query]:focus,
+[data-modal-variant="search"] [data-overlay-query]:focus-visible {
+  outline: none;
+  outline-offset: 0;
+  border-color: transparent;
+  box-shadow: none;
+}
 [data-size-filter] .kw-filter-chevron { transition: transform .25s ease-out; }
 [data-size-filter]:not([open]) .kw-filter-chevron { transform: rotate(-90deg); }
 [data-product-details] summary > span { display: inline-flex; font-size: .75rem; }
