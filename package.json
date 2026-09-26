@@ -14,7 +14,7 @@
     "dev": "concurrently --kill-others --handle-input --default-input-target 2 --names css,js,shopify \"npm:dev:css\" \"npm:dev:js\" \"npm:dev:shopify\"",
     "dev:css": "tailwindcss -i assets/base.css -o assets/theme.css --watch=always",
     "dev:js": "esbuild src/theme.js --bundle --format=esm --target=es2020 --outfile=assets/theme.js --watch=forever",
-    "dev:shopify": "\"${SHOPIFY:-shopify}\" theme dev --store \"${STORE:-krithiweaves-qcwbthv1.myshopify.com}\" --theme \"${THEME:-190223352119}\" --port \"${PORT:-9292}\""
+    "dev:shopify": "if [ -n \"${THEME:-}\" ]; then \"${SHOPIFY:-shopify}\" theme dev --store \"${STORE:-b8pvud-pu.myshopify.com}\" --theme \"$THEME\" --port \"${PORT:-9292}\"; else \"${SHOPIFY:-shopify}\" theme dev --store \"${STORE:-b8pvud-pu.myshopify.com}\" --port \"${PORT:-9292}\"; fi"
   },
   "dependencies": {
     "motion": "12.38.0"

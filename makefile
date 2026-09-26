@@ -1,8 +1,8 @@
 -include .env
 
 SHOPIFY ?= shopify
-STORE ?= krithiweaves-qcwbthv1.myshopify.com
-THEME ?= 190223352119
+STORE ?= b8pvud-pu.myshopify.com
+THEME ?=
 PORT ?= 9292
 
 export SHOPIFY STORE THEME PORT
@@ -11,7 +11,7 @@ export SHOPIFY_CLI_NO_ANALYTICS = 1
 export SHOPIFY_CLI_NO_AUTO_UPDATE = 1
 
 .DEFAULT_GOAL := help
-.PHONY: help dev build check package package-shopify pull-dev pull-gift-card push-dev sync-dev
+.PHONY: help dev build check package package-shopify pull-dev pull-gift-card push-dev deploy-preview sync-dev
 
 help:
 	@echo 'make dev             Build, watch CSS/JS, and serve the unpublished preview'
@@ -20,6 +20,7 @@ help:
 	@echo 'make package         Validate and write dist/krithi-weaves-theme.zip'
 	@echo 'make package-shopify Alias for the Shopify-ready ZIP package'
 	@echo 'make push-dev        Validate and upload to the preview theme'
+	@echo 'make deploy-preview  Validate and upload to THEME_ID on STORE'
 	@echo 'make sync-dev        Alias for push-dev (keeps local changes)'
 	@echo 'make pull-dev        Download preview theme, overwriting matching local files'
 	@echo 'make pull-gift-card  Download only the remote gift-card template, if present'
@@ -49,6 +50,11 @@ pull-gift-card:
 	"$(SHOPIFY)" theme pull --store "$(STORE)" --theme "$(THEME)" --only templates/gift_card.liquid --nodelete
 
 push-dev: check
+	@test -n "$(THEME)" || (echo 'Set THEME to the unpublished preview theme ID' >&2; exit 2)
+	"$(SHOPIFY)" theme push --store "$(STORE)" --theme "$(THEME)" --strict
+
+deploy-preview: check
+	@test -n "$(THEME)" || (echo 'Set THEME to the unpublished preview theme ID' >&2; exit 2)
 	"$(SHOPIFY)" theme push --store "$(STORE)" --theme "$(THEME)" --strict
 
 # Pulling before pushing could overwrite the work being deployed.

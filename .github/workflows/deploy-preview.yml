@@ -1,0 +1,65 @@
+name: Deploy preview theme
+
+on:
+  push:
+    branches: [migration/shopify-theme]
+    paths:
+      - '**'
+      - '.github/workflows/deploy-preview.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deployment-config:
+    runs-on: ubuntu-latest
+    outputs:
+      token_ready: ${{ steps.check.outputs.token_ready }}
+    steps:
+      - id: check
+        env:
+          SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
+        run: |
+          if [ -n "$SHOPIFY_CLI_THEME_TOKEN" ]; then
+            echo 'token_ready=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'token_ready=false' >> "$GITHUB_OUTPUT"
+          fi
+
+  deploy:
+    needs: deployment-config
+    if: ${{ vars.SHOPIFY_THEME_ID != '' && needs.deployment-config.outputs.token_ready == 'true' }}
+    runs-on: ubuntu-latest
+    env:
+      SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
+      SHOPIFY_FLAG_STORE: b8pvud-pu.myshopify.com
+      SHOPIFY_FLAG_FORCE: '1'
+      SHOPIFY_CLI_NO_ANALYTICS: '1'
+      SHOPIFY_CLI_NO_AUTO_UPDATE: '1'
+      SHOPIFY_THEME_ID: ${{ vars.SHOPIFY_THEME_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
+      - run: npm run check:css
+      - name: Install Shopify CLI
+        run: npm install --global @shopify/cli@4.8.0
+      - name: Check theme
+        run: shopify theme check
+      - name: Push to the configured unpublished theme
+        run: shopify theme push --store "$SHOPIFY_FLAG_STORE" --theme "$SHOPIFY_THEME_ID" --strict --json
+
+  setup-required:
+    needs: deployment-config
+    if: ${{ vars.SHOPIFY_THEME_ID == '' || needs.deployment-config.outputs.token_ready != 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Explain preview setup
+        run: echo 'Preview deployment is disabled until repository variable SHOPIFY_THEME_ID is configured. The deploy job also requires secret SHOPIFY_CLI_THEME_TOKEN.'
