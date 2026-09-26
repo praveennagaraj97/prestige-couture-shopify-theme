@@ -1,9 +1,99 @@
-<div data-cart-content data-cart-section="{{ section.id }}" data-invalid-discount="{{ section.settings.invalid_discount | escape }}" data-error-message="{{ section.settings.error_message | escape }}" class="flex min-h-0 w-full flex-1 flex-col bg-white-chocolate/40">
-<div class="flex items-center justify-between border-b border-strong-coffee/10 bg-white px-5 py-4"><div class="flex items-center gap-2.5"><span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-rust/10 text-rust">{% render 'icon', name: 'bag' %}</span><div><h2 class="font-libre-baskerville text-lg text-dark-chocolate leading-tight">{{ section.settings.title }}</h2><p class="text-[11px] uppercase tracking-[0.18em] text-strong-coffee/60">{{ cart.item_count }} {{ section.settings.items_label }}</p></div></div><button type="button" data-close-modal aria-label="{{ section.settings.close_label }}" class="inline-flex h-9 w-9 items-center justify-center rounded-full text-strong-coffee/70">{% render 'icon', name: 'close' %}</button></div>
-<p data-commerce-error role="alert" class="px-5 text-xs text-red-600"></p>
-{% if cart.empty? %}<div class="flex flex-1 flex-col items-center justify-center px-8 py-12 text-center"><span class="mb-5 inline-flex h-20 w-20 items-center justify-center rounded-full bg-rust/10 text-rust">{% render 'icon', name: 'bag' %}</span><h3 class="font-libre-baskerville text-xl text-dark-chocolate">{{ section.settings.empty_title }}</h3><p class="mt-2 max-w-xs text-sm text-strong-coffee/65">{{ section.settings.empty_text }}</p><a href="{{ routes.all_products_collection_url }}" class="mt-6 inline-flex items-center gap-2 rounded-full bg-rust px-5 py-3 text-sm font-medium text-white shadow-sm">{{ section.settings.shop_label }}</a></div>{% else %}
-<ul class="min-h-0 flex-1 space-y-3 overflow-y-auto px-4 py-4">{% for item in cart.items %}<li data-cart-line="{{ item.key | escape }}" data-quantity="{{ item.quantity }}" class="group flex gap-4 rounded-2xl bg-white p-4 shadow-[0_2px_12px_rgba(44,36,26,0.07)]" data-motion='{"initial":{"opacity":0,"y":16,"filter":"blur(4px)"},"animate":{"opacity":1,"y":0,"filter":"blur(0px)"},"transition":{"duration":0.5,"ease":[0.22,1,0.36,1]}}'>
-<a href="{{ item.url }}" class="relative h-25 w-20 shrink-0 overflow-hidden rounded-xl bg-white-chocolate">{% if item.image %}{{ item.image | image_url: width: 240 | image_tag: class: 'h-full w-full object-cover transition-transform duration-500 group-hover:scale-105', loading: 'lazy' }}{% endif %}</a><div class="flex min-w-0 flex-1 flex-col gap-3"><div class="flex items-start justify-between gap-2"><a href="{{ item.url }}" class="line-clamp-2 text-sm font-medium leading-snug text-dark-chocolate hover:text-rust">{{ item.product.title | escape }}</a><a href="{{ item.url_to_remove }}" data-cart-remove aria-label="{{ section.settings.remove_label }} {{ item.product.title | escape }}" class="mt-0.5 shrink-0 text-strong-coffee/35 transition hover:text-red-500">{% render 'icon', name: 'trash' %}</a></div>
-{% unless item.product.has_only_default_variant %}<div class="flex flex-wrap gap-1.5">{% for variant in item.product.variants %}<button type="button" data-cart-variant="{{ variant.id }}" {% unless variant.available %}disabled{% endunless %} {% if variant.id == item.variant_id %}aria-pressed="true"{% else %}aria-pressed="false"{% endif %} class="inline-flex min-w-8 items-center justify-center rounded-full border px-2.5 py-1 text-[10px] font-medium tracking-wide transition {% if variant.id == item.variant_id %}border-rust bg-rust text-white{% elsif variant.available %}border-strong-coffee/20 text-strong-coffee hover:border-rust/60{% else %}border-strong-coffee/10 text-strong-coffee/30 line-through{% endif %}">{{ variant.title | escape }}</button>{% endfor %}</div>{% endunless %}
-<div class="flex items-center justify-between"><div class="inline-flex items-center gap-0 rounded-full border border-strong-coffee/15 bg-white-chocolate/50"><button type="button" data-cart-delta="-1" aria-label="{{ section.settings.decrease_label }}" class="inline-flex h-8 w-8 items-center justify-center rounded-full text-strong-coffee/70"><span class="text-[10px]">{% render 'icon', name: 'minus' %}</span></button><span class="min-w-6 text-center text-sm font-medium text-dark-chocolate tabular-nums">{{ item.quantity }}</span><button type="button" data-cart-delta="1" aria-label="{{ section.settings.increase_label }}" {% if item.variant.inventory_management and item.variant.inventory_policy == 'deny' and item.quantity >= item.variant.inventory_quantity %}disabled{% endif %} class="inline-flex h-8 w-8 items-center justify-center rounded-full text-strong-coffee/70 disabled:opacity-40"><span class="text-[10px]">{% render 'icon', name: 'plus' %}</span></button></div><div class="text-right flex items-end gap-1"><p class="text-sm font-semibold text-dark-chocolate">{{ item.final_line_price | money }}</p>{% if item.original_line_price > item.final_line_price %}<s class="text-[11px] text-strong-coffee/50">{{ item.original_line_price | money }}</s>{% endif %}</div></div></div></li>{% endfor %}</ul>
-<div class="border-t border-strong-coffee/10 bg-white px-5 py-4"><form data-discount-form action="{{ routes.cart_url }}" method="post" class="mb-4"><div class="flex gap-2"><div class="relative min-w-0 flex-1"><span class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[10px] text-strong-coffee/40">{% render 'icon', name: 'tag' %}</span><input name="discount" aria-label="{{ section.settings.promo_label }}" placeholder="{{ section.settings.promo_label }}" class="w-full rounded-full border border-strong-coffee/20 bg-white-chocolate/50 py-2 pl-7 pr-3 text-xs text-dark-chocolate"></div><button class="rounded-full border border-rust px-4 py-2 text-xs font-medium text-rust">{{ section.settings.apply_label }}</button></div><div data-discount-codes data-remove-label="{{ section.settings.remove_label | escape }}" class="mt-2 flex flex-wrap gap-1.5"></div><div class="mt-2 flex flex-wrap gap-1.5">{% for discount in cart.cart_level_discount_applications %}{% unless discount.type == 'discount_code' %}<span class="inline-flex items-center gap-1 rounded-full bg-rust/10 px-2.5 py-1 text-[10px] font-medium text-rust">{{ discount.title | escape }}{% if discount.type == 'discount_code' %}<button type="button" data-remove-discount="{{ discount.title | escape }}" aria-label="{{ section.settings.remove_label }} {{ discount.title | escape }}">{% render 'icon', name: 'close' %}</button>{% endif %}</span>{% endunless %}{% endfor %}</div></form><div class="mb-3 flex items-baseline justify-between"><span class="text-[11px] uppercase tracking-[0.2em] text-strong-coffee/65">{{ section.settings.subtotal_label }}</span><span class="font-libre-baskerville text-2xl text-dark-chocolate">{{ cart.total_price | money }}</span></div><p class="mb-4 text-[11px] text-strong-coffee/55">{{ section.settings.shipping_text }}</p><div class="flex flex-col gap-2"><form action="{{ routes.cart_url }}" method="post"><button name="checkout" class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-rust px-5 py-3 text-sm font-medium text-white shadow-md transition hover:bg-mocha-coffee">{% render 'icon', name: 'bag' %} {{ section.settings.checkout_label }}</button></form><a href="{{ routes.all_products_collection_url }}" data-close-modal class="text-center text-xs uppercase tracking-[0.2em] text-strong-coffee/65 underline-offset-4 hover:text-rust hover:underline">{{ section.settings.continue_label }}</a></div></div>{% endif %}</div>
+<div
+  data-cart-content
+  data-cart-section="{{ section.id }}"
+  data-invalid-discount="{{ section.settings.invalid_discount | escape }}"
+  data-error-message="{{ section.settings.error_message | escape }}"
+  class="{% if page_mode %}grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-8{% else %}flex min-h-0 w-full flex-1 flex-col bg-white-chocolate/40{% endif %}"
+>
+  {% unless page_mode %}
+    <div class="flex items-center justify-between border-b border-strong-coffee/10 bg-white px-5 py-4">
+      <div class="flex items-center gap-2.5">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-rust/10 text-rust">{% render 'icon', name: 'bag' %}</span>
+        <div>
+          <h2 class="font-libre-baskerville text-lg leading-tight text-dark-chocolate">{{ section.settings.title }}</h2>
+          <p class="text-[11px] uppercase tracking-[0.18em] text-strong-coffee/60">{{ cart.item_count }} {{ section.settings.items_label }}</p>
+        </div>
+      </div>
+      <button type="button" data-close-modal aria-label="{{ section.settings.close_label }}" class="inline-flex h-9 w-9 items-center justify-center rounded-full text-strong-coffee/70">{% render 'icon', name: 'close' %}</button>
+    </div>
+  {% endunless %}
+
+  <p data-commerce-error role="alert" class="{% if page_mode %}lg:col-span-2{% else %}px-5{% endif %} text-xs text-red-600"></p>
+
+  {% if cart.empty? %}
+    <div class="{% if page_mode %}lg:col-span-2 min-h-80 rounded-3xl border border-strong-coffee/10 bg-white px-8 py-16{% else %}flex flex-1 px-8 py-12{% endif %} flex flex-col items-center justify-center text-center">
+      <span class="mb-5 inline-flex h-20 w-20 items-center justify-center rounded-full bg-rust/10 text-rust">{% render 'icon', name: 'bag' %}</span>
+      <h2 class="font-libre-baskerville text-xl text-dark-chocolate">{{ section.settings.empty_title }}</h2>
+      <p class="mt-2 max-w-xs text-sm text-strong-coffee/65">{{ section.settings.empty_text }}</p>
+      <a href="{{ routes.all_products_collection_url }}" class="mt-6 inline-flex items-center gap-2 rounded-full bg-rust px-5 py-3 text-sm font-medium text-white shadow-sm">{{ section.settings.shop_label }}</a>
+    </div>
+  {% else %}
+    <div class="min-w-0 {% if page_mode %}rounded-3xl border border-strong-coffee/10 bg-white p-2 sm:p-3{% endif %}">
+      <ul class="min-h-0 space-y-2 {% unless page_mode %}flex-1 overflow-y-auto{% endunless %} px-1 py-1 sm:px-0 sm:py-0">
+        {% for item in cart.items %}
+          <li data-cart-line="{{ item.key | escape }}" data-quantity="{{ item.quantity }}" class="group flex gap-3 rounded-2xl bg-white shadow-[0_2px_12px_rgba(44,36,26,0.07)] {% if page_mode %}border border-strong-coffee/5 p-3 sm:gap-4 sm:p-4{% else %}gap-4 p-4{% endif %}" data-motion='{"initial":{"opacity":0,"y":16,"filter":"blur(4px)"},"animate":{"opacity":1,"y":0,"filter":"blur(0px)"},"transition":{"duration":0.5,"ease":[0.22,1,0.36,1]}}'>
+            <a href="{{ item.url }}" class="relative h-20 w-16 shrink-0 overflow-hidden rounded-xl bg-white-chocolate {% if page_mode %}sm:h-28 sm:w-22{% endif %}">
+              {% if item.image %}{{ item.image | image_url: width: 360 | image_tag: class: 'h-full w-full object-cover transition-transform duration-500 group-hover:scale-105', loading: 'lazy' }}{% endif %}
+            </a>
+            <div class="flex min-w-0 flex-1 flex-col gap-2.5 sm:gap-3">
+              <div class="flex items-start justify-between gap-2">
+                <div class="min-w-0">
+                  <a href="{{ item.url }}" class="line-clamp-2 text-sm font-medium leading-snug text-dark-chocolate hover:text-rust {% if page_mode %}sm:text-base{% endif %}">{{ item.product.title | escape }}</a>
+                </div>
+                <a href="{{ item.url_to_remove }}" data-cart-remove aria-label="{{ section.settings.remove_label }} {{ item.product.title | escape }}" class="mt-0.5 shrink-0 text-strong-coffee/35 transition hover:text-red-500">{% render 'icon', name: 'trash' %}</a>
+              </div>
+              {% unless item.product.has_only_default_variant %}
+                <div class="flex flex-wrap gap-1.5">
+                  {% for variant in item.product.variants %}
+                    <button type="button" data-cart-variant="{{ variant.id }}" {% unless variant.available %}disabled{% endunless %} {% if variant.id == item.variant_id %}aria-pressed="true"{% else %}aria-pressed="false"{% endif %} class="inline-flex min-w-8 items-center justify-center rounded-full border px-2.5 py-1 text-[10px] font-medium tracking-wide transition {% if variant.id == item.variant_id %}border-rust bg-rust text-white{% elsif variant.available %}border-strong-coffee/20 text-strong-coffee hover:border-rust/60{% else %}border-strong-coffee/10 text-strong-coffee/30 line-through{% endif %}">{{ variant.options.first | escape }}</button>
+                  {% endfor %}
+                </div>
+              {% endunless %}
+              <div class="flex items-center justify-between gap-3">
+                <div class="inline-flex items-center gap-0 rounded-full border border-strong-coffee/15 bg-white-chocolate/50">
+                  <button type="button" data-cart-delta="-1" aria-label="{{ section.settings.decrease_label }}" class="inline-flex h-8 w-8 items-center justify-center rounded-full text-strong-coffee/70"><span class="text-[10px]">{% render 'icon', name: 'minus' %}</span></button>
+                  <span class="min-w-6 text-center text-sm font-medium tabular-nums text-dark-chocolate">{{ item.quantity }}</span>
+                  <button type="button" data-cart-delta="1" aria-label="{{ section.settings.increase_label }}" {% if item.variant.inventory_management and item.variant.inventory_policy == 'deny' and item.quantity >= item.variant.inventory_quantity %}disabled{% endif %} class="inline-flex h-8 w-8 items-center justify-center rounded-full text-strong-coffee/70 disabled:opacity-40"><span class="text-[10px]">{% render 'icon', name: 'plus' %}</span></button>
+                </div>
+                <div class="flex items-end gap-1 text-right">
+                  <p class="text-sm font-semibold text-dark-chocolate">{{ item.final_line_price | money }}</p>
+                  {% if item.original_line_price > item.final_line_price %}<s class="text-[11px] text-strong-coffee/50">{{ item.original_line_price | money }}</s>{% endif %}
+                </div>
+              </div>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <aside data-cart-summary class="{% if page_mode %}rounded-3xl border border-strong-coffee/10 bg-white p-4 shadow-[0_8px_28px_rgba(44,36,26,0.06)] sm:p-5 lg:sticky lg:top-28{% else %}border-t border-strong-coffee/10 bg-white px-5 py-4{% endif %}">
+      {% if page_mode %}<h2 class="mb-3 font-libre-baskerville text-lg text-dark-chocolate">Order summary</h2>{% endif %}
+      <form data-discount-form action="{{ routes.cart_url }}" method="post" class="mb-3">
+        <div class="flex gap-2">
+          <div class="relative min-w-0 flex-1">
+            <span class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[10px] text-strong-coffee/40">{% render 'icon', name: 'tag' %}</span>
+            <input name="discount" aria-label="{{ section.settings.promo_label }}" placeholder="{{ section.settings.promo_label }}" class="w-full rounded-full border border-strong-coffee/20 bg-white-chocolate/50 py-2.5 pl-7 pr-3 text-xs text-dark-chocolate">
+          </div>
+          <button class="rounded-full border border-rust px-4 py-2 text-xs font-medium text-rust">{{ section.settings.apply_label }}</button>
+        </div>
+        <div data-discount-codes data-remove-label="{{ section.settings.remove_label | escape }}" class="mt-2 flex flex-wrap gap-1.5"></div>
+        <div class="mt-2 flex flex-wrap gap-1.5">
+          {% for discount in cart.cart_level_discount_applications %}
+            {% unless discount.type == 'discount_code' %}<span class="inline-flex items-center gap-1 rounded-full bg-rust/10 px-2.5 py-1 text-[10px] font-medium text-rust">{{ discount.title | escape }}{% if discount.type == 'discount_code' %}<button type="button" data-remove-discount="{{ discount.title | escape }}" aria-label="{{ section.settings.remove_label }} {{ discount.title | escape }}">{% render 'icon', name: 'close' %}</button>{% endif %}</span>{% endunless %}
+          {% endfor %}
+        </div>
+      </form>
+      <div class="mb-2 flex items-baseline justify-between border-t border-strong-coffee/10 pt-3">
+        <span class="text-[11px] uppercase tracking-[0.2em] text-strong-coffee/65">{{ section.settings.subtotal_label }}</span>
+        <span class="font-libre-baskerville text-2xl text-dark-chocolate">{{ cart.total_price | money }}</span>
+      </div>
+      <p class="mb-3 text-[11px] text-strong-coffee/55">{{ section.settings.shipping_text }}</p>
+      <div class="flex flex-col gap-2">
+        <form action="{{ routes.cart_url }}" method="post">
+          <button name="checkout" class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-rust px-5 py-3 text-sm font-medium text-white shadow-md transition hover:bg-mocha-coffee">{% render 'icon', name: 'bag' %} {{ section.settings.checkout_label }}</button>
+        </form>
+        <a href="{{ routes.all_products_collection_url }}" data-close-modal class="text-center text-xs uppercase tracking-[0.2em] text-strong-coffee/65 underline-offset-4 hover:text-rust hover:underline">{{ section.settings.continue_label }}</a>
+      </div>
+    </aside>
+  {% endif %}
+</div>
