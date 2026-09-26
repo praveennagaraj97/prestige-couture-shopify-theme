@@ -115,15 +115,15 @@ textarea:focus, select:focus {
   border-color: color-mix(in srgb, var(--color-rust) 60%, transparent);
   box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-rust) 15%, transparent);
 }
-[data-modal-variant="search"] [data-overlay-query]:focus,
-[data-modal-variant="search"] [data-overlay-query]:focus-visible {
+[data-modal-variant="search"] input[data-overlay-query]:focus,
+[data-modal-variant="search"] input[data-overlay-query]:focus-visible {
   outline: none;
   outline-offset: 0;
   border-color: transparent;
   box-shadow: none;
 }
-[data-search-form] [name="q"]:focus,
-[data-search-form] [name="q"]:focus-visible {
+[data-search-form] input[name="q"]:focus,
+[data-search-form] input[name="q"]:focus-visible {
   outline: none;
   outline-offset: 0;
   border-color: transparent;
