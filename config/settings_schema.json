@@ -16,6 +16,17 @@
         "label": "Favicon"
       },
       {
+        "type": "image_picker",
+        "id": "social_sharing_image",
+        "label": "Default social sharing image"
+      },
+      {
+        "type": "text",
+        "id": "default_meta_description",
+        "label": "Default meta description",
+        "default": "Shop thoughtfully designed everyday kurtis, dresses, and separates from Krithi Weaves."
+      },
+      {
         "type": "text",
         "id": "card_add_label",
         "label": "Add to Bag label",
