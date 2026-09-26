@@ -1,5 +1,5 @@
 {% comment %} Source-parity migration: Announcement. Content controls preserve the source layout. {% endcomment %}
-<div class="overflow-hidden bg-dark-chocolate py-2 text-center text-sm text-white" data-motion="{&quot;initial&quot;:{&quot;y&quot;:&quot;-100%&quot;,&quot;opacity&quot;:0},&quot;animate&quot;:{&quot;y&quot;:0,&quot;opacity&quot;:1},&quot;transition&quot;:{&quot;duration&quot;:0.5,&quot;ease&quot;:[0.22,1,0.36,1]},&quot;inView&quot;:false,&quot;viewport&quot;:{&quot;once&quot;:true,&quot;amount&quot;:0.2}}"><div class="section flex items-center justify-center gap-2 line-clamp-1"><span class="line-clamp-1"><span><span class="line-clamp-1"><span>{{ section.settings.text_1 | default: 'Get early access on launches and offers.' | escape }} </span><span><a href="{{ section.settings.link_2 | default: '/collections/all' | escape }}" target="_blank" rel="noopener noreferrer" class="underline underline-offset-4"><span>{{ section.settings.text_3 | default: 'Browse' | escape }}</span></a></span><span></span></span></span></span></div></div>
+<div class="overflow-hidden bg-dark-chocolate py-2 text-center text-sm text-white" data-motion="{"initial":{"y":"-100%","opacity":0},"animate":{"y":0,"opacity":1},"transition":{"duration":0.5,"ease":[0.22,1,0.36,1]},"inView":false,"viewport":{"once":true,"amount":0.2}}"><div class="section flex items-center justify-center gap-2 line-clamp-1"><span class="line-clamp-1"><span><span class="line-clamp-1"><span>{{ section.settings.text_1 | default: 'Get early access on launches and offers.' | escape }} </span><span><a href="{{ section.settings.link_2 | default: '/collections/all' | escape }}" target="{{ section.settings.link_target | default: '_blank' }}" rel="noopener noreferrer" class="underline underline-offset-4"><span>{{ section.settings.text_3 | default: 'Browse' | escape }}</span></a></span><span></span></span></span></span></div></div>
 {% schema %}
 {
   "name": "Announcement",
@@ -16,6 +16,22 @@
       "type": "url",
       "id": "link_2",
       "label": "Link: Browse"
+    },
+    {
+      "type": "select",
+      "id": "link_target",
+      "label": "Link Target",
+      "options": [
+        {
+          "value": "_self",
+          "label": "Same Tab"
+        },
+        {
+          "value": "_blank",
+          "label": "New Tab"
+        }
+      ],
+      "default": "_blank"
     },
     {
       "type": "text",

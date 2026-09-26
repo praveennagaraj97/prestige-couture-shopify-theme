@@ -5,7 +5,8 @@
     "announcement": {
       "type": "announcement-bar",
       "settings": {
-        "link_2": "/collections/all"
+        "link_2": "/collections/all",
+        "link_target": "_blank"
       }
     },
     "header": {
