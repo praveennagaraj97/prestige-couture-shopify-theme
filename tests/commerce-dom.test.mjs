@@ -30,3 +30,19 @@ test('variant image selection resolves a deep link and tolerates image query dif
  assert.equal(findVariantImageIndex(variants,'2',['https://cdn.example.com/red.jpg?width=1600','https://cdn.example.com/blue.jpg?v=1&width=1600']),1);
  assert.equal(findVariantImageIndex(variants,'3',['https://cdn.example.com/red.jpg']),0);
 });
+
+test('product add shows loading until cart confirmation, opens the modal only on success, and clears loading on failure',async()=>{
+ const env=environment();const events=[];document.dispatchEvent=e=>events.push(e.type);
+ const classes=new Set(),attrs=new Map(),message={textContent:''};
+ const button={disabled:false,dataset:{},classList:{add:c=>classes.add(c),remove:c=>classes.delete(c)},setAttribute:(k,v)=>attrs.set(k,v),removeAttribute:k=>attrs.delete(k)};
+ const section={dataset:{inCart:'false'},querySelectorAll:()=>[button],querySelector:s=>s==='[data-commerce-error]'?message:button};
+ const form={matches:s=>s==='[data-product-form]',closest:()=>section,elements:{id:{value:'31'},quantity:{value:'1'}}};
+ let release;let reject=false;
+ globalThis.fetch=async url=>{if(String(url).endsWith('cart/add.js')){await new Promise(r=>release=r);return {ok:!reject,json:async()=>reject?{description:'Sold out'}:{}};}return {ok:true,json:async()=>({items:[],item_count:0})};};
+ const {initializeCommerce}=await import('../src/commerce.js?add-loading');initializeCommerce();await tick();
+ const submit=()=>env.listeners.get('submit')({target:form,submitter:button,preventDefault(){}});
+ button.hasAttribute=()=>false;submit();await tick();
+ assert.equal(attrs.get('aria-busy'),'true');assert.equal(classes.has('kw-add-loading'),true);assert.equal(button.disabled,true);assert.equal(events.includes('kw:cart-open'),false);
+ release();await tick();await tick();assert.equal(events.filter(e=>e==='kw:cart-open').length,1);assert.equal(attrs.has('aria-busy'),false);assert.equal(classes.size,0);assert.equal(button.disabled,false);
+ reject=true;submit();await tick();release();await tick();await tick();assert.equal(events.filter(e=>e==='kw:cart-open').length,1);assert.equal(message.textContent,'Sold out');assert.equal(classes.size,0);assert.equal(button.disabled,false);
+});

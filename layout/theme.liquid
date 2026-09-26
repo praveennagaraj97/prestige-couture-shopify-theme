@@ -13,7 +13,7 @@
   {{ 'fonts.css' | asset_url | stylesheet_tag }}
   {{ 'theme.css' | asset_url | stylesheet_tag }}
   {{ content_for_header }}
-  <script>window.KW={root:{{ routes.root_url | json }},accountUrl:{{ routes.account_url | json }},searchUrl:{{ routes.search_url | json }},labels:{previous:{{ settings.previous_label | json }},next:{{ settings.next_label | json }} }};</script>
+  <script>window.KW={validation:{required:{{ settings.form_required | default: "Please complete this field." | json }},email:{{ settings.form_email | default: "Please enter a valid email address." | json }},invalid:{{ settings.form_invalid | default: "Please check this value." | json }}},root:{{ routes.root_url | json }},accountUrl:{{ routes.account_url | json }},searchUrl:{{ routes.search_url | json }},labels:{previous:{{ settings.previous_label | json }},next:{{ settings.next_label | json }} }};</script>
   <script type="module" src="{{ 'theme.js' | asset_url }}"></script>
 </head>
 <body class="max-w-400 mx-auto">

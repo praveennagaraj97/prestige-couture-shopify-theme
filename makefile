@@ -11,13 +11,14 @@ export SHOPIFY_CLI_NO_ANALYTICS = 1
 export SHOPIFY_CLI_NO_AUTO_UPDATE = 1
 
 .DEFAULT_GOAL := help
-.PHONY: help dev build check package pull-dev pull-gift-card push-dev sync-dev
+.PHONY: help dev build check package package-shopify pull-dev pull-gift-card push-dev sync-dev
 
 help:
 	@echo 'make dev             Build, watch CSS/JS, and serve the unpublished preview'
 	@echo 'make build           Compile CSS and JavaScript (including Motion)'
 	@echo 'make check           Build, test, check CSS consistency and Liquid/schema'
 	@echo 'make package         Validate and write dist/krithi-weaves-theme.zip'
+	@echo 'make package-shopify Alias for the Shopify-ready ZIP package'
 	@echo 'make push-dev        Validate and upload to the preview theme'
 	@echo 'make sync-dev        Alias for push-dev (keeps local changes)'
 	@echo 'make pull-dev        Download preview theme, overwriting matching local files'
@@ -35,6 +36,8 @@ check: build
 	npm test
 	npm run check:css
 	"$(SHOPIFY)" theme check
+
+package-shopify: package
 
 package:
 	bash scripts/package-theme.sh

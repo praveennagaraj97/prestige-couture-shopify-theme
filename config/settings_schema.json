@@ -48,8 +48,8 @@
       {
         "type": "text",
         "id": "card_adding_label",
-        "label": "Adding… label",
-        "default": "Adding…"
+        "label": "Adding\u2026 label",
+        "default": "Adding\u2026"
       },
       {
         "type": "text",
@@ -74,6 +74,29 @@
         "id": "card_off_label",
         "label": "Discount label",
         "default": "OFF"
+      }
+    ]
+  },
+  {
+    "name": "Form validation",
+    "settings": [
+      {
+        "type": "text",
+        "id": "form_required",
+        "label": "Required field message",
+        "default": "Please complete this field."
+      },
+      {
+        "type": "text",
+        "id": "form_email",
+        "label": "Invalid email message",
+        "default": "Please enter a valid email address."
+      },
+      {
+        "type": "text",
+        "id": "form_invalid",
+        "label": "Invalid value message",
+        "default": "Please check this value."
       }
     ]
   }

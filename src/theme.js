@@ -1,4 +1,5 @@
 import {animate, inView} from 'motion';
+import {initializeForms} from './forms.js';
 import {initializeCommerce} from './commerce.js';
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
 const initialized=new WeakSet(), cleanups=new Map();
@@ -55,15 +56,17 @@ function accordions(root){
 }
 function carousels(root){
  $all('[data-carousel],.no-scrollbar.snap-x',root).forEach(el=>{
-  if(initialized.has(el))return;initialized.add(el);const track=el.querySelector('[data-carousel-track]')||el;
-  if(track.scrollWidth<=track.clientWidth&& !el.matches('[data-carousel]'))return;
+  if(initialized.has(el)||el.matches('.no-scrollbar')&&el.closest('[data-carousel],[data-gallery]'))return;initialized.add(el);
+  const track=el.querySelector('[data-carousel-track]')||el;
   let prev=el.querySelector('[data-carousel-prev]'),next=el.querySelector('[data-carousel-next]');
   if(!prev&&!next&&!el.closest('.home-products')){
-   const controls=document.createElement('div');controls.className='mt-8 flex items-center justify-center gap-3';
-   for(const [dir,label] of [[-1,window.KW.labels.previous],[1,window.KW.labels.next]]){const button=document.createElement('button');button.type='button';button.className='grid size-11 place-items-center rounded-full border border-rust/50 bg-white text-rust disabled:opacity-30 md:size-10 md:rounded-md';button.setAttribute('aria-label',label);button.innerHTML=dir<0?'&#8592;':'&#8594;';button.addEventListener('click',()=>track.scrollBy({left:track.clientWidth*.85*dir,behavior:reduced.matches?'instant':'smooth'}));controls.append(button);if(dir<0)prev=button;else next=button;}
-   el.after(controls);register(el,()=>controls.remove());
-  }else{prev?.addEventListener('click',()=>track.scrollBy({left:-track.clientWidth*.8,behavior:'smooth'}));next?.addEventListener('click',()=>track.scrollBy({left:track.clientWidth*.8,behavior:'smooth'}));}
-  const update=()=>{if(prev)prev.disabled=track.scrollLeft<=1;if(next)next.disabled=track.scrollLeft>=track.scrollWidth-track.clientWidth-1;};update();track.addEventListener('scroll',update,{passive:true});const ro=new ResizeObserver(update);ro.observe(track);register(el,()=>ro.disconnect());
+   const host=el.parentElement;host.classList.add('kw-carousel-host');
+   for(const [dir,label] of [[-1,window.KW.labels.previous],[1,window.KW.labels.next]]){const button=document.createElement('button');button.type='button';button.className=`kw-carousel-arrow kw-carousel-${dir<0?'prev':'next'}`;button.setAttribute('aria-label',label);button.innerHTML=`<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="${dir<0?'M15 5l-7 7 7 7':'M9 5l7 7-7 7'}" fill="none" stroke="currentColor" stroke-width="3"/></svg>`;host.append(button);register(el,()=>button.remove());if(dir<0)prev=button;else next=button;}
+  }
+  const states=new WeakMap(),controls=new WeakMap();
+  const visibility=(button,visible)=>{if(!button||states.get(button)===visible)return;states.set(button,visible);controls.get(button)?.stop();button.disabled=!visible;if(visible)button.hidden=false;const control=animate(button,{opacity:visible?1:0,scale:visible?1:.7},{duration:reduced.matches?0:.2,ease:'easeOut'});controls.set(button,control);control.then(()=>{if(!states.get(button))button.hidden=true;});};
+  prev?.addEventListener('click',()=>track.scrollBy({left:-track.clientWidth*.8,behavior:reduced.matches?'instant':'smooth'}));next?.addEventListener('click',()=>track.scrollBy({left:track.clientWidth*.8,behavior:reduced.matches?'instant':'smooth'}));
+  const update=()=>{visibility(prev,track.scrollLeft>0);visibility(next,track.scrollLeft<track.scrollWidth-track.clientWidth-1);};update();track.addEventListener('scroll',update,{passive:true});const ro=new ResizeObserver(update);ro.observe(track);register(el,()=>{ro.disconnect();track.removeEventListener('scroll',update);});
  });
 }
 function header(root){
@@ -73,7 +76,7 @@ function header(root){
  $all('[data-footer-toggle]',root).forEach(button=>{if(initialized.has(button))return;initialized.add(button);button.addEventListener('click',()=>{const open=button.getAttribute('aria-expanded')!=='true';button.setAttribute('aria-expanded',String(open));const container=button.closest('h3').nextElementSibling;container.classList.toggle('grid-rows-[0fr]',!open);container.classList.toggle('grid-rows-[1fr]',open);container.classList.toggle('mt-2',open);button.querySelector('svg')?.classList.toggle('rotate-180',open);});});
  $all('[data-header] nav a[href],nav[aria-label] a[href]',root).forEach(link=>{const active=new URL(link.href).pathname===location.pathname;link.toggleAttribute('aria-current',active);if(active)link.setAttribute('aria-current','page');});
 }
-function initialize(root=document){$all('[data-animated-text]',root).forEach(el=>{if(!el.dataset.motion)el.dataset.motion=JSON.stringify({initial:{opacity:0,y:14},animate:{opacity:1,y:0},transition:{duration:.6,ease},inView:true,viewport:{amount:.8}});});motions(root);accordions(root);carousels(root);header(root);initializeCommerce(root);}
+function initialize(root=document){$all('[data-animated-text]',root).forEach(el=>{if(!el.dataset.motion)el.dataset.motion=JSON.stringify({initial:{opacity:0,y:14},animate:{opacity:1,y:0},transition:{duration:.6,ease},inView:true,viewport:{amount:.8}});});motions(root);accordions(root);carousels(root);header(root);initializeCommerce(root);initializeForms(root);}
 document.addEventListener('click',event=>{
  const opener=event.target.closest('[data-open-modal]');if(opener){event.preventDefault();const current=opener.closest('[data-modal]');if(current)closeModal(current).then(()=>openModal(opener.dataset.openModal));else openModal(opener.dataset.openModal);return;}
  const closer=event.target.closest('[data-close-modal]');if(closer){const owner=closer.closest('[data-modal]');if(owner){event.preventDefault();closeModal(owner);return;}}

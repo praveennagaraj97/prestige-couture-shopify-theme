@@ -80,3 +80,29 @@ button:disabled {
 [data-modal-variant="fullscreen"] > [data-modal-panel] { width: 100%; height: 100%; }
 @media (min-width:640px) { [data-modal-variant="bubble"] { align-items: stretch; justify-content: flex-end; padding: 1rem; } [data-modal-variant="bubble"] > [data-modal-panel] { width: 25rem; flex: none; height: 100%; max-height: 100%; border-radius: 1rem; padding-bottom: 0; } }
 @media (min-width:768px) { [data-modal-variant="bubble"] { padding: 1.25rem; } [data-modal-variant="bubble"] > [data-modal-panel] { width: 27rem; } }
+
+/* Same centered 650ms ring used by Cross-talk's add-to-cart button. */
+.kw-add-loading { position: relative; color: transparent !important; }
+.kw-add-loading [data-card-label] { opacity: 0; }
+.kw-add-loading::after { content: ''; position: absolute; top: 50%; left: 50%; width: 1rem; height: 1rem; margin: -.5rem 0 0 -.5rem; border: 1.5px solid var(--color-rust); border-right-color: transparent; border-radius: 999px; animation: kw-add-spin 650ms linear infinite; }
+[data-product-buy].kw-add-loading::after, [data-card-action].kw-add-loading::after { border-color: white; border-right-color: transparent; }
+@keyframes kw-add-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .kw-add-loading::after { animation: none; } }
+
+/* Match the original inline feedback, without browser validation bubbles. */
+.kw-field { min-width: 0; }
+.kw-field-error { margin: .375rem 0 0; font-size: 13px; line-height: 1.5; color: var(--color-rust); }
+.kw-field [aria-invalid="true"] { border-color: var(--color-rust); box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-rust) 12%, transparent); }
+.kw-add-loading > * { opacity: 0; }
+[data-guide-indicator] { position: absolute; left: 1rem; bottom: 0; height: 2px; width: calc(50% - 2rem); background: var(--color-rust); border-radius: 999px; }
+.kw-carousel-host { position: relative; }
+.kw-carousel-arrow { position: absolute; top: 50%; z-index: 10; display: grid; width: 2.5rem; height: 2.5rem; translate: 0 -50%; place-items: center; border-radius: 999px; box-shadow: 0 4px 6px #0002; backdrop-filter: blur(8px); }
+.kw-carousel-prev { left: .75rem; background: #ffffffe6; color: var(--color-rust); }
+.kw-carousel-next { right: .75rem; background: var(--color-rust); color: white; }
+.kw-carousel-arrow:hover { background: var(--color-dark-chocolate); color: white; }
+@media (max-width: 767px) { .kw-carousel-arrow { display: none; } }
+[data-guide-unit-indicator] { position: absolute; left: 2px; top: 2px; bottom: 2px; width: calc((100% - 4px) / 2); border-radius: 999px; background: var(--color-rust); }
+[data-guide-panel="measure"] > div:last-child { counter-reset: measurement; }
+[data-guide-panel="measure"] > div:last-child > p { position: relative; padding: 1rem 1rem 1rem 3.5rem; border-radius: .75rem; background: white; }
+[data-guide-panel="measure"] > div:last-child > p::before { counter-increment: measurement; content: counter(measurement); position: absolute; left: 1rem; top: 1rem; display: grid; place-items: center; width: 1.75rem; height: 1.75rem; border-radius: 50%; background: var(--color-rust); color: white; font-size: .75rem; }
+[data-guide-panel="measure"] > div:last-child > p strong { display: block; margin-bottom: .125rem; color: var(--color-dark-chocolate); font-size: .875rem; }

@@ -50,3 +50,13 @@ Final automated validation: 13 tests passed, CSS consistency passed, Theme Check
 ## Indigo reference product
 
 The Indigo sample (product ID 10986965172535) was updated from https://www.krithiweaves.com/products/indigo-kurti on 2026-09-26. Its handle is now `indigo-kurti`; preview homepage selections were updated accordingly, without creating a redirect. Shopify native import through Chrome copied the exact title, HTML description, Kurta type, three tags, ten ordered images and five size variants. Prices/stock: S INR20 (compare-at INR499), 2; M INR419, 1; L INR459, 4; XL INR529, 1; One size INR599, 0. Inventory is tracked for this product. Details, Fabric care (list), Number of reviews (128) and Review (4.8/5) were created as matching product metafields. The storefront preview confirms the ten-image gallery, five sizes, source pricing, stock message, description, details and rating values. The two other products remain samples.
+
+## Cart add feedback and packaging
+
+Product and card add buttons use the Cross-talk-style centered 650ms ring while Shopify confirms the add and refreshes cart sections. The cart modal opens after success; failed adds retain an error and restore the button. `make package-shopify` (or `make -C theme package-shopify` from the workspace root) runs compilation, tests, CSS consistency, Theme Check, and writes `dist/krithi-weaves-theme.zip`.
+
+## Product polish and inline validation
+
+The savings badge is server-rendered and updated on variant selection; variants without savings hide the entire badge. Purchase labels update independently of bag/check/bolt SVGs. Size-guide rows, measurement strokes, and tab/unit indicators use bundled Motion with the source timings and springs; reduced motion skips those transitions. Carousel arrows enter/exit only when scrolling in their direction is possible.
+
+Home, Contact and Bulk Orders use inline validation while retaining Shopify contact submissions. Theme settings → Form validation controls required-field, invalid-email and invalid-value messages, with English fallbacks. Errors attach to the affected field via `aria-describedby`; failed submission focuses the first invalid field. Without JavaScript the native form remains available.
