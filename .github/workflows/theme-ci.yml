@@ -26,6 +26,12 @@ jobs:
           cache-dependency-path: package-lock.json
       - run: npm ci
       - run: npm run build
+      - name: Verify generated theme assets are committed
+        run: |
+          if ! git diff --quiet -- assets/theme.css assets/theme.js; then
+            echo "::error::Generated theme assets are stale. Run 'npm run build' and commit assets/theme.css and assets/theme.js."
+            exit 1
+          fi
       - run: npm test
       - run: npm run check:css
       - name: Install Shopify CLI
