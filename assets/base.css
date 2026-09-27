@@ -66,6 +66,15 @@ button:disabled {
   cursor: not-allowed;
 }
 
+[data-product-section] .kw-unavailable-size {
+  text-decoration-line: line-through;
+}
+
+[data-product-section] [data-option-value]:focus-visible {
+  outline: 2px solid var(--color-rust);
+  outline-offset: 2px;
+}
+
 [hidden] { display: none !important; }
 .kw-section { display: contents; }
 .kw-header-compact { background-color: rgb(240 229 216 / .9); box-shadow: 0 10px 30px -14px rgb(44 36 26 / .25); backdrop-filter: blur(12px); }
