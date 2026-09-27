@@ -11,117 +11,201 @@
   "sections": {
     "hero": {
       "type": "home-hero",
-      "settings": {
-        "link_4": "/collections/all"
-      },
       "blocks": {
         "item_1": {
           "type": "item_1",
           "settings": {
-            "link_1": "/pages/about"
+            "link_1": "/pages/about",
+            "text_2": "Read More"
           }
         },
         "item_2": {
           "type": "item_2",
           "settings": {
-            "link_1": "/collections/all"
+            "link_1": "/collections/all",
+            "text_2": "Shop Now"
           }
         },
         "item_3": {
           "type": "item_3",
-          "settings": {}
+          "settings": {
+            "text_1": "• Free Shipping"
+          }
         },
         "item_4": {
           "type": "item_4",
-          "settings": {}
+          "settings": {
+            "text_1": "• Easy Returns"
+          }
         },
         "item_5": {
           "type": "item_5",
-          "settings": {}
+          "settings": {
+            "text_1": "• 100% Authentic"
+          }
         }
       },
-      "block_order": ["item_1", "item_2", "item_3", "item_4", "item_5"]
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4",
+        "item_5"
+      ],
+      "settings": {
+        "text_1": "Crafted in roots for every occasion",
+        "text_3": "Inspired from women around us and thoughtfully crafted for indian body",
+        "link_4": "/collections/all",
+        "text_5": "Shop Now",
+        "text_9": "4.8",
+        "link_10": "",
+        "checkbox_11": true,
+        "checkbox_12": true,
+        "color_13": "#190202",
+        "color_14": "#ffffff"
+      }
     },
     "featured": {
       "type": "home-products",
       "settings": {
         "heading": "Featured Products",
-        "mode": "featured"
+        "mode": "featured",
+        "collection": "",
+        "products": [],
+        "best_seller_products": [],
+        "link": "",
+        "link_label": "View All",
+        "empty": "Our collection is coming soon.",
+        "previous": "Scroll left",
+        "next": "Scroll right"
       }
     },
     "best": {
       "type": "home-products",
       "settings": {
         "heading": "Best Sellers",
-        "mode": "best"
+        "mode": "best",
+        "collection": "",
+        "products": [],
+        "best_seller_products": [],
+        "link": "",
+        "link_label": "View All",
+        "empty": "Our collection is coming soon.",
+        "previous": "Scroll left",
+        "next": "Scroll right"
       }
     },
     "testimonials": {
       "type": "home-testimonials",
-      "settings": {},
       "blocks": {
         "item_1": {
           "type": "item_1",
-          "settings": {}
+          "settings": {
+            "text_1": "5.0",
+            "text_2": "Emily Wilson",
+            "copy_3": "I have worn this kurti twice a week for six months, and it still looks fresh off the rack. The fabric breathes beautifully in the Bangalore heat—nothing I own fits this well at this price."
+          }
         },
         "item_2": {
           "type": "item_2",
-          "settings": {}
+          "settings": {
+            "text_1": "5.0",
+            "text_2": "Ananya",
+            "copy_3": "Absolutely loved my purchase from Krithi Weaves! The fabric quality is beautiful, the detailing is elegant, and the product looks exactly like the pictures. The fit and finish are really good, making it perfect for both casual and special occasions. You can definitely see the care and craftsmanship that goes into each piece. Highly recommended!"
+          }
         }
       },
-      "block_order": ["item_1", "item_2"]
+      "block_order": [
+        "item_1",
+        "item_2"
+      ],
+      "settings": {
+        "text_1": "Your words of love",
+        "text_2": "What our customers say"
+      }
     },
     "stories": {
       "type": "home-stories",
-      "settings": {},
       "blocks": {
         "item_1": {
           "type": "item_1",
-          "settings": {}
+          "settings": {
+            "text_2": "Customer story 1",
+            "text_4": "Customer story 3",
+            "text_6": "Customer story 5",
+            "text_8": "Customer story 7",
+            "text_10": "Customer story 9"
+          }
         },
         "item_2": {
           "type": "item_2",
-          "settings": {}
+          "settings": {
+            "text_2": "Customer story 2",
+            "text_4": "Customer story 4",
+            "text_6": "Customer story 6",
+            "text_8": "Customer story 8",
+            "text_10": "Customer story 10"
+          }
         },
         "item_3": {
           "type": "item_3",
-          "settings": {}
+          "settings": {
+            "text_2": "Customer story 1"
+          }
         },
         "item_4": {
           "type": "item_4",
-          "settings": {}
+          "settings": {
+            "text_2": "Customer story 2"
+          }
         },
         "item_5": {
           "type": "item_5",
-          "settings": {}
+          "settings": {
+            "text_2": "Customer story 3"
+          }
         },
         "item_6": {
           "type": "item_6",
-          "settings": {}
+          "settings": {
+            "text_2": "Customer story 4"
+          }
         },
         "item_7": {
           "type": "item_7",
-          "settings": {}
+          "settings": {
+            "text_2": "Customer story 5"
+          }
         },
         "item_8": {
           "type": "item_8",
-          "settings": {}
+          "settings": {
+            "text_2": "Customer story 6"
+          }
         },
         "item_9": {
           "type": "item_9",
-          "settings": {}
+          "settings": {
+            "text_2": "Customer story 7"
+          }
         },
         "item_10": {
           "type": "item_10",
-          "settings": {}
+          "settings": {
+            "text_2": "Customer story 8"
+          }
         },
         "item_11": {
           "type": "item_11",
-          "settings": {}
+          "settings": {
+            "text_2": "Customer story 9"
+          }
         },
         "item_12": {
           "type": "item_12",
-          "settings": {}
+          "settings": {
+            "text_2": "Customer story 10"
+          }
         }
       },
       "block_order": [
@@ -137,93 +221,172 @@
         "item_10",
         "item_11",
         "item_12"
-      ]
+      ],
+      "settings": {
+        "text_1": "Real Stories. Real Comfort.",
+        "text_3": "Real Stories",
+        "text_4": "Real Comfort.",
+        "text_5": "Real conversations from happy customers who chose Krithi Weaves."
+      }
     },
     "about": {
       "type": "home-about",
-      "settings": {},
       "blocks": {
         "item_1": {
           "type": "item_1",
-          "settings": {}
+          "settings": {
+            "text_2": "Architect-designed clothing blending comfort and style"
+          }
         },
         "item_2": {
           "type": "item_2",
-          "settings": {}
+          "settings": {
+            "text_1": "Made with soft, breathable cottons \nfor Indian weather"
+          }
         },
         "item_3": {
           "type": "item_3",
-          "settings": {}
+          "settings": {
+            "text_2": "An architects vision for breathable and comfort wear"
+          }
         }
       },
-      "block_order": ["item_1", "item_2", "item_3"]
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3"
+      ],
+      "settings": {
+        "text_1": "Behind Krithi Weaves"
+      }
     },
     "how": {
       "type": "home-how",
-      "settings": {},
       "blocks": {
         "item_1": {
           "type": "item_1",
-          "settings": {}
+          "settings": {
+            "text_1": "01",
+            "copy_2": "Soft, airy, and gentle on skin — perfect for India's warm climate. Our fabrics let you move freely and stay comfortable."
+          }
         },
         "item_2": {
           "type": "item_2",
-          "settings": {}
+          "settings": {
+            "text_1": "02",
+            "copy_2": "Clean lines, subtle structure, and purposeful silhouettes. Every piece reflects an architectural approach."
+          }
         },
         "item_3": {
           "type": "item_3",
-          "settings": {}
+          "settings": {
+            "text_1": "03",
+            "copy_2": "Good design shouldn't be out of reach. We keep our prices accessible so you can build a timeless wardrobe."
+          }
         }
       },
-      "block_order": ["item_1", "item_2", "item_3"]
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3"
+      ],
+      "settings": {
+        "text_1": "How Krithi Weaves makes clothing",
+        "text_3": "Krithi Weaves model in brown kurti"
+      }
     },
     "style-it": {
       "type": "home-style-it",
-      "settings": {
-        "link_3": "https://www.instagram.com/krithi_weaves_"
-      },
       "blocks": {
         "item_1": {
           "type": "item_1",
-          "settings": {}
+          "settings": {
+            "text_2": "Customer styled look 1"
+          }
         },
         "item_2": {
           "type": "item_2",
-          "settings": {}
+          "settings": {
+            "text_2": "Customer styled look 2"
+          }
         },
         "item_3": {
           "type": "item_3",
-          "settings": {}
+          "settings": {
+            "text_2": "Customer styled look 3"
+          }
         },
         "item_4": {
           "type": "item_4",
-          "settings": {}
+          "settings": {
+            "text_2": "Customer styled look 4"
+          }
         }
       },
-      "block_order": ["item_1", "item_2", "item_3", "item_4"]
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4"
+      ],
+      "settings": {
+        "text_1": "How They Style It",
+        "text_2": "Real looks from our Krithi family",
+        "link_3": "https://www.instagram.com/krithi_weaves_",
+        "text_4": "Follow Our Instagram",
+        "text_5": "Tag us @krithi_Weaves"
+      }
     },
     "connect": {
       "type": "home-connect",
-      "settings": {},
       "blocks": {
         "item_1": {
           "type": "item_1",
-          "settings": {}
+          "settings": {
+            "text_1": "No. 47, Lavelle Road, Bengaluru - 560001, India"
+          }
         },
         "item_2": {
           "type": "item_2",
-          "settings": {}
+          "settings": {
+            "text_1": "hello@krithiweaves.com"
+          }
         },
         "item_3": {
           "type": "item_3",
-          "settings": {}
+          "settings": {
+            "text_1": "+91 98765 43210"
+          }
         },
         "item_4": {
           "type": "item_4",
-          "settings": {}
+          "settings": {
+            "text_1": "Mon–Sat 10am–7pm IST"
+          }
         }
       },
-      "block_order": ["item_1", "item_2", "item_3", "item_4"]
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4"
+      ],
+      "settings": {
+        "text_1": "Let's connect",
+        "text_2": "Have a question? Sizing help or just want to say hello",
+        "text_3": "Krithi Weaves",
+        "text_4": "Facebook",
+        "text_5": "Instagram",
+        "text_6": "X",
+        "text_7": "LinkedIn",
+        "text_8": "Send us an enquiry",
+        "text_9": "Full name *",
+        "text_10": "Email address *",
+        "text_11": "Tell us more... sizing, fabric, or just say hi *",
+        "text_12": "Send message",
+        "form_success": "Thank you! Your message has been sent. We will get back to you soon.",
+        "text_13": "Message sent"
+      }
     }
   },
   "order": [
