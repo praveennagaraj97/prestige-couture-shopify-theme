@@ -80,6 +80,7 @@ button:disabled {
 .kw-header-compact { background-color: rgb(240 229 216 / .9); box-shadow: 0 10px 30px -14px rgb(44 36 26 / .25); backdrop-filter: blur(12px); }
 :focus-visible { outline: 2px solid #b13e10; outline-offset: 3px; }
 [data-modal] { z-index: 80; }
+[data-modal-variant="navigation"] { position: fixed; inset: 0; z-index: 100; display: flex; justify-content: flex-end; background: rgb(0 0 0 / .4); }
 [data-header-row] { padding-top: 8px; padding-bottom: 8px; }
 [data-modal-panel] { outline: none; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; animation-iteration-count: 1 !important; } }
