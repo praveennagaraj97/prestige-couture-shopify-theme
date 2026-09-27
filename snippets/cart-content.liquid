@@ -74,8 +74,9 @@
             <span class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[10px] text-strong-coffee/40">{% render 'icon', name: 'tag' %}</span>
             <input name="discount" aria-label="{{ section.settings.promo_label }}" placeholder="{{ section.settings.promo_label }}" class="w-full rounded-full border border-strong-coffee/20 bg-white-chocolate/50 py-2.5 pl-7 pr-3 text-xs text-dark-chocolate">
           </div>
-          <button class="rounded-full border border-rust px-4 py-2 text-xs font-medium text-rust">{{ section.settings.apply_label }}</button>
+          <button type="submit" data-promo-apply class="rounded-full border border-rust px-4 py-2 text-xs font-medium text-rust">{{ section.settings.apply_label }}</button>
         </div>
+        <p data-promo-error role="alert" hidden class="mt-1 px-1 text-xs text-red-600"></p>
         <div data-discount-codes data-remove-label="{{ section.settings.remove_label | escape }}" class="mt-2 flex flex-wrap gap-1.5"></div>
         <div class="mt-2 flex flex-wrap gap-1.5">
           {% for discount in cart.cart_level_discount_applications %}
