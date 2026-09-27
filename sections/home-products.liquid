@@ -7,7 +7,11 @@
       assign selected_collection = collections['featured']
     endif
   endif
-  assign products = section.settings.products
+  if section.settings.mode == 'best'
+    assign products = section.settings.best_seller_products
+  else
+    assign products = section.settings.products
+  endif
   if products == blank
     assign products = selected_collection.products
   endif
@@ -19,18 +23,21 @@
     <a href="{{ destination }}" class="group inline-flex shrink-0 items-center gap-1 pb-1 text-xs text-rust transition-colors sm:text-sm -translate-y-1"><span>{{ section.settings.link_label | escape }}</span><span aria-hidden="true" class="inline-flex transition-transform duration-200 ease-out group-hover:translate-x-0.5">{% render 'icon', name: 'chevron-right' %}</span></a>
   </div>
   {% if products != blank %}
-    <div class="grid grid-cols-2 gap-3 sm:hidden">
-      {% for product in products limit: 4 %}
-        <div class="{% if section.settings.mode == 'best' and forloop.first %}col-span-2{% endif %}" data-motion='{"initial":{"opacity":0,"y":14},"animate":{"opacity":1,"y":0},"transition":{"duration":0.4,"delay":{{ forloop.index0 | times: 0.04 | plus: 0.02 }},"ease":[0.22,1,0.36,1]},"inView":true,"viewport":{"amount":0.25}}'>
-          {% if section.settings.mode == 'best' %}{% render 'product-card', product: product, mode: 'mobile-best', index: forloop.index0 %}{% else %}{% render 'product-card', product: product, mode: 'mobile', index: forloop.index0 %}{% endif %}
-        </div>
-      {% endfor %}
-    </div>
     {% if section.settings.mode == 'best' %}
+      <div class="grid grid-cols-2 gap-3 sm:hidden">
+        {% for product in products limit: 3 %}
+          <div class="{% if forloop.first %}col-span-2{% endif %}" data-motion='{"initial":{"opacity":0,"y":14},"animate":{"opacity":1,"y":0},"transition":{"duration":0.4,"delay":{{ forloop.index0 | times: 0.04 | plus: 0.02 }},"ease":[0.22,1,0.36,1]},"inView":true,"viewport":{"amount":0.25}}'>{% render 'product-card', product: product, mode: 'mobile-best', index: forloop.index0 %}</div>
+        {% endfor %}
+      </div>
       <div class="hidden gap-5 sm:grid sm:grid-cols-2 md:grid-cols-3">
-        {% for product in products limit: 6 %}<div data-motion='{"initial":{"opacity":0,"y":14},"animate":{"opacity":1,"y":0},"transition":{"duration":0.4,"delay":{{ forloop.index0 | times: 0.04 | plus: 0.02 }},"ease":[0.22,1,0.36,1]},"inView":true,"viewport":{"amount":0.3}}'>{% render 'product-card', product: product, mode: 'best', index: forloop.index0 %}</div>{% endfor %}
+        {% for product in products limit: 3 %}<div data-motion='{"initial":{"opacity":0,"y":14},"animate":{"opacity":1,"y":0},"transition":{"duration":0.4,"delay":{{ forloop.index0 | times: 0.04 | plus: 0.02 }},"ease":[0.22,1,0.36,1]},"inView":true,"viewport":{"amount":0.3}}'>{% render 'product-card', product: product, mode: 'best', index: forloop.index0 %}</div>{% endfor %}
       </div>
     {% else %}
+      <div class="relative sm:hidden" data-carousel>
+        <div class="no-scrollbar flex snap-x snap-mandatory overflow-x-auto scroll-smooth gap-3 py-2" data-carousel-track>
+          {% for product in products limit: 6 %}<div class="shrink-0 snap-start basis-[70%]" data-motion='{"initial":{"opacity":0,"y":14},"animate":{"opacity":1,"y":0},"transition":{"duration":0.4,"delay":{{ forloop.index0 | times: 0.04 | plus: 0.02 }},"ease":[0.22,1,0.36,1]},"inView":true,"viewport":{"amount":0.2}}'>{% render 'product-card', product: product, mode: 'mobile', index: forloop.index0 %}</div>{% endfor %}
+        </div>
+      </div>
       <div class="relative hidden sm:block" data-carousel>
         <div class="no-scrollbar flex snap-x snap-mandatory overflow-x-auto scroll-smooth gap-4 md:gap-5 py-2" data-carousel-track>
           {% for product in products limit: 6 %}<div class="shrink-0 snap-start basis-[70%] sm:basis-[45%] md:basis-[33%] lg:basis-[25%]" data-motion='{"initial":{"opacity":0,"y":14},"animate":{"opacity":1,"y":0},"transition":{"duration":0.4,"delay":{{ forloop.index0 | times: 0.04 | plus: 0.02 }},"ease":[0.22,1,0.36,1]},"inView":true,"viewport":{"amount":0.2}}'>{% render 'product-card', product: product, mode: 'desktop', index: forloop.index0 %}</div>{% endfor %}
@@ -75,8 +82,14 @@
     {
       "type": "product_list",
       "id": "products",
-      "label": "Product selection (overrides collection)",
+      "label": "Featured product selection (overrides collection)",
       "limit": 12
+    },
+    {
+      "type": "product_list",
+      "id": "best_seller_products",
+      "label": "Best-seller product selection (overrides collection)",
+      "limit": 3
     },
     {
       "type": "url",
