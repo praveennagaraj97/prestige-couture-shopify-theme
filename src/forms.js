@@ -3,6 +3,7 @@ const initialized=new WeakSet();
 let nextId=0;
 export function validationMessage(field,labels){
  if(field.required&&!field.value.trim())return labels.required;
+ if(field.type==='email'&&field.value&&!/^[^\s@]+@[^\s@.]+(?:\.[^\s@.]+)+$/.test(field.value.trim()))return labels.email;
  if(field.validity.typeMismatch&&field.type==='email')return labels.email;
  if(!field.validity.valid)return labels.invalid;
  return '';
