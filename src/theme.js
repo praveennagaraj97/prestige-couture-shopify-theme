@@ -4,7 +4,7 @@ import {initializeForms} from './forms.js';
 import {isActiveNavigationPath} from './navigation.js';
 import {initializeCommerce} from './commerce.js';
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
-const initialized=new WeakSet(), cleanups=new Map();
+const initialized=new WeakSet(), initializedAccordions=new WeakSet(), accordionAnimations=new WeakMap(), cleanups=new Map();
 const $all=(selector,root=document)=>[...(root.matches?.(selector)?[root]:[]),...root.querySelectorAll(selector)];
 const ease=[.22,1,.36,1];
 function register(root,cleanup){const key=root.closest?.('.shopify-section')||root;(cleanups.get(key)||cleanups.set(key,[]).get(key)).push(cleanup);}
@@ -51,9 +51,12 @@ export async function closeModal(modal=openModals.at(-1)){
  if(!openModals.length){document.body.style.overflow=savedOverflow;savedFocus?.focus?.({preventScroll:true});}
 }
 function accordions(root){
- $all('[data-accordion]',root).forEach(el=>{if(initialized.has(el))return;initialized.add(el);const button=el.querySelector('button'),body=el.querySelector('[data-accordion-body]'),icon=el.querySelector('[data-accordion-icon]');if(!button||!body)return;
- const initial=el.dataset.defaultOpen==='true';body.hidden=!initial;button.setAttribute('aria-expanded',String(initial));
- button.addEventListener('click',async()=>{const open=button.getAttribute('aria-expanded')!=='true';button.setAttribute('aria-expanded',String(open));el.classList.toggle('ring-rust/40',open);el.classList.toggle('ring-strong-coffee/10',!open);if(icon)animate(icon,{rotate:open?45:0},{duration:reduced.matches?0:.25,ease:'easeOut'});if(open){body.hidden=false;animate(body,{height:[0,body.scrollHeight],opacity:[0,1]},{duration:reduced.matches?0:.35,ease}).then(()=>{body.style.height='auto';});}else{await animate(body,{height:0,opacity:0},{duration:reduced.matches?0:.3,ease});body.hidden=true;}});
+ $all('[data-accordion]',root).forEach(el=>{if(initializedAccordions.has(el))return;initializedAccordions.add(el);const button=el.querySelector('button'),body=el.querySelector('[data-accordion-body]'),icon=el.querySelector('[data-accordion-icon]');if(!button||!body)return;
+ const initial=el.dataset.defaultOpen==='true';body.hidden=!initial;body.style.height=initial?'auto':'0px';body.style.opacity=initial?'1':'0';button.setAttribute('aria-expanded',String(initial));el.classList.toggle('ring-rust/40',initial);el.classList.toggle('ring-strong-coffee/10',!initial);if(icon)animate(icon,{rotate:initial?45:0},{duration:0});
+ button.addEventListener('click',()=>{const open=button.getAttribute('aria-expanded')!=='true',previous=accordionAnimations.get(body);previous?.stop();button.setAttribute('aria-expanded',String(open));el.classList.toggle('ring-rust/40',open);el.classList.toggle('ring-strong-coffee/10',!open);if(icon)animate(icon,{rotate:open?45:0},{duration:reduced.matches?0:.25,ease:'easeOut'});
+  if(open){body.hidden=false;body.style.height='0px';body.style.opacity='0';const controls=animate(body,{height:body.scrollHeight,opacity:1},{duration:reduced.matches?0:.35,ease});accordionAnimations.set(body,controls);controls.then(()=>{if(button.getAttribute('aria-expanded')==='true'&&accordionAnimations.get(body)===controls)body.style.height='auto';});}
+  else{const height=body.getBoundingClientRect().height;body.style.height=`${height}px`;const controls=animate(body,{height:0,opacity:0},{duration:reduced.matches?0:.3,ease});accordionAnimations.set(body,controls);controls.then(()=>{if(button.getAttribute('aria-expanded')==='false'&&accordionAnimations.get(body)===controls){body.hidden=true;body.style.height='0px';body.style.opacity='0';}});}
+ });
  });
 }
 function carousels(root){
