@@ -1,11 +1,33 @@
 import {animate} from 'motion';
 const initialized=new WeakSet();
 let nextId=0;
+function fieldLabel(field){
+ const name=(field.name||'').toLowerCase();
+ if(field.type==='email'||name.includes('email'))return 'email address';
+ if(field.type==='tel'||name.includes('phone'))return 'phone number';
+ if(name.includes('organisation')||name.includes('organization')||name.includes('brand'))return 'organisation or brand name';
+ if(name.includes('[name]')||name==='name')return 'name';
+ if(field.tagName==='TEXTAREA'||name.includes('body'))return 'message';
+ if(field.tagName==='SELECT')return (field.options[0]?.textContent||'option').trim().toLowerCase();
+ return (field.getAttribute('aria-label')||field.placeholder||'value').replace(/\s*\*+\s*$/,'').trim().toLowerCase();
+}
+function requiredMessage(field){
+ const label=fieldLabel(field);
+ if(label==='email address')return 'Please enter your email address.';
+ if(label==='phone number')return 'Please enter your phone number.';
+ if(label==='organisation or brand name')return 'Please enter your organisation or brand name.';
+ if(label==='name')return 'Please enter your name.';
+ if(label==='message')return 'Please enter a message.';
+ if(field.tagName==='SELECT'&&label.includes('quantity'))return 'Please select an approximate order quantity.';
+ if(field.tagName==='SELECT'&&label.includes('needed by'))return 'Please select when you need the order.';
+ if(field.tagName==='SELECT')return `Please choose an option for ${label}.`;
+ return `Please enter your ${label}.`;
+}
 export function validationMessage(field,labels){
- if(field.required&&!field.value.trim())return labels.required;
+ if(field.required&&!field.value.trim())return requiredMessage(field);
  if(field.type==='email'&&field.value&&!/^[^\s@]+@[^\s@.]+(?:\.[^\s@.]+)+$/.test(field.value.trim()))return labels.email;
  if(field.validity.typeMismatch&&field.type==='email')return labels.email;
- if(!field.validity.valid)return labels.invalid;
+ if(!field.validity.valid)return `Please check your ${fieldLabel(field)} and try again.`;
  return '';
 }
 export function initializeForms(root=document){
