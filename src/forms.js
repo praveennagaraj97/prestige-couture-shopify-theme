@@ -45,7 +45,7 @@ export function initializeForms(root=document){
    if(message&&!matchMedia('(prefers-reduced-motion: reduce)').matches)animate(error,{opacity:[0,1],y:[6,0]},{duration:.25,ease:[.22,1,.36,1]});
    return !message;
   };
-  form.addEventListener('submit',event=>{let first;for(const field of fields)if(!validate(field)&&!first)first=field;if(first){event.preventDefault();first.focus();return;}const button=event.submitter||form.querySelector('[data-contact-submit]');if(button){button.classList.add('kw-form-loading');button.disabled=true;button.setAttribute('aria-busy','true');}});
+  form.addEventListener('submit',event=>{const invalid=fields.filter(field=>!validate(field));if(invalid.length){event.preventDefault();event.stopImmediatePropagation();invalid[0].focus();return;}const button=event.submitter||form.querySelector('[data-contact-submit]');if(button){button.classList.add('kw-form-loading');button.disabled=true;button.setAttribute('aria-busy','true');}},true);
   for(const field of fields){field.addEventListener('blur',()=>{if(field.value||messages.has(field))validate(field);});field.addEventListener('input',()=>{if(messages.has(field))validate(field);});}
  });
 }
