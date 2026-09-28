@@ -4202,6 +4202,11 @@ footer a:not(.inline-flex):hover {
   input:not([type]), input[type="text"], input[type="email"], input[type="search"], input[type="tel"], input[type="url"], input[type="password"], input[type="number"], textarea, select {
     font-size: 16px !important;
   }
+  [data-mobile-bottom-nav].kw-mobile-nav-keyboard-hidden {
+    visibility: hidden;
+    transform: translateY(100%);
+    pointer-events: none;
+  }
 }
 @property --tw-translate-x {
   syntax: "*";

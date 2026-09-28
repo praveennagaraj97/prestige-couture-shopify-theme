@@ -6001,14 +6001,22 @@ function header(root) {
         cartButton.querySelector("[data-nav-indicator]")?.classList.toggle("opacity-0", !active);
       }
     };
+    const isTextEntry = (element) => element instanceof HTMLElement && element.matches("input:not([type=checkbox]):not([type=radio]):not([type=button]):not([type=submit]):not([type=reset]):not([type=hidden]),textarea,select,[contenteditable=true]");
+    const syncKeyboard = () => nav.classList.toggle("kw-mobile-nav-keyboard-hidden", innerWidth < 768 && isTextEntry(document.activeElement));
+    const onFocusOut = () => requestAnimationFrame(syncKeyboard);
     sync();
+    syncKeyboard();
     window.addEventListener("popstate", sync);
     document.addEventListener("kw:modal-open", sync);
     document.addEventListener("kw:modal-close", sync);
+    document.addEventListener("focusin", syncKeyboard);
+    document.addEventListener("focusout", onFocusOut);
     register(nav, () => {
       window.removeEventListener("popstate", sync);
       document.removeEventListener("kw:modal-open", sync);
       document.removeEventListener("kw:modal-close", sync);
+      document.removeEventListener("focusin", syncKeyboard);
+      document.removeEventListener("focusout", onFocusOut);
     });
   });
 }

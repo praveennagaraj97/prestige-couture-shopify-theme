@@ -106,8 +106,8 @@ function header(root){
    const cartButton=nav.querySelector('[data-open-modal="cart"]');
    if(cartButton){const active=/^\/cart(?:\/|$)/.test(location.pathname)||Boolean(document.querySelector('[data-modal="cart"]:not([hidden])'));cartButton.setAttribute('aria-expanded',String(active));cartButton.classList.toggle('text-rust',active);cartButton.classList.toggle('text-strong-coffee/60',!active);cartButton.querySelector('[data-nav-indicator]')?.classList.toggle('opacity-0',!active);}
   };
-  sync();window.addEventListener('popstate',sync);document.addEventListener('kw:modal-open',sync);document.addEventListener('kw:modal-close',sync);
-  register(nav,()=>{window.removeEventListener('popstate',sync);document.removeEventListener('kw:modal-open',sync);document.removeEventListener('kw:modal-close',sync);});
+  const isTextEntry=element=>element instanceof HTMLElement&&element.matches('input:not([type=checkbox]):not([type=radio]):not([type=button]):not([type=submit]):not([type=reset]):not([type=hidden]),textarea,select,[contenteditable=true]');const syncKeyboard=()=>nav.classList.toggle('kw-mobile-nav-keyboard-hidden',innerWidth<768&&isTextEntry(document.activeElement));const onFocusOut=()=>requestAnimationFrame(syncKeyboard);sync();syncKeyboard();window.addEventListener('popstate',sync);document.addEventListener('kw:modal-open',sync);document.addEventListener('kw:modal-close',sync);document.addEventListener('focusin',syncKeyboard);document.addEventListener('focusout',onFocusOut);
+  register(nav,()=>{window.removeEventListener('popstate',sync);document.removeEventListener('kw:modal-open',sync);document.removeEventListener('kw:modal-close',sync);document.removeEventListener('focusin',syncKeyboard);document.removeEventListener('focusout',onFocusOut);});
  });
 }
 function initialize(root=document){$all('[data-animated-text]',root).forEach(el=>{if(!el.dataset.motion)el.dataset.motion=JSON.stringify({initial:{opacity:0,y:14},animate:{opacity:1,y:0},transition:{duration:.6,ease},inView:true,viewport:{amount:.8}});});motions(root);accordions(root);carousels(root);header(root);initializeCommerce(root);initializeForms(root);}
