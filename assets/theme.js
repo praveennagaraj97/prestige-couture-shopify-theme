@@ -5353,7 +5353,7 @@ function initGallery(section) {
     if (scale2 === 1) x = y = 0;
     zoom.style.transform = `translate(${x}px,${y}px) scale(${scale2})`;
   };
-  let swap = 0, mainAnimation;
+  let swap = 0, mainAnimation, zoomChange = 0;
   const track = $("[data-gallery-track]", section);
   const show = (index, scrollTrack = true) => {
     active = (index + thumbs.length) % thumbs.length;
@@ -5377,8 +5377,21 @@ function initGallery(section) {
     if (scrollTrack && track) {
       track.scrollLeft = active * track.clientWidth;
     }
-    zoom.src = item.dataset.image;
-    zoom.alt = item.dataset.alt;
+    const zoomModal = canvas.closest('[data-modal="product-zoom"]');
+    if (zoomModal && !zoomModal.hidden && zoom.getAttribute("src") !== item.dataset.image && !reduced()) {
+      const token = ++zoomChange;
+      animate(zoom, { opacity: [1, 0] }, { duration: 0.12, ease: "easeOut" }).then(() => {
+        if (token !== zoomChange) return;
+        zoom.src = item.dataset.image;
+        zoom.alt = item.dataset.alt;
+        animate(zoom, { opacity: [0, 1] }, { duration: 0.2, ease: "easeOut" });
+      });
+    } else {
+      zoomChange++;
+      zoom.src = item.dataset.image;
+      zoom.alt = item.dataset.alt;
+      zoom.style.opacity = "1";
+    }
     scale2 = 1;
     x = y = 0;
     transform();
