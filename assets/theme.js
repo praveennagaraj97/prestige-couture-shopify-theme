@@ -5049,6 +5049,7 @@ function findVariantForOption(variants, currentId, index, value) {
 var installed = false;
 var cart = { items: [] };
 var api;
+var cartOrderHint = null;
 var $ = (selector, root = document) => root.querySelector(selector);
 var $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 var emit = (name, detail) => document.dispatchEvent(new CustomEvent(name, { detail }));
@@ -5079,7 +5080,7 @@ async function refreshCart(next) {
   cart = next;
   const sectionNodes = $$("[data-cart-content]");
   const ids = [...new Set(sectionNodes.map((n) => n.dataset.cartSection))];
-  const scrollStates = sectionNodes.map((node) => ({ section: node.dataset.cartSection, list: $("[data-cart-list]", node)?.scrollTop ?? 0 }));
+  const scrollStates = sectionNodes.map((node) => ({ section: node.dataset.cartSection, list: $("[data-cart-list]", node)?.scrollTop ?? 0, order: $$("[data-cart-line]", node).map((line) => ({ key: line.dataset.cartLine, product: line.dataset.cartProductId, variant: line.dataset.cartVariantId })) }));
   const pageScroll = window.scrollY;
   if (ids.length) {
     const url = new URL(location.href);
@@ -5097,7 +5098,23 @@ async function refreshCart(next) {
         const state = scrollStates.find((item) => item.section === node.dataset.cartSection);
         if (state) {
           const list = $("[data-cart-list]", replacement);
-          if (list) list.scrollTop = state.list;
+          if (list) {
+            const lines = $$("[data-cart-line]", list), byKey = new Map(lines.map((line) => [line.dataset.cartLine, line])), previousKeys = new Set(state.order.map((item) => item.key)), used = /* @__PURE__ */ new Set(), ordered = [];
+            for (const previous of state.order) {
+              let line = byKey.get(previous.key);
+              if (!line && cartOrderHint?.lineKey === previous.key) {
+                const candidate = lines.find((item) => item.dataset.cartProductId === cartOrderHint.productId && item.dataset.cartVariantId === cartOrderHint.variantId);
+                if (candidate && !previousKeys.has(candidate.dataset.cartLine)) line = candidate;
+              }
+              if (line && !used.has(line)) {
+                ordered.push(line);
+                used.add(line);
+              }
+            }
+            for (const line of lines) if (!used.has(line)) ordered.push(line);
+            ordered.forEach((line) => list.append(line));
+            list.scrollTop = state.list;
+          }
         }
         emit("kw:content-updated", { root: replacement });
       }
@@ -5567,7 +5584,16 @@ function initializeCommerce(root = document) {
     const line = target.closest("[data-cart-line]"), scope = target.closest("[data-cart-content]");
     if (line && (target.hasAttribute("data-cart-delta") || target.hasAttribute("data-cart-remove") || target.hasAttribute("data-cart-variant"))) {
       e.preventDefault();
-      busy(scope, () => target.hasAttribute("data-cart-variant") ? api.swap(line.dataset.cartLine, Number(target.dataset.cartVariant)) : api.change(line.dataset.cartLine, target.hasAttribute("data-cart-remove") ? 0 : Number(line.dataset.quantity) + Number(target.dataset.cartDelta)), "[data-commerce-error]", target);
+      busy(scope, async () => {
+        if (target.hasAttribute("data-cart-variant")) {
+          cartOrderHint = { lineKey: line.dataset.cartLine, productId: line.dataset.cartProductId, variantId: target.dataset.cartVariant };
+          try {
+            await api.swap(line.dataset.cartLine, Number(target.dataset.cartVariant));
+          } finally {
+            cartOrderHint = null;
+          }
+        } else await api.change(line.dataset.cartLine, target.hasAttribute("data-cart-remove") ? 0 : Number(line.dataset.quantity) + Number(target.dataset.cartDelta));
+      }, "[data-commerce-error]", target);
     }
     if (target.hasAttribute("data-remove-discount")) busy(scope, () => api.discount(applicableDiscountCodes(cart).filter((code) => code !== target.dataset.removeDiscount)), "[data-commerce-error]", target);
     if (target.hasAttribute("data-option-value")) {
