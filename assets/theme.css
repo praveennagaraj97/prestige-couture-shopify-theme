@@ -4198,6 +4198,11 @@ footer a:not(.inline-flex):hover {
   border-radius: 999px;
   animation: kw-add-spin 650ms linear infinite;
 }
+@media (max-width: 767px) {
+  input:not([type]), input[type="text"], input[type="email"], input[type="search"], input[type="tel"], input[type="url"], input[type="password"], input[type="number"], textarea, select {
+    font-size: 16px !important;
+  }
+}
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;

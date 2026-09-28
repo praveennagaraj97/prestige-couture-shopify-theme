@@ -187,3 +187,19 @@ footer a:not(.inline-flex):hover { text-decoration: underline; text-underline-of
 }
 [data-filter-apply]::before { content: none; }
 [data-collection-section][aria-busy="true"] [data-filter-apply]::before { content: ''; width: .75rem; height: .75rem; margin-right: .35rem; border: 1.5px solid currentColor; border-right-color: transparent; border-radius: 999px; animation: kw-add-spin 650ms linear infinite; }
+
+/* Prevent iOS Safari from zooming the page when a form field receives focus. */
+@media (max-width: 767px) {
+  input:not([type]),
+  input[type="text"],
+  input[type="email"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="password"],
+  input[type="number"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
