@@ -14,7 +14,8 @@ const reduced=()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const spring={type:'spring',stiffness:380,damping:28};
 async function refreshCart(next){
  cart=next;const sectionNodes=$$('[data-cart-content]');const ids=[...new Set(sectionNodes.map(n=>n.dataset.cartSection))];
- if(ids.length){const url=new URL(location.href);url.searchParams.set('sections',ids.join(','));const response=await fetch(url,{credentials:'same-origin'});if(!response.ok)throw Error('Unable to refresh bag');const sections=await response.json();for(const node of sectionNodes){const html=sections[node.dataset.cartSection];if(!html)continue;const doc=new DOMParser().parseFromString(html,'text/html');const replacement=$('[data-cart-content]',doc);if(replacement){node.replaceWith(replacement);emit('kw:content-updated',{root:replacement});}}}
+ const scrollStates=sectionNodes.map(node=>({section:node.dataset.cartSection,list:$('[data-cart-list]',node)?.scrollTop??0}));const pageScroll=window.scrollY;
+ if(ids.length){const url=new URL(location.href);url.searchParams.set('sections',ids.join(','));const response=await fetch(url,{credentials:'same-origin'});if(!response.ok)throw Error('Unable to refresh bag');const sections=await response.json();for(const node of sectionNodes){const html=sections[node.dataset.cartSection];if(!html)continue;const doc=new DOMParser().parseFromString(html,'text/html');const replacement=$('[data-cart-content]',doc);if(replacement){node.replaceWith(replacement);const state=scrollStates.find(item=>item.section===node.dataset.cartSection);if(state){const list=$('[data-cart-list]',replacement);if(list)list.scrollTop=state.list;}emit('kw:content-updated',{root:replacement});}}window.scrollTo({top:pageScroll,behavior:'instant'});}
  syncCart();emit('kw:cart-updated',{cart});
 }
 function syncCart(){

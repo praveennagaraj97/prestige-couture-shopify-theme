@@ -5079,6 +5079,8 @@ async function refreshCart(next) {
   cart = next;
   const sectionNodes = $$("[data-cart-content]");
   const ids = [...new Set(sectionNodes.map((n) => n.dataset.cartSection))];
+  const scrollStates = sectionNodes.map((node) => ({ section: node.dataset.cartSection, list: $("[data-cart-list]", node)?.scrollTop ?? 0 }));
+  const pageScroll = window.scrollY;
   if (ids.length) {
     const url = new URL(location.href);
     url.searchParams.set("sections", ids.join(","));
@@ -5092,9 +5094,15 @@ async function refreshCart(next) {
       const replacement = $("[data-cart-content]", doc);
       if (replacement) {
         node.replaceWith(replacement);
+        const state = scrollStates.find((item) => item.section === node.dataset.cartSection);
+        if (state) {
+          const list = $("[data-cart-list]", replacement);
+          if (list) list.scrollTop = state.list;
+        }
         emit("kw:content-updated", { root: replacement });
       }
     }
+    window.scrollTo({ top: pageScroll, behavior: "instant" });
   }
   syncCart();
   emit("kw:cart-updated", { cart });
