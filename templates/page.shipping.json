@@ -1,15 +1,20 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "content_1": {
       "type": "shipping-1",
-      "settings": {
-        "link_2": "/pages/help",
-        "text_3": "Back to help center"
-      }
+      "settings": {}
     },
     "content_2": {
       "type": "shipping-2",
-      "settings": {},
       "blocks": {
         "item_1": {
           "type": "item_1",
@@ -33,11 +38,11 @@
         "item_2",
         "item_3",
         "item_4"
-      ]
+      ],
+      "settings": {}
     },
     "content_3": {
       "type": "shipping-3",
-      "settings": {},
       "blocks": {
         "item_1": {
           "type": "item_1",
@@ -61,11 +66,11 @@
         "item_2",
         "item_3",
         "item_4"
-      ]
+      ],
+      "settings": {}
     },
     "content_4": {
       "type": "shipping-4",
-      "settings": {},
       "blocks": {
         "item_1": {
           "type": "item_1",
@@ -94,7 +99,8 @@
         "item_3",
         "item_4",
         "item_5"
-      ]
+      ],
+      "settings": {}
     }
   },
   "order": [

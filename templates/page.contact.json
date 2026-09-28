@@ -1,11 +1,16 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "content_1": {
       "type": "contact-1",
-      "settings": {
-        "link_2": "/pages/help",
-        "text_3": "Back to help center"
-      },
       "blocks": {
         "item_1": {
           "type": "item_1",
@@ -26,11 +31,13 @@
         "item_1",
         "item_2",
         "item_3"
-      ]
+      ],
+      "settings": {
+        "text_3": "Back to help center"
+      }
     },
     "content_2": {
       "type": "contact-2",
-      "settings": {},
       "blocks": {
         "item_1": {
           "type": "item_1",
@@ -54,7 +61,8 @@
         "item_2",
         "item_3",
         "item_4"
-      ]
+      ],
+      "settings": {}
     },
     "content_3": {
       "type": "contact-3",
@@ -64,7 +72,6 @@
     },
     "content_4": {
       "type": "contact-4",
-      "settings": {},
       "blocks": {
         "item_1": {
           "type": "item_1",
@@ -93,7 +100,8 @@
         "item_3",
         "item_4",
         "item_5"
-      ]
+      ],
+      "settings": {}
     }
   },
   "order": [
