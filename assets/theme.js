@@ -5432,13 +5432,13 @@ function initGallery(section) {
   canvas.addEventListener("pointerdown", (e) => {
     if (e.target.closest("button")) return;
     canvas.setPointerCapture(e.pointerId);
-    pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    pointers.set(e.pointerId, { x: e.clientX, y: e.clientY, startX: e.clientX, startY: e.clientY });
     distance = 0;
   });
   canvas.addEventListener("pointermove", (e) => {
     const previous = pointers.get(e.pointerId);
     if (!previous) return;
-    pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    pointers.set(e.pointerId, { ...previous, x: e.clientX, y: e.clientY });
     if (pointers.size === 2) {
       const [a, b] = [...pointers.values()], d = Math.hypot(a.x - b.x, a.y - b.y);
       if (distance) scale2 *= d / distance;
@@ -5446,13 +5446,42 @@ function initGallery(section) {
     } else if (scale2 > 1) {
       x += e.clientX - previous.x;
       y += e.clientY - previous.y;
+    } else {
+      const dx = e.clientX - previous.startX, dy = e.clientY - previous.startY;
+      if (Math.abs(dx) > Math.abs(dy)) {
+        x = dx;
+        y = 0;
+      }
     }
     transform();
   });
-  ["pointerup", "pointercancel"].forEach((event) => canvas.addEventListener(event, (e) => {
+  canvas.addEventListener("pointerup", (e) => {
+    const start = pointers.get(e.pointerId);
+    if (start && pointers.size === 1 && scale2 <= 1.01) {
+      const dx = e.clientX - start.startX, dy = e.clientY - start.startY;
+      if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy) * 1.2) {
+        const direction = dx < 0 ? 1 : -1, canChange = direction > 0 ? active < thumbs.length - 1 : active > 0;
+        if (canChange) show(active + direction, false);
+        else {
+          x = y = 0;
+          transform();
+        }
+      } else {
+        x = y = 0;
+        transform();
+      }
+    }
     pointers.delete(e.pointerId);
     distance = 0;
-  }));
+  });
+  canvas.addEventListener("pointercancel", (e) => {
+    pointers.delete(e.pointerId);
+    distance = 0;
+    if (!pointers.size) {
+      x = y = 0;
+      transform();
+    }
+  });
   document.addEventListener("keydown", (e) => {
     if ($('[data-modal="product-zoom"]', section)?.hidden) return;
     if (e.key === "ArrowRight") show(active + 1);
