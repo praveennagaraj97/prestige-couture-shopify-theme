@@ -5386,6 +5386,12 @@ function initGallery(section) {
     thumbs.forEach((b, i) => {
       b.setAttribute("aria-current", String(i === active));
       b.classList.toggle("outline-rust", i === active);
+      const lightboxThumb = section.querySelector(`[data-lightbox-thumb="${i}"]`);
+      if (lightboxThumb) {
+        lightboxThumb.classList.toggle("border-2", i === active);
+        lightboxThumb.classList.toggle("border-white", i === active);
+        lightboxThumb.classList.toggle("border-transparent", i !== active);
+      }
     });
   };
   section.addEventListener("click", (e) => {

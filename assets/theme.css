@@ -1290,6 +1290,9 @@
       border-color: color-mix(in oklab, var(--color-strong-coffee) 30%, transparent);
     }
   }
+  .border-transparent {
+    border-color: transparent;
+  }
   .border-white {
     border-color: var(--color-white);
   }
