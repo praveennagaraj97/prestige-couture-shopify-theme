@@ -1,84 +1,105 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "type": "footer",
   "name": "Footer",
   "sections": {
     "footer": {
       "type": "site-footer",
-      "settings": {
-        "link_7": "https://wa.me/919999999999?text=Hi%2C%20I%20would%20like%20to%20join%20the%20Krithi%20Weaves%20WhatsApp%20community%20for%20exclusive%20updates.",
-        "link_13": "/collections/all"
-      },
       "blocks": {
         "item_0": {
           "type": "item_1",
-          "settings": {}
+          "settings": {
+            "text_1": "Login"
+          }
         },
         "item_1": {
           "type": "item_2",
-          "settings": {}
+          "settings": {
+            "text_1": "Account"
+          }
         },
         "item_2": {
           "type": "item_3",
-          "settings": {}
+          "settings": {
+            "text_1": "Orders"
+          }
         },
         "item_3": {
           "type": "item_4",
           "settings": {
-            "link_1": "/pages/about"
+            "link_1": "/pages/about",
+            "text_2": "About"
           }
         },
         "item_4": {
           "type": "item_5",
           "settings": {
-            "link_1": "/pages/factories"
+            "link_1": "/pages/factories",
+            "text_2": "Factories"
           }
         },
         "item_5": {
           "type": "item_6",
           "settings": {
-            "link_1": "/pages/careers"
+            "link_1": "/pages/careers",
+            "text_2": "Careers"
           }
         },
         "item_6": {
           "type": "item_7",
           "settings": {
-            "link_1": "/pages/help"
+            "link_1": "/pages/help",
+            "text_2": "Help Center"
           }
         },
         "item_7": {
           "type": "item_8",
           "settings": {
-            "link_1": "/pages/returns"
+            "link_1": "/pages/returns",
+            "text_2": "Return Policy"
           }
         },
         "item_8": {
           "type": "item_9",
           "settings": {
-            "link_1": "/pages/shipping"
+            "link_1": "/pages/shipping",
+            "text_2": "Shipping Info"
           }
         },
         "item_9": {
           "type": "item_10",
           "settings": {
-            "link_1": "/pages/bulk-orders"
+            "link_1": "/pages/bulk-orders",
+            "text_2": "Bulk Orders"
           }
         },
         "item_10": {
           "type": "item_11",
           "settings": {
-            "link_1": "/pages/privacy"
+            "link_1": "/pages/privacy",
+            "text_2": "Privacy Policy"
           }
         },
         "item_11": {
           "type": "item_12",
           "settings": {
-            "link_1": "/pages/terms"
+            "link_1": "/pages/terms",
+            "text_2": "Terms of Service"
           }
         },
         "item_12": {
           "type": "item_13",
           "settings": {
-            "link_1": "/pages/cookies"
+            "link_1": "/pages/cookies",
+            "text_2": "Cookies"
           }
         }
       },
@@ -96,7 +117,24 @@
         "item_10",
         "item_11",
         "item_12"
-      ]
+      ],
+      "settings": {
+        "text_1": "Site footer",
+        "text_2": "Account",
+        "text_3": "Company",
+        "text_4": "Get Help",
+        "text_5": "Community updates",
+        "text_6": "Join our WhatsApp community for exclusive updates",
+        "link_7": "https://wa.me/918590554142?text=Hi%2C%20I%20would%20like%20to%20join%20the%20Krithi%20Weaves%20WhatsApp%20community%20for%20exclusive%20updates.",
+        "text_8": "Join our WhatsApp community",
+        "text_9": "Join WhatsApp",
+        "text_10": "Open chat and get updates",
+        "text_11": "© 2026 Krithi Weaves. All rights reserved.",
+        "text_12": "Mobile footer navigation",
+        "link_13": "/collections/all",
+        "text_14": "Categories",
+        "text_15": "Cart"
+      }
     }
   },
   "order": [
