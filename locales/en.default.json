@@ -1,1 +1,4 @@
-{"general":{"accessibility":{"skip_to_content":"Skip to content"}},"customer":{"account":{"title":"Account"}}}
+{
+  "general": { "accessibility": { "skip_to_content": "Skip to content" } },
+  "customer": { "account": { "title": "Account" } }
+}
