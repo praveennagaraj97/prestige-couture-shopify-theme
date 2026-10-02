@@ -6015,7 +6015,9 @@ function header(root) {
       }
     };
     const isTextEntry = (element) => element instanceof HTMLElement && element.matches("input:not([type=checkbox]):not([type=radio]):not([type=button]):not([type=submit]):not([type=reset]):not([type=hidden]),textarea,select,[contenteditable=true]");
-    const syncKeyboard = () => nav.classList.toggle("kw-mobile-nav-keyboard-hidden", innerWidth < 768 && isTextEntry(document.activeElement));
+    const viewport = window.visualViewport;
+    const isKeyboardOpen = () => innerWidth < 768 && Boolean(viewport && window.innerHeight - viewport.height > 120);
+    const syncKeyboard = () => nav.classList.toggle("kw-mobile-nav-keyboard-hidden", innerWidth < 768 && (isTextEntry(document.activeElement) || isKeyboardOpen()));
     const onFocusOut = () => requestAnimationFrame(syncKeyboard);
     sync();
     syncKeyboard();
@@ -6024,12 +6026,18 @@ function header(root) {
     document.addEventListener("kw:modal-close", sync);
     document.addEventListener("focusin", syncKeyboard);
     document.addEventListener("focusout", onFocusOut);
+    window.addEventListener("resize", syncKeyboard);
+    viewport?.addEventListener("resize", syncKeyboard);
+    viewport?.addEventListener("scroll", syncKeyboard);
     register(nav, () => {
       window.removeEventListener("popstate", sync);
       document.removeEventListener("kw:modal-open", sync);
       document.removeEventListener("kw:modal-close", sync);
       document.removeEventListener("focusin", syncKeyboard);
       document.removeEventListener("focusout", onFocusOut);
+      window.removeEventListener("resize", syncKeyboard);
+      viewport?.removeEventListener("resize", syncKeyboard);
+      viewport?.removeEventListener("scroll", syncKeyboard);
     });
   });
 }
