@@ -5816,8 +5816,9 @@ function openModal(id) {
     animate(panel, { opacity: 1, x: 0, y: 0, scale: 1 }, { duration: reduced2.matches ? 0 : variant === "search" ? 0.45 : variant === "navigation" ? 0.3 : 0.35, ease: variant === "navigation" ? [0.22, 0.7, 0.36, 0.7] : ease2 });
   }
   motions(modal);
-  const target = modal.querySelector("input:not([type=hidden]),button,a[href],select,[tabindex]");
-  (target || modal).focus({ preventScroll: true });
+  const target = variant === "navigation" ? modal.querySelector("[data-close-modal]") : null;
+  const firstFocusable = target || modal.querySelector("input:not([type=hidden]),button,a[href],select,[tabindex]");
+  (firstFocusable || modal).focus({ preventScroll: true });
   document.querySelectorAll(`[data-open-modal="${CSS.escape(id)}"]`).forEach((el) => el.setAttribute("aria-expanded", "true"));
   document.dispatchEvent(new CustomEvent("kw:modal-open", { detail: { id, modal } }));
 }

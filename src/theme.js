@@ -37,7 +37,7 @@ export function openModal(id){
  const from=variant==='fullscreen'?{opacity:0}:variant==='bottom'?{opacity:0,y:'100%'}:variant==='navigation'?{x:'100%'}:variant==='search'?{opacity:0,y:-18}:mobile?{opacity:0,y:'100%'}:{opacity:0,x:40,scale:.96};
  animate(modal,{opacity:[0,1]},{duration:reduced.matches?0:.2});
  if(panel){animate(panel,from,{duration:0});animate(panel,{opacity:1,x:0,y:0,scale:1},{duration:reduced.matches?0:variant==='search'?.45:variant==='navigation'?.3:.35,ease:variant==='navigation'?[.22,.7,.36,.7]:ease});}
- motions(modal);const target=modal.querySelector('input:not([type=hidden]),button,a[href],select,[tabindex]');(target||modal).focus({preventScroll:true});
+ motions(modal);const target=variant==='navigation'?modal.querySelector('[data-close-modal]'):null;const firstFocusable=target||modal.querySelector('input:not([type=hidden]),button,a[href],select,[tabindex]');(firstFocusable||modal).focus({preventScroll:true});
  document.querySelectorAll(`[data-open-modal="${CSS.escape(id)}"]`).forEach(el=>el.setAttribute('aria-expanded','true'));
  document.dispatchEvent(new CustomEvent('kw:modal-open',{detail:{id,modal}}));
 }
