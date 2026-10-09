@@ -135,9 +135,14 @@
         "text_14": "Categories",
         "text_15": "Cart"
       }
+    },
+    "whatsapp_chat": {
+      "type": "whatsapp-chat-widget",
+      "settings": {}
     }
   },
   "order": [
-    "footer"
+    "footer",
+    "whatsapp_chat"
   ]
 }

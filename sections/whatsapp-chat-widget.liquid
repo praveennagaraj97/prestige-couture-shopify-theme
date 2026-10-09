@@ -1,0 +1,94 @@
+{% if section.settings.enabled %}
+  {% assign whatsapp_number = section.settings.whatsapp_number | default: '918590554142' | remove: '+' | remove: ' ' | remove: '-' | remove: '(' | remove: ')' %}
+  {% assign whatsapp_message = section.settings.default_message | default: "Hi Krithi Weaves! I need help choosing the right size for a piece. Could you guide me?" %}
+  <div class="fixed bottom-20 right-4 z-[80] flex flex-col items-end sm:bottom-6 sm:right-6" data-whatsapp-widget data-whatsapp-number="{{ whatsapp_number }}" data-whatsapp-default-message="{{ whatsapp_message | escape }}">
+    <section
+      id="whatsapp-panel-{{ section.id }}"
+      data-whatsapp-panel
+      role="dialog"
+      aria-label="{{ section.settings.welcome_heading | escape }}"
+      tabindex="-1"
+      hidden
+      class="mb-2 flex max-h-[min(34rem,calc(100dvh-6rem))] w-[min(20rem,calc(100vw-2rem))] origin-bottom-right flex-col overflow-hidden rounded-2xl border border-strong-coffee/10 bg-white shadow-[0_12px_36px_rgba(44,36,26,0.18)]"
+    >
+      <header class="flex items-center justify-between gap-3 bg-white px-4 py-3">
+        <div class="flex min-w-0 items-center gap-2.5">
+          <span class="relative grid size-10 shrink-0 place-items-center rounded-full bg-white text-[#128C4A] ring-1 ring-strong-coffee/10">
+            <svg viewBox="0 0 448 512" class="size-6" fill="currentColor" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.7 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+          </span>
+          <span class="min-w-0">
+            <span class="block truncate font-inter-tight text-sm font-semibold text-dark-chocolate">{{ section.settings.brand_name | escape }}</span>
+            <span class="mt-0.5 block text-xs text-strong-coffee/60"><span class="mr-1 inline-block size-1.5 rounded-full bg-[#25D366] align-middle"></span>{{ section.settings.status_text | escape }}</span>
+          </span>
+        </div>
+        <button type="button" data-whatsapp-close aria-label="{{ section.settings.close_label | escape }}" class="grid size-8 shrink-0 place-items-center rounded-full text-strong-coffee/55 transition hover:bg-white-chocolate/60 hover:text-dark-chocolate focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]">
+          <svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        </button>
+      </header>
+
+      <div class="flex min-h-0 flex-1 flex-col gap-2.5 overflow-y-auto bg-[#f5f7fa] p-3">
+        <article class="rounded-xl border border-[#d9e2ee] bg-white p-3.5">
+          <h2 class="font-inter-tight text-base font-bold leading-snug text-dark-chocolate">{{ section.settings.welcome_heading | escape }}</h2>
+          <p class="mt-1.5 text-sm leading-5 text-strong-coffee/75">{{ section.settings.welcome_copy | escape }}</p>
+          <p class="mt-2 text-xs text-strong-coffee/45">{{ section.settings.timestamp_label | escape }}</p>
+        </article>
+
+        <article class="rounded-xl border border-[#f3d9c9] bg-white px-3.5 py-2.5">
+          <h3 class="text-xs font-bold uppercase tracking-wide text-dark-chocolate">{{ section.settings.support_label | escape }}</h3>
+          <p class="mt-1 text-sm leading-5 text-strong-coffee/75">{{ section.settings.support_copy | escape }}</p>
+        </article>
+
+        <label class="sr-only" for="whatsapp-message-{{ section.id }}">{{ section.settings.message_label | escape }}</label>
+        <textarea
+          id="whatsapp-message-{{ section.id }}"
+          data-whatsapp-message
+          rows="3"
+          class="min-h-20 resize-y rounded-xl border border-strong-coffee/15 bg-white px-3.5 py-2.5 text-sm leading-5 text-dark-chocolate outline-none transition placeholder:text-strong-coffee/40 focus:border-[#25D366] focus:ring-2 focus:ring-[#25D366]/15"
+        >{{ whatsapp_message | escape }}</textarea>
+        <a
+          data-whatsapp-link
+          href="https://wa.me/{{ whatsapp_number }}?text={{ whatsapp_message | url_encode }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-[#128C4A] px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#0d7a3e] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2"
+        >
+          <svg viewBox="0 0 448 512" class="size-4 text-white" fill="currentColor" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.2-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.7 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+          {{ section.settings.continue_label | escape }}
+        </a>
+      </div>
+    </section>
+
+    <button
+      type="button"
+      data-whatsapp-launcher
+      aria-expanded="false"
+      aria-controls="whatsapp-panel-{{ section.id }}"
+      aria-label="{{ section.settings.launcher_label | escape }}"
+      class="group grid size-12 place-items-center rounded-full bg-[#25D366] text-white shadow-[0_8px_22px_rgba(37,211,102,0.32)] transition-transform duration-200 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#128C4A] focus-visible:ring-offset-2"
+    >
+      <svg viewBox="0 0 448 512" class="size-6" fill="currentColor" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.7 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 3.2-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+    </button>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "WhatsApp chat",
+  "settings": [
+    { "type": "checkbox", "id": "enabled", "label": "Show WhatsApp chat button", "default": true },
+    { "type": "text", "id": "whatsapp_number", "label": "WhatsApp number with country code", "default": "918590554142", "info": "Digits only. Default: +91 85905 54142." },
+    { "type": "text", "id": "brand_name", "label": "Chat heading", "default": "Krithi Weaves" },
+    { "type": "text", "id": "status_text", "label": "Availability label", "default": "Online support" },
+    { "type": "text", "id": "welcome_heading", "label": "Welcome heading", "default": "Welcome to Krithi Weaves" },
+    { "type": "textarea", "id": "welcome_copy", "label": "Welcome message", "default": "Need help with sizing, fabric, or an order? Tell us what you are looking for and we will help you choose." },
+    { "type": "text", "id": "timestamp_label", "label": "Message timestamp", "default": "Now" },
+    { "type": "text", "id": "support_label", "label": "Support card heading", "default": "CLOTHING & ORDER SUPPORT" },
+    { "type": "textarea", "id": "support_copy", "label": "Support card message", "default": "Ask us about fit, fabric, product availability, or your order. We are happy to help." },
+    { "type": "textarea", "id": "default_message", "label": "Prefilled WhatsApp message", "default": "Hi Krithi Weaves! I need help choosing the right size for a piece. Could you guide me?" },
+    { "type": "text", "id": "message_label", "label": "Message field label", "default": "Your message" },
+    { "type": "text", "id": "continue_label", "label": "WhatsApp button label", "default": "Continue on WhatsApp" },
+    { "type": "text", "id": "launcher_label", "label": "Chat bubble accessible label", "default": "Chat with Krithi Weaves on WhatsApp" },
+    { "type": "text", "id": "close_label", "label": "Close button label", "default": "Close WhatsApp chat" }
+  ]
+}
+{% endschema %}

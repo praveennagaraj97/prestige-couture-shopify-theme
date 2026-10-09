@@ -3,6 +3,7 @@ import {animate, inView} from 'motion';
 import {initializeForms} from './forms.js';
 import {isActiveNavigationPath} from './navigation.js';
 import {initializeCommerce} from './commerce.js';
+import {initializeWhatsAppWidget} from './whatsapp-widget.js';
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
 const initialized=new WeakSet(), initializedAccordions=new WeakSet(), accordionAnimations=new WeakMap(), cleanups=new Map();
 const $all=(selector,root=document)=>[...(root.matches?.(selector)?[root]:[]),...root.querySelectorAll(selector)];
@@ -115,7 +116,7 @@ function header(root){
   register(nav,()=>{window.removeEventListener('popstate',sync);document.removeEventListener('kw:modal-open',sync);document.removeEventListener('kw:modal-close',sync);document.removeEventListener('focusin',syncKeyboard);document.removeEventListener('focusout',onFocusOut);window.removeEventListener('resize',syncKeyboard);viewport?.removeEventListener('resize',syncKeyboard);viewport?.removeEventListener('scroll',syncKeyboard);});
  });
 }
-function initialize(root=document){$all('[data-animated-text]',root).forEach(el=>{if(!el.dataset.motion)el.dataset.motion=JSON.stringify({initial:{opacity:0,y:14},animate:{opacity:1,y:0},transition:{duration:.6,ease},inView:true,viewport:{amount:.8}});});motions(root);accordions(root);carousels(root);header(root);initializeCommerce(root);initializeForms(root);}
+function initialize(root=document){$all('[data-animated-text]',root).forEach(el=>{if(!el.dataset.motion)el.dataset.motion=JSON.stringify({initial:{opacity:0,y:14},animate:{opacity:1,y:0},transition:{duration:.6,ease},inView:true,viewport:{amount:.8}});});motions(root);accordions(root);carousels(root);header(root);initializeCommerce(root);initializeForms(root);initializeWhatsAppWidget(root);}
 document.addEventListener('click',event=>{
  const opener=event.target.closest('[data-open-modal]');if(opener){event.preventDefault();const current=opener.closest('[data-modal]');if(current)closeModal(current).then(()=>openModal(opener.dataset.openModal));else openModal(opener.dataset.openModal);return;}
  const closer=event.target.closest('[data-close-modal]');if(closer){const owner=closer.closest('[data-modal]');if(owner){event.preventDefault();closeModal(owner);return;}}
