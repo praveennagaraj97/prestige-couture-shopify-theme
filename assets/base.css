@@ -38,23 +38,36 @@
   }
 }
 
-/* Thin rust-tinted scrollbar. macOS overlay scrollbars fade naturally. */
+/* Minimal gallery scrollbar that reveals its theme-colored thumb on intent. */
 @utility thumb-scroll {
   scrollbar-width: thin;
-  scrollbar-color: rgba(177, 62, 16, 0.35) transparent;
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 240ms ease;
+  &:hover,
+  &:focus-within {
+    scrollbar-color: var(--color-rust) transparent;
+  }
   &::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
+    width: 2px;
+    height: 2px;
   }
   &::-webkit-scrollbar-track {
     background: transparent;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: rgba(177, 62, 16, 0.35);
+    background-color: transparent;
     border-radius: 9999px;
+    transition: background-color 240ms ease;
   }
-  &::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(177, 62, 16, 0.65);
+  &:hover::-webkit-scrollbar-thumb,
+  &:focus-within::-webkit-scrollbar-thumb {
+    background-color: var(--color-rust);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    &::-webkit-scrollbar-thumb {
+      transition: none;
+    }
   }
 }
 
