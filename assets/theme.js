@@ -5009,16 +5009,25 @@ function createCartAPI({ fetch: request = globalThis.fetch, root = globalThis.Sh
       const before = await read(), line = before.items.find((item) => item.key === key);
       if (!line) throw Error(errorMessage);
       if (String(line.variant_id) === String(variantId)) return;
-      await call("cart/add.js", { items: [{ id: variantId, quantity: line.quantity, properties: line.properties, ...line.selling_plan_allocation ? { selling_plan: line.selling_plan_allocation.selling_plan.id } : {} }] });
+      if (before.items.some((item) => item.key !== key && String(item.variant_id) === String(variantId))) throw Error("That option is already in your bag.");
+      const added = await call("cart/add.js", { items: [{ id: variantId, quantity: line.quantity, properties: line.properties, ...line.selling_plan_allocation ? { selling_plan: line.selling_plan_allocation.selling_plan.id } : {} }] });
+      const addedLine = (Array.isArray(added.items) ? added.items : [added]).find((item) => String(item.variant_id ?? item.id) === String(variantId));
+      if (addedLine && Number(addedLine.quantity) < line.quantity) {
+        if (addedLine.key) try {
+          await call("cart/change.js", { id: addedLine.key, quantity: 0 });
+        } catch {
+        }
+        throw Error(`Only ${addedLine.quantity} available. Your current option was kept.`);
+      }
       try {
         await call("cart/change.js", { id: key, quantity: 0 });
       } catch (error2) {
         const current = await read();
         const originalKeys = new Map(before.items.map((item) => [item.key, item.quantity]));
-        const added = current.items.find((item) => String(item.variant_id) === String(variantId) && item.quantity > (originalKeys.get(item.key) || 0));
-        if (added) {
+        const added2 = current.items.find((item) => String(item.variant_id) === String(variantId) && item.quantity > (originalKeys.get(item.key) || 0));
+        if (added2) {
           try {
-            await call("cart/change.js", { id: added.key, quantity: originalKeys.get(added.key) || 0 });
+            await call("cart/change.js", { id: added2.key, quantity: originalKeys.get(added2.key) || 0 });
           } catch {
             throw Error(errorMessage);
           }
@@ -5027,6 +5036,13 @@ function createCartAPI({ fetch: request = globalThis.fetch, root = globalThis.Sh
       }
     })
   };
+}
+function optimisticQuantity(cart2, key, quantity) {
+  const current = cart2.items.find((item) => item.key === key);
+  if (!current) return cart2;
+  const delta = quantity - current.quantity;
+  const items = quantity === 0 ? cart2.items.filter((item) => item.key !== key) : cart2.items.map((item) => item.key === key ? { ...item, quantity } : item);
+  return { ...cart2, item_count: Math.max(0, (Number(cart2.item_count) || 0) + delta), items };
 }
 function applicableDiscountCodes(cart2) {
   const unique = /* @__PURE__ */ new Map();
@@ -5053,6 +5069,32 @@ var cartOrderHint = null;
 var $ = (selector, root = document) => root.querySelector(selector);
 var $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 var emit = (name, detail) => document.dispatchEvent(new CustomEvent(name, { detail }));
+var cartToastTimer;
+function showCartToast(message) {
+  if (!message) return;
+  let toast = $("[data-cart-toast]");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.dataset.cartToast = "";
+    toast.className = "kw-cart-toast";
+    toast.setAttribute("role", "alert");
+    toast.setAttribute("aria-live", "assertive");
+    document.body.append(toast);
+  }
+  toast.textContent = message;
+  toast.dataset.visible = "true";
+  clearTimeout(cartToastTimer);
+  cartToastTimer = setTimeout(() => {
+    toast.dataset.visible = "false";
+    setTimeout(() => {
+      if (toast.dataset.visible === "false") toast.remove();
+    }, 250);
+  }, 5e3);
+}
+function cartErrorMessage(message, action) {
+  if (!/only\s+\d+\s+items?\s+were\s+added\s+to\s+your\s+cart\s+due\s+to\s+availability/i.test(message)) return message;
+  return action?.hasAttribute?.("data-cart-variant") ? "That option does not have enough stock. Your current option was kept." : message;
+}
 var error = (root, message, selector = "[data-commerce-error]") => {
   if (root?.isConnected === false && root.dataset.cartSection) root = $(`[data-cart-section="${CSS.escape(root.dataset.cartSection)}"]`) || document;
   const target = $(selector, root) || $(selector);
@@ -5219,9 +5261,10 @@ async function busy(scope, work, errorSelector = "[data-commerce-error]", action
   try {
     await work();
   } catch (e) {
-    error(scope, e.message, errorSelector);
+    showCartToast(cartErrorMessage(e.message, action));
   } finally {
     delete scope.dataset.commerceBusy;
+    delete scope.dataset.cartPending;
     action?.removeAttribute("aria-busy");
     controls.forEach((n, i) => n.disabled = state[i]);
     syncCart();
@@ -5576,7 +5619,7 @@ function initializeCommerce(root = document) {
       busy(scope, async () => {
         const codes = applicableDiscountCodes(cart);
         const result = await api.discount([.../* @__PURE__ */ new Set([...codes, code])]);
-        if (result.discount_codes?.some((c) => c.code.toLowerCase() === code.toLowerCase() && !c.applicable)) error(scope, scope.dataset.invalidDiscount, "[data-promo-error]");
+        if (result.discount_codes?.some((c) => c.code.toLowerCase() === code.toLowerCase() && !c.applicable)) showCartToast(scope.dataset.invalidDiscount);
       }, "[data-promo-error]", button);
     }
     if (form.matches("[data-search-form]")) {
@@ -5640,7 +5683,30 @@ function initializeCommerce(root = document) {
           } finally {
             cartOrderHint = null;
           }
-        } else await api.change(line.dataset.cartLine, target.hasAttribute("data-cart-remove") ? 0 : Number(line.dataset.quantity) + Number(target.dataset.cartDelta));
+        } else {
+          const key = line.dataset.cartLine, oldQuantity = Number(line.dataset.quantity), quantity = target.hasAttribute("data-cart-remove") ? 0 : Math.max(0, oldQuantity + Number(target.dataset.cartDelta)), previousCart = cart;
+          const optimistic = optimisticQuantity(cart, key, quantity);
+          cart = optimistic;
+          scope.dataset.cartPending = "true";
+          line.dataset.quantity = String(quantity);
+          line.dataset.cartPending = "true";
+          const quantityLabel = $("[data-line-quantity]", line);
+          if (quantityLabel) quantityLabel.textContent = String(quantity);
+          syncCart();
+          try {
+            await api.change(key, quantity);
+          } catch (cause) {
+            if (cart === optimistic) {
+              cart = previousCart;
+              line.dataset.quantity = String(oldQuantity);
+              if (quantityLabel) quantityLabel.textContent = String(oldQuantity);
+              delete line.dataset.cartPending;
+              delete scope.dataset.cartPending;
+              syncCart();
+            }
+            throw cause;
+          }
+        }
       }, "[data-commerce-error]", target);
     }
     if (target.hasAttribute("data-remove-discount")) busy(scope, () => api.discount(applicableDiscountCodes(cart).filter((code) => code !== target.dataset.removeDiscount)), "[data-commerce-error]", target);

@@ -18,7 +18,6 @@
     </div>
   {% endunless %}
 
-  <p data-commerce-error role="alert" class="{% if page_mode %}lg:col-span-2{% else %}px-5{% endif %} text-xs text-red-600"></p>
 
   {% if cart.empty? %}
     <div class="{% if page_mode %}lg:col-span-2 min-h-80 rounded-3xl border border-strong-coffee/10 bg-white px-8 py-16{% else %}flex flex-1 px-8 py-12{% endif %} flex flex-col items-center justify-center text-center">
@@ -45,18 +44,24 @@
               {% unless item.product.has_only_default_variant %}
                 <div class="flex flex-wrap gap-1.5">
                   {% for variant in item.product.variants %}
+                    {% assign cart_variant_in_another_line = false %}
+                    {% for cart_variant_item in cart.items %}
+                      {% if cart_variant_item.key != item.key and cart_variant_item.variant_id == variant.id and variant.id != item.variant_id %}{% assign cart_variant_in_another_line = true %}{% endif %}
+                    {% endfor %}
+                    {% unless cart_variant_in_another_line %}
                     <button type="button" data-cart-variant="{{ variant.id }}" {% unless variant.available %}disabled{% endunless %} {% if variant.id == item.variant_id %}aria-pressed="true"{% else %}aria-pressed="false"{% endif %} class="inline-flex min-w-8 items-center justify-center rounded-full border px-2.5 py-1 text-[10px] font-medium tracking-wide transition {% if variant.id == item.variant_id %}border-rust bg-rust text-white{% elsif variant.available %}border-strong-coffee/20 text-strong-coffee hover:border-rust/60{% else %}border-strong-coffee/10 text-strong-coffee/30 line-through{% endif %}">{{ variant.options.first | escape }}</button>
+                    {% endunless %}
                   {% endfor %}
                 </div>
               {% endunless %}
               <div class="flex items-center justify-between gap-3">
                 <div class="inline-flex items-center gap-0 rounded-full border border-strong-coffee/15 bg-white-chocolate/50">
                   <button type="button" data-cart-delta="-1" aria-label="{{ section.settings.decrease_label }}" class="inline-flex h-8 w-8 items-center justify-center rounded-full text-strong-coffee/70"><span class="text-[10px]">{% render 'icon', name: 'minus' %}</span></button>
-                  <span class="min-w-6 text-center text-sm font-medium tabular-nums text-dark-chocolate">{{ item.quantity }}</span>
+                  <span data-line-quantity class="min-w-6 text-center text-sm font-medium tabular-nums text-dark-chocolate">{{ item.quantity }}</span>
                   <button type="button" data-cart-delta="1" aria-label="{{ section.settings.increase_label }}" {% if item.variant.inventory_management and item.variant.inventory_policy == 'deny' and item.quantity >= item.variant.inventory_quantity %}disabled{% endif %} class="inline-flex h-8 w-8 items-center justify-center rounded-full text-strong-coffee/70 disabled:opacity-40"><span class="text-[10px]">{% render 'icon', name: 'plus' %}</span></button>
                 </div>
                 <div class="flex items-end gap-1 text-right">
-                  <p class="text-sm font-semibold text-dark-chocolate">{{ item.final_line_price | money }}</p>
+                  <p data-cart-line-price class="text-sm font-semibold text-dark-chocolate">{{ item.final_line_price | money }}</p>
                   {% if item.original_line_price > item.final_line_price %}<s class="text-[11px] text-strong-coffee/50">{{ item.original_line_price | money }}</s>{% endif %}
                 </div>
               </div>
@@ -86,7 +91,7 @@
       </form>
       <div class="mb-2 flex items-baseline justify-between border-t border-strong-coffee/10 pt-3">
         <span class="text-[11px] uppercase tracking-[0.2em] text-strong-coffee/65">{{ section.settings.subtotal_label }}</span>
-        <span class="font-libre-baskerville text-2xl text-dark-chocolate">{{ cart.total_price | money }}</span>
+        <span data-cart-total-price class="font-libre-baskerville text-2xl text-dark-chocolate">{{ cart.total_price | money }}</span>
       </div>
       <p class="mb-3 text-[11px] text-strong-coffee/55">{{ section.settings.shipping_text }}</p>
       <div class="flex flex-col gap-2">
