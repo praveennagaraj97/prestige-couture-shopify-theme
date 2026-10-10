@@ -5279,6 +5279,8 @@ async function navigateSection(url, selector, { replace = false, searchOnly = fa
   const current = $(selector);
   if (!current) return;
   const id = current.dataset.collectionSection || current.dataset.searchSection;
+  const activeFilterModal = selector === "[data-collection-section]" ? $('[data-modal="collection-filters"]:not([hidden])', current) : null;
+  const focusedFilter = activeFilterModal?.contains(document.activeElement) ? { name: document.activeElement.getAttribute("name"), value: document.activeElement.value, priceMin: document.activeElement.dataset?.priceMin, clear: document.activeElement.hasAttribute("data-filter-clear") } : null;
   const requestURL = new URL(url, location.href);
   requestURL.searchParams.set("section_id", id);
   current.setAttribute("aria-busy", "true");
@@ -5293,18 +5295,35 @@ async function navigateSection(url, selector, { replace = false, searchOnly = fa
       $("[data-search-results]", current).replaceWith($("[data-search-results]", replacement));
     } else {
       for (const modal of $$("[data-modal]", current)) {
-        if (!modal.hidden) await window.KW?.closeModal?.(modal);
+        if (!modal.hidden && modal !== activeFilterModal) await window.KW?.closeModal?.(modal);
       }
       if (controller.signal.aborted) return;
+      if (activeFilterModal) {
+        const nextFilterModal = $('[data-modal="collection-filters"]', replacement);
+        if (nextFilterModal) {
+          const filterScroll = $("[data-filter-scroll]", activeFilterModal)?.scrollTop || 0;
+          activeFilterModal.innerHTML = nextFilterModal.innerHTML;
+          nextFilterModal.replaceWith(activeFilterModal);
+          const nextFilterScroll = $("[data-filter-scroll]", activeFilterModal);
+          if (nextFilterScroll) nextFilterScroll.scrollTop = filterScroll;
+        }
+      }
       current.replaceWith(replacement);
     }
     history[replace ? "replaceState" : "pushState"]({}, "", url);
     initializeCommerce(document);
+    if (activeFilterModal && !activeFilterModal.hidden) {
+      const focusTarget = focusedFilter?.name ? $$("[name]", activeFilterModal).find((input) => input.name === focusedFilter.name && input.value === focusedFilter.value) : focusedFilter?.priceMin !== void 0 ? $$("[data-price-min]", activeFilterModal).find((button) => button.dataset.priceMin === focusedFilter.priceMin) : null;
+      (focusTarget || $("[data-close-modal]", activeFilterModal))?.focus({ preventScroll: true });
+    }
     emit("kw:content-updated", { root: searchOnly ? current : replacement });
   } catch (e) {
-    if (e.name !== "AbortError") error(current, e.message);
+    if (e.name !== "AbortError") {
+      if (selector === "[data-collection-section]") syncCollectionFilterInputs(current);
+      error(current, e.message);
+    }
   } finally {
-    current.removeAttribute("aria-busy");
+    if (navigationController === controller) current.removeAttribute("aria-busy");
   }
 }
 function search(value, replace = true) {
@@ -5321,22 +5340,37 @@ function collectionURL(form) {
   for (const [key, value] of new FormData(form)) if (value !== "") url.searchParams.append(key, value);
   return url;
 }
-function syncFilterActions(scope = document) {
-  for (const aside of $$("[data-filter-form]", scope).map((form) => form.closest("aside")).filter(Boolean)) {
-    const params = new URL(location.href).searchParams;
-    const applied = [...params.keys()].some((key) => key.startsWith("filter.") && params.getAll(key).some(Boolean));
-    const clear = $("[data-filter-clear]", aside), apply = $("[data-filter-apply]", aside);
-    delete aside.dataset.filterDirty;
-    if (clear) clear.hidden = !applied;
-    if (apply) apply.hidden = true;
-  }
+function filterEntries(params) {
+  const entries = [];
+  for (const [key, value] of params) if (key.startsWith("filter.") && value !== "") entries.push([key, value]);
+  const min = Number(params.get("filter.v.price.gte") || 0), max = Number(params.get("filter.v.price.lte") || 0);
+  const filtered = entries.filter(([key]) => key !== "filter.v.price.gte" && key !== "filter.v.price.lte");
+  if (min) filtered.push(["filter.v.price.gte", String(min)]);
+  if (max) filtered.push(["filter.v.price.lte", String(max)]);
+  return filtered.map(([key, value]) => `${key}=${value}`).sort();
 }
-function markFilterChanged(form) {
-  const aside = form?.closest("aside");
-  if (!aside) return;
-  aside.dataset.filterDirty = "true";
-  const apply = $("[data-filter-apply]", aside);
-  if (apply) apply.hidden = false;
+function mobileFilterState(modal) {
+  if (!modal) return;
+  const form = $("[data-filter-form]", modal), apply = $("[data-filter-apply]", modal), clear = $("[data-filter-clear]", modal);
+  if (!form) return;
+  const draft = filterEntries(new URLSearchParams(new FormData(form))), applied = filterEntries(new URL(location.href).searchParams), dirty = draft.length !== applied.length || draft.some((entry, index) => entry !== applied[index]);
+  if (apply) {
+    apply.disabled = !dirty;
+    apply.classList.toggle("bg-rust", dirty);
+    apply.classList.toggle("shadow-md", dirty);
+    apply.classList.toggle("bg-strong-coffee/15", !dirty);
+    apply.classList.toggle("shadow-none", !dirty);
+  }
+  if (clear) clear.hidden = !draft.length && !applied.length;
+}
+function syncFilterActions(scope = document) {
+  const params = new URL(location.href).searchParams;
+  const applied = filterEntries(params).length > 0;
+  $$("[data-filter-clear]", scope).forEach((clear) => {
+    const modal = clear.closest('[data-modal="collection-filters"]');
+    if (modal && !modal.hidden) return;
+    clear.hidden = !applied;
+  });
 }
 function setPriceBucket(button) {
   const aside = button.closest("aside"), form = $("[data-filter-form]", aside), minInput = $("[data-price-min-input]", form), maxInput = $("[data-price-max-input]", form);
@@ -5350,26 +5384,46 @@ function setPriceBucket(button) {
     for (const name of ["border-rust", "bg-rust", "text-white"]) item.classList.toggle(name, selected);
     for (const name of ["border-strong-coffee/20", "bg-white", "text-strong-coffee/85"]) item.classList.toggle(name, !selected);
   });
-  markFilterChanged(form);
 }
-function clearCollectionFilters() {
+async function clearCollectionFilters(mobileModal) {
   const url = new URL(location.href), section = $("[data-collection-section]");
   url.pathname = section?.querySelector("[data-filter-form]")?.getAttribute("action") || url.pathname;
   url.searchParams.delete("page");
   for (const [key] of [...url.searchParams]) if (key.startsWith("filter.")) url.searchParams.delete(key);
+  if (mobileModal) await window.KW?.closeModal?.(mobileModal);
   navigateSection(url, "[data-collection-section]");
 }
-function syncPriceBuckets() {
+function syncPriceBuckets(scope = document, { includeOpenMobile = false } = {}) {
   const params = new URL(location.href).searchParams;
-  $$("[data-price-min]").forEach((button) => {
-    const aside = button.closest("aside"), form = $("[data-filter-form]", aside), minInput = $("[data-price-min-input]", form), maxInput = $("[data-price-max-input]", form);
-    const min = aside?.dataset.filterDirty === "true" && minInput ? minInput.value : params.get("filter.v.price.gte");
-    const max = aside?.dataset.filterDirty === "true" && maxInput ? maxInput.value : params.get("filter.v.price.lte");
-    const active = min === button.dataset.priceMin && max === (button.dataset.priceMax || "");
+  const min = Number(params.get("filter.v.price.gte") || 0), max = Number(params.get("filter.v.price.lte") || 0);
+  $$("[data-price-min]", scope).forEach((button) => {
+    if (!includeOpenMobile && button.closest('[data-modal="collection-filters"]:not([hidden])')) return;
+    const active = min === Number(button.dataset.priceMin) && max === Number(button.dataset.priceMax || 0);
     button.setAttribute("aria-pressed", String(active));
     for (const name of ["border-rust", "bg-rust", "text-white"]) button.classList.toggle(name, active);
     for (const name of ["border-strong-coffee/20", "bg-white", "text-strong-coffee/85"]) button.classList.toggle(name, !active);
   });
+}
+function syncCollectionFilterInputs(scope = document, options = {}) {
+  const params = new URL(location.href).searchParams;
+  $$("[data-filter-form]", scope).forEach((form) => {
+    if (!options.includeOpenMobile && form.closest('[data-modal="collection-filters"]:not([hidden])')) return;
+    $$('input[type="checkbox"]', form).forEach((input) => {
+      input.checked = params.getAll(input.name).includes(input.value);
+    });
+    const min = $("[data-price-min-input]", form), max = $("[data-price-max-input]", form);
+    if (min) min.value = params.get("filter.v.price.gte") || "";
+    if (max) max.value = params.get("filter.v.price.lte") || "";
+  });
+  syncPriceBuckets(scope, options);
+}
+async function applyMobileFilters(modal) {
+  const form = $("[data-filter-form]", modal);
+  if (!form) return;
+  const url = collectionURL(form), button = $("[data-filter-apply]", modal);
+  if (button) button.disabled = true;
+  await window.KW?.closeModal?.(modal);
+  navigateSection(url, "[data-collection-section]");
 }
 function findVariantImageIndex(variants, id, images) {
   const image = variants.find((v) => String(v.id) === String(id))?.image;
@@ -5568,6 +5622,16 @@ function animateGuide(modal) {
 }
 document.addEventListener("kw:modal-open", (event) => {
   if (event.detail.id === "size-guide") animateGuide(event.detail.modal);
+  if (event.detail.id === "collection-filters") {
+    syncCollectionFilterInputs(event.detail.modal, { includeOpenMobile: true });
+    mobileFilterState(event.detail.modal);
+  }
+});
+document.addEventListener("kw:modal-close", (event) => {
+  if (event.detail.id === "collection-filters") {
+    syncCollectionFilterInputs(event.detail.modal, { includeOpenMobile: true });
+    mobileFilterState(event.detail.modal);
+  }
 });
 function initializeCommerce(root = document) {
   $$("[data-product-section]", root).forEach((section) => {
@@ -5576,6 +5640,7 @@ function initializeCommerce(root = document) {
   });
   syncCart();
   syncFilterActions(root);
+  syncCollectionFilterInputs(root);
   if (installed) return;
   installed = true;
   api = createCartAPI({ root: rootURL(), errorMessage: $("[data-cart-content]")?.dataset.errorMessage, onUpdate: refreshCart });
@@ -5629,6 +5694,7 @@ function initializeCommerce(root = document) {
     }
     if (form.matches("[data-filter-form]")) {
       e.preventDefault();
+      if (form.closest('[data-modal="collection-filters"]')) return;
       navigateSection(collectionURL(form), "[data-collection-section]");
     }
   });
@@ -5647,7 +5713,11 @@ function initializeCommerce(root = document) {
       url.searchParams.delete("page");
       navigateSection(url, "[data-collection-section]");
     }
-    if (target.matches('[data-filter-form] input[type="checkbox"]')) markFilterChanged(target.form);
+    if (target.matches('[data-filter-form] input[type="checkbox"]')) {
+      const modal = target.closest('[data-modal="collection-filters"]');
+      if (modal) mobileFilterState(modal);
+      else navigateSection(collectionURL(target.form), "[data-collection-section]");
+    }
     if (target.matches('[data-variant-select],[data-product-form] [name="quantity"]')) updateProduct(target.closest("[data-product-section]"));
   });
   document.addEventListener("click", (e) => {
@@ -5730,12 +5800,18 @@ function initializeCommerce(root = document) {
     if (target.hasAttribute("data-price-min")) {
       e.preventDefault();
       setPriceBucket(target);
-      const aside = target.closest("aside");
-      if (aside) aside.dataset.filterDirty = "true";
+      const form = target.closest("aside")?.querySelector("[data-filter-form]"), modal = target.closest('[data-modal="collection-filters"]');
+      if (form && modal) mobileFilterState(modal);
+      else if (form) navigateSection(collectionURL(form), "[data-collection-section]");
+    }
+    if (target.hasAttribute("data-filter-apply")) {
+      e.preventDefault();
+      const modal = target.closest('[data-modal="collection-filters"]');
+      if (modal && !target.disabled) applyMobileFilters(modal);
     }
     if (target.hasAttribute("data-filter-clear")) {
       e.preventDefault();
-      clearCollectionFilters();
+      clearCollectionFilters(target.closest('[data-modal="collection-filters"]'));
     }
     if (target.matches("[data-collection-link], [data-collection-section] [data-pagination] a")) {
       e.preventDefault();
