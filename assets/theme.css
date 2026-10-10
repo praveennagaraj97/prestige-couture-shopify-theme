@@ -293,9 +293,6 @@
   .top-1\/2 {
     top: calc(1 / 2 * 100%);
   }
-  .top-2 {
-    top: calc(var(--spacing) * 2);
-  }
   .top-3 {
     top: calc(var(--spacing) * 3);
   }
@@ -1888,6 +1885,9 @@
   .pr-5 {
     padding-right: calc(var(--spacing) * 5);
   }
+  .pr-8 {
+    padding-right: calc(var(--spacing) * 8);
+  }
   .pr-9 {
     padding-right: calc(var(--spacing) * 9);
   }
@@ -1942,8 +1942,8 @@
   .pl-2 {
     padding-left: calc(var(--spacing) * 2);
   }
-  .pl-4 {
-    padding-left: calc(var(--spacing) * 4);
+  .pl-3 {
+    padding-left: calc(var(--spacing) * 3);
   }
   .pl-7 {
     padding-left: calc(var(--spacing) * 7);
@@ -3713,6 +3713,9 @@
     .lg\:min-h-140 {
       min-height: calc(var(--spacing) * 140);
     }
+    .lg\:w-auto {
+      width: auto;
+    }
     .lg\:max-w-none {
       max-width: none;
     }
@@ -4397,6 +4400,17 @@ footer a:not(.inline-flex):hover {
     visibility: hidden;
     transform: translateY(100%);
     pointer-events: none;
+  }
+}
+@media (max-width: 639px) {
+  [data-collection-filter-modal] > [data-modal-panel] {
+    max-height: 68vh;
+    max-height: min(68dvh, 38rem);
+  }
+}
+@media (max-width: 767px) {
+  select[data-sort] {
+    font-size: 12px !important;
   }
 }
 @property --tw-translate-x {

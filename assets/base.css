@@ -227,3 +227,9 @@ footer a:not(.inline-flex):hover { text-decoration: underline; text-underline-of
     pointer-events: none;
   }
 }
+@media (max-width: 639px) {
+  [data-collection-filter-modal] > [data-modal-panel] { max-height: 68vh; max-height: min(68dvh, 38rem); }
+}
+@media (max-width: 767px) {
+  select[data-sort] { font-size: 12px !important; }
+}
