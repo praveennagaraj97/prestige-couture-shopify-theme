@@ -5192,12 +5192,6 @@ function syncCart() {
   });
   $$("[data-product-card]").forEach((card) => {
     const present = cart.items.some((i) => String(i.product_id) === card.dataset.productId);
-    const button = $("[data-card-action]", card);
-    if (button) {
-      ($("[data-card-label]", button) || button).textContent = present ? button.dataset.viewLabel : button.dataset.available === "false" ? button.dataset.outOfStockLabel : button.dataset.addLabel;
-      button.disabled = !present && button.dataset.available === "false";
-      button.dataset.inCart = String(present);
-    }
     const badge = $("[data-card-badge]", card), discount = $("[data-card-discount]", card);
     if (badge) badge.hidden = !present;
     if (discount) discount.hidden = present;
@@ -5656,15 +5650,6 @@ function initializeCommerce(root = document) {
   }
   document.addEventListener("submit", (e) => {
     const form = e.target;
-    if (form.matches("[data-card-form]")) {
-      e.preventDefault();
-      const button = $("[data-card-action]", form);
-      if (button.dataset.inCart === "true") {
-        openCart();
-        return;
-      }
-      busy(form.closest("[data-product-card]"), () => addWithLoading(button, Number(form.elements.id.value)));
-    }
     if (form.matches("[data-product-form]")) {
       e.preventDefault();
       const section = form.closest("[data-product-section]"), buy = e.submitter?.hasAttribute("data-product-buy");

@@ -28,39 +28,21 @@
       },
       {
         "type": "text",
-        "id": "card_add_label",
-        "label": "Add to Bag label",
-        "default": "Add to Cart"
-      },
-      {
-        "type": "text",
-        "id": "card_mobile_add_label",
-        "label": "Add to Bag label",
-        "default": "Add to Bag"
-      },
-      {
-        "type": "text",
         "id": "card_view_label",
-        "label": "View product label",
-        "default": "View Bag"
+        "label": "Product card link label",
+        "default": "View product"
       },
       {
         "type": "text",
         "id": "card_mobile_view_label",
-        "label": "View product label",
-        "default": "View Bag"
+        "label": "Mobile product card link label",
+        "default": "View product"
       },
       {
         "type": "text",
         "id": "card_in_cart_label",
         "label": "In Bag label",
         "default": "In Bag"
-      },
-      {
-        "type": "text",
-        "id": "card_adding_label",
-        "label": "Adding\u2026 label",
-        "default": "Adding\u2026"
       },
       {
         "type": "text",

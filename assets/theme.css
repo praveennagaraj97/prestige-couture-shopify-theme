@@ -3028,12 +3028,6 @@
   .disabled\:opacity-50:disabled {
     opacity: 50%;
   }
-  .disabled\:opacity-70:disabled {
-    opacity: 70%;
-  }
-  .disabled\:opacity-80:disabled {
-    opacity: 80%;
-  }
   .disabled\:shadow-none:disabled {
     --tw-shadow: 0 0 #0000;
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
