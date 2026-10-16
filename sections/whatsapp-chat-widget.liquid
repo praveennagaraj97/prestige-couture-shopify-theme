@@ -44,7 +44,7 @@
           data-whatsapp-message
           rows="3"
           class="min-h-20 resize-y rounded-xl border border-strong-coffee/15 bg-white px-3.5 py-2.5 text-sm leading-5 text-dark-chocolate outline-none transition placeholder:text-strong-coffee/40 focus:border-[#25D366] focus:ring-2 focus:ring-[#25D366]/15"
-        >{{ whatsapp_message | escape }}</textarea>
+         maxlength="500">{{ whatsapp_message | escape }}</textarea>
         <a
           data-whatsapp-link
           href="https://wa.me/{{ whatsapp_number }}?text={{ whatsapp_message | url_encode }}"
