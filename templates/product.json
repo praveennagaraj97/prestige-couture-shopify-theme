@@ -1,8 +1,16 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-product",
-      "settings": {},
       "blocks": {
         "0": {
           "type": "size",
@@ -102,10 +110,71 @@
         "promise1",
         "promise2",
         "promise3"
-      ]
+      ],
+      "settings": {
+        "product_label": "Product",
+        "reviews_label": "reviews",
+        "save_label": "Save",
+        "size_label": "Size",
+        "guide_label": "Size Guide",
+        "quantity_label": "Quantity",
+        "add_label": "Add to Bag",
+        "in_label": "In Bag",
+        "added_label": "Added to bag",
+        "adding_label": "Adding…",
+        "buy_label": "Buy Now",
+        "checkout_label": "Checkout →",
+        "sold_out_text": "This size is currently sold out. We’re restocking soon.",
+        "stock_text": "Only {quantity} left in stock",
+        "decrease_label": "Decrease quantity",
+        "increase_label": "Increase quantity",
+        "details_label": "Product Details",
+        "care_label": "Fabric & Care",
+        "colour_label": "Colour",
+        "shipping_label": "Shipping & Returns",
+        "shipping_text": "<p><strong>Free shipping</strong> on orders above ₹999 across India. Dispatched in 1–2 business days.</p><p>Easy 7-day returns &amp; exchanges. Items must be unworn with original tags intact. See our <a href=\"/pages/returns\">returns policy</a>.</p>",
+        "zoom_label": "Open zoom view",
+        "previous_label": "Previous image",
+        "next_label": "Next image",
+        "view_label": "View image",
+        "close_zoom_label": "Close zoom",
+        "zoom_in_label": "Zoom in",
+        "zoom_out_label": "Zoom out",
+        "reset_label": "Reset",
+        "zoom_hint": "Pinch · Scroll · Drag to explore",
+        "fit_label": "Find your fit",
+        "chart_label": "Size Chart",
+        "measure_label": "How to Measure",
+        "measurement_text": "Garment measurements for body fit.",
+        "bust_label": "Bust",
+        "waist_label": "Waist",
+        "hip_label": "Hip",
+        "chart_note": "For between sizes, we recommend sizing up. All measurements are approximate and may vary by +/- 0.5 inch due to the nature of handwoven fabrics.",
+        "measure_text": "<p><strong>Bust</strong> Measure around the fullest part of your bust, keeping the tape parallel to the floor.</p><p><strong>Waist</strong> Wrap the tape around the narrowest point of your natural waistline.</p><p><strong>Hip</strong> Measure around the fullest part of your hips, standing with feet together.</p><p><strong>Length</strong> From the shoulder point, let the tape fall straight down to your desired hemline.</p>",
+        "close_guide_label": "Close size guide"
+      }
+    },
+    "1792234577fb2ade7a": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_RNcLMt": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1150,
+            "show_shop_reviews": true,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_RNcLMt"
+      ],
+      "settings": {}
     }
   },
   "order": [
-    "main"
+    "main",
+    "1792234577fb2ade7a"
   ]
 }
