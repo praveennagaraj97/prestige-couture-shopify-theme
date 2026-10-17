@@ -15,16 +15,23 @@
         "item_1": {
           "type": "item_1",
           "settings": {
-            "link_1": "https://wa.me/919876543210"
+            "link_1": "https://wa.me/919876543210",
+            "text_2": "Chat on WhatsApp"
           }
         },
         "item_2": {
           "type": "item_2",
-          "settings": {}
+          "settings": {
+            "link_1": "",
+            "text_2": "hello@krithiweaves.com"
+          }
         },
         "item_3": {
           "type": "item_3",
-          "settings": {}
+          "settings": {
+            "link_1": "",
+            "text_2": "+91 98765 43210"
+          }
         }
       },
       "block_order": [
@@ -33,6 +40,10 @@
         "item_3"
       ],
       "settings": {
+        "link_back": "",
+        "text_back": "Back to help center",
+        "text_1": "Get in touch",
+        "text_2": "Let's talk",
         "text_3": "Back to help center"
       }
     },
@@ -41,19 +52,35 @@
       "blocks": {
         "item_1": {
           "type": "item_1",
-          "settings": {}
+          "settings": {
+            "text_1": "Visit the atelier",
+            "text_2": "No. 47, Lavelle Road, Bengaluru – 560001, India",
+            "text_3": "Walk-in fittings by appointment"
+          }
         },
         "item_2": {
           "type": "item_2",
-          "settings": {}
+          "settings": {
+            "text_1": "Write to us",
+            "text_2": "hello@krithiweaves.com",
+            "text_3": "Replies within one working day"
+          }
         },
         "item_3": {
           "type": "item_3",
-          "settings": {}
+          "settings": {
+            "text_1": "Call or WhatsApp",
+            "text_2": "+91 98765 43210",
+            "text_3": "Mon – Sat, 10 am – 7 pm IST"
+          }
         },
         "item_4": {
           "type": "item_4",
-          "settings": {}
+          "settings": {
+            "text_1": "Studio hours",
+            "text_2": "Monday to Saturday",
+            "text_3": "10:00 am – 7:00 pm IST"
+          }
         }
       },
       "block_order": [
@@ -62,12 +89,34 @@
         "item_3",
         "item_4"
       ],
-      "settings": {}
+      "settings": {
+        "text_1": "Ways to reach us",
+        "text_2": "Also on",
+        "text_3": "Instagram",
+        "text_4": "Facebook",
+        "text_5": "X",
+        "text_6": "LinkedIn",
+        "text_7": "Send us a note",
+        "text_8": "We read every message, usually within a day.",
+        "text_9": "Full name *",
+        "text_10": "Email *",
+        "text_11": "Tell us a little about what you need *",
+        "text_12": "Send message",
+        "form_success": "Thank you! Your message has been sent. We will get back to you soon.",
+        "text_13": "Message sent"
+      }
     },
     "content_3": {
       "type": "contact-3",
+      "disabled": true,
       "settings": {
-        "link_6": "https://maps.google.com/?q=Lavelle+Road+Bengaluru"
+        "text_1": "Studio location",
+        "text_2": "Our studio",
+        "text_3": "Lavelle Road, Bengaluru",
+        "copy_4": "Tucked into a quiet lane in central Bengaluru — a small studio where every piece is drafted, sampled, and checked before it reaches you.",
+        "text_5": "No. 47, Lavelle Road, Bengaluru — 560001",
+        "link_6": "https://maps.google.com/?q=Lavelle+Road+Bengaluru",
+        "text_7": "Get directions"
       }
     },
     "content_4": {
@@ -75,23 +124,38 @@
       "blocks": {
         "item_1": {
           "type": "item_1",
-          "settings": {}
+          "settings": {
+            "text_1": "How do I find my right size?",
+            "copy_2": "Every product page has a garment-specific size guide with actual bust, waist, and length measurements. If you are between sizes, WhatsApp us a quick note with your measurements and we will recommend the best fit from the current batch."
+          }
         },
         "item_2": {
           "type": "item_2",
-          "settings": {}
+          "settings": {
+            "text_1": "How long does shipping take?",
+            "copy_2": "Most orders within India dispatch within 48 hours and arrive in 3–6 working days. International orders take 7–10 working days after dispatch. Tracking is shared the moment the parcel leaves the studio."
+          }
         },
         "item_3": {
           "type": "item_3",
-          "settings": {}
+          "settings": {
+            "text_1": "Can I return or exchange a piece?",
+            "copy_2": "Yes — exchanges are free within 7 days of delivery, provided the piece is unworn with tags intact. Refunds are processed within 5–7 working days of us receiving the return. Sale items are eligible for exchanges only."
+          }
         },
         "item_4": {
           "type": "item_4",
-          "settings": {}
+          "settings": {
+            "text_1": "Do you take wholesale or bulk orders?",
+            "copy_2": "We work with a small number of boutiques and studios across India. Please write to hello@krithiweaves.com with \"Wholesale\" in the subject and we will share our line-sheet within two working days."
+          }
         },
         "item_5": {
           "type": "item_5",
-          "settings": {}
+          "settings": {
+            "text_1": "How should I care for the fabric?",
+            "copy_2": "Machine wash cold, inside out, with a mild detergent. Line dry in shade. Do not wring or tumble dry. A quick steam-iron on low keeps the weave looking crisp without compromising softness."
+          }
         }
       },
       "block_order": [
@@ -101,7 +165,10 @@
         "item_4",
         "item_5"
       ],
-      "settings": {}
+      "settings": {
+        "text_1": "Frequently asked",
+        "copy_2": "Quick answers to the questions we get most. Can't find yours? The form above is always open."
+      }
     }
   },
   "order": [
