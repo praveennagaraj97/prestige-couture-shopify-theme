@@ -1,44 +1,125 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "content_1": {
       "type": "testimonials-1",
-      "settings": {}
+      "settings": {
+        "text_1": "Loved by the people who wear it",
+        "text_2": "Your words of love",
+        "copy_3": "Real notes, real photos, real feedback from the women who wake up to a Krithi Weaves piece every morning.",
+        "text_4": "4.9",
+        "text_5": "from 1,248 reviews"
+      }
     },
     "content_2": {
       "type": "testimonials-2",
+      "settings": {
+        "text_1": "At a glance",
+        "text_2": "25k+",
+        "text_3": "Happy customers",
+        "text_4": "4.9/5",
+        "text_5": "Average rating",
+        "text_6": "98%",
+        "text_7": "Repeat love",
+        "text_8": "< 72h",
+        "text_9": "Average delivery"
+      }
+    },
+    "179223407277e25a82": {
+      "type": "apps",
+      "settings": {}
+    },
+    "1792233987a59c18b7": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_homepage_PUcYGg": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget_homepage/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "product": "",
+            "review_data": "sample_data",
+            "max_width": 1200
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_homepage_PUcYGg"
+      ],
       "settings": {}
     },
     "content_3": {
       "type": "testimonials-3",
-      "settings": {}
+      "settings": {
+        "text_1": "Featured review",
+        "text_3": "Priya Sharma",
+        "text_4": "“I have worn this kurti twice a week for six months and it still looks fresh off the rack. The fabric breathes beautifully in the Bangalore heat — nothing I own fits this well at this price.”",
+        "copy_5": "“I have worn this kurti twice a week for six months and it still looks fresh off the rack. The fabric breathes beautifully in the Bangalore heat — nothing I own fits this well at this price.”",
+        "text_6": "Bengaluru · Repeat customer since 2023"
+      }
     },
     "content_4": {
       "type": "testimonials-4",
-      "settings": {},
       "blocks": {
         "item_1": {
           "type": "item_1",
-          "settings": {}
+          "settings": {
+            "text_2": "Ananya Reddy",
+            "text_3": "Hyderabad · Mar 2026",
+            "copy_4": "The Shakira boat neck fits me better than any kurti I have tried from brands twice the price. The seams are perfect, the fabric is gentle on skin, and the shade is exactly like the photo. Ordered three more in different colours.",
+            "text_5": "Shakira Boat Neck Kurti"
+          }
         },
         "item_2": {
           "type": "item_2",
-          "settings": {}
+          "settings": {
+            "text_2": "Emily Wilson",
+            "text_3": "London · Feb 2026",
+            "copy_4": "Packaging was beautiful, shipping to the UK was faster than expected, and the piece itself — the Bayaan — is genuinely the softest cotton I own. I wear it to work-from-home, to the shops, to dinners.",
+            "text_5": "Bayaan Straight Sleeves Kurti"
+          }
         },
         "item_3": {
           "type": "item_3",
-          "settings": {}
+          "settings": {
+            "text_2": "Olivia Martinez",
+            "text_3": "Bengaluru · Feb 2026",
+            "copy_4": "I have very specific sizing needs and Krithi’s M fits me exactly as described. The customer support replied to my sizing DM within the hour with actual measurements, not a canned reply. That is rare.",
+            "text_5": "Aaliya Bell Sleeves Kurti"
+          }
         },
         "item_4": {
           "type": "item_4",
-          "settings": {}
+          "settings": {
+            "text_2": "Priya Shetty",
+            "text_3": "Mumbai · Jan 2026",
+            "copy_4": "My mother noticed the quality before I even told her the price — and she is the harshest critic I know. The colour holds beautifully after three washes. This brand deserves more attention.",
+            "text_5": "Paro Halter Neck Kurti"
+          }
         },
         "item_5": {
           "type": "item_5",
-          "settings": {}
+          "settings": {
+            "text_2": "Ishita Banerjee",
+            "text_3": "Kolkata · Jan 2026",
+            "copy_4": "I bought the Meera block print for a family gathering and it has since become my go-to outfit. Comfortable enough to sit cross-legged on the floor, structured enough for photos. What more can I ask for?",
+            "text_5": "Meera Block Print Kurti"
+          }
         },
         "item_6": {
           "type": "item_6",
-          "settings": {}
+          "settings": {
+            "text_2": "Zara Khan",
+            "text_3": "Delhi · Dec 2025",
+            "copy_4": "The Rumi mandarin collar is genuinely one of the most flattering pieces I own. Love that you can throw it over jeans or pair with salwar, and it works. Shipping was fast and the thank-you note was a lovely touch.",
+            "text_5": "Rumi Mandarin Collar Kurti"
+          }
         }
       },
       "block_order": [
@@ -48,18 +129,28 @@
         "item_4",
         "item_5",
         "item_6"
-      ]
+      ],
+      "settings": {
+        "text_1": "From our community",
+        "text_2": "Honest, unfiltered reviews — every one verified."
+      }
     },
     "content_5": {
       "type": "testimonials-5",
+      "disabled": true,
       "settings": {
-        "link_3": "/pages/contact"
+        "text_1": "Wearing Krithi? Share your story.",
+        "text_2": "One honest note helps the next person find a better-fitting piece.",
+        "link_3": "/pages/contact",
+        "text_4": "Write a review"
       }
     }
   },
   "order": [
     "content_1",
     "content_2",
+    "179223407277e25a82",
+    "1792233987a59c18b7",
     "content_3",
     "content_4",
     "content_5"
