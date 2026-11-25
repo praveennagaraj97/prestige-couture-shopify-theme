@@ -1,66 +1,125 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "content_1": {
       "type": "help-orders-tracking-1",
       "settings": {
-        "link_2": "/pages/help"
+        "text_1": "Your order, from our hands to yours.",
+        "link_2": "/pages/help",
+        "text_3": "Back to help center",
+        "text_4": "Orders & Tracking",
+        "copy_5": "Every order begins with a little excitement. We'll keep you informed as your selection is confirmed, prepared and sent your way."
       }
     },
     "content_2": {
       "type": "help-orders-tracking-2",
-      "settings": {},
       "blocks": {
         "item_1": {
           "type": "item_1",
-          "settings": {}
+          "settings": {
+            "text_1": "Order confirmation",
+            "copy_2": "Once your order is successfully placed, you'll receive a confirmation through both email and WhatsApp. Your confirmation will include the details of your purchase for easy reference."
+          }
         },
         "item_2": {
           "type": "item_2",
-          "settings": {}
+          "settings": {
+            "text_1": "Tracking your order",
+            "copy_2": "As soon as your order is dispatched, we'll share a tracking link through email and WhatsApp. You can use it to follow your parcel and stay updated on its delivery progress."
+          }
         },
         "item_3": {
           "type": "item_3",
-          "settings": {}
+          "settings": {
+            "text_1": "Before placing your order",
+            "copy_2": "Please take a moment to review your selected products, sizes and delivery details before completing your purchase. Once an order has been successfully placed, it cannot be cancelled."
+          }
         }
       },
       "block_order": [
         "item_1",
         "item_2",
         "item_3"
-      ]
+      ],
+      "settings": {
+        "text_1": "Orders & Tracking highlights"
+      }
     },
     "content_3": {
       "type": "help-orders-tracking-3",
-      "settings": {},
       "blocks": {
         "item_1": {
           "type": "item_1",
-          "settings": {}
+          "settings": {
+            "text_1": "How do I know if my order has been placed successfully?",
+            "copy_2": "You'll receive an order confirmation through your registered email address and WhatsApp once your payment and order are successfully completed."
+          }
         },
         "item_2": {
           "type": "item_2",
-          "settings": {}
+          "settings": {
+            "text_1": "Where can I find my tracking details?",
+            "copy_2": "Your tracking link will be shared through email and WhatsApp once your order is dispatched."
+          }
         },
         "item_3": {
           "type": "item_3",
-          "settings": {}
+          "settings": {
+            "text_1": "Can I change my delivery address after placing an order?",
+            "copy_2": "Please contact us as soon as possible if you've entered an incorrect address. We'll check whether an update is possible based on the current status of your order."
+          }
         },
         "item_4": {
           "type": "item_4",
-          "settings": {}
+          "settings": {
+            "text_1": "Can I cancel my order after placing it?",
+            "copy_2": "We do not accept order cancellations once an order has been successfully placed. We recommend reviewing your order details carefully before completing checkout."
+          }
+        },
+        "item_1_W6wAep": {
+          "type": "item_1",
+          "settings": {
+            "text_1": "What if my tracking information isn't updating?",
+            "copy_2": "Courier tracking details may occasionally take some time to refresh. If there hasn't been an update for 48 hours, contact us with your order ID or tracking number. We'll follow up with the delivery partner."
+          }
+        },
+        "item_2_VCF4eA": {
+          "type": "item_2",
+          "settings": {
+            "text_1": "What should I do if I receive the wrong item?",
+            "copy_2": "Please contact us with your order details and clear photographs of the item received. We'll look into the issue and help arrange the appropriate resolution."
+          }
         }
       },
       "block_order": [
         "item_1",
         "item_2",
         "item_3",
-        "item_4"
-      ]
+        "item_4",
+        "item_1_W6wAep",
+        "item_2_VCF4eA"
+      ],
+      "settings": {
+        "text_1": "Orders & Tracking FAQ",
+        "text_2": "Short answers to the most common questions for this topic."
+      }
     },
     "content_4": {
       "type": "help-orders-tracking-4",
       "settings": {
-        "link_4": "/pages/contact"
+        "text_1": "Need more help",
+        "text_2": "Need more help?",
+        "text_3": "Our support team can help with order-specific questions.",
+        "link_4": "/pages/contact",
+        "text_5": "Contact support"
       }
     }
   },
