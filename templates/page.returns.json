@@ -12,7 +12,15 @@
     "content_1": {
       "type": "returns-1",
       "settings": {
-        "text_3": "Back to help center"
+        "text_1": "Return Policy",
+        "text_2": "Returns & Exchanges",
+        "text_3": "We want you to feel good about every purchase.",
+        "copy_4": "We understand that sometimes a piece may not be quite what you expected. If something doesn't work out, we're here to help make the process easier.",
+        "link_back": "",
+        "text_back": "Back to help center",
+        "text_5": "Free exchanges",
+        "text_6": "7-day window",
+        "text_7": "Pickup from home"
       }
     },
     "content_2": {
@@ -20,19 +28,35 @@
       "blocks": {
         "item_1": {
           "type": "item_1",
-          "settings": {}
+          "settings": {
+            "text_1": "01",
+            "text_2": "Get in touch",
+            "copy_3": "Contact our support team within 5 days of receiving your order. Share your order ID and let us know whether you'd like a return or exchange."
+          }
         },
         "item_2": {
           "type": "item_2",
-          "settings": {}
+          "settings": {
+            "text_1": "02",
+            "text_2": "Request review",
+            "copy_3": "Our team will review your request and guide you through the process."
+          }
         },
         "item_3": {
           "type": "item_3",
-          "settings": {}
+          "settings": {
+            "text_1": "03",
+            "text_2": "Return arrangement",
+            "copy_3": "We'll arrange the return shipping at our expense and share the necessary instructions."
+          }
         },
         "item_4": {
           "type": "item_4",
-          "settings": {}
+          "settings": {
+            "text_1": "04",
+            "text_2": "Refund or exchange",
+            "copy_3": "Once the returned item has been received and reviewed, we'll proceed with the approved refund or exchange."
+          }
         }
       },
       "block_order": [
@@ -41,48 +65,113 @@
         "item_3",
         "item_4"
       ],
-      "settings": {}
+      "settings": {
+        "text_1": "How it works",
+        "text_2": "How returns work",
+        "text_3": "Four steps, no paperwork."
+      }
     },
     "content_3": {
       "type": "returns-3",
       "blocks": {
         "item_1": {
           "type": "item_1",
-          "settings": {}
+          "disabled": true,
+          "settings": {
+            "text_1": "Accepted",
+            "text_2": "Unworn pieces with original tags intact",
+            "text_3": "Products returned within 7 days of delivery",
+            "text_4": "Original invoice or order number shared with return",
+            "text_5": "Defects or wrong items received (we cover shipping both ways)"
+          }
         },
         "item_2": {
           "type": "item_2",
-          "settings": {}
+          "disabled": true,
+          "settings": {
+            "text_1": "Not accepted",
+            "text_2": "Pieces that have been worn, washed, or altered",
+            "text_3": "Items without tags or returned after 7 days",
+            "text_4": "Accessories or innerwear (hygiene)",
+            "text_5": "Clearance sale items (exchanges only, sizing permitting)"
+          }
         }
       },
       "block_order": [
         "item_1",
         "item_2"
       ],
-      "settings": {}
+      "settings": {
+        "text_1": "Eligibility",
+        "text_2": "Return & Exchange Conditions",
+        "text_3": "Requests must be raised within 5 days of delivery. Products must be unused and have their original tags attached.Both regular-priced and discounted products are eligible.Return shipping charges are covered by Krithi Weaves.Exchanges are available for any available product of equivalent value.Approved refunds are processed to the original payment method.Refund processing generally takes 3–4 working days."
+      }
     },
     "content_4": {
       "type": "returns-4",
       "blocks": {
         "item_1": {
           "type": "item_1",
-          "settings": {}
+          "settings": {
+            "text_1": "How many days do I have to request a return or exchange?",
+            "copy_2": "You can contact us within 5 days from the date your order is delivered."
+          }
         },
         "item_2": {
           "type": "item_2",
-          "settings": {}
+          "settings": {
+            "text_1": "Are sale and discounted products eligible for returns?",
+            "copy_2": "Yes. Sale and discounted products are also eligible for returns and exchanges within the applicable five-day period."
+          }
         },
         "item_3": {
           "type": "item_3",
-          "settings": {}
+          "settings": {
+            "text_1": "What condition should the product be in?",
+            "copy_2": "Products must be unused and have their original tags attached to qualify for a return or exchange."
+          }
         },
         "item_4": {
           "type": "item_4",
-          "settings": {}
+          "settings": {
+            "text_1": "Do I have to pay for return shipping?",
+            "copy_2": "No. Return shipping charges are covered by Krithi Weaves."
+          }
         },
         "item_5": {
           "type": "item_5",
-          "settings": {}
+          "settings": {
+            "text_1": "Can I exchange my purchase for a different product?",
+            "copy_2": "Yes. You can request an exchange for any available product of equivalent value, within the five-day exchange window."
+          }
+        },
+        "item_1_zqniCT": {
+          "type": "item_1",
+          "settings": {
+            "text_1": "Can I exchange an item for a different size?",
+            "copy_2": "Yes. You can request a size exchange within 5 days of delivery, subject to availability."
+          }
+        },
+        "item_1_xTHDKi": {
+          "type": "item_1",
+          "settings": {
+            "text_1": "How do I request a return or exchange?",
+            "copy_2": "Contact us through WhatsApp or email with your order ID and the reason for your request. Our team will guide you through the process."
+          }
+        },
+        "item_1_XgqWHL": {
+          "type": "item_1",
+          "settings": {
+            "text_1": "How long will my refund take?",
+            "copy_2": "Once your return is reviewed and approved, the refund is generally processed within 3–4 working days to your original payment method."
+          }
+        },
+        "item_1_C3Epwh": {
+          "type": "item_1",
+          "settings": {
+            "text_1": "What if I receive a damaged or incorrect product?",
+            "copy_2": "Please share your order ID and clear photographs of the product with our team. We'll look into the issue and assist you with the next steps"
+          }
         }
       },
       "block_order": [
@@ -90,9 +179,16 @@
         "item_2",
         "item_3",
         "item_4",
-        "item_5"
+        "item_5",
+        "item_1_zqniCT",
+        "item_1_xTHDKi",
+        "item_1_XgqWHL",
+        "item_1_C3Epwh"
       ],
-      "settings": {}
+      "settings": {
+        "text_1": "Returns & FAQ",
+        "text_2": "The top questions we get about sending pieces back."
+      }
     }
   },
   "order": [
