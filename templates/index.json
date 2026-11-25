@@ -342,6 +342,7 @@
       "blocks": {
         "item_1": {
           "type": "item_1",
+          "disabled": true,
           "settings": {
             "text_1": "No. 47, Lavelle Road, Bengaluru - 560001, India"
           }
@@ -349,13 +350,13 @@
         "item_2": {
           "type": "item_2",
           "settings": {
-            "text_1": "hello@krithiweaves.com"
+            "text_1": "info@krithiweaves.com"
           }
         },
         "item_3": {
           "type": "item_3",
           "settings": {
-            "text_1": "+91 98765 43210"
+            "text_1": "+91  8590554142"
           }
         },
         "item_4": {
